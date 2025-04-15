@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovementHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+
+    //Classe Move que contém a movimentação do jogador
+    public void Move(InputAction.CallbackContext context){
+
+        if(context.phase == InputActionPhase.Performed){
+            Debug.Log("Move");
+        }
         
+        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
