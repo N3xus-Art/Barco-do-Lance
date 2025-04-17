@@ -24,10 +24,10 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Attack",
+                    "name": "Click",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -42,10 +42,19 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Secondary",
+                    "type": "Button",
+                    "id": "f92136d9-988b-47e6-9b05-6f7632fd3c68",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Crouch",
                     "type": "Button",
                     "id": "27c5f898-bc57-4ee1-8800-db469aca5fe3",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -260,7 +269,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Attack",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -271,7 +280,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Attack",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -282,7 +291,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
-                    "action": "Attack",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -293,7 +302,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
-                    "action": "Attack",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -304,7 +313,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Attack",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -315,7 +324,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Attack",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -448,6 +457,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dc36e610-1f4f-4156-a936-5ae3491b6edf",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Secondary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddf212b3-4a78-438b-aac0-701100f568e9",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Secondary",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -7,8 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovementHandler : MonoBehaviour
 {
     [SerializeField] float velocity;
-    bool isMoving;
-    bool isInteracting;
+    bool isMoving, isInteracting, isSecondary, isClicking;
     Vector2 direction;
 
 
@@ -40,6 +39,42 @@ public class PlayerMovementHandler : MonoBehaviour
         }
     }
 
+    public void Secondary(InputAction.CallbackContext context)
+    {
+
+        if (context.phase == InputActionPhase.Started)
+        {
+
+        }
+        else if (context.phase == InputActionPhase.Performed)
+        {
+            isSecondary = true;
+
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            isSecondary = false;
+        }
+    }
+
+    public void Click(InputAction.CallbackContext context)
+    {
+
+        if (context.phase == InputActionPhase.Started)
+        {
+
+        }
+        else if (context.phase == InputActionPhase.Performed)
+        {
+            isClicking = true;
+
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            isClicking = false;
+        }
+    }
+
     void Update()
     {
         if (isMoving)
@@ -49,6 +84,18 @@ public class PlayerMovementHandler : MonoBehaviour
         
         if(isInteracting){
             Debug.Log("Foi");
+
+        }
+
+        if (isSecondary)
+        {
+            Debug.Log("Foi denovo");
+
+        }
+
+        if (isClicking)
+        {
+            Debug.Log("Você não vai acreditar");
 
         }
 
