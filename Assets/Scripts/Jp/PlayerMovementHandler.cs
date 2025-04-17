@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovementHandler : MonoBehaviour
 {
     [SerializeField] float velocity;
-    bool isMoving, isInteracting, isSecondary, isClicking;
+    bool isMoving, isInteracting, isSecondary, isClicking, isTertiary;
     Vector2 direction;
 
 
@@ -57,6 +57,24 @@ public class PlayerMovementHandler : MonoBehaviour
         }
     }
 
+    public void Tertiary(InputAction.CallbackContext context)
+    {
+
+        if (context.phase == InputActionPhase.Started)
+        {
+
+        }
+        else if (context.phase == InputActionPhase.Performed)
+        {
+            isTertiary = true;
+
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            isTertiary = false;
+        }
+    }
+
     public void Click(InputAction.CallbackContext context)
     {
 
@@ -90,6 +108,12 @@ public class PlayerMovementHandler : MonoBehaviour
         if (isSecondary)
         {
             Debug.Log("Foi denovo");
+
+        }
+
+        if (isTertiary)
+        {
+            Debug.Log("IMPOSSIVEL");
 
         }
 
