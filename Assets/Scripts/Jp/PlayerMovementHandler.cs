@@ -71,12 +71,14 @@ public class PlayerMovementHandler : MonoBehaviour
             {
                 sceneController.LoadScene("Cena Mapa");
                 SceneManager.UnloadSceneAsync("Cena Navegacao");
+                sceneController.LoadScene("CENA JP", LoadSceneMode.Additive);
 
             }
             else if (activeScene.name == "Cena Mapa")
             {
                 sceneController.LoadScene("Cena Navegacao");
                 SceneManager.UnloadSceneAsync("Cena Navegacao");
+                sceneController.LoadScene("CENA JP", LoadSceneMode.Additive);
 
             }
 

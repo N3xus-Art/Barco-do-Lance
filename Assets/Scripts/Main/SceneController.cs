@@ -9,6 +9,6 @@ public class SceneController
     public void LoadScene(string sceneName, LoadSceneMode sceneMode = LoadSceneMode.Single){
 
         //Usa o metodo do LoadScene do SceneManager para carregar a cena com os parametros rescebidos
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        SceneManager.LoadScene(sceneName, sceneMode);
     }
 }

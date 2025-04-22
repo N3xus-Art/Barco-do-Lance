@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     //Importa o SceneController
     SceneController sceneController;
 
-    //Verifica se já existe uma instancia na cena atual, caso tenha destroi e colocar esta no lugar, caso não tenha nada na instancia coloca as propriedades dessa
+    //Verifica se jï¿½ existe uma instancia na cena atual, caso tenha destroi e colocar esta no lugar, caso nï¿½o tenha nada na instancia coloca as propriedades dessa
     void Awake()
     {
         if (Instance == null){
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         //cria o sceneController baseado no molde
        sceneController = new SceneController();
-        //executa a aplicação de CENA JP em modo aditivo
+        //executa a aplicaï¿½ï¿½o de CENA JP em modo aditivo
        sceneController.LoadScene("CENA JP", LoadSceneMode.Additive);
         
     }
