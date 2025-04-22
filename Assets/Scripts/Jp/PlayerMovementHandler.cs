@@ -1,15 +1,17 @@
 using JetBrains.Annotations;
+using System;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovementHandler : MonoBehaviour
 {
     [SerializeField] float velocity;
     bool isMoving, isInteracting, isSecondary, isClicking, isTertiary;
     Vector2 direction;
-
+    SceneController sceneController;
 
     //Classe Move que contém a movimentação do jogador
     public void Move(InputAction.CallbackContext context){
@@ -59,9 +61,24 @@ public class PlayerMovementHandler : MonoBehaviour
 
     public void Tertiary(InputAction.CallbackContext context)
     {
-
         if (context.phase == InputActionPhase.Started)
         {
+
+            Scene activeScene = SceneManager.GetActiveScene();
+            sceneController = new SceneController();
+
+            if (activeScene.name == "Cena Navegacao")
+            {
+                sceneController.LoadScene("Cena Mapa");
+                SceneManager.UnloadSceneAsync("Cena Navegacao");
+
+            }
+            else if (activeScene.name == "Cena Mapa")
+            {
+                sceneController.LoadScene("Cena Navegacao");
+                SceneManager.UnloadSceneAsync("Cena Navegacao");
+
+            }
 
         }
         else if (context.phase == InputActionPhase.Performed)
