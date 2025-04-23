@@ -2,17 +2,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        Debug.Log("2");
-
-    }
-
-    // Update is called once per frame
+    [SerializeField] float vida;
     void Update()
     {
-        Debug.Log("1");
-
+        vida--;
+        if(0 > vida){
+            Destroy(gameObject);
+        }
     }
+
 }
