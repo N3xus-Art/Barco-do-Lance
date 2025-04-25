@@ -4,14 +4,8 @@ using System.Collections;
 public class ScriptTesteHud : MonoBehaviour
 {
     
-    [SerializeField] public int Vida;
+    public int Oxigenio;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         
