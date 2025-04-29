@@ -6,16 +6,16 @@ public class ScriptTesteBarraOxigenio : MonoBehaviour
 
     public Image BarraOxigenio;
     public GameObject player;
-    public float MaxOxigen, OxigenCost, Oxigen;
+    public float MaxOxygen, OxygenCost, Oxygen;
 
     void Update()
     {
-        Oxigen = player.GetComponent<ScriptTesteHud>().Oxigenio;
-        Oxigen -= OxigenCost;
+        Oxygen = player.GetComponent<ScriptTesteHud>().Oxigenio;
+        Oxygen -= OxygenCost;
 
-        if (Oxigen < 0) {Oxigen = 0;}
+        if (Oxygen < 0) {Oxygen = 0;}
         
-        BarraOxigenio.fillAmount = Oxigen / MaxOxigen; 
+        BarraOxigenio.fillAmount = Oxygen / MaxOxygen; 
     }
     
 }
