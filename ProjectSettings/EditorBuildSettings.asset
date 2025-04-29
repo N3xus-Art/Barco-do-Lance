@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Cenas/Main/Tela de Menu.unity
     guid: 521d540ab36996542a5009127862fbe2
   - enabled: 1
-    path: Assets/Scenes/Cenas/CENA JP.unity
+    path: Assets/Scenes/Cenas/Cenas Jp/CENA JP.unity
     guid: 737902d0522fb63468e0169a1487bdfe
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 33a4e5ba6287ca547810b7a02c952a8f, type: 2}
