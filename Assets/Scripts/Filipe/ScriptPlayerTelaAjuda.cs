@@ -1,22 +1,25 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.UI;
 
 public class ScriptPlayerTelaAjuda : MonoBehaviour
 {
+    public Canvas TelaAjuda;
 
-
-    public void CriarCanva(InputAction.CallbackContext context)
+    public void HabilitarCanva(InputAction.CallbackContext context)
     {
+        
+        if(context.phase == InputActionPhase.Started){
 
-    if(context.phase == InputActionPhase.Started){
+            if (TelaAjuda != null)
+                {
 
-        GameObject canvasGo = new GameObject("UI Canvas");
-        Canvas canvas = canvasGo.AddComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+                    if (TelaAjuda.enabled == false){TelaAjuda.enabled = true;}else{TelaAjuda.enabled = false;}
 
-    }
+                }
+
+            }
 
     }
 
