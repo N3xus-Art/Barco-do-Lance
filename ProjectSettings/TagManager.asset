@@ -50,11 +50,11 @@ TagManager:
   - name: Animal
     uniqueID: 2262881223
     locked: 0
-  - name: Ui
-    uniqueID: 3113777643
-    locked: 0
   - name: Camera
     uniqueID: 563370113
+    locked: 0
+  - name: Ui
+    uniqueID: 3113777643
     locked: 0
   m_RenderingLayers:
   - Default

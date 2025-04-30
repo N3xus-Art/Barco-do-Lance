@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 695863344}
   - component: {fileID: 695863343}
   - component: {fileID: 695863346}
-  m_Layer: 31
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1762778199}
   - component: {fileID: 1762778198}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
