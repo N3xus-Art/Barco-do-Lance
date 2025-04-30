@@ -41,14 +41,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: AGUA
+  - name: Agua
     uniqueID: 4237130247
     locked: 0
-  - name: Lance
+  - name: Jogador
     uniqueID: 3660568817
     locked: 0
   - name: Animal
     uniqueID: 2262881223
+    locked: 0
+  - name: Ui
+    uniqueID: 3113777643
+    locked: 0
+  - name: Camera
+    uniqueID: 563370113
     locked: 0
   m_RenderingLayers:
   - Default
