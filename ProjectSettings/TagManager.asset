@@ -38,17 +38,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: UI
+    uniqueID: 476030215
+    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: AGUA
-    uniqueID: 4237130247
-    locked: 0
-  - name: Lance
-    uniqueID: 3660568817
-    locked: 0
-  - name: Animal
-    uniqueID: 2262881223
     locked: 0
   m_RenderingLayers:
   - Default
