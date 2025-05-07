@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class ScriptPlayerTelaAjuda : MonoBehaviour
 {
-    public Canvas TelaAjuda;
-    public Transform Image;
-
+    public GameObject TelaAjuda;
+    public Transform Imagem;
     public GameObject button1;
     public GameObject button2;
     public GameObject button3;
@@ -22,20 +21,21 @@ public class ScriptPlayerTelaAjuda : MonoBehaviour
         
         if(context.phase == InputActionPhase.Started){
 
-            if (TelaAjuda != null && TelaAjuda.enabled == false){
-                    Debug.Log("doce");
+            if (TelaAjuda != null && TelaAjuda.activeSelf == false){
+                    
+                    TelaAjuda.SetActive(true);
 
                     button1.SetActive(true);
                     button2.SetActive(true);
                     button3.SetActive(true);
                     button4.SetActive(true);
                     button5.SetActive(true);
-                    button6.SetActive(true);
+                    button6.SetActive(true);       
 
-                    if (Image != null)
+                    if (Imagem != null)
                     {
 
-                        foreach (Transform child in Image)
+                        foreach (Transform child in Imagem)
                         {
                             Button button = child.GetComponent<Button>();
 
@@ -45,22 +45,14 @@ public class ScriptPlayerTelaAjuda : MonoBehaviour
                             }
                         }
                     }
-
-                    TelaAjuda.enabled = true;
             }
         }
     }
 
-    void Start()
-    {
-
-    }
-
-
     void Update()
     {   
 
-        if (numBotoes == 0){ TelaAjuda.enabled = false; };
+        if (numBotoes <= 0){ TelaAjuda.SetActive(false); };
 
     }
 
