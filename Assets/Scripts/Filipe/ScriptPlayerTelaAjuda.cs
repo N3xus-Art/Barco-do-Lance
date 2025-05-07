@@ -5,27 +5,54 @@ using UnityEngine.UI;
 
 public class ScriptPlayerTelaAjuda : MonoBehaviour
 {
-    public Canvas TelaAjuda;
+    public GameObject TelaAjuda;
+    public Transform Imagem;
+    public GameObject button1;
+    public GameObject button2;
+    public GameObject button3;
+    public GameObject button4;
+    public GameObject button5;
+    public GameObject button6;
+
+    public int numBotoes = 0;
 
     public void HabilitarCanva(InputAction.CallbackContext context)
     {
         
         if(context.phase == InputActionPhase.Started){
 
-            if (TelaAjuda != null)
-                {
+            if (TelaAjuda != null && TelaAjuda.activeSelf == false){
+                    
+                    TelaAjuda.SetActive(true);
 
-                    if (TelaAjuda.enabled == false){TelaAjuda.enabled = true;}else{TelaAjuda.enabled = false;}
+                    button1.SetActive(true);
+                    button2.SetActive(true);
+                    button3.SetActive(true);
+                    button4.SetActive(true);
+                    button5.SetActive(true);
+                    button6.SetActive(true);       
 
-                }
+                    if (Imagem != null)
+                    {
 
+                        foreach (Transform child in Imagem)
+                        {
+                            Button button = child.GetComponent<Button>();
+
+                            if (button != null)
+                            {
+                                numBotoes++;
+                            }
+                        }
+                    }
             }
-
+        }
     }
 
-
     void Update()
-    {
+    {   
+
+        if (numBotoes <= 0){ TelaAjuda.SetActive(false); };
 
     }
 
