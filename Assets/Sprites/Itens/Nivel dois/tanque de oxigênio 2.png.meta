@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e7aff7b5b7cc95b4bbe71af34023ce1c
+guid: e92ab178d3adaa1479523261c8f70e2e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5561316388814128032
-    second: "barco2.5 1280 n\xE3o terminado 2_0"
+      213: -6679657123748729417
+    second: "tanque de oxig\xEAnio 2_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "barco2.5 1280 n\xE3o terminado 2_0"
+      name: "tanque de oxig\xEAnio 2_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 73
-        width: 1276
-        height: 1062
+        x: 20
+        y: 2
+        width: 24
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a303de5ac3cd2d40800000000000000
-      internalID: 5561316388814128032
+      spriteID: 7bdac8d7c371d43a0800000000000000
+      internalID: -6679657123748729417
       vertices: []
       indices: 
       edges: []
