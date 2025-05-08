@@ -80,18 +80,19 @@ public class PlayerMovementHandler : MonoBehaviour
                 curItem++;
             }
 
-            if(changeScene){
-                if (activeScene.name == "Cena Navegacao")
-                {
-                    sceneController.LoadScene("Cena Mapa");
-                    SceneManager.UnloadSceneAsync("Cena Navegacao");
-                    sceneController.LoadScene("CENA JP", LoadSceneMode.Additive);
+            Debug.Log(activeScene.name);
 
-                }
-                else if (activeScene.name == "Cena Mapa")
+            if(changeScene){
+                if (activeScene.name == "Cena teste Navegacao")
                 {
-                    sceneController.LoadScene("Cena Navegacao");
-                    SceneManager.UnloadSceneAsync("Cena Navegacao");
+                    sceneController.LoadScene("Cena Mapa Teste");
+                    SceneManager.UnloadSceneAsync("Cena teste Navegacao");
+                    sceneController.LoadScene("CENA JP", LoadSceneMode.Additive);
+                }
+                else if (activeScene.name == "Cena Mapa Teste")
+                {
+                    sceneController.LoadScene("Cena teste Navegacao");
+                    SceneManager.UnloadSceneAsync("Cena Mapa Teste");
                     sceneController.LoadScene("CENA JP", LoadSceneMode.Additive);
 
                 }
