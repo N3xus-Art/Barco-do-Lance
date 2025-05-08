@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      divisoria escada2_0: 3630889220370403032
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

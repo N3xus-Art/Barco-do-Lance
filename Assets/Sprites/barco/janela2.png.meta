@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      janela2_0: -4842796649435761626
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MergulhadorBasico_0: 1581314409984735493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

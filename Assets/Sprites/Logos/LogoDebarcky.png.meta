@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LogoDebarcky_0: 597466868934980189
+      LogoDebarcky_1: -8442047228949502041
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

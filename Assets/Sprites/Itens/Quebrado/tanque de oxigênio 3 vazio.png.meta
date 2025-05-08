@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "tanque de oxig\xEAnio 3 vazio_0": -7812174549655624140
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

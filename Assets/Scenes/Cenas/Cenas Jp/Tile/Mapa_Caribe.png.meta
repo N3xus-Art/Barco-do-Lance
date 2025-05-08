@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mapa_Caribe_0: -7709288683956450141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

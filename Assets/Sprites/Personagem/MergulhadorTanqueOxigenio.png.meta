@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MergulhadorTanqueOxigenio_0: -595312614510608486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rede 1 quebrada_0: -5865607351187960729
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
