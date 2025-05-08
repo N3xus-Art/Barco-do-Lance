@@ -396,6 +396,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f92136d9-988b-47e6-9b05-6f7632fd3c68
+    m_ActionName: 'Player/Secondary[/Keyboard/i]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cf2015be-cd37-47ba-b039-6fa503b42f5b
+    m_ActionName: 'Player/Tetriary[/Keyboard/q]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -414,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TelaAjuda: {fileID: 1346913699}
-  Imagem: {fileID: 0}
+  Imagem: {fileID: 1346913703}
   button1: {fileID: 28789653}
   button2: {fileID: 1706947579}
   button3: {fileID: 1766549116}
