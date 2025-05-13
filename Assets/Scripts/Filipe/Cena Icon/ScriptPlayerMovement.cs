@@ -1,3 +1,5 @@
+using Microsoft.Unity.VisualStudio.Editor;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +12,8 @@ public class ScriptPlayerMovement : MonoBehaviour
     public Transform Item;
 
     float range = 2f;
+
+    public GameObject Tecla;
 
     public void Move(InputAction.CallbackContext context)
     {
@@ -39,11 +43,13 @@ public class ScriptPlayerMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, Item.position) >= range){
 
-            
+            if (!Tecla.activeSelf){
+            Tecla.SetActive(true);
+            }
 
         }else{
 
-                
+            Tecla.SetActive(false);
 
         }
 
