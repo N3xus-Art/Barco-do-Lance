@@ -17,6 +17,7 @@ public class PlayerMovementHandler : MonoBehaviour
     public Canvas TelaAjuda;
     
     public Canvas Cut, Web, Treat;
+    public SpawnerHandler spawnerHandler;
 
     //Classe Move que contém a movimentação do jogador
     public void Move(InputAction.CallbackContext context){
@@ -142,7 +143,6 @@ public class PlayerMovementHandler : MonoBehaviour
                 TelaAjuda.enabled = true;
                 screenAnimal = true;
             }
-
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
@@ -156,7 +156,7 @@ public class PlayerMovementHandler : MonoBehaviour
 
         }
         else if (context.phase == InputActionPhase.Performed)
-        {
+        { 
            switch(curItem){
             case 0:
                 Debug.Log("Caso 0");
@@ -190,7 +190,7 @@ public class PlayerMovementHandler : MonoBehaviour
     {
         TelaAjuda.enabled = false;
         Cut.enabled = false;
-        Web.enabled = true;
+        Web.enabled = false;
         Treat.enabled = false;
     }
 
@@ -220,6 +220,11 @@ public class PlayerMovementHandler : MonoBehaviour
         if (isClicking)
         {
             Debug.Log("Você não vai acreditar");
+            Debug.Log(spawnerHandler.animalLock + "HOJE VAI");
+            if(spawnerHandler.animalLock){
+               Destroy(GameObject.Find("Animal(Clone)"));
+            }
+
 
         }
 

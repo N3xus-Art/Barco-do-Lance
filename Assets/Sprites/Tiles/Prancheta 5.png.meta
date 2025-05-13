@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fa9b7953e7daf64438281d8814308186
+guid: c15f73780f1c72e4b91fc085178941db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 35622906487153068
-    second: Prancheta 8_0
+      213: -7308699144074354532
+    second: Prancheta 5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prancheta 8_0
+      name: Prancheta 5_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca1a80f38de8e7000800000000000000
-      internalID: 35622906487153068
+      spriteID: c902f330ad8429a90800000000000000
+      internalID: -7308699144074354532
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Prancheta 8_0: 35622906487153068
+      Prancheta 5_0: -7308699144074354532
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
