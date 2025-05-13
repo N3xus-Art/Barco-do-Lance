@@ -18,6 +18,7 @@ public class PlayerMovementHandler : MonoBehaviour
     
     public Canvas Cut, Web, Treat;
     public SpawnerHandler spawnerHandler;
+    public PlayerHandler playerHandler;
 
     //Classe Move que contém a movimentação do jogador
     public void Move(InputAction.CallbackContext context){
@@ -159,22 +160,25 @@ public class PlayerMovementHandler : MonoBehaviour
         { 
            switch(curItem){
             case 0:
-                Debug.Log("Caso 0");
                 Cut.enabled = false;
                 Web.enabled = false;
                 Treat.enabled = true;
+                playerHandler.durTreat --;
+                Debug.Log(playerHandler.durTreat);
                 break;
             case 1:
-                Debug.Log("Caso 1");
                 Cut.enabled = true;
                 Web.enabled = false;
                 Treat.enabled = false;
+                playerHandler.durCut --;
+                Debug.Log(playerHandler.durCut);
                 break;
             case 2:
-                Debug.Log("Caso 2");
                 Cut.enabled = false;
                 Web.enabled = true;
                 Treat.enabled = false;
+                playerHandler.durCut --;
+                Debug.Log(playerHandler.durWeb);
                 break;
            }
         }
@@ -202,29 +206,24 @@ public class PlayerMovementHandler : MonoBehaviour
         }
         
         if(isInteracting){
-            Debug.Log("Foi");
+
         }
 
         if (isSecondary)
         {
-            Debug.Log("Foi denovo");
 
         }
 
         if (isTertiary)
         {
-            Debug.Log("IMPOSSIVEL");
 
         }
 
-        if (isClicking)
-        {
-            Debug.Log("Você não vai acreditar");
-            Debug.Log(spawnerHandler.animalLock + "HOJE VAI");
+        if (isClicking){
+
             if(spawnerHandler.animalLock){
                Destroy(GameObject.Find("Animal(Clone)"));
             }
-
 
         }
 
