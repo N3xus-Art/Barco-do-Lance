@@ -116,7 +116,29 @@ public class PlayerMovementHandler : MonoBehaviour
 
         if (context.phase == InputActionPhase.Started)
         {
-
+           switch(curItem){
+            case 0:
+                if(playerHandler.durTreat <= 0){
+                    Debug.Log("Acabou o doce");
+                }else{
+                    playerHandler.durTreat --;
+                }
+                break;
+            case 1:
+                if(playerHandler.durCut <= 0){
+                    Debug.Log("Acabou a tesoura");
+                }else{
+                    playerHandler.durCut --;
+                }
+                break;
+            case 2:
+                if(playerHandler.durWeb <= 0){
+                    Debug.Log("Acabou a rede");
+                }else{
+                    playerHandler.durWeb --;
+                }
+                break;
+           }
         }
         else if (context.phase == InputActionPhase.Performed)
         {
@@ -163,22 +185,16 @@ public class PlayerMovementHandler : MonoBehaviour
                 Cut.enabled = false;
                 Web.enabled = false;
                 Treat.enabled = true;
-                playerHandler.durTreat --;
-                Debug.Log(playerHandler.durTreat);
                 break;
             case 1:
                 Cut.enabled = true;
                 Web.enabled = false;
                 Treat.enabled = false;
-                playerHandler.durCut --;
-                Debug.Log(playerHandler.durCut);
                 break;
             case 2:
                 Cut.enabled = false;
                 Web.enabled = true;
                 Treat.enabled = false;
-                playerHandler.durCut --;
-                Debug.Log(playerHandler.durWeb);
                 break;
            }
         }
