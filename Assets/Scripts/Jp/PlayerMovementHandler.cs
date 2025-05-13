@@ -85,16 +85,16 @@ public class PlayerMovementHandler : MonoBehaviour
             Debug.Log(activeScene.name);
 
             if(changeScene){
-                if (activeScene.name == "Cena teste Navegacao")
+                if (activeScene.name == "Mediterraneo")
                 {
-                    sceneController.LoadScene("Cena Mapa Teste");
-                    SceneManager.UnloadSceneAsync("Cena teste Navegacao");
+                    sceneController.LoadScene("Caribe");
+                    SceneManager.UnloadSceneAsync("Mediterraneo");
                     sceneController.LoadScene("CENA JP", LoadSceneMode.Additive);
                 }
-                else if (activeScene.name == "Cena Mapa Teste")
+                else if (activeScene.name == "Caribe")
                 {
-                    sceneController.LoadScene("Cena teste Navegacao");
-                    SceneManager.UnloadSceneAsync("Cena Mapa Teste");
+                    sceneController.LoadScene("Mediterraneo");
+                    SceneManager.UnloadSceneAsync("Caribe");
                     sceneController.LoadScene("CENA JP", LoadSceneMode.Additive);
 
                 }
