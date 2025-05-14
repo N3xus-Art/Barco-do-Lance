@@ -28,7 +28,6 @@ public class SpawnerHandler : MonoBehaviour
     {
 
         animalCur = GameObject.Find("Animal(Clone)");
-        Debug.Log(animalCur);
         _timeUntilSpawn -= Time.deltaTime;
 
         if(animalCur == null){

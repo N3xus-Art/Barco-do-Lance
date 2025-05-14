@@ -18,6 +18,7 @@ public class PlayerMovementHandler : MonoBehaviour
     
     public Canvas Cut, Web, Treat;
     public SpawnerHandler spawnerHandler;
+    public PlayerHandler playerHandler;
 
     //Classe Move que contém a movimentação do jogador
     public void Move(InputAction.CallbackContext context){
@@ -115,7 +116,29 @@ public class PlayerMovementHandler : MonoBehaviour
 
         if (context.phase == InputActionPhase.Started)
         {
-
+           switch(curItem){
+            case 0:
+                if(playerHandler.durTreat <= 0){
+                    Debug.Log("Acabou o doce");
+                }else{
+                    playerHandler.durTreat --;
+                }
+                break;
+            case 1:
+                if(playerHandler.durCut <= 0){
+                    Debug.Log("Acabou a tesoura");
+                }else{
+                    playerHandler.durCut --;
+                }
+                break;
+            case 2:
+                if(playerHandler.durWeb <= 0){
+                    Debug.Log("Acabou a rede");
+                }else{
+                    playerHandler.durWeb --;
+                }
+                break;
+           }
         }
         else if (context.phase == InputActionPhase.Performed)
         {
@@ -159,19 +182,16 @@ public class PlayerMovementHandler : MonoBehaviour
         { 
            switch(curItem){
             case 0:
-                Debug.Log("Caso 0");
                 Cut.enabled = false;
                 Web.enabled = false;
                 Treat.enabled = true;
                 break;
             case 1:
-                Debug.Log("Caso 1");
                 Cut.enabled = true;
                 Web.enabled = false;
                 Treat.enabled = false;
                 break;
             case 2:
-                Debug.Log("Caso 2");
                 Cut.enabled = false;
                 Web.enabled = true;
                 Treat.enabled = false;
@@ -202,29 +222,24 @@ public class PlayerMovementHandler : MonoBehaviour
         }
         
         if(isInteracting){
-            Debug.Log("Foi");
+
         }
 
         if (isSecondary)
         {
-            Debug.Log("Foi denovo");
 
         }
 
         if (isTertiary)
         {
-            Debug.Log("IMPOSSIVEL");
 
         }
 
-        if (isClicking)
-        {
-            Debug.Log("Você não vai acreditar");
-            Debug.Log(spawnerHandler.animalLock + "HOJE VAI");
+        if (isClicking){
+
             if(spawnerHandler.animalLock){
                Destroy(GameObject.Find("Animal(Clone)"));
             }
-
 
         }
 
