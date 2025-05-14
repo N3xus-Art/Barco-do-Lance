@@ -6,10 +6,12 @@ public class Comprahandler : MonoBehaviour
 
     public String Nome;
 
+    public GameObject TelaConfirmacao;
+
     public void Comprar(){
 
 
-        Debug.Log($"Você comprou um {Nome} do cu da sua mãe");
+        TelaConfirmacao.SetActive(true);
 
 
     }
