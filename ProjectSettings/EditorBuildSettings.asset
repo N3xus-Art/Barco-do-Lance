@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
     path: Assets/Scenes/Cenas/Main/Cena Navegacao.unity
     guid: 9dc03894d3197fe4fabc676be8ee4f41
   - enabled: 0
@@ -38,9 +35,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Cenas/Main/Tela de Menu.unity
     guid: 521d540ab36996542a5009127862fbe2
-  - enabled: 1
-    path: Assets/Scenes/Cenas/Cenas Jp/CENA JP.unity
-    guid: 737902d0522fb63468e0169a1487bdfe
   - enabled: 0
     path: Assets/Scenes/Cenas/Cenas Jp/Cena teste Navegacao.unity
     guid: 199b2d3dc6b17cc4eada75754bc0e4ed
@@ -56,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Cenas/testez\xE3o/Caribe.unity"
     guid: 82b9e556efbca0b4c84e669413f935cf
+  - enabled: 1
+    path: Assets/Scenes/Cenas/Cenas Jp/CENA JP.unity
+    guid: 737902d0522fb63468e0169a1487bdfe
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 33a4e5ba6287ca547810b7a02c952a8f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
