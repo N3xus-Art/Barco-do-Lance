@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mapa_mediterraneo_0: -1471760924702157219
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
