@@ -2,10 +2,10 @@ using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScriptBotaoTeladeAjuda : MonoBehaviour
+public class ScriptBotaoTelaDeAjuda : MonoBehaviour
 {
 
-    public ScriptPlayerTelaAjuda TelaAjudaController;
+    public ScriptTelaAjuda TelaAjudaController;
 
     public void DeletarSiProprio(){
 
