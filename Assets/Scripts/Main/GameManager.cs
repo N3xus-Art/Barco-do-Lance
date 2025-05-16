@@ -22,11 +22,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        //cria o sceneController baseado no molde
-       sceneController = new SceneController();
-        //executa a aplicao de CENA JP em modo aditivo
-       sceneController.LoadScene("CENA JP", LoadSceneMode.Additive);
-        
+
     }
 
     void Update()
