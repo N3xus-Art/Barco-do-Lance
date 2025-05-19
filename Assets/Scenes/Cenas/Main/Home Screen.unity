@@ -775,7 +775,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1024095025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f6cd50cd18f1e46a615d41ea89259c, type: 3}
+  m_Script: {fileID: 11500000, guid: 81acfd1b4ca1dd24db5de7b002b27ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1024095028
@@ -822,9 +822,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ScriptMenuPrincipal, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1024095027}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: Credits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1570646671}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f6cd50cd18f1e46a615d41ea89259c, type: 3}
+  m_Script: {fileID: 11500000, guid: 81acfd1b4ca1dd24db5de7b002b27ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1570646674
@@ -1251,8 +1251,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1570646673}
-        m_TargetAssemblyTypeName: ScriptMenuPrincipal, Assembly-CSharp
-        m_MethodName: Sair
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

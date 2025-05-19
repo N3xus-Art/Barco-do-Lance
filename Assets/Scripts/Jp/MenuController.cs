@@ -14,7 +14,7 @@ public class MenuController : MonoBehaviour
     public void NewGame()
     {
         sceneController = new SceneController();
-        sceneController.LoadScene("Cena Navegacao");
+        sceneController.LoadScene("Scene Navigation");
         
 
     }
@@ -23,11 +23,25 @@ public class MenuController : MonoBehaviour
     {
         Scene activeScene = SceneManager.GetActiveScene();
         sceneController = new SceneController();
-        sceneController.LoadScene("Tela de Configuracoes");    
+        sceneController.LoadScene("Settings Screen");    
+
+    }
+
+    public void Credits()
+    {
+        Scene activeScene = SceneManager.GetActiveScene();
+        sceneController = new SceneController();
+        sceneController.LoadScene("Credits Screen");
+
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
 
     }
 
 
-    
+
 
 }
