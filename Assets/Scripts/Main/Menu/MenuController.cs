@@ -19,14 +19,12 @@ public class MenuController : MonoBehaviour
 
     public void Config()
     {
-        Scene activeScene = SceneManager.GetActiveScene();
         sceneController = new SceneController();
         sceneController.LoadScene("Settings Screen");    
     }
 
     public void Credits()
     {
-        Scene activeScene = SceneManager.GetActiveScene();
         sceneController = new SceneController();
         sceneController.LoadScene("Credits Screen");
     }

@@ -12,14 +12,35 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] float velocity, curItem;
     [SerializeField] bool screenAnimal, changeScene = false;
     [SerializeField] GameManager gameManager;
+    [SerializeField] GameObject betaDebarcky, warning;
     SceneController sceneController;
     Vector2 direction;
-    public bool isMoving, isInteracting, isSecondary, isClicking, isTertiary;
+    public bool isMoving, isInteracting, isSecondary, isClicking, isTertiary, isColliding;
     public Canvas TelaAjuda;
     public SpawnerHandler spawnerHandler;
     public PlayerHandler playerHandler;
     public ItemUIHandler toolKit;
 
+
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "PC"){
+            isColliding = true;
+            warning.SetActive(true);
+        }
+    }
+
+
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "PC")
+        {
+            isColliding = false;
+            betaDebarcky.SetActive(false);
+            warning.SetActive(false);
+        }
+    }
 
 
     public void Move(InputAction.CallbackContext context){
@@ -182,7 +203,7 @@ public class PlayerInputHandler : MonoBehaviour
         
         if(isInteracting){
 
-
+            if (isColliding){betaDebarcky.SetActive(true);}
 
         }
 
