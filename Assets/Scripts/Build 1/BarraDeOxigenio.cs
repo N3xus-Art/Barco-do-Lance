@@ -9,7 +9,7 @@ public class BarraDeOxigenio : MonoBehaviour
     void Update()
     {
 
-      BarraOxigenio.fillAmount = Player.o2 / Player.MaxOxygen; 
+      //BarraOxigenio.fillAmount = Player.o2 / Player.MaxOxygen; 
       
     }
 

@@ -2,26 +2,11 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
-public class PlayerHandler : ItemHandler
+public class PlayerHandler : MonoBehaviour
 {
-    [SerializeField]
-    public float o2, MaxOxygen, OxygenCost;
-    [SerializeField]
-    public ItemHandler net, sambura, cut, treat;
-
-    void Update(){
-
-        o2 = o2 - OxygenCost;
-
-        if (o2 < 0) {
-            o2 = 0;
-            Destroy(gameObject);
-        }
-
-
-    }
-
-
+    public ItemHandler net, cut, treat, sambura, o2;
 
 }

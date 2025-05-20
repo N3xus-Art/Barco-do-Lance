@@ -7,20 +7,21 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovementHandler : MonoBehaviour
+public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] float velocity, curItem;
     [SerializeField] bool screenAnimal, changeScene = false;
-    bool isMoving, isInteracting, isSecondary, isClicking, isTertiary;
-    Vector2 direction;
+    [SerializeField] GameManager gameManager;
     SceneController sceneController;
+    Vector2 direction;
+    public bool isMoving, isInteracting, isSecondary, isClicking, isTertiary;
     public Canvas TelaAjuda;
-    
-    public Canvas Cut, Web, Treat;
     public SpawnerHandler spawnerHandler;
     public PlayerHandler playerHandler;
+    public ItemUIHandler toolKit;
 
-    //Classe Move que contém a movimentação do jogador
+
+
     public void Move(InputAction.CallbackContext context){
         
         if(context.phase == InputActionPhase.Started){
@@ -70,20 +71,17 @@ public class PlayerMovementHandler : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
+            if (toolKit.cur >= 3 || toolKit.cur <=0){
+                toolKit.cur = 1;
+            }else{
+                toolKit.cur = toolKit.cur + 1;
+            }
+
+
 
             Scene activeScene = SceneManager.GetActiveScene();
             sceneController = new SceneController();
-
-            if(curItem >= 2){
-                curItem = 0;
-            }else if(curItem <= -1){
-                curItem = 0;
-            }else{
-                curItem++;
-            }
-
             Debug.Log(activeScene.name);
-
             if(changeScene){
                 if (activeScene.name == "Mediterraneo")
                 {
@@ -116,29 +114,7 @@ public class PlayerMovementHandler : MonoBehaviour
 
         if (context.phase == InputActionPhase.Started)
         {
-           /*switch(curItem){
-            case 0:
-                if(playerHandler.durTreat <= 0){
-                    Debug.Log("Acabou o doce");
-                }else{
-                    playerHandler.durTreat --;
-                }
-                break;
-            case 1:
-                if(playerHandler.durCut <= 0){
-                    Debug.Log("Acabou a tesoura");
-                }else{
-                    playerHandler.durCut --;
-                }
-                break;
-            case 2:
-                if(playerHandler.durWeb <= 0){
-                    Debug.Log("Acabou a rede");
-                }else{
-                    playerHandler.durWeb --;
-                }
-                break;
-           }*/
+
         }
         else if (context.phase == InputActionPhase.Performed)
         {
@@ -159,13 +135,13 @@ public class PlayerMovementHandler : MonoBehaviour
         }
         else if (context.phase == InputActionPhase.Performed)
         {
-            if(screenAnimal == true && TelaAjuda != null){
+            /*if(screenAnimal == true && TelaAjuda != null){
                 TelaAjuda.enabled = false;
                 screenAnimal = false;
             }else{
                 TelaAjuda.enabled = true;
                 screenAnimal = true;
-            }
+            }*/
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
@@ -180,23 +156,6 @@ public class PlayerMovementHandler : MonoBehaviour
         }
         else if (context.phase == InputActionPhase.Performed)
         { 
-           switch(curItem){
-            case 0:
-                Cut.enabled = false;
-                Web.enabled = false;
-                Treat.enabled = true;
-                break;
-            case 1:
-                Cut.enabled = true;
-                Web.enabled = false;
-                Treat.enabled = false;
-                break;
-            case 2:
-                Cut.enabled = false;
-                Web.enabled = true;
-                Treat.enabled = false;
-                break;
-           }
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
@@ -208,20 +167,22 @@ public class PlayerMovementHandler : MonoBehaviour
 
     void Start()
     {
-        TelaAjuda.enabled = false;
-        Cut.enabled = false;
-        Web.enabled = false;
-        Treat.enabled = false;
+       
     }
 
     void Update()
     {
         if (isMoving)
         {
-            transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * velocity;
+            if (gameManager.OnBoat){
+                transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime * velocity;
+            }else{transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * velocity;}
+
         }
         
         if(isInteracting){
+
+
 
         }
 
@@ -237,9 +198,9 @@ public class PlayerMovementHandler : MonoBehaviour
 
         if (isClicking){
 
-            if(spawnerHandler.animalLock){
+            /*if(spawnerHandler.animalLock){
                Destroy(GameObject.Find("Animal(Clone)"));
-            }
+            }*/
 
         }
 

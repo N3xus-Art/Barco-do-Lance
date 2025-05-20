@@ -4,14 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    //Cria uma instrancia estatica para apenas a classe alterar as propriedades dela
     static GameManager Instance;
-    //Importa o SceneController
     SceneController sceneController;
+    public bool OnBoat;
 
-    //Verifica se ja existe uma instancia na cena atual, caso tenha destroi e colocar esta no lugar, caso n�o tenha nada na instancia coloca as propriedades dessa
-    void Awake()
-    {
+    void Awake(){
         if (Instance == null){
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -20,13 +17,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
+    void Start(){
 
     }
 
-    void Update()
-    {
-        
+    void Update(){
+        Scene activeScene = SceneManager.GetActiveScene();
+        sceneController = new SceneController();
+        if (activeScene.name == "Scene Navigation"){
+            OnBoat = true;
+        }else{
+            OnBoat = false;
+        }
+
     }
 }

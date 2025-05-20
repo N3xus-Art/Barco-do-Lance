@@ -2,12 +2,7 @@ using UnityEngine;
 
 public class ItemHandler : MonoBehaviour
 {
-    [SerializeField] int Durability;
-    [SerializeField] int CurentLevel;
-    [SerializeField] int Upgrade2;
-    [SerializeField] int Upgrade3;
-    [SerializeField] int Cost;
-    [SerializeField] int ID;
+    [SerializeField] public float Durability, CurentLevel, Upgrade2, Upgrade3, Cost, ItemID;
 
     public void Awake()
     {
@@ -23,10 +18,5 @@ public class ItemHandler : MonoBehaviour
         {
             Durability = Upgrade3;
         }
-
-
     }
-
-
-
 }
