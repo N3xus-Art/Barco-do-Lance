@@ -6879,8 +6879,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2085407229}
   - component: {fileID: 2085407228}
-  - component: {fileID: 2085407227}
-  - component: {fileID: 2085407226}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6888,51 +6886,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2085407226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085407225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1013d47b469e8df46bc0442928daea16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 10
-  curItem: 0
-  screenAnimal: 0
-  changeScene: 0
-  TelaAjuda: {fileID: 0}
-  Cut: {fileID: 0}
-  Web: {fileID: 0}
-  Treat: {fileID: 0}
-  spawnerHandler: {fileID: 0}
-  playerHandler: {fileID: 0}
---- !u!114 &2085407227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085407225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479c233ff4ab4ac45b24c5f070ed3ada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BarraOxigenio: {fileID: 0}
-  o2: 100000
-  MaxOxygen: 100000
-  OxygenCost: 0.1
-  durCut: 0
-  durWeb: 0
-  durTreat: 0
-  durSanbu: 0
-  nivel1: 0
-  nivel2: 0
-  nivel3: 0
 --- !u!114 &2085407228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6960,7 +6913,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2085407226}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovementHandler, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
@@ -6980,7 +6933,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Look[/Mouse/delta,/Pen/delta]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2085407226}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovementHandler, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 0
@@ -6996,7 +6949,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2085407226}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovementHandler, Assembly-CSharp
         m_MethodName: Interact
         m_Mode: 0
@@ -7008,7 +6961,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 2085407226}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovementHandler, Assembly-CSharp
         m_MethodName: Animal
         m_Mode: 0
@@ -7084,7 +7037,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2085407226}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovementHandler, Assembly-CSharp
         m_MethodName: Secondary
         m_Mode: 0
@@ -7100,7 +7053,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Interact1[/Keyboard/e]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2085407226}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovementHandler, Assembly-CSharp
         m_MethodName: Tertiary
         m_Mode: 0
@@ -7112,7 +7065,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 2085407226}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovementHandler, Assembly-CSharp
         m_MethodName: Item
         m_Mode: 0

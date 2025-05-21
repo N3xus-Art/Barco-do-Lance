@@ -1,6 +1,4 @@
-using Microsoft.Unity.VisualStudio.Editor;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class ScriptPlayerMovement : MonoBehaviour
@@ -53,7 +51,7 @@ public class ScriptPlayerMovement : MonoBehaviour
 
         }
 
-        
+        Debug.Log(Vector3.Distance(transform.position, Item.position));
 
     }
 }
