@@ -6,21 +6,17 @@ public class DebarckyLocate : MonoBehaviour{
     public float range = 2f;
     public bool isColliding;
 
-    public void OnCollisionEnter(Collision collision){
-          if (collision.gameObject.name == "Pc"){
+    public void OnCollisionEnter2D(Collision2D collision){
+          if (collision.gameObject.name == "Player"){
                 isColliding = true;
-            Debug.Log("On2");
          }
-        Debug.Log("On1");
     }
 
-    public void OnCollisionExit(Collision collision){
-         if (collision.gameObject.name == "PC"){
+    public void OnCollisionExit2D(Collision2D collision){
+         if (collision.gameObject.name == "Player"){
             isColliding = false;
             betaDebarcky.SetActive(false);
-            Debug.Log("exit2");
         }
-        Debug.Log("exit1");
     }
 
     void Update(){
@@ -34,9 +30,7 @@ public class DebarckyLocate : MonoBehaviour{
         if (playerInputHandler.isInteracting){
             if (isColliding){ 
                 betaDebarcky.SetActive(true);
-                Debug.Log("intera2");
             }
-            Debug.Log(isColliding);
         }
     }
 
