@@ -171,9 +171,10 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (isMoving)
         {
-            if (!gameManager.OnBoat){
+            transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * velocity;
+            /*if (!gameManager.OnBoat){
                 transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * velocity;
-            }/*else{transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime * velocity;}*/
+            }else{transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime * velocity;}*/
 
         }
         
