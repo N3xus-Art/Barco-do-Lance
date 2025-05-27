@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5c6bd18aaaabf574cb7d4d9818a05010
+guid: 7469e33463c748748902ab96cd9a6b64
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2101355460916296898
-    second: Icone_selecao_0
+      213: -2867045002198535030
+    second: tartaruga verde montada_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icone_selecao_0
+      name: tartaruga verde montada_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 64
-        height: 64
+        width: 119
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e33c14d775c76d2e0800000000000000
-      internalID: -2101355460916296898
+      spriteID: a84b5e0c2c53638d0800000000000000
+      internalID: -2867045002198535030
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Icone_selecao_0: -2101355460916296898
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
