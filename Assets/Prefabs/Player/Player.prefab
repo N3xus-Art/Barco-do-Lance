@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6496916043701283248}
   - component: {fileID: 7440721274353932795}
   - component: {fileID: 5228576663048424843}
+  - component: {fileID: 2519103452200747238}
   - component: {fileID: 201148909248469237}
   - component: {fileID: 3635512557579102152}
   m_Layer: 3
@@ -258,8 +259,6 @@ MonoBehaviour:
   treat: {fileID: 2914802584513759287}
   sambura: {fileID: 3490404351214161895}
   o2: {fileID: 6248358480429091753}
-  PlayerInputHandler: {fileID: 7440721274353932795}
-  betaDebarcky: {fileID: 0}
 --- !u!114 &7440721274353932795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +281,7 @@ MonoBehaviour:
   isSecondary: 0
   isClicking: 0
   isTertiary: 0
+  isClimbing: 0
   TelaAjuda: {fileID: 0}
   spawnerHandler: {fileID: 0}
   playerHandler: {fileID: 6496916043701283248}
@@ -304,6 +304,19 @@ MonoBehaviour:
   Upgrade3: 0
   Cost: 0
   ItemID: 0
+--- !u!114 &2519103452200747238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2581693128084255002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ffb764a3660e7347a45a91802cb8f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 201148909248469237}
 --- !u!50 &201148909248469237
 Rigidbody2D:
   serializedVersion: 5

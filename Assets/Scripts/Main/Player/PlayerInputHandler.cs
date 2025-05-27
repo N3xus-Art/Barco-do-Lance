@@ -13,7 +13,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] GameManager gameManager;
     SceneController sceneController;
     Vector2 direction;
-    public bool isMoving, isInteracting, isSecondary, isClicking, isTertiary, isClimbing;
+    public bool isMoving, isInteracting, isSecondary, isClicking, isTertiary;
     public Canvas TelaAjuda;
     public SpawnerHandler spawnerHandler;
     public PlayerHandler playerHandler;
@@ -171,9 +171,9 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (isMoving)
         {
-            if (gameManager.OnBoat){
-                transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime * velocity;
-            }else{transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * velocity;}
+            if (!gameManager.OnBoat){
+                transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * velocity;
+            }/*else{transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime * velocity;}*/
 
         }
         
