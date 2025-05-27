@@ -1568,7 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a7741a933842742860206680f507a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Site: {fileID: 0}
+  Site: {fileID: 2033578223}
 --- !u!1 &1603148653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,7 +2408,7 @@ MonoBehaviour:
   Sprite_Leao_Marinho: {fileID: -3745387414516135415, guid: 3a187bcc021dc214bb55f3a7de9aea49, type: 3}
   Valor_Missao: 50
   MissaoAtual: 1
-  BotaoAtual: {fileID: 55149099}
+  BotaoAtual: {fileID: 1802242250}
 --- !u!1 &2065224849
 GameObject:
   m_ObjectHideFlags: 0
