@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class AbaHandler : MonoBehaviour
 {
-    public int Missao;
+    public int ID;
     public SiteHandler Site;
-    
-    public void Aba(){
-        Site.MissaoAtual = Missao;
 
-        Site.BotaoAtual = gameObject;
+    public void Aba()
+    {
+        Site.ID_Atual = ID;
     }
 }

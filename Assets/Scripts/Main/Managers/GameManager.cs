@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public int MissãoAtual;
+
     static GameManager Instance;
     SceneController sceneController;
     public bool OnBoat;

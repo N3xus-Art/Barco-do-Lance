@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223781d141ac55d43934286e62648962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Missao: 1
+  ID: 0
   Site: {fileID: 2033578223}
 --- !u!1 &63710677
 GameObject:
@@ -896,7 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223781d141ac55d43934286e62648962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Missao: 3
+  ID: 2
   Site: {fileID: 2033578223}
 --- !u!1 &503422897
 GameObject:
@@ -2141,7 +2141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223781d141ac55d43934286e62648962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Missao: 2
+  ID: 1
   Site: {fileID: 2033578223}
 --- !u!1 &2028962458
 GameObject:
@@ -2405,10 +2405,12 @@ MonoBehaviour:
   Texto_Missao: {fileID: 2028962460}
   Sprite_Foca: {fileID: 76202436883337493, guid: 384a46ac99c195f4c9107eef5c96a302, type: 3}
   Sprite_Peixe_Boi: {fileID: -4668227323012713794, guid: 03c08f6dbc3f6bb4ab82d30341dabf94, type: 3}
+  Sprite_Sapo: {fileID: 532282208441007744, guid: 82c06cc6c050f70449a3bcfbd66f33b5, type: 3}
   Sprite_Leao_Marinho: {fileID: -3745387414516135415, guid: 3a187bcc021dc214bb55f3a7de9aea49, type: 3}
+  Sprite_Tatu: {fileID: -4668227323012713794, guid: 4d085558713848143aa0dc13fe2d00c6, type: 3}
   Valor_Missao: 50
-  MissaoAtual: 1
-  BotaoAtual: {fileID: 1802242250}
+  ID_Atual: 0
+  MissoesDisponiveis: 000000000100000002000000
 --- !u!1 &2065224849
 GameObject:
   m_ObjectHideFlags: 0
