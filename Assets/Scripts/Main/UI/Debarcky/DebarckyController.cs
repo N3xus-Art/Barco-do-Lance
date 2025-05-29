@@ -8,14 +8,14 @@ public class DebarckyController : MonoBehaviour
     public void Medi()
     {
         sceneController = new SceneController();
-        sceneController.LoadScene("Caribbean Sea");
+        sceneController.LoadScene("Mediterranean Sea");
     }
 
     public void Cari()
     {
     
         sceneController = new SceneController();
-        sceneController.LoadScene("Mediterranean Sea");
+        sceneController.LoadScene("Caribbean Sea");
     }
     public void Red()
     {
