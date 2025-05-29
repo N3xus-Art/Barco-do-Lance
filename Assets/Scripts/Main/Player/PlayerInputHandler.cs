@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    [SerializeField] float velocity, curItem;
+    [SerializeField] float curItem;
+    [SerializeField] public float speed {get; private set;}
     [SerializeField] bool screenAnimal, changeScene = false;
     [SerializeField] GameManager gameManager;
     SceneController sceneController;
@@ -162,19 +163,18 @@ public class PlayerInputHandler : MonoBehaviour
     }
 
 
-    void Start()
-    {
-       
+    void Start(){
+       speed = 5f;
     }
 
     void Update()
     {
         if (isMoving)
         {
-            transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * velocity;
+            transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
             /*if (!gameManager.OnBoat){
-                transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * velocity;
-            }else{transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime * velocity;}*/
+                transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
+            }else{transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime * speed;}*/
 
         }
         

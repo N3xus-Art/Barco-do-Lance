@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 940490380257034118}
   - component: {fileID: 1626464423442706607}
   - component: {fileID: 6496916043701283248}
-  - component: {fileID: 7440721274353932795}
   - component: {fileID: 5228576663048424843}
-  - component: {fileID: 2519103452200747238}
   - component: {fileID: 201148909248469237}
   - component: {fileID: 3635512557579102152}
+  - component: {fileID: 7531527960308033718}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -71,7 +70,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7440721274353932795}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
@@ -91,7 +90,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Look[/Mouse/delta,/Pen/delta]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7440721274353932795}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 0
@@ -107,7 +106,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7440721274353932795}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Interact
         m_Mode: 0
@@ -119,7 +118,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 7440721274353932795}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Animal
         m_Mode: 0
@@ -195,7 +194,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7440721274353932795}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Secondary
         m_Mode: 0
@@ -211,7 +210,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Interact1[/Keyboard/e]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7440721274353932795}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Tertiary
         m_Mode: 0
@@ -223,7 +222,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 7440721274353932795}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: Item
         m_Mode: 0
@@ -237,6 +236,10 @@ MonoBehaviour:
         m_CallState: 1
     m_ActionId: cf2015be-cd37-47ba-b039-6fa503b42f5b
     m_ActionName: 'Player/Tetriary[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f11e50e4-5c6d-406e-8d6c-718e199824a5
+    m_ActionName: 'Player/Climb[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -259,33 +262,6 @@ MonoBehaviour:
   treat: {fileID: 2914802584513759287}
   sambura: {fileID: 3490404351214161895}
   o2: {fileID: 6248358480429091753}
---- !u!114 &7440721274353932795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2581693128084255002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8299bb6e2e197974e80cad574774405f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 5
-  curItem: 0
-  screenAnimal: 0
-  changeScene: 0
-  gameManager: {fileID: 0}
-  isMoving: 0
-  isInteracting: 0
-  isSecondary: 0
-  isClicking: 0
-  isTertiary: 0
-  isClimbing: 0
-  TelaAjuda: {fileID: 0}
-  spawnerHandler: {fileID: 0}
-  playerHandler: {fileID: 6496916043701283248}
-  toolKit: {fileID: 0}
 --- !u!114 &5228576663048424843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,19 +280,6 @@ MonoBehaviour:
   Upgrade3: 0
   Cost: 0
   ItemID: 0
---- !u!114 &2519103452200747238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2581693128084255002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ffb764a3660e7347a45a91802cb8f1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 201148909248469237}
 --- !u!50 &201148909248469237
 Rigidbody2D:
   serializedVersion: 5
@@ -390,6 +353,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.35, y: 0.86}
   m_EdgeRadius: 0
+--- !u!114 &7531527960308033718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2581693128084255002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8299bb6e2e197974e80cad574774405f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 0
+  curItem: 0
+  screenAnimal: 0
+  changeScene: 0
+  gameManager: {fileID: 0}
+  isMoving: 0
+  isInteracting: 0
+  isSecondary: 0
+  isClicking: 0
+  isTertiary: 0
+  TelaAjuda: {fileID: 0}
+  spawnerHandler: {fileID: 0}
+  playerHandler: {fileID: 0}
+  toolKit: {fileID: 0}
 --- !u!1 &3805701425543861712
 GameObject:
   m_ObjectHideFlags: 0
