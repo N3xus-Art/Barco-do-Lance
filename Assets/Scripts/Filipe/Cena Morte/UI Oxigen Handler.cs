@@ -7,26 +7,30 @@ public class UIOxigenHandler : MonoBehaviour
 {
     public PlayerHandlerDeath Player;
     public Image BarraOxigenio;
-    public Image FadeImage;
-
+    public float FadeTime;
+    public CanvasGroup FadeImage;
 
     public void Fade(bool FadeAway = true)
     {
-        if (FadeAway == false)
+        if (FadeAway)
         {
-            for (float i = 1; i >= 0; i -= Time.deltaTime)
+            if (FadeImage.alpha < 1)
             {
-                FadeImage.color = new Color(0, 0, 0, i);
+
+                FadeImage.alpha += FadeTime * Time.deltaTime;
+
             }
         }
         else
         {
-            for (float i = 0; i <= 255; i += 1 * Time.deltaTime)
+         
+          if (FadeImage.alpha > 1)
             {
-                Debug.Log("Escurecendo a imagem");
-                FadeImage.color = new Color(0, 0, 0, i);
+
+                FadeImage.alpha -= FadeTime * Time.deltaTime;
 
             }
+            
         }
 
     }
@@ -38,8 +42,16 @@ public class UIOxigenHandler : MonoBehaviour
 
         if (Player.o2 <= 0)
         {
-            Debug.Log("Sem oxigenio");
-            Fade();
+            if (FadeImage.alpha < 1)
+            {
+                Debug.Log("Sem Oxigênio");
+                Fade(true);
+            }
+            else
+            {
+                Fade(false);
+            }
+
         }
 
     }
