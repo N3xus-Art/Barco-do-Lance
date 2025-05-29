@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class LadderController : MonoBehaviour{
-    [SerializeField] private PlayerInputManager playerinputManager;
+    [SerializeField] private PlayerInputHandler playerInputHandler;
     [SerializeField] private Rigidbody2D rb;
     private float vertical;
     private bool isLadder, isClimbing;
@@ -18,12 +18,11 @@ public class LadderController : MonoBehaviour{
     private void FixedUpdate(){
         if (isClimbing){
             rb.gravityScale = 0f;
-            rb.linearVelocity = new Vector2(rb.linearVelocityX, vertical * playerinputManager.speed);
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, vertical * playerInputHandler.speed);
         }else{
             rb.gravityScale = 1f;
         }
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.CompareTag("Ladder")){

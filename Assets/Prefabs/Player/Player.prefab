@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 201148909248469237}
   - component: {fileID: 3635512557579102152}
   - component: {fileID: 7531527960308033718}
+  - component: {fileID: 2150667429337722420}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -365,7 +366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8299bb6e2e197974e80cad574774405f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 0
   curItem: 0
   screenAnimal: 0
   changeScene: 0
@@ -377,8 +377,22 @@ MonoBehaviour:
   isTertiary: 0
   TelaAjuda: {fileID: 0}
   spawnerHandler: {fileID: 0}
-  playerHandler: {fileID: 0}
+  playerHandler: {fileID: 6496916043701283248}
   toolKit: {fileID: 0}
+--- !u!114 &2150667429337722420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2581693128084255002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ffb764a3660e7347a45a91802cb8f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInputHandler: {fileID: 7531527960308033718}
+  rb: {fileID: 201148909248469237}
 --- !u!1 &3805701425543861712
 GameObject:
   m_ObjectHideFlags: 0
