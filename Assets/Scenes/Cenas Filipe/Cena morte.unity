@@ -628,6 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 510286800}
+  GO_Player: {fileID: 510286798}
   BarraOxigenio: {fileID: 1392152795}
   FadeTime: 0.2
   TextoMorte: {fileID: 103075500}
