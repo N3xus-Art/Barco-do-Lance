@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 00a713a6eb0f2974bae36e72ca99c380
+guid: 82c06cc6c050f70449a3bcfbd66f33b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 597466868934980189
-    second: LogoDebarcky_0
-  - first:
-      213: -8442047228949502041
-    second: LogoDebarcky_1
+      213: 532282208441007744
+    second: images (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,45 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LogoDebarcky_0
+      name: images (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 278
+        height: 182
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d523fe7a3f0aa4800800000000000000
-      internalID: 597466868934980189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LogoDebarcky_1
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 50
-        width: 15
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a7e46de5c2d7da80800000000000000
-      internalID: -8442047228949502041
+      spriteID: 08ef26239db036700800000000000000
+      internalID: 532282208441007744
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8bf731bca5f27674f81c11409a22831f
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LogoDebarcky_0: 597466868934980189
-      LogoDebarcky_1: -8442047228949502041
+      images (1)_0: 532282208441007744
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
