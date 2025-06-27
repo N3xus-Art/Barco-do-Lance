@@ -23,6 +23,7 @@ public class SiteHandler : MonoBehaviour
 
     public Queue<int> ProximasMissoes = new Queue<int>();
 
+    [HideInInspector]
     public int[] MissoesDisponiveis = new int[3] { 0, 1, 2 };
 
     void Start()
