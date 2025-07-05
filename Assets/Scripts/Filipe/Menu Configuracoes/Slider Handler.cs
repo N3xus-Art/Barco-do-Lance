@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class OptionsHandler: MonoBehaviour
+public class SliderHandler: MonoBehaviour
 {
     public Slider Slider;
     public int Valor;

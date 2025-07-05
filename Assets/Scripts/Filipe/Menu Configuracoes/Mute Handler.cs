@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class MuteHandler : MonoBehaviour
 {
-    public OptionsHandler OptionsHandler;
+    public SliderHandler OptionsHandler;
     public UnityEngine.UI.Image Botao;
     public Sprite SpriteDesmutado;
     public Sprite SpriteMutado;
