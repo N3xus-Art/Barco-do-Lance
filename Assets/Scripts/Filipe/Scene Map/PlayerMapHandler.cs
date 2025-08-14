@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMapHandler : MonoBehaviour
 {
-
+    
     string Index = "";
 
     SceneController sceneController;
@@ -32,6 +32,7 @@ public class PlayerMapHandler : MonoBehaviour
         
             if (Index != "") {
 
+                Time.timeScale = 0;
                 sceneController = new SceneController();
                 sceneController.LoadScene(Index, LoadSceneMode.Additive);
 
