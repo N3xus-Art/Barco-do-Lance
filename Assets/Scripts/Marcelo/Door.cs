@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -14,14 +15,18 @@ public class Door : MonoBehaviour
     }
 
     public Player target;
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Alguma coisa acontece
-        if (other.gameObject.GetComponent<Player>().temTanque)
+
+        Player player = other.GetComponent<Player>();
+
+        if (player.temTanque && player != null)
         {
-            GetComponent<Renderer>().material.color = Color.green;
-        }
+            GetComponent<Renderer>().enabled = false;
+            GameObject DoorOut = GameObject.Find("DoorOut");
+            DoorOut?.SetActive(false);
+        }   
 
     }
 }
