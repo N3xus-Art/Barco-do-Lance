@@ -3,7 +3,8 @@ using UnityEngine.InputSystem;
 
 public class Moving : MonoBehaviour{
 
-    private bool isMoving, isInteracting;
+    private bool isMoving; 
+    static public bool isInteractingGlobal;
     private Vector2 direction;
     private float speed;
 
@@ -21,15 +22,12 @@ public class Moving : MonoBehaviour{
         
         }
     }
-        public void Interact(InputAction.CallbackContext context){
+    public void Interact(InputAction.CallbackContext context){
 
         if(context.phase == InputActionPhase.Started){
-           
-        }else if(context.phase == InputActionPhase.Performed){
-            isInteracting = true;
-            
+           isInteractingGlobal = true;
         }else if(context.phase == InputActionPhase.Canceled){
-            isInteracting = false;       
+            isInteractingGlobal = false;       
         }
     }
 
@@ -41,14 +39,5 @@ public class Moving : MonoBehaviour{
         if(isMoving){
              transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
         }
-
-        if (isInteracting){
-
-
-
-        }
-
     }
-
-
 }
