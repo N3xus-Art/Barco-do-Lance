@@ -3,38 +3,23 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Item_SO", menuName = "Scriptable Objects/Item")]
 public class Item_SO : ScriptableObject{
-    [SerializeField] public int InstanceId => GetInstanceID();
-    [SerializeField] public int Id;
-    [SerializeField] public int durability;
-    [SerializeField] public bool isPicked, isDroped, isUsed, isActive;
+     public int InstanceId => GetInstanceID();
+     public int Id;
+     public int durability;
+     public bool isPicked, isUsed, isActive;
 
-    public void Pick(){
-        if (TableScript.inRange) { 
-            isPicked = true;
-            Debug.Log("inRange");
-        }
+    public void Pick(bool _isPicked){
+        isPicked = _isPicked;
     }
     public void Drop(){
-        isDroped = true;
+        isPicked = false;
     }
-    public void Use(string texto){
-        if (isPicked) { 
-            isUsed = true;
-            Debug.Log(texto);
-        }
+    public void Use(string texto, bool _isUsed){
+        isUsed = _isUsed;
+        Debug.Log(texto);
     }
 
-    public void Activate(){
-        isActive = true;
-    }
-
-    public void Deactivate(){
-        isActive = false;
-    }
-
-    public void Update() {
-        Debug.Log(TableScript.inRange);
-        Debug.Log(isPicked);
-        Debug.Log(isUsed);
+    public void Activate(bool _isActive){
+        isActive = _isActive;
     }
 }

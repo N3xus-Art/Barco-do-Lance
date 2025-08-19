@@ -24,7 +24,7 @@ public class Moving : MonoBehaviour{
     }
     public void Interact(InputAction.CallbackContext context){
 
-        if(context.phase == InputActionPhase.Started){
+        if(context.phase == InputActionPhase.Performed){
            isInteractingGlobal = true;
         }else if(context.phase == InputActionPhase.Canceled){
             isInteractingGlobal = false;       

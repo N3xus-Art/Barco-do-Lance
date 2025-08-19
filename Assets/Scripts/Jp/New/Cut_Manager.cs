@@ -5,7 +5,7 @@ public class Cut_Manager : MonoBehaviour{
 
     private void Update(){
         if (item != null && item.isActive) {
-            item.Use("Cortado");
+            //item.Use("Cortado");
         }
     }
 
