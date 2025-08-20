@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     SceneController sceneController;
+    public GameObject ConfirmExit;
     public void NewGame()
     {
         sceneController = new SceneController();
@@ -29,7 +30,7 @@ public class MenuController : MonoBehaviour
 
     public void Exit()
     {
-        Application.Quit();
+        ConfirmExit.SetActive(true);
     }
 
 
