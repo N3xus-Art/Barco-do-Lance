@@ -53,13 +53,11 @@ public class AceitarHandler : MonoBehaviour
 
     private void Update()
     {
-        if (IsOnMission == true)
+        if (IsOnMission)
         {
-
 
             gameObject.GetComponent<Image>().color = EndColor;
             Texto.SetText("Cancelar");
-
 
         }
         else {
@@ -69,7 +67,7 @@ public class AceitarHandler : MonoBehaviour
 
         }
 
-        if (IsEndMission == false)
+        if (IsEndMission == false && IsOnMission)
         {
             if (GameObject.Find("CurrentMission") != null)
             {
@@ -83,7 +81,8 @@ public class AceitarHandler : MonoBehaviour
 
             }
         }
-        else
+        
+        if (IsEndMission)
         {
 
             Texto.SetText("Terminar Missão");
