@@ -1625,6 +1625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a7741a933842742860206680f507a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsOnMission: 0
+  IsEndMission: 0
   Texto: {fileID: 503422899}
   Site: {fileID: 2033578223}
   AcceptColor: {r: 0.1254902, g: 0.85098046, b: 0.31764707, a: 1}
@@ -2469,11 +2471,9 @@ MonoBehaviour:
   ID_Atual: 0
   ProximasMissoes:
   - {fileID: 11400000, guid: f2be7a4ebfdf1f34a84b48d2d17f67d4, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 950797ce28cca3349b62a299157acd15, type: 2}
+  - {fileID: 11400000, guid: bce810c59ca46a747983830d94f363d2, type: 2}
+  - {fileID: 11400000, guid: e3e12fc0ba08f75459fbbb4b141e958c, type: 2}
   MissoesDisponiveis:
   - {fileID: 11400000, guid: ffef3787ff34d7148b8af0ffd4895719, type: 2}
   - {fileID: 11400000, guid: e36ea8acc1ee0874386e8a7c7715029f, type: 2}
