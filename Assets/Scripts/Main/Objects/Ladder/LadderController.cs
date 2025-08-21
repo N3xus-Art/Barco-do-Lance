@@ -18,7 +18,7 @@ public class LadderController : MonoBehaviour{
     private void FixedUpdate(){
         if (isClimbing){
             rb.gravityScale = 0f;
-            rb.linearVelocity = new Vector2(rb.linearVelocityX, vertical * playerInputHandler.speed);
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, (vertical * playerInputHandler.speed));
         }else{
             rb.gravityScale = 1f;
         }
