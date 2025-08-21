@@ -1198,6 +1198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 654503194}
   - component: {fileID: 654503195}
+  - component: {fileID: 654503196}
   m_Layer: 0
   m_Name: Rudder
   m_TagString: Untagged
@@ -1266,6 +1267,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &654503196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654503193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34661969e9178d843a60e382b21c69aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &700657013
 GameObject:
   m_ObjectHideFlags: 0
@@ -4693,7 +4706,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
@@ -4717,6 +4738,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1956320151}
     - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1956320151}
@@ -4730,6 +4755,10 @@ PrefabInstance:
       objectReference: {fileID: 1956320151}
     - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
@@ -4749,6 +4778,10 @@ PrefabInstance:
       value: Animal
       objectReference: {fileID: 0}
     - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: EntrarNoLeme
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Secondary
       objectReference: {fileID: 0}
@@ -4763,6 +4796,14 @@ PrefabInstance:
     - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PlayerInputHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ScriptTesteLeme, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626464423442706607, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2581693128084255002, guid: 5682b82122ea5ce44a61a9ecc93eb157, type: 3}
       propertyPath: m_Name

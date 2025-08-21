@@ -6,30 +6,35 @@ using System;
 
 public class ScriptTesteLeme : MonoBehaviour
 {
-    bool CollidinoLeme;
+    bool EntrouNoLeme;
 
     SceneController sceneController;
 
-     void OnTriggerEnter2D(Collider2D collision)
+     void OnTriggerEnter2D(Collider2D other)
     {
-        CollidinoLeme = true;
+
+        EntrouNoLeme = true;
+        Debug.Log("Entrou nessa desgraça");
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D other)
     {
-        CollidinoLeme = false;
+        EntrouNoLeme = false;
+        Debug.Log("Saiu nessa desgraça");
+
     }
 
-    public void EntrarNoLeme()
+    private void Update()
     {
-
-        if (CollidinoLeme) {
+        if (PlayerInputHandler.isInteracting && (EntrouNoLeme))
+        {
 
             sceneController = new SceneController();
             sceneController.LoadScene("Scene Map", LoadSceneMode.Single);
 
         }
-
     }
 
+
 }
+

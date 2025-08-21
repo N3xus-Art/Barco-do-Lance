@@ -1,7 +1,6 @@
 using UnityEngine;
 
 public class DebarckyLocate : MonoBehaviour{
-    public PlayerInputHandler playerInputHandler;
     public GameObject Key, Player, betaDebarcky;
     public float range = 2f;
     public bool isColliding;
@@ -27,7 +26,7 @@ public class DebarckyLocate : MonoBehaviour{
             Key.SetActive(false);
         }
 
-        if (playerInputHandler.isInteracting){
+        if (PlayerInputHandler.isInteracting){
             if (isColliding){ 
                 betaDebarcky.SetActive(true);
             }
