@@ -25,7 +25,7 @@ public class MenuController : MonoBehaviour
     public void Credits()
     {
         sceneController = new SceneController();
-        sceneController.LoadScene("Credits Screen");
+        sceneController.LoadScene("Credits Screen P");
     }
 
     public void Exit()
