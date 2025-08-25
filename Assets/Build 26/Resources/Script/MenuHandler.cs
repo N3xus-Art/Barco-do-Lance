@@ -8,17 +8,33 @@ public class MenuHandler : MonoBehaviour{
     private SceneController sceneController;
     private List<string> scenes = new List<string>(){"Cena Navegacao", "Menu Configuracoes", "Creditos"};
     public int scene;
-    public GameObject ConfirmExit;
+    public GameObject buttons, confirmExit, yesButton, noButton;
     #endregion
 
     //Methods
     #region
+    public void Start(){
+        confirmExit.SetActive(false);
+    }
     public void ChangeScene(){
         sceneController = new SceneController();
         sceneController.LoadScene(scenes[scene]);
     }
     public void Exit(){
-        ConfirmExit.SetActive(true);
+        confirmExit.SetActive(true);
+        //buttons.SetActive(false);
+        Debug.lo
     }
+    public void ExitCheck(){
+        if (this == yesButton){
+            Application.Quit();
+            Debug.Log("Saiu");
+        }else if (this == noButton) {
+            confirmExit.SetActive(false);
+            buttons.SetActive(true);
+            Debug.Log("Saiu");
+        }
+    }
+
     #endregion
 }
