@@ -631,7 +631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cb436f0cc06074fbb7eb426f393471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInputHandler: {fileID: 1956320151}
   Key: {fileID: 1651335620}
   Player: {fileID: 1956320149}
   betaDebarcky: {fileID: 717682231}
@@ -4159,7 +4158,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1613250021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88125d3d31cca4103b0b23acc4b74196, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a7ad884aef00df4996d188498e7dff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!225 &1613250024
