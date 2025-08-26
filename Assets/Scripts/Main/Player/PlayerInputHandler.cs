@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] GameManager gameManager;
     SceneController sceneController;
     Vector2 direction;
-    public bool isMoving, isInteracting, isSecondary, isClicking, isTertiary;
+    public bool waterMovement, isInteracting, isSecondary, isClicking, isTertiary;
     public Canvas TelaAjuda;
     public SpawnerHandler spawnerHandler;
     public PlayerHandler playerHandler;
@@ -25,12 +26,12 @@ public class PlayerInputHandler : MonoBehaviour
         if(context.phase == InputActionPhase.Started){
            
         }else if(context.phase == InputActionPhase.Performed){
-            isMoving = true;
+            waterMovement = true;
             direction = context.ReadValue<Vector2>();
             
         
         }else if(context.phase == InputActionPhase.Canceled){
-            isMoving = false;       
+            waterMovement = false;       
         
         }
     }
@@ -164,21 +165,32 @@ public class PlayerInputHandler : MonoBehaviour
 
 
     void Start(){
-       speed = 5f;
+        speed = 5f;
     }
 
     void Update()
     {
-        if (isMoving)
-        {
-            transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
-            /*if (!gameManager.OnBoat){
-                transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
-            }else{transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime * speed;}*/
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
+        if (horizontal != 0 && vertical != 0)
+        {
+            vertical = 0; // Deleta a possibilidade de movimento diagonal e prioriza o movimento horizontal
         }
-        
-        if(isInteracting){
+
+        if (waterMovement)
+        {
+            Vector2 movement = new Vector2(horizontal, vertical).normalized;
+            transform.Translate(movement * speed * Time.deltaTime);
+        }
+        else 
+        {
+            Vector2 movement = new Vector2(horizontal, 0).normalized;
+            transform.Translate(movement * speed * Time.deltaTime);
+        }
+
+
+        if (isInteracting){
 
             
 
