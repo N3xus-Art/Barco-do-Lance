@@ -168,6 +168,23 @@ public class PlayerInputHandler : MonoBehaviour
         speed = 5f;
     }
 
+    // Verificação de colisão com o barco
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boat"))
+        {
+            waterMovement = false;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boat"))
+        {
+            waterMovement = true;
+        }
+    }
+    // fim da verificação
+
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
