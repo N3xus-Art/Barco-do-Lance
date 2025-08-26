@@ -7,7 +7,7 @@ public class MenuHandler : MonoBehaviour{
     //Variables
     #region
     private SceneHandler sceneHandler;
-    private List<string> scenes = new List<string>(){"Cena Navegacao", "ConfigurationsScreen", "Creditos"};
+    private List<string> scenes = new List<string>(){"GameScreen", "ConfigurationsScreen", "CreditsScreen" };
     public int scene;
     public GameObject buttons, confirmExit;
     #endregion

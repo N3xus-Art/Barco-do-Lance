@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Build 26/Scenes/ConfigurationsScreen.unity
     guid: e5d14f7a42867104cb0dd13744c8c215
+  - enabled: 1
+    path: Assets/Build 26/Scenes/CreditsScreen.unity
+    guid: 85d70abc5590bd44bb75de1a41a24a2f
+  - enabled: 1
+    path: Assets/Build 26/Scenes/GameScreen.unity
+    guid: 126e761b3b0cc7f468d2baba5cf8c549
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 33a4e5ba6287ca547810b7a02c952a8f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
