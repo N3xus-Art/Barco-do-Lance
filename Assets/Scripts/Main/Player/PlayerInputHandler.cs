@@ -5,7 +5,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -15,26 +14,12 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] GameManager gameManager;
     SceneController sceneController;
     Vector2 direction;
-    public bool waterMovement, isInteracting, isSecondary, isClicking, isTertiary;
+    public bool OSBoat, isInteracting, isSecondary, isClicking, isTertiary;
     public Canvas TelaAjuda;
     public SpawnerHandler spawnerHandler;
     public PlayerHandler playerHandler;
     public ItemUIHandler toolKit;
-
-    public void Move(InputAction.CallbackContext context){
-        
-        if(context.phase == InputActionPhase.Started){
-           
-        }else if(context.phase == InputActionPhase.Performed){
-            waterMovement = true;
-            direction = context.ReadValue<Vector2>();
-            
-        
-        }else if(context.phase == InputActionPhase.Canceled){
-            waterMovement = false;       
-        
-        }
-    }
+    
 
     public void Interact(InputAction.CallbackContext context){
 
@@ -165,49 +150,25 @@ public class PlayerInputHandler : MonoBehaviour
 
 
     void Start(){
-        speed = 5f;
+       speed = 5f;
+       OSBoat = true;
     }
-
-    // Verificação de colisão com o barco
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Boat"))
-        {
-            waterMovement = false;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Boat"))
-        {
-            waterMovement = true;
-        }
-    }
-    // fim da verificação
 
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        if (horizontal != 0 && vertical != 0)
+        if (OSBoat)
         {
-            vertical = 0; // Deleta a possibilidade de movimento diagonal e prioriza o movimento horizontal
+            if (Input.GetAxisRaw("Horizontal") != 0)
+            {
+                transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime, 0f, 0f));
+            }
+            else if (Input.GetAxisRaw("Vertical") != 0)
+            {
+                transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * speed * Time.deltaTime, 0f));
+            }
         }
-
-        if (waterMovement)
-        {
-            Vector2 movement = new Vector2(horizontal, vertical).normalized;
-            transform.Translate(movement * speed * Time.deltaTime);
-        }
-        else 
-        {
-            Vector2 movement = new Vector2(horizontal, 0).normalized;
-            transform.Translate(movement * speed * Time.deltaTime);
-        }
-
-
-        if (isInteracting){
+        
+        if(isInteracting){
 
             
 

@@ -1,18 +1,16 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class WaterCollisionCTRL : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collided with: " + collision.gameObject.name);
-        rb.gravityScale = 0;
+        rb.gravityScale = 0f;
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
-        rb.gravityScale = 1;
+        rb.gravityScale = 1f;
     }
 }
