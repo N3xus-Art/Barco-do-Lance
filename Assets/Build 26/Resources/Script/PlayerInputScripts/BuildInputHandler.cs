@@ -46,7 +46,7 @@ public class BuildInputHandler : MonoBehaviour{
 
     public void Update(){
         if (isMoving) {
-            transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime * speed;
+            transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
         }else if (isMoving && WaterHandler.onWater){
             transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
         }

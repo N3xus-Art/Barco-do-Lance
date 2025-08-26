@@ -4,6 +4,7 @@ public class WaterHandler : MonoBehaviour{
     //Variables
     #region
     static public bool onWater;
+    [SerializeField] private new Collider2D collider2D;
     #endregion
 
     //Methods
