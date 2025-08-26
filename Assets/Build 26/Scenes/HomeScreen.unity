@@ -495,21 +495,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &183683456
-Transform:
+--- !u!224 &183683456
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183683455}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9719.999}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1200, y: 675, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1555463408}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &183683457
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -714,8 +718,6 @@ MonoBehaviour:
   scene: 1
   buttons: {fileID: 2035946532}
   confirmExit: {fileID: 1555463407}
-  yesButton: {fileID: 882051135}
-  noButton: {fileID: 525382924}
 --- !u!1 &228082987
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,8 +867,6 @@ MonoBehaviour:
   scene: 0
   buttons: {fileID: 2035946532}
   confirmExit: {fileID: 1555463407}
-  yesButton: {fileID: 882051135}
-  noButton: {fileID: 525382924}
 --- !u!1 &279062743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1144,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 745, y: -50}
+  m_AnchoredPosition: {x: 347.5, y: -168.75}
   m_SizeDelta: {x: 480, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &525382926
@@ -1193,7 +1193,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 525382929}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
-        m_MethodName: ExitCheck
+        m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1256,8 +1256,6 @@ MonoBehaviour:
   scene: 0
   buttons: {fileID: 2035946532}
   confirmExit: {fileID: 1555463407}
-  yesButton: {fileID: 882051135}
-  noButton: {fileID: 525382924}
 --- !u!1 &618529906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,21 +1273,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &618529907
-Transform:
+--- !u!224 &618529907
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618529906}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9719.999}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1920, y: 1080, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1555463408}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &618529908
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1518,7 +1520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -50}
+  m_AnchoredPosition: {x: 852.5, y: -168.75}
   m_SizeDelta: {x: 480, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &882051137
@@ -1567,7 +1569,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 882051140}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
-        m_MethodName: ExitCheck
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1630,8 +1632,6 @@ MonoBehaviour:
   scene: 0
   buttons: {fileID: 2035946532}
   confirmExit: {fileID: 1555463407}
-  yesButton: {fileID: 882051135}
-  noButton: {fileID: 525382924}
 --- !u!1 &1087921635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,7 +1854,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1164036714}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
-        m_MethodName: Exit
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1917,8 +1917,6 @@ MonoBehaviour:
   scene: 0
   buttons: {fileID: 2035946532}
   confirmExit: {fileID: 1555463407}
-  yesButton: {fileID: 882051135}
-  noButton: {fileID: 525382924}
 --- !u!1 &1210579015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,8 +2031,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: -145}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: -168.75}
+  m_SizeDelta: {x: 1200, y: 337.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1224861861
 MonoBehaviour:
@@ -2061,7 +2059,7 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+  m_ReverseArrangement: 1
 --- !u!1 &1287830350
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,8 +2209,6 @@ MonoBehaviour:
   scene: 2
   buttons: {fileID: 2035946532}
   confirmExit: {fileID: 1555463407}
-  yesButton: {fileID: 882051135}
-  noButton: {fileID: 525382924}
 --- !u!1 &1415154725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,7 +2356,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1555463408}
-  - component: {fileID: 1555463409}
   m_Layer: 5
   m_Name: '######  Confirm ######'
   m_TagString: Untagged
@@ -2380,8 +2375,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 46027017}
   - {fileID: 1224861860}
+  - {fileID: 46027017}
   - {fileID: 183683456}
   - {fileID: 618529907}
   m_Father: {fileID: 338114305}
@@ -2391,29 +2386,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1200, y: 675}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!223 &1555463409
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555463407}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 476030215
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &1759283548
 GameObject:
   m_ObjectHideFlags: 0

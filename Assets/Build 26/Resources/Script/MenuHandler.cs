@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuHandler : MonoBehaviour{
     //Variables
@@ -8,33 +9,27 @@ public class MenuHandler : MonoBehaviour{
     private SceneController sceneController;
     private List<string> scenes = new List<string>(){"Cena Navegacao", "Menu Configuracoes", "Creditos"};
     public int scene;
-    public GameObject buttons, confirmExit, yesButton, noButton;
+    public GameObject buttons, confirmExit;
     #endregion
 
     //Methods
     #region
-    public void Start(){
-        confirmExit.SetActive(false);
-    }
     public void ChangeScene(){
         sceneController = new SceneController();
         sceneController.LoadScene(scenes[scene]);
     }
+    public void Show(){
+            confirmExit.SetActive(true);
+            buttons.SetActive(false);
+    }
     public void Exit(){
-        confirmExit.SetActive(true);
-        //buttons.SetActive(false);
-        Debug.lo
+        Debug.Log("Exit");
+        Application.Quit();
     }
-    public void ExitCheck(){
-        if (this == yesButton){
-            Application.Quit();
-            Debug.Log("Saiu");
-        }else if (this == noButton) {
-            confirmExit.SetActive(false);
-            buttons.SetActive(true);
-            Debug.Log("Saiu");
-        }
+    public void Hide(){
+        Debug.Log("Hide");
+        confirmExit.SetActive(false);
+        buttons.SetActive(true);
     }
-
     #endregion
 }
