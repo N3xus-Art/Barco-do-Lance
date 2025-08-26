@@ -1,9 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneController{
+public class SceneHandler{
+    //Methods
+    #region
     public void LoadScene(string sceneName, LoadSceneMode sceneMode = LoadSceneMode.Single){
         SceneManager.LoadSceneAsync(sceneName, sceneMode);
     }
+    #endregion
 }

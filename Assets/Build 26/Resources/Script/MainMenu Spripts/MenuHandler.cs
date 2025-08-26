@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class MenuHandler : MonoBehaviour{
     //Variables
     #region
-    private SceneController sceneController;
-    private List<string> scenes = new List<string>(){"Cena Navegacao", "Menu Configuracoes", "Creditos"};
+    private SceneHandler sceneHandler;
+    private List<string> scenes = new List<string>(){"Cena Navegacao", "ConfigurationsScreen", "Creditos"};
     public int scene;
     public GameObject buttons, confirmExit;
     #endregion
@@ -15,19 +15,17 @@ public class MenuHandler : MonoBehaviour{
     //Methods
     #region
     public void ChangeScene(){
-        sceneController = new SceneController();
-        sceneController.LoadScene(scenes[scene]);
+        sceneHandler = new SceneHandler();
+        sceneHandler.LoadScene(scenes[scene]);
     }
     public void Show(){
             confirmExit.SetActive(true);
             buttons.SetActive(false);
     }
     public void Exit(){
-        Debug.Log("Exit");
         Application.Quit();
     }
     public void Hide(){
-        Debug.Log("Hide");
         confirmExit.SetActive(false);
         buttons.SetActive(true);
     }
