@@ -26,13 +26,13 @@ public class ScriptTesteLeme : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerInputHandler.isInteracting && (EntrouNoLeme))
+        /*if (PlayerInputHandler.isInteracting && (EntrouNoLeme))
         {
 
             sceneController = new SceneController();
             sceneController.LoadScene("Scene Map", LoadSceneMode.Single);
 
-        }
+        }*/
     }
 
 

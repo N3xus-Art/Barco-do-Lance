@@ -25,7 +25,6 @@ public class BuildInputHandler : MonoBehaviour{
             isMoving = false;
         }
     }
-
     public void Interact(InputAction.CallbackContext context){
         if(context.phase == InputActionPhase.Started){
         }else if (context.phase == InputActionPhase.Performed){
@@ -34,7 +33,6 @@ public class BuildInputHandler : MonoBehaviour{
             isInteracting = false;
         }
     }
-
     public void Click(InputAction.CallbackContext context){
         if(context.phase == InputActionPhase.Started){
         }else if (context.phase == InputActionPhase.Performed){
@@ -43,12 +41,11 @@ public class BuildInputHandler : MonoBehaviour{
             isClicking = false;
         }
     }
-
     public void Update(){
-        if (isMoving) {
-            transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
+        if (isMoving){
+            transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime * speed;
         }else if (isMoving && WaterHandler.onWater){
-            transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
+                transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
         }
     }
     #endregion

@@ -4,8 +4,8 @@ public class CameraHandler : MonoBehaviour{
     //Variables
     #region
     [SerializeField] private float damping;
-    [SerializeField] private Transform target;
-    [SerializeField] private Vector3 velocity = Vector3.zero;
+    public Transform target;
+    private Vector3 velocity = Vector3.zero;
     #endregion
     //Methods
     #region

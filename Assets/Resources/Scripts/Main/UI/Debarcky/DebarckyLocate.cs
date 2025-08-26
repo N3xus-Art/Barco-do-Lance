@@ -26,11 +26,11 @@ public class DebarckyLocate : MonoBehaviour{
             Key.SetActive(false);
         }
 
-        if (PlayerInputHandler.isInteracting){
+        /*if (PlayerInputHandler.isInteracting){
             if (isColliding){ 
                 betaDebarcky.SetActive(true);
             }
-        }
+        }*/
     }
 
 }

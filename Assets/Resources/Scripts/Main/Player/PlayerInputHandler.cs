@@ -14,7 +14,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] GameManager gameManager;
     SceneController sceneController;
     Vector2 direction;
-    public static bool isMoving, isInteracting, isSecondary, isClicking, isTertiary;
+    public bool isMoving, isInteracting, isSecondary, isClicking, isTertiary;
     public Canvas TelaAjuda;
     public SpawnerHandler spawnerHandler;
     public PlayerHandler playerHandler;
