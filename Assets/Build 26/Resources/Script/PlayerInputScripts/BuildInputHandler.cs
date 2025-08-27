@@ -11,7 +11,7 @@ public class BuildInputHandler : MonoBehaviour{
     #region
     [Header("----Boleanas----")]
     [SerializeField] private bool isMoving;
-    [SerializeField] private bool isInteracting;
+    [SerializeField] static public bool isInteracting;
     [SerializeField] private bool isClicking;
     [Header("----Variaveis de Movimentação----")]
     [SerializeField] private float speed;
