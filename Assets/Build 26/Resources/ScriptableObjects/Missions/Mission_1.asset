@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36128abbab363ba40bbda7e862498462, type: 3}
-  m_Name: "Miss\xE3o_5"
+  m_Name: Mission_1
   m_EditorClassIdentifier: 
-  MissionName: 
-  AnimalSprite: {fileID: 0}
-  MissionDescription: 
-  AnimalDescription: 
-  missionID: 0
-  missionReward: 0
-  RescueableAnimals: 0
-  OperableAnimals: 0
+  missionName: "Miss\xE3o numero 1"
+  animalSprite: {fileID: 76202436883337493, guid: 384a46ac99c195f4c9107eef5c96a302, type: 3}
+  missionDescription: "MDS MDS MDS \xC9 A FOFOCA"
+  animalDescription: Chonk
+  missionID: 1
+  missionReward: 300
+  rescueableAnimals: 2
+  operableAnimals: 0

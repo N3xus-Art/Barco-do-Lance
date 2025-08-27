@@ -21,7 +21,11 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private int currentID;
     [SerializeField] private List<ScriptableObjectMissions> nextMissions = new List<ScriptableObjectMissions>();
     [SerializeField] private ScriptableObjectMissions[] currentMissions = new ScriptableObjectMissions[] { };
-        #endregion
+    [Header("----Variaveis das Abas----")]
+    [SerializeField] private Button firstButton;
+    [SerializeField] private Button centralButton;
+    [SerializeField] private Button lastButton;
+    #endregion
     //Methods
     #region
     private void OnTriggerEnter2D(Collider2D collision){
@@ -32,13 +36,28 @@ public class DebackyHandler : MonoBehaviour {
         inTrigger = false;
         keyGO.SetActive(false);
     }
+    private void Start(){
+        Button firstTab = firstButton.GetComponent<Button>();
+        Button centralTab = centralButton.GetComponent<Button>();
+        Button lastTab = lastButton.GetComponent<Button>();
+        firstTab.onClick.AddListener(onTabClick);
+        centralTab.onClick.AddListener(onTabClick);
+        lastTab.onClick.AddListener(onTabClick);
+    }
+    private void onTabClick(){
+        if (this.Equals(firstButton)){
+            Debug.Log("Será?");
+        }
+    }
+
     private void Update(){
         if (BuildInputHandler.isInteracting && inTrigger){
             debackyScreen.SetActive(true);
         }
-        animalImage.sprite = currentMissions[currentID].AnimalSprite;
+        animalImage.sprite = currentMissions[currentID].animalSprite;
         missionTMP.SetText($"Recompensa: { currentMissions[currentID].missionReward}");
         moneyTMP.SetText($"R${money}");
+        Debug.Log(currentID);
     }
     #endregion
 }

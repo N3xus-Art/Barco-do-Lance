@@ -216,3 +216,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075c1d3fc28eea04b91082fb3427585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inTrigger: 0
+  keyGO: {fileID: 0}
+  debackyScreen: {fileID: 0}
+  money: 0
+  moneyTMP: {fileID: 0}
+  animalImage: {fileID: 0}
+  animalDescription: {fileID: 0}
+  missionTMP: {fileID: 0}
+  missionDescription: {fileID: 0}
+  missionValue: 0
+  currentID: 0
+  nextMissions:
+  - {fileID: 11400000, guid: d22068b48bad1e145941151916700ae4, type: 2}
+  - {fileID: 11400000, guid: f12b7cfcc71a495438b74f6e170b9bf3, type: 2}
+  - {fileID: 11400000, guid: 8395748b333bfd542b718bb8e61b8bb2, type: 2}
+  - {fileID: 11400000, guid: be5acbe361f98744e86de4fc7df6ba82, type: 2}
+  currentMissions:
+  - {fileID: 11400000, guid: f2806be1c5b30924b81602c9534cf61d, type: 2}
+  - {fileID: 11400000, guid: fa2b13d77861aa545ae731763eae8488, type: 2}
+  - {fileID: 11400000, guid: 32d4832049944aa4baf229f76cb36b41, type: 2}

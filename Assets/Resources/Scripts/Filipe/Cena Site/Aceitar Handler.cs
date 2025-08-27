@@ -27,8 +27,8 @@ public class AceitarHandler : MonoBehaviour
             CurrentMission.name = "CurrentMission";
             CurrentMission.AddComponent<CurrentMission>();
             CurrentMission.GetComponent<CurrentMission>().missionReward = Site.MissoesDisponiveis[Site.ID_Atual].missionReward;
-            CurrentMission.GetComponent<CurrentMission>().RescueableAnimals = Site.MissoesDisponiveis[Site.ID_Atual].RescueableAnimals;
-            CurrentMission.GetComponent<CurrentMission>().OperableAnimals = Site.MissoesDisponiveis[Site.ID_Atual].OperableAnimals;
+            CurrentMission.GetComponent<CurrentMission>().RescueableAnimals = Site.MissoesDisponiveis[Site.ID_Atual].rescueableAnimals;
+            CurrentMission.GetComponent<CurrentMission>().OperableAnimals = Site.MissoesDisponiveis[Site.ID_Atual].operableAnimals;
           
 
             IsOnMission = true;

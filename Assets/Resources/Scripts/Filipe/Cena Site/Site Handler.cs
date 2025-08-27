@@ -25,7 +25,7 @@ public class SiteHandler : MonoBehaviour
 
     void Update()
     {
-        Imagem_Animal.sprite = MissoesDisponiveis[ID_Atual].AnimalSprite;
+        Imagem_Animal.sprite = MissoesDisponiveis[ID_Atual].animalSprite;
         Texto_Valor_Missao.SetText($"Recompensa: { MissoesDisponiveis[ID_Atual].missionReward } R$");
 
         Texto_DinDin.SetText($"R${DinDin}");
