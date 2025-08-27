@@ -24,7 +24,6 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask waterLayer;
     #endregion
-
     //Input Methdos
     #region
     public void Move(InputAction.CallbackContext context){
@@ -62,12 +61,14 @@ public class BuildInputHandler : MonoBehaviour{
     }
     private bool isGrounded(){
         if (Physics2D.OverlapBox(contactCheckPos.position, contactCheckSize, 0, groundLayer)){
+            rb.gravityScale = 20;
             return true;
         }
         return false;
     }
     private bool inWater(){
         if (Physics2D.OverlapBox(contactCheckPos.position, contactCheckSize, 0, waterLayer)){
+            rb.gravityScale = 0;
             return true;
         }
         return false;
@@ -89,5 +90,4 @@ public class BuildInputHandler : MonoBehaviour{
         }
     }
     #endregion
-
 }
