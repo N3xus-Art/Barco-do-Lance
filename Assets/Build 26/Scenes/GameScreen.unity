@@ -164,8 +164,7 @@ GameObject:
   - component: {fileID: 105697733}
   - component: {fileID: 105697732}
   - component: {fileID: 105697731}
-  - component: {fileID: 105697730}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: No
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,21 +191,6 @@ RectTransform:
   m_AnchoredPosition: {x: 347.5, y: -168.75}
   m_SizeDelta: {x: 480, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &105697730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105697728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 397eac6a21e51c845925022fa13b24f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: 0
-  buttons: {fileID: 0}
-  confirmExit: {fileID: 1349484406}
 --- !u!114 &105697731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +235,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 105697730}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
@@ -647,9 +631,9 @@ RectTransform:
   - {fileID: 2045788419}
   m_Father: {fileID: 445892426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -220.70636}
   m_SizeDelta: {x: 338.5674, y: 80.4709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &319390410
@@ -780,9 +764,9 @@ RectTransform:
   - {fileID: 590857576}
   m_Father: {fileID: 445892426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -581.6482}
   m_SizeDelta: {x: 338.5674, y: 80.4709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &354113761
@@ -890,7 +874,7 @@ GameObject:
   - component: {fileID: 412049686}
   - component: {fileID: 412049688}
   - component: {fileID: 412049687}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1155,7 +1139,7 @@ RectTransform:
   - {fileID: 319390409}
   - {fileID: 1240785763}
   - {fileID: 354113760}
-  m_Father: {fileID: 680858326}
+  m_Father: {fileID: 1077907309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1681,9 +1665,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1349484407}
-  - {fileID: 974765310}
-  - {fileID: 445892426}
-  - {fileID: 1043820188}
+  - {fileID: 1077907309}
   m_Father: {fileID: 594381957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1765,7 +1747,7 @@ GameObject:
   - component: {fileID: 705923241}
   - component: {fileID: 705923243}
   - component: {fileID: 705923242}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2715,7 +2697,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 680858326}
+  m_Father: {fileID: 1077907309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2832,7 +2814,7 @@ GameObject:
   - component: {fileID: 986149848}
   - component: {fileID: 986149850}
   - component: {fileID: 986149849}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2981,12 +2963,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043820187}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10767.6}
-  m_LocalScale: {x: 1920, y: 1080, z: 1}
+  m_LocalScale: {x: 1920.0001, y: 1080, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 680858326}
+  m_Father: {fileID: 1077907309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3048,6 +3030,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1077907308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1077907309}
+  m_Layer: 9
+  m_Name: '### Content ###'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1077907309
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077907308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 974765310}
+  - {fileID: 445892426}
+  - {fileID: 1043820188}
+  m_Father: {fileID: 680858326}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1092230541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3082,9 +3102,9 @@ RectTransform:
   - {fileID: 235434292}
   m_Father: {fileID: 445892426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -40.23545}
   m_SizeDelta: {x: 338.5674, y: 80.4709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1092230543
@@ -3496,7 +3516,7 @@ GameObject:
   - component: {fileID: 1240785765}
   - component: {fileID: 1240785764}
   m_Layer: 9
-  m_Name: GoBack Button
+  m_Name: Home Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3517,9 +3537,9 @@ RectTransform:
   - {fileID: 835434835}
   m_Father: {fileID: 445892426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -401.17725}
   m_SizeDelta: {x: 338.5674, y: 80.4709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1240785764
@@ -3953,7 +3973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1349484407}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: '######  Confirm ######'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3993,7 +4013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1381879116}
   - component: {fileID: 1381879117}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4329,8 +4349,7 @@ GameObject:
   - component: {fileID: 1503865432}
   - component: {fileID: 1503865431}
   - component: {fileID: 1503865430}
-  - component: {fileID: 1503865429}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Yes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4357,21 +4376,6 @@ RectTransform:
   m_AnchoredPosition: {x: 852.5, y: -168.75}
   m_SizeDelta: {x: 480, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1503865429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503865427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 397eac6a21e51c845925022fa13b24f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: 0
-  buttons: {fileID: 0}
-  confirmExit: {fileID: 1349484406}
 --- !u!114 &1503865430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4416,7 +4420,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1503865429}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -4921,7 +4925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1866710792}
   - component: {fileID: 1866710793}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: '######  Confirm Buttons ######'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4985,7 +4989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1951074054}
   - component: {fileID: 1951074055}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Smoke Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5599,6 +5603,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: buttons
+      value: 
+      objectReference: {fileID: 445892425}
+    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1077907308}
+    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: backButton
+      value: 
+      objectReference: {fileID: 105697731}
+    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: homeButton
+      value: 
+      objectReference: {fileID: 1240785764}
+    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: quitButton
+      value: 
+      objectReference: {fileID: 354113761}
+    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: confirmExit
+      value: 
+      objectReference: {fileID: 1349484406}
+    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: configButton
+      value: 
+      objectReference: {fileID: 319390410}
+    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: resumeButton
+      value: 
+      objectReference: {fileID: 1092230543}
+    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: confirmButton
+      value: 
+      objectReference: {fileID: 1503865430}
     - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.4539967
