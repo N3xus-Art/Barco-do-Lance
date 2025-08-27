@@ -6,47 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main/Home Screen.unity
-    guid: bee49580b1332b84285efcae231b84ad
+    path: Assets/Build 26/Scenes/HomeScreen.unity
+    guid: 2ccdd3619d75d3b4da5d03c4c86e8ed9
   - enabled: 1
-    path: Assets/Scenes/Main/Scene Navigation.unity
-    guid: 9dc03894d3197fe4fabc676be8ee4f41
+    path: Assets/Build 26/Scenes/CreditsScreen.unity
+    guid: 85d70abc5590bd44bb75de1a41a24a2f
   - enabled: 1
-    path: Assets/Scenes/Main/Settings Screen.unity
-    guid: 3f6131cf1d59484438a0997f6269f139
+    path: Assets/Build 26/Scenes/GameScreen.unity
+    guid: 126e761b3b0cc7f468d2baba5cf8c549
   - enabled: 1
-    path: Assets/Scenes/Main/Credits Screen.unity
-    guid: b7232bd719b618749827f8a61cfe629a
-  - enabled: 1
-    path: Assets/Scenes/Main/Caribbean Sea.unity
-    guid: 519dac4bf970b4b4d8738453810adce0
-  - enabled: 1
-    path: Assets/Scenes/Main/Mediterranean Sea.unity
-    guid: 1c5402fc0446fae4488c6df02f2685b9
-  - enabled: 1
-    path: Assets/Scenes/Main/Red Sea.unity
-    guid: 1c48e5b1ab2707141aba35d1d3950836
-  - enabled: 1
-    path: Assets/Scenes/Cenas Filipe/Scene Map.unity
-    guid: db4e46f132cb75446b251ffc871f97b0
-  - enabled: 1
-    path: Assets/Scenes/Cenas Filipe/Scenes Shops/Scene Shop Micheal.unity
-    guid: 4593539ef3c9e39449acbf3655023166
-  - enabled: 1
-    path: Assets/Scenes/Cenas Filipe/Scenes Shops/Scene Shop Aquacardo.unity
-    guid: 0e76cb22ad129f445bc83c40ad19cf8b
-  - enabled: 1
-    path: Assets/Scenes/Cenas Filipe/Scenes Shops/Scene Shop Racardo.unity
-    guid: 51ac836e5c5391e4780a630839c3a389
-  - enabled: 1
-    path: Assets/Scenes/Cenas Filipe/Scenes Shops/Scene Shop Recardo.unity
-    guid: ecddbdfbf55d6b0439f959632a2a4718
-  - enabled: 1
-    path: Assets/Scenes/Cenas Filipe/Scenes Shops/Scene Shop Tancardo.unity
-    guid: b79791b54bcb3d14ca7c3fe42acac182
-  - enabled: 1
-    path: Assets/Scenes/Cenas Filipe/Scenes Shops/Scene Shop Transcardo.unity
-    guid: 8bef957cff117774494575e4a66395f8
+    path: Assets/Build 26/Scenes/ConfigurationsScreen.unity
+    guid: 314d082f207d67840a1234b3872546fb
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 33a4e5ba6287ca547810b7a02c952a8f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
