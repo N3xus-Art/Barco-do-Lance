@@ -236,3 +236,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f2806be1c5b30924b81602c9534cf61d, type: 2}
   - {fileID: 11400000, guid: fa2b13d77861aa545ae731763eae8488, type: 2}
   - {fileID: 11400000, guid: 32d4832049944aa4baf229f76cb36b41, type: 2}
+  firstButton: {fileID: 0}
+  centralButton: {fileID: 0}
+  lastButton: {fileID: 0}
+  onMission: 0
+  outMission: 0
+  confirmTMP: {fileID: 0}
+  acceptColor: {r: 0.1254902, g: 0.8509804, b: 0.31764707, a: 0}
+  endColor: {r: 0.99215686, g: 0.09803922, b: 0.2784314, a: 0}

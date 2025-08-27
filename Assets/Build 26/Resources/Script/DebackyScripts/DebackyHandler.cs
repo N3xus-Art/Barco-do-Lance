@@ -28,6 +28,7 @@ public class DebackyHandler : MonoBehaviour {
     [Header("----Variaveis de Confirmação----")]
     [SerializeField] private bool onMission = false;
     [SerializeField] private bool outMission = false;
+    [SerializeField] private GameObject confirmButton;
     [SerializeField] private TMP_Text confirmTMP;
     [SerializeField] private Color acceptColor;
     [SerializeField] private Color endColor;
@@ -45,13 +46,13 @@ public class DebackyHandler : MonoBehaviour {
     }
     //Tabs Methods
     private void OnFirstTabClick(){
-        currentID = 1;
+        currentID = 0;
     }
     private void OnCentralTabClick(){
-        currentID = 2;
+        currentID = 1;
     }
     private void OnLastTabClick(){
-        currentID = 3;
+        currentID = 2;
     }
     //Missions Methods
     public void AcceptMissions(){
@@ -96,9 +97,9 @@ public class DebackyHandler : MonoBehaviour {
         Debug.Log(currentID);
         //Updates the confirm button
         if (onMission){
-            gameObject.GetComponent<Image>().color = endColor;
+            confirmButton.GetComponent<Image>().color = endColor;
         }else {
-            gameObject.GetComponent<Image>().color = acceptColor;
+            confirmButton.GetComponent<Image>().color = acceptColor;
             confirmTMP.SetText("Aceitar");
         }
         if (!outMission && onMission && GameObject.Find("CurrentMission") != null && GameObject.Find("CurrentMission").GetComponent<CurrentMission>().End){ 
@@ -106,7 +107,7 @@ public class DebackyHandler : MonoBehaviour {
         }
         if (outMission){
             confirmTMP.SetText("Terminar Missão");
-            GetComponent<Image>().color = acceptColor;
+            confirmButton.GetComponent<Image>().color = acceptColor;
         }
     }
     #endregion

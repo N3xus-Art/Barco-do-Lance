@@ -3063,6 +3063,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 735920483}
     - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: confirmTMP
+      value: 
+      objectReference: {fileID: 1827676663}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
       propertyPath: lastButton
       value: 
       objectReference: {fileID: 1434735527}
@@ -3082,6 +3086,10 @@ PrefabInstance:
       propertyPath: centralButton
       value: 
       objectReference: {fileID: 1993343261}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: confirmButton
+      value: 
+      objectReference: {fileID: 1252810759}
     - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
       propertyPath: debackyScreen
       value: 
