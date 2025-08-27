@@ -1037,9 +1037,9 @@ MonoBehaviour:
   Resolucoes:
   - 1920x1080
   - 1600x1200
-  - 1x1
-  ResolucoesWidth: 800700004006000001000000
-  ResolucoesHeight: 38040000b004000001000000
+  - 1000x1000
+  ResolucoesWidth: 8007000040060000e8030000
+  ResolucoesHeight: 38040000b004000064000000
   Index: 0
   MaxIndex: 0
   ResolutionText: {fileID: 9002588}
