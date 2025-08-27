@@ -39,17 +39,19 @@ public class BuildInputHandler : MonoBehaviour{
     public void Interact(InputAction.CallbackContext context){
        if(context.phase == InputActionPhase.Started){
        }else if (context.phase == InputActionPhase.Performed){
-           isInteracting = true;
+            if (isInteracting){
+                isInteracting = false;
+            }else{
+                isInteracting = true;
+            }
        }else if(context.phase == InputActionPhase.Canceled){
-           isInteracting = false;
        }
     }
     public void Click(InputAction.CallbackContext context){
         if(context.phase == InputActionPhase.Started){
         }else if (context.phase == InputActionPhase.Performed){
             isClicking = true;
-        }
-        else if(context.phase == InputActionPhase.Canceled){
+        }else if(context.phase == InputActionPhase.Canceled){
             isClicking = false;
         }
     }

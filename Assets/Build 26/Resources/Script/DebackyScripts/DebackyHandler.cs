@@ -20,7 +20,7 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private int missionValue;
     [SerializeField] private int currentID;
     [SerializeField] private List<ScriptableObjectMissions> nextMissions = new List<ScriptableObjectMissions>();
-    [SerializeField] private ScriptableObjectMissions[] currentMissions = new ScriptableObjectMissions[] { };
+    [SerializeField] private ScriptableObjectMissions[] avaliableMissions = new ScriptableObjectMissions[] { };
     [Header("----Variaveis das Abas----")]
     [SerializeField] private Button firstButton;
     [SerializeField] private Button centralButton;
@@ -59,17 +59,17 @@ public class DebackyHandler : MonoBehaviour {
         GameObject currentMission = new GameObject();
         currentMission.name = "CurrentMission";
         currentMission.AddComponent<CurrentMission>();
-        currentMission.AddComponent<CurrentMission>().missionReward = currentMissions[currentID].missionReward;
-        currentMission.AddComponent<CurrentMission>().RescueableAnimals = currentMissions[currentID].rescueableAnimals;
-        currentMission.AddComponent<CurrentMission>().OperableAnimals = currentMissions[currentID].operableAnimals;
+        currentMission.AddComponent<CurrentMission>().missionReward = avaliableMissions[currentID].missionReward;
+        currentMission.AddComponent<CurrentMission>().RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
+        currentMission.AddComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
         onMission = true;
     }
 
     public void EndMissions() {
         money += GameObject.Find("CurrentMission").GetComponent<CurrentMission>().missionReward;
         Destroy(GameObject.Find("CurrentMission"));
-        nextMissions.Add(currentMissions[currentID]);
-        currentMissions[currentID] = nextMissions[0];
+        nextMissions.Add(avaliableMissions[currentID]);
+        avaliableMissions[currentID] = nextMissions[0];
         nextMissions.RemoveAt(0);
         onMission = false;
         outMission = false;
@@ -89,12 +89,15 @@ public class DebackyHandler : MonoBehaviour {
         //Open DebackyScreen
         if (BuildInputHandler.isInteracting && inTrigger){
             debackyScreen.SetActive(true);
+        }else if(!BuildInputHandler.isInteracting && inTrigger){
+            debackyScreen.SetActive(false);
         }
         //Import data to the canva
-        animalImage.sprite = currentMissions[currentID].animalSprite;
-        missionTMP.SetText($"Recompensa: { currentMissions[currentID].missionReward}");
+        animalImage.sprite = avaliableMissions[currentID].animalSprite;
+        animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
+        missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
+        missionTMP.SetText($"Recompensa: {avaliableMissions[currentID].missionReward}");
         moneyTMP.SetText($"R${money}");
-        Debug.Log(currentID);
         //Updates the confirm button
         if (onMission){
             confirmButton.GetComponent<Image>().color = endColor;
