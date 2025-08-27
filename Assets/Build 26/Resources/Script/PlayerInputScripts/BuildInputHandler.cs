@@ -48,7 +48,8 @@ public class BuildInputHandler : MonoBehaviour{
         if(context.phase == InputActionPhase.Started){
         }else if (context.phase == InputActionPhase.Performed){
             isClicking = true;
-        }else if(context.phase == InputActionPhase.Canceled){
+        }
+        else if(context.phase == InputActionPhase.Canceled){
             isClicking = false;
         }
     }
@@ -79,6 +80,7 @@ public class BuildInputHandler : MonoBehaviour{
         rb = this.GetComponent<Rigidbody2D>();
     }
     public void Update(){
+        //Moviment Update
         if (isMoving && isGrounded()){
             rb.linearVelocity = new Vector2(horizontalMoviment * speed, 0);
             rb.gravityScale = 20;
@@ -92,8 +94,14 @@ public class BuildInputHandler : MonoBehaviour{
             rb.linearVelocity = new Vector2(0, 0);
             rb.gravityScale = 20;
         }
-        Debug.Log(isGrounded() + " isGrounded");
-        Debug.Log(inWater() + " inWater");
+        //Interact Update
+        if (isInteracting){
+            Debug.Log("Interagindo");
+        }
+        //Click Update
+        if (isClicking){
+            Debug.Log("Clicking");
+        }
     }
     #endregion
 }
