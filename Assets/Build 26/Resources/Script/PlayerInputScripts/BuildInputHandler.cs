@@ -12,7 +12,7 @@ public class BuildInputHandler : MonoBehaviour{
     [Header("----Boleanas----")]
     [SerializeField] private bool isMoving;
     [SerializeField] static public bool isInteracting;
-    [SerializeField] private bool isClicking;
+    [SerializeField] static public bool isClicking;
     [Header("----Variaveis de Movimentação----")]
     [SerializeField] private float speed;
     [SerializeField] private float horizontalMoviment;
