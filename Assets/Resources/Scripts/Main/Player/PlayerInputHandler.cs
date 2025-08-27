@@ -13,7 +13,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] bool screenAnimal, changeScene = false;
     [SerializeField] GameManager gameManager;
     SceneController sceneController;
-    Vector2 direction;
+    [SerializeField] Vector2 direction;
     public bool isMoving, isInteracting, isSecondary, isClicking, isTertiary;
     public Canvas TelaAjuda;
     public SpawnerHandler spawnerHandler;

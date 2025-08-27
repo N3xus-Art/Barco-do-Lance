@@ -463,21 +463,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3525301303533993492, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6307744505160990472, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
-      propertyPath: speed
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8174683534659020767, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8174683534659020767, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -545,8 +533,16 @@ PrefabInstance:
       value: Gerenic Ocean
       objectReference: {fileID: 0}
     - target: {fileID: 2541520854083856520, guid: 5c0ad1150739d5943b3a96aae68926d8, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541520854083856520, guid: 5c0ad1150739d5943b3a96aae68926d8, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318831959060522413, guid: 5c0ad1150739d5943b3a96aae68926d8, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6096620211796825065, guid: 5c0ad1150739d5943b3a96aae68926d8, type: 3}
@@ -659,9 +655,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1501839926609349769, guid: 16bc562a765e7ea4098c1ac020371b81, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1648155553323933585, guid: 16bc562a765e7ea4098c1ac020371b81, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1822617067079272363, guid: 16bc562a765e7ea4098c1ac020371b81, type: 3}
       propertyPath: m_Name
@@ -669,7 +669,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1822617067079272363, guid: 16bc562a765e7ea4098c1ac020371b81, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297549342793719292, guid: 16bc562a765e7ea4098c1ac020371b81, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954962211500214017, guid: 16bc562a765e7ea4098c1ac020371b81, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7537460469049948235}
   - component: {fileID: 5749581253383859342}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1472663523757593498}
   - component: {fileID: 7532085233450272938}
   - component: {fileID: 6307744505160990472}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player_PF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,6 +121,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7537460469049948235}
+  - {fileID: 7702303080722848036}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4594393413099154204
@@ -138,8 +139,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0.5
-  m_Material: {fileID: 0}
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 9931babb01bb9234590825e3ffe6122b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -184,7 +185,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0012849942, y: 0.00049713254}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -194,7 +195,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.17830546, y: 0.8618743}
   m_EdgeRadius: 0
 --- !u!114 &7532085233450272938
 MonoBehaviour:
@@ -365,5 +366,46 @@ MonoBehaviour:
   isMoving: 0
   isInteracting: 0
   isClicking: 0
-  speed: 5
-  direction: {x: 0, y: 0}
+  speed: 0
+  horizontalMoviment: 0
+  verticalMoviment: 0
+  rb: {fileID: 4594393413099154204}
+  contactCheckPos: {fileID: 7702303080722848036}
+  contactCheckSize: {x: 0.13, y: 0.05}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  waterLayer:
+    serializedVersion: 2
+    m_Bits: 16
+--- !u!1 &8903335817540346762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7702303080722848036}
+  m_Layer: 0
+  m_Name: ContactChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7702303080722848036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903335817540346762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.027, y: -0.455, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3211765220757160149}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
