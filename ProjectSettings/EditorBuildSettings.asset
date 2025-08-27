@@ -6,35 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main/Home Screen.unity
-    guid: bee49580b1332b84285efcae231b84ad
+    path: Assets/Build 26/Scenes/HomeScreen.unity
+    guid: 2ccdd3619d75d3b4da5d03c4c86e8ed9
   - enabled: 1
-    path: Assets/Scenes/Main/Scene Navigation.unity
-    guid: 9dc03894d3197fe4fabc676be8ee4f41
+    path: Assets/Build 26/Scenes/CreditsScreen.unity
+    guid: 85d70abc5590bd44bb75de1a41a24a2f
   - enabled: 1
-    path: Assets/Scenes/Main/Settings Screen.unity
-    guid: 3f6131cf1d59484438a0997f6269f139
-  - enabled: 0
-    path: Assets/Scenes/Main/Credits Screen.unity
-    guid: b7232bd719b618749827f8a61cfe629a
+    path: Assets/Build 26/Scenes/GameScreen.unity
+    guid: 126e761b3b0cc7f468d2baba5cf8c549
   - enabled: 1
-    path: Assets/Scenes/Main/Caribbean Sea.unity
-    guid: fc1a140fe851da04e9ddc65647684300
-  - enabled: 1
-    path: Assets/Scenes/Main/Mediterranean Sea.unity
-    guid: 82a28438163738844852497b7f9b8de6
-  - enabled: 1
-    path: Assets/Scenes/Main/Red Sea.unity
-    guid: 34069ea15e998824dbff8c04c5a2e979
-  - enabled: 1
-    path: Assets/Scenes/Gustavo/Credits Screen P.unity
-    guid: 76d9cc4e49f9e9c44a500d3d9199d2d1
-  - enabled: 1
-    path: Assets/Scenes/Gustavo/Credits Screen D.unity
-    guid: 5c38c8938debcd3489b24a932d3d697e
-  - enabled: 1
-    path: Assets/Scenes/Gustavo/Credits Screen A.unity
-    guid: a113098f90090184ab98dbd4f3b02122
+    path: Assets/Build 26/Scenes/ConfigurationsScreen.unity
+    guid: 314d082f207d67840a1234b3872546fb
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 33a4e5ba6287ca547810b7a02c952a8f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

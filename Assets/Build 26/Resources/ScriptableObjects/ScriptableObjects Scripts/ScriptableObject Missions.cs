@@ -1,0 +1,14 @@
+using UnityEditor;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "Mission_", menuName = "Mission/New Missions")]
+public class ScriptableObjectMissions : ScriptableObject{
+    public string missionName;
+    public Sprite animalSprite;
+    public string missionDescription;
+    public string animalDescription;
+    public int missionID;
+    public float missionReward;
+    public int rescueableAnimals;
+    public int operableAnimals;
+}
