@@ -61,14 +61,12 @@ public class BuildInputHandler : MonoBehaviour{
     }
     private bool isGrounded(){
         if (Physics2D.OverlapBox(contactCheckPos.position, contactCheckSize, 0, groundLayer)){
-            rb.gravityScale = 20;
             return true;
         }
         return false;
     }
     private bool inWater(){
         if (Physics2D.OverlapBox(contactCheckPos.position, contactCheckSize, 0, waterLayer)){
-            rb.gravityScale = 0;
             return true;
         }
         return false;
@@ -83,8 +81,10 @@ public class BuildInputHandler : MonoBehaviour{
     public void Update(){
         if (isMoving && isGrounded()){
             rb.linearVelocity = new Vector2(horizontalMoviment * speed, 0);
+            rb.gravityScale = 20;
         }else if (isMoving && inWater()){
             rb.linearVelocity = new Vector2(horizontalMoviment * speed, verticalMoviment * speed);
+            rb.gravityScale = 0;
         }else if (!isMoving){
             rb.linearVelocity = new Vector2(0, 0);
         }
