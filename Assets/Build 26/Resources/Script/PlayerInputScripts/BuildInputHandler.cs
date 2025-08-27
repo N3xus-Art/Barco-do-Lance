@@ -87,7 +87,13 @@ public class BuildInputHandler : MonoBehaviour{
             rb.gravityScale = 0;
         }else if (!isMoving){
             rb.linearVelocity = new Vector2(0, 0);
+            rb.gravityScale = 0;
+        }else if (isMoving && !isGrounded() && !inWater()){
+            rb.linearVelocity = new Vector2(0, 0);
+            rb.gravityScale = 20;
         }
+        Debug.Log(isGrounded() + " isGrounded");
+        Debug.Log(inWater() + " inWater");
     }
     #endregion
 }

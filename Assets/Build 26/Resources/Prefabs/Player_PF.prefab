@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7537460469049948235}
   - component: {fileID: 5749581253383859342}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1472663523757593498}
   - component: {fileID: 7532085233450272938}
   - component: {fileID: 6307744505160990472}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player_PF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 10
   m_Material: {fileID: 6200000, guid: 9931babb01bb9234590825e3ffe6122b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -403,7 +403,7 @@ Transform:
   m_GameObject: {fileID: 8903335817540346762}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.027, y: -0.455, z: 0}
+  m_LocalPosition: {x: 0.027, y: -0.405, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
