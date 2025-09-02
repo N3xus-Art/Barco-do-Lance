@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8037804745682596653}
   - component: {fileID: 4234564011519078673}
   - component: {fileID: 7645550614000103667}
+  - component: {fileID: -2213528681753558379}
   m_Layer: 0
   m_Name: Foca
   m_TagString: Untagged
@@ -131,3 +132,72 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &-2213528681753558379
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769674068124204445}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.75, y: 0.57}
+    newSize: {x: 1.75, y: 0.57}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.85499996, y: -0.225}
+      - {x: 0.875, y: -0.21499999}
+      - {x: 0.875, y: -0.125}
+      - {x: 0.835, y: -0.035}
+      - {x: 0.435, y: 0.13499999}
+      - {x: 0.285, y: 0.235}
+      - {x: 0.105, y: 0.285}
+      - {x: -0.195, y: 0.285}
+      - {x: -0.345, y: 0.255}
+      - {x: -0.53499997, y: 0.155}
+      - {x: -0.625, y: 0.225}
+      - {x: -0.815, y: 0.175}
+      - {x: -0.875, y: 0.114999995}
+      - {x: -0.875, y: 0.044999998}
+      - {x: -0.85499996, y: -0.005}
+      - {x: -0.745, y: -0.074999996}
+      - {x: -0.545, y: -0.155}
+      - {x: -0.355, y: -0.285}
+      - {x: -0.265, y: -0.285}
+      - {x: -0.21499999, y: -0.16499999}
+      - {x: -0.125, y: -0.13499999}
+      - {x: 0.355, y: -0.13499999}
+  m_UseDelaunayMesh: 0
