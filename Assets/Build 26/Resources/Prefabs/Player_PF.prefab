@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7537460469049948235}
   - component: {fileID: 5749581253383859342}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1581314409984735493, guid: 5ab8891c6b0e0414bbc3a2bc3c4ab6ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1472663523757593498}
   - component: {fileID: 7532085233450272938}
   - component: {fileID: 6307744505160990472}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player_PF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,8 +364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoving: 0
-  isInteracting: 0
-  isClicking: 0
   speed: 0
   horizontalMoviment: 0
   verticalMoviment: 0
@@ -387,7 +385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7702303080722848036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ContactChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

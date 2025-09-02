@@ -20,7 +20,7 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private int missionValue;
     [SerializeField] private int currentID;
     [SerializeField] private List<ScriptableObjectMissions> nextMissions = new List<ScriptableObjectMissions>();
-    [SerializeField] private ScriptableObjectMissions[] avaliableMissions = new ScriptableObjectMissions[] { };
+    [SerializeField] private ScriptableObjectMissions[] avaliableMissions = new ScriptableObjectMissions[]{};
     [Header("----Variaveis das Abas----")]
     [SerializeField] private Button firstButton;
     [SerializeField] private Button centralButton;
@@ -28,7 +28,8 @@ public class DebackyHandler : MonoBehaviour {
     [Header("----Variaveis de Confirmação----")]
     [SerializeField] private bool onMission = false;
     [SerializeField] private bool outMission = false;
-    [SerializeField] private GameObject confirmButton;
+    [SerializeField] private GameObject confirmButtonGO;
+    [SerializeField] private Button confirmButton;
     [SerializeField] private TMP_Text confirmTMP;
     [SerializeField] private Color acceptColor;
     [SerializeField] private Color endColor;
@@ -56,23 +57,27 @@ public class DebackyHandler : MonoBehaviour {
     }
     //Missions Methods
     public void AcceptMissions(){
+        if (!onMission) { 
         GameObject currentMission = new GameObject();
         currentMission.name = "CurrentMission";
         currentMission.AddComponent<CurrentMission>();
-        currentMission.AddComponent<CurrentMission>().missionReward = avaliableMissions[currentID].missionReward;
-        currentMission.AddComponent<CurrentMission>().RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
-        currentMission.AddComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
+        currentMission.GetComponent<CurrentMission>().missionReward = avaliableMissions[currentID].missionReward;
+        currentMission.GetComponent<CurrentMission>().RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
+        currentMission.GetComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
         onMission = true;
+        }
     }
 
     public void EndMissions() {
-        money += GameObject.Find("CurrentMission").GetComponent<CurrentMission>().missionReward;
-        Destroy(GameObject.Find("CurrentMission"));
-        nextMissions.Add(avaliableMissions[currentID]);
-        avaliableMissions[currentID] = nextMissions[0];
-        nextMissions.RemoveAt(0);
-        onMission = false;
-        outMission = false;
+        if (outMission){
+            money += GameObject.Find("CurrentMission").GetComponent<CurrentMission>().missionReward;
+            Destroy(GameObject.Find("CurrentMission"));
+            nextMissions.Add(avaliableMissions[currentID]);
+            avaliableMissions[currentID] = nextMissions[0];
+            nextMissions.RemoveAt(0);
+            onMission = false;
+            outMission = false;
+        }
     }
 
     //Unity Methods
@@ -84,6 +89,10 @@ public class DebackyHandler : MonoBehaviour {
         firstTab.onClick.AddListener(OnFirstTabClick);
         centralTab.onClick.AddListener(OnCentralTabClick);
         lastTab.onClick.AddListener(OnLastTabClick);
+        //Confirm Button
+        Button confirmButton = confirmButtonGO.GetComponent<Button>();
+        confirmButton.onClick.AddListener(AcceptMissions);
+        confirmButton.onClick.AddListener(EndMissions);
     }
     private void Update(){
         //Open DebackyScreen
@@ -100,9 +109,9 @@ public class DebackyHandler : MonoBehaviour {
         moneyTMP.SetText($"R${money}");
         //Updates the confirm button
         if (onMission){
-            confirmButton.GetComponent<Image>().color = endColor;
+            confirmButtonGO.GetComponent<Image>().color = endColor;
         }else {
-            confirmButton.GetComponent<Image>().color = acceptColor;
+            confirmButtonGO.GetComponent<Image>().color = acceptColor;
             confirmTMP.SetText("Aceitar");
         }
         if (!outMission && onMission && GameObject.Find("CurrentMission") != null && GameObject.Find("CurrentMission").GetComponent<CurrentMission>().End){ 
@@ -110,7 +119,7 @@ public class DebackyHandler : MonoBehaviour {
         }
         if (outMission){
             confirmTMP.SetText("Terminar Missão");
-            confirmButton.GetComponent<Image>().color = acceptColor;
+            confirmButtonGO.GetComponent<Image>().color = acceptColor;
         }
     }
     #endregion

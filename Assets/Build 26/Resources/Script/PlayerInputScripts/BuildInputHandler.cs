@@ -49,8 +49,8 @@ public class BuildInputHandler : MonoBehaviour{
     }
     public void Click(InputAction.CallbackContext context){
         if(context.phase == InputActionPhase.Started){
-        }else if (context.phase == InputActionPhase.Performed){
             isClicking = true;
+        }else if (context.phase == InputActionPhase.Performed){
         }else if(context.phase == InputActionPhase.Canceled){
             isClicking = false;
         }

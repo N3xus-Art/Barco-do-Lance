@@ -5387,25 +5387,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3525301303533993492, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5749581253383859342, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8174683534659020767, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8174683534659020767, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8903335817540346762, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5490,6 +5474,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1827676663}
     - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: endColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
       propertyPath: lastButton
       value: 
       objectReference: {fileID: 1434735527}
@@ -5506,6 +5494,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1533498112}
     - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: acceptColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
       propertyPath: centralButton
       value: 
       objectReference: {fileID: 1993343261}
@@ -5517,6 +5509,10 @@ PrefabInstance:
       propertyPath: debackyScreen
       value: 
       objectReference: {fileID: 436222837}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: confirmButtonGO
+      value: 
+      objectReference: {fileID: 1252810759}
     - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
       propertyPath: animalDescription
       value: 

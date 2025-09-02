@@ -19,4 +19,4 @@ MonoBehaviour:
   missionID: 1
   missionReward: 300
   rescueableAnimals: 2
-  operableAnimals: 0
+  operableAnimals: 3
