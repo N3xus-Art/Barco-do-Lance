@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BotaoProximo_0: 1116215163345458237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

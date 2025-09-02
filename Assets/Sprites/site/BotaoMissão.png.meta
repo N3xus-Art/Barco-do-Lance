@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "BotaoMiss\xE3o_0": 8423806289403981626
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
