@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: b31a5c23b91902140995fa1f33c9306c
+<<<<<<<< HEAD:Assets/Sprites/Tiles/Mar Caribe/Baixo_2.png.meta
+guid: e07be0be5f1886643af4a62ac22ef8a2
+========
+guid: c75b544d6466acb44aa0aef3fb379aa0
+>>>>>>>> origin/Alex:Assets/Sprites/Tiles/Mar vermelho/Baixo_2.png.meta
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -37,7 +41,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +79,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,8 +138,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Baixo_2_0: -468942769494500983
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
