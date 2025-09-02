@@ -6,35 +6,46 @@ public class DebugInventoryTester : MonoBehaviour
     public ToolData hammerData;
     public ToolData scissorsData;
 
+    void showInventory()
+    {
+        Debug.Log("\nLista de ferramentas:" + string.Join(", ", playerInventory.OwnedTools) +
+                  "\nDinheiro:" + playerInventory.Money +
+                  "\nFerramenta equipada: " + playerInventory.EquippedTool
+                  );
+    }
+
     void Update()
     {
-        // B - Buy Hammer
-        if (Input.GetKeyDown(KeyCode.B))
+        // M - Compra um Martelo
+        if (Input.GetKeyDown(KeyCode.M))
         {
             if (playerInventory.TryBuyTool(hammerData, out var tool))
-                Debug.Log("Bought " + tool);
+                Debug.Log("Comprou " + hammerData.toolName);
             else
-                Debug.Log("Could not buy Hammer");
+                Debug.Log("Não conseguiu comprar o Martelo");
+            showInventory();
         }
 
-        // N - Buy Scissors
-        if (Input.GetKeyDown(KeyCode.N))
+        // T - Compra uma Tesoura
+        if (Input.GetKeyDown(KeyCode.T))
         {
             if (playerInventory.TryBuyTool(scissorsData, out var tool))
-                Debug.Log("Bought " + tool);
+                Debug.Log("Bought " + scissorsData.toolName);
             else
-                Debug.Log("Could not buy Scissors");
+                Debug.Log("Não conseguiu comprar o Martelo");
+            showInventory();
         }
 
         // U - Use Equipped Tool
         if (Input.GetKeyDown(KeyCode.U))
         {
             bool success = playerInventory.TryUseEquipped();
-            Debug.Log(success ? "Used equipped tool" : "No tool to use!");
+            Debug.Log(success ? "Usou a ferramenta equipada" : "Sem ferramentas para usar!");
+
         }
 
-        // S - Scrap Equipped Tool (if broken)
-        if (Input.GetKeyDown(KeyCode.S))
+        // X - Vende a ferramenta quebrada
+        if (Input.GetKeyDown(KeyCode.X))
         {
             var equipped = playerInventory.EquippedTool;
             if (equipped != null)
@@ -46,11 +57,11 @@ public class DebugInventoryTester : MonoBehaviour
             }
         }
 
-        // E - Equip Next Tool
+        // E - Equipa a proxima ferramenta
         if (Input.GetKeyDown(KeyCode.E))
         {
             playerInventory.EquipNext();
-            Debug.Log("Equipped next tool: " + playerInventory.EquippedTool);
+            Debug.Log("Proxima ferramenta equipada: " + playerInventory.EquippedTool);
         }
     }
 }

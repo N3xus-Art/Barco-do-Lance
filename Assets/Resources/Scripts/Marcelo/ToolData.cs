@@ -8,4 +8,5 @@ public class ToolData : ScriptableObject
     public int maxDurability;
     public int shopPrice;
     public int scrapValue;
+    public int itemLevel;
 }

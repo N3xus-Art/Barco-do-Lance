@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a094a5b47462040bd963bfb7129a1cc0, type: 3}
   m_Name: Scissors
   m_EditorClassIdentifier: 
-  toolName: 
+  toolName: Tesoura
   icon: {fileID: 0}
   maxDurability: 40
   shopPrice: 20
   scrapValue: 10
+  itemLevel: 0

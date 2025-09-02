@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a094a5b47462040bd963bfb7129a1cc0, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: 
-  toolName: 
+  toolName: Martelo
   icon: {fileID: 0}
   maxDurability: 10
   shopPrice: 50
   scrapValue: 20
+  itemLevel: 0

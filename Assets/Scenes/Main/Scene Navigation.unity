@@ -5966,7 +5966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6fd07dde62c84922bd63bc9f3608b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingMoney: 100
+  Money: 100
   maxSlots: 20
   ownedTools: []
   equippedInstanceId: 

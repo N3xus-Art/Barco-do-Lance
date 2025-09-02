@@ -5,24 +5,22 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    [Header("Economy")]
-    [SerializeField] private int startingMoney = 100;
-    public int Money { get; private set; }
+    [Header("Dinheiro")]
+    [SerializeField] public int Money = 100;
 
-    [Header("Capacity")]
+    [Header("Capacidade")]
     [SerializeField] private int maxSlots = 20;
 
-    [Header("Runtime Tools (owned items)")]
+    [Header("Itens do Jogador")]
     [SerializeField] private List<ToolInstance> ownedTools = new List<ToolInstance>();
 
-    // Track which tool is "equipped" (by unique instance id)
+    // Ferramenta equipada
     [SerializeField] private string equippedInstanceId;
 
-    // ---- Events for UI/Audio/Gameplay ----
+    // Eventos para UI/Audio/Gameplay 
     public event Action OnInventoryChanged;
     public event Action<int> OnMoneyChanged;
     public event Action<ToolInstance> OnEquippedToolChanged;
-
     public IReadOnlyList<ToolInstance> OwnedTools => ownedTools;
     public int MaxSlots => maxSlots;
     public int UsedSlots => ownedTools.Count;
@@ -32,12 +30,11 @@ public class PlayerInventory : MonoBehaviour
 
     private void Awake()
     {
-        Money = startingMoney;
         RaiseMoneyChanged();
         RaiseInventoryChanged();
     }
 
-    // ---------- Money helpers ----------
+    // ---------- Helpers de Dinheiro ----------
     public bool CanAfford(int price) => price <= Money;
 
     public bool Spend(int amount)
@@ -130,10 +127,8 @@ public class PlayerInventory : MonoBehaviour
         bool used = tool.TryUse(wearAmount);
         if (!used) return false;
 
-        // If it just broke, you might (optionally) auto-unequip here.
         if (tool.IsBroken)
         {
-            // Optional behavior: auto-unequip broken tool
             EquipNext();
         }
 
@@ -143,9 +138,7 @@ public class PlayerInventory : MonoBehaviour
     }
 
     // ---------- Buy / Scrap ----------
-    /// <summary>
-    /// Buys a brand-new tool using its shopPrice. Returns the new instance if successful.
-    /// </summary>
+    // Buys a brand-new tool using its shopPrice. Returns the new instance if successful.
     public bool TryBuyTool(ToolData data, out ToolInstance instance)
     {
         instance = null;
@@ -166,9 +159,7 @@ public class PlayerInventory : MonoBehaviour
         return true;
     }
 
-    /// <summary>
-    /// Scraps a BROKEN tool for cash. Returns false if the tool isn't broken.
-    /// </summary>
+    // Scraps a BROKEN tool for cash. Returns false if the tool isn't broken.
     public bool TryScrapBroken(string instanceId, out int payout)
     {
         payout = 0;
