@@ -6,6 +6,8 @@ public class MoveTester : MonoBehaviour
     bool isMoving;
     Vector2 direction;
     public float speed;
+    public float horizontalMoviment = 1;
+    public float verticalMoviment;
 
     public void Move(InputAction.CallbackContext context)
     {
@@ -14,6 +16,8 @@ public class MoveTester : MonoBehaviour
         {
             isMoving = true;
             direction = context.ReadValue<Vector2>();
+            horizontalMoviment = context.ReadValue<Vector2>().x;
+            verticalMoviment = context.ReadValue<Vector2>().y;
 
 
         }
