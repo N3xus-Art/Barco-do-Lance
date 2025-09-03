@@ -1,14 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Sprites/Tiles/Mar Caribe/Baixo_2.png.meta
-guid: fa78dd78c07ec0546b9ee1093cc74a81
-========
-guid: c75b544d6466acb44aa0aef3fb379aa0
->>>>>>>> origin/Alex:Assets/Sprites/Tiles/Mar vermelho/Baixo_2.png.meta
+guid: 66f0638f285b07f4ba66a5c77c3c9a5a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -468942769494500983
-    second: Baixo_2_0
+      213: 1441809175755072641
+    second: Baixo_2 (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -41,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -79,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Baixo_2_0
+      name: Baixo_2 (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 989da44290bfd79f0800000000000000
-      internalID: -468942769494500983
+      spriteID: 184a7ca6ec5520410800000000000000
+      internalID: 1441809175755072641
       vertices: []
       indices: 
       edges: []
@@ -138,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Baixo_2 (1)_0: 1441809175755072641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
