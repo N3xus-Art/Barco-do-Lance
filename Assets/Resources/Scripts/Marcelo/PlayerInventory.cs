@@ -63,7 +63,7 @@ public class PlayerInventory : MonoBehaviour
         instance = new ToolInstance(data);
         ownedTools.Add(instance);
 
-        // Auto-equip the first tool if nothing is equipped
+        // Auto-equipa a primeira ferramenta
         if (EquippedTool == null)
         {
             equippedInstanceId = instance.InstanceId;
@@ -116,9 +116,8 @@ public class PlayerInventory : MonoBehaviour
     }
 
     // ---------- Use (wear) ----------
-    /// <summary>
+
     /// Uses the currently equipped tool (wearAmount default 1). Returns false if none or broken.
-    /// </summary>
     public bool TryUseEquipped(int wearAmount = 1)
     {
         var tool = EquippedTool;
