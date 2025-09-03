@@ -23,7 +23,9 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private ScriptableObjectMissions[] avaliableMissions = new ScriptableObjectMissions[]{};
     [Header("----Variaveis das Abas----")]
     [SerializeField] private Button firstButton;
+    [SerializeField] private Button secondButton;
     [SerializeField] private Button centralButton;
+    [SerializeField] private Button fourthButton;
     [SerializeField] private Button lastButton;
     [Header("----Variaveis de Confirmação----")]
     [SerializeField] private bool onMission = false;
@@ -49,11 +51,17 @@ public class DebackyHandler : MonoBehaviour {
     private void OnFirstTabClick(){
         currentID = 0;
     }
-    private void OnCentralTabClick(){
+    private void OnSecondTabClick(){
         currentID = 1;
     }
-    private void OnLastTabClick(){
+    private void OnCentralTabClick(){
         currentID = 2;
+    }
+    private void OnFourthTabClick(){
+        currentID = 3;
+    }
+    private void OnLastTabClick(){
+        currentID = 4;
     }
     //Missions Methods
     public void AcceptMissions(){
@@ -84,10 +92,14 @@ public class DebackyHandler : MonoBehaviour {
     private void Start(){
         //Tabs Handler
         Button firstTab = firstButton.GetComponent<Button>();
+        Button secondTab = secondButton.GetComponent<Button>();
         Button centralTab = centralButton.GetComponent<Button>();
+        Button fourthTab = fourthButton.GetComponent<Button>();
         Button lastTab = lastButton.GetComponent<Button>();
         firstTab.onClick.AddListener(OnFirstTabClick);
+        secondTab.onClick.AddListener(OnSecondTabClick);
         centralTab.onClick.AddListener(OnCentralTabClick);
+        fourthTab.onClick.AddListener(OnFourthTabClick);
         lastTab.onClick.AddListener(OnLastTabClick);
         //Confirm Button
         Button confirmButton = confirmButtonGO.GetComponent<Button>();
