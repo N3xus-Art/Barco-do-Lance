@@ -12,11 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36128abbab363ba40bbda7e862498462, type: 3}
   m_Name: Mission_3E
   m_EditorClassIdentifier: 
-  missionName: 
-  animalSprite: {fileID: 0}
-  missionDescription: 
-  animalDescription: 
+  missionName: "Facil - Mar Mediterr\xE2neo"
+  animalSprite: {fileID: 21300000, guid: ae0f9b690c1e25a4ead907bbf73b411f, type: 3}
+  missionDescription: "A inaugura\xE7\xE3o do novo Resort NewWaters ao Norte do Mar
+    Mediterr\xE2neo causou um aumento de polui\xE7\xE3o significativo na regi\xE3o.
+    Entre as esp\xE9cies mais afetadas, as Focas-monge-do-mediterr\xE2neo sofrem
+    com o descarte inadequado de pl\xE1sticos e outros materiais deixados durante
+    a obra. Al\xE9m disso, o polui\xE7\xE3o sonora gerada pela m\xFAsica alta e aglomera\xE7\xE3o
+    de pessoas, for\xE7ou a evacua\xE7\xE3o da esp\xE9cie. Segundo nossos registros,
+    quatro animais habitavam a regi\xE3o. \n\r\nEquipamentos Obrigat\xF3rios \n\r\nTanque
+    de Oxig\xEAnio b\xE1sico; \r\nRede b\xE1sica; \r\nTesoura b\xE1sica; \r\nAlicate
+    b\xE1sico: \r\n"
+  animalDescription: "A foca-monge-do-mediterr\xE2neo \xE9 um animal origin\xE1rio
+    do Mar Mediterr\xE2neo.\r\nEla possui nadadeiras adaptadas para nata\xE7\xE3o
+    e locomo\xE7\xE3o em terra, embora seja mais \xE1gil na \xE1gua.\r\nSua pele
+    \xE9 grossa e a camada de gordura (tamb\xE9m conhecida como blubber) ajuda a
+    manter a temperatura corporal em \xE1guas mais frias. \xC9 um animal solit\xE1rio
+    e territorial, conhecido por sua curiosidade e intelig\xEAncia, o que o torna
+    um desafio interessante.\r\n"
   missionID: 0
-  missionReward: 0
+  missionReward: 70
   rescueableAnimals: 0
-  operableAnimals: 0
+  operableAnimals: 4
