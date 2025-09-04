@@ -16,12 +16,12 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] private float horizontalMoviment;
     [SerializeField] private float verticalMoviment;
     [SerializeField] private Rigidbody2D rb;
-    [Header("----Variaveis da Escada----")]
+    /*[Header("----Variaveis da Escada----")]
     [SerializeField] private float vertical;
-    [SerializeField] private bool isLadder, isClimbing;
+    [SerializeField] private bool isLadder, isClimbing;*/
     [Header("----Verificação de Contato----")]
     [SerializeField] private Transform contactCheckPos;
-    [SerializeField] private Vector2 contactCheckSize = new Vector2(0.43f, 0.05f);
+    [SerializeField] private Vector2 contactCheckSize = new Vector2(0.43f, 0.14f);
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask waterLayer;
 
@@ -77,21 +77,6 @@ public class BuildInputHandler : MonoBehaviour{
         return false;
     }
     #endregion
-    //Ladder Methods
-    #region
-    private void OnTriggerEnter2D(Collider2D collision){
-        if (collision.CompareTag("Ladder")){
-            rb.gravityScale = 0f;
-            rb.linearVelocity = new Vector2(rb.linearVelocityX, (vertical * speed));
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision){
-        if (collision.CompareTag("Ladder")){
-            rb.gravityScale = 1f;
-        }
-    }
-    #endregion
     //Unity Methods
     #region
     public void Awake(){
@@ -110,22 +95,14 @@ public class BuildInputHandler : MonoBehaviour{
             rb.linearVelocity = new Vector2(0, 0);
             rb.gravityScale = 0;
         }else if (isMoving && !isGrounded() && !inWater()){
-            rb.linearVelocity = new Vector2(0, 0);
+            rb.linearVelocity = new Vector2(horizontalMoviment * speed, verticalMoviment * speed);
             rb.gravityScale = 20;
         }
         //Interact Update
         if (isInteracting){
-            Debug.Log("Interagindo");
         }
         //Click Update
         if (isClicking){
-            Debug.Log("Clicking");
-        }
-        //Ladder Update
-        vertical = Input.GetAxis("Vertical");
-        if (isLadder && Mathf.Abs(vertical) > 0f)
-        {
-            isClimbing = true;
         }
     }
     #endregion
