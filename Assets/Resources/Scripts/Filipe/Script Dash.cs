@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class ScriptDash : MonoBehaviour
 {
     bool isDashing = false; 
-
+    
     public void Dash(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
@@ -18,12 +18,21 @@ public class ScriptDash : MonoBehaviour
 
     private void Update()
     {
+
         if (isDashing) {
 
-            gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x + (5 * Time.deltaTime) * gameObject.GetComponent<MoveTester>().horizontalMoviment, gameObject.transform.localPosition.y,gameObject.transform.localPosition.z);
-        
+            if (gameObject.GetComponent<MoveTester>().direction.x != 0)
+            {
+                gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x + (5 * Time.deltaTime * Mathf.Sign(gameObject.GetComponent<MoveTester>().direction.x)), gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
+            }
+
+            if (gameObject.GetComponent<MoveTester>().direction.y != 0)
+            {
+                gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y + (5 * Time.deltaTime * Mathf.Sign(gameObject.GetComponent<MoveTester>().direction.y)), gameObject.transform.localPosition.z);
+
+            }
         }
 
-        gameObject.GetComponent<Transform>().localScale = new Vector3(gameObject.GetComponent<MoveTester>().horizontalMoviment, 1,1);
+        
     }
 }
