@@ -3,24 +3,24 @@ using TMPro;
 
 public class MoneyUIHandler : MonoBehaviour
 {
-    public PlayerInventory playerInventory;
+    public PlayerInventoryHandler playerInventoryHandler;
     public TextMeshProUGUI moneyText;
 
     private void OnEnable()
     {
-        if (playerInventory != null)
-            playerInventory.OnMoneyChanged += UpdateMoneyText;
+        if (playerInventoryHandler != null)
+            playerInventoryHandler.OnMoneyChanged += UpdateMoneyText;
     }
 
     private void OnDisable()
     {
-        if (playerInventory != null)
-            playerInventory.OnMoneyChanged -= UpdateMoneyText;
+        if (playerInventoryHandler != null)
+            playerInventoryHandler.OnMoneyChanged -= UpdateMoneyText;
     }
 
     private void Start()
     {
-        UpdateMoneyText(playerInventory.Money);
+        UpdateMoneyText(playerInventoryHandler.Money);
     }
 
     private void UpdateMoneyText(int currentMoney)

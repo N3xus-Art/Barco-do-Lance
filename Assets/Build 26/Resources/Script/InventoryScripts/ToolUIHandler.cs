@@ -4,15 +4,15 @@ using System;
 
 public class EquippedToolUIHandler : MonoBehaviour
 {
-    public PlayerInventory playerInventory;
+    public PlayerInventoryHandler playerInventoryHandler;
     public TextMeshProUGUI ToolText;
 
     private void OnEnable()
     {
-        if (playerInventory != null)
+        if (playerInventoryHandler != null)
         {
-            playerInventory.OnInventoryChanged += UpdateToolText;
-            playerInventory.OnEquippedToolChanged += UpdateToolText;
+            playerInventoryHandler.OnInventoryChanged += UpdateToolText;
+            playerInventoryHandler.OnEquippedToolChanged += UpdateToolText;
         }
 
 
@@ -20,10 +20,10 @@ public class EquippedToolUIHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        if (playerInventory != null)
+        if (playerInventoryHandler != null)
         {
-            playerInventory.OnInventoryChanged += UpdateToolText;
-            playerInventory.OnEquippedToolChanged += UpdateToolText;
+            playerInventoryHandler.OnInventoryChanged += UpdateToolText;
+            playerInventoryHandler.OnEquippedToolChanged += UpdateToolText;
         }
     }
 
@@ -33,11 +33,11 @@ public class EquippedToolUIHandler : MonoBehaviour
     }
 
 
-    private void UpdateToolText(ToolInstance tool)
+    private void UpdateToolText(ToolInstanceHandler tool)
     {
-        if (playerInventory.EquippedTool != null)
+        if (playerInventoryHandler.EquippedTool != null)
         {
-            ToolText.text = $"Ferramenta atual: {tool.Data.toolName} ({tool.CurrentDurability}/{tool.MaxDurability})";
+            ToolText.text = $"Ferramenta atual: {tool.DataHandler.toolName} ({tool.CurrentDurability}/{tool.MaxDurability})";
         }
         else
         {
@@ -46,9 +46,9 @@ public class EquippedToolUIHandler : MonoBehaviour
     }
     private void UpdateToolText()
     {
-        if (playerInventory.EquippedTool != null)
+        if (playerInventoryHandler.EquippedTool != null)
         {
-            ToolText.text = $"Ferramenta atual: {playerInventory.EquippedTool.Data.toolName} ({playerInventory.EquippedTool.CurrentDurability}/{playerInventory.EquippedTool.MaxDurability})";
+            ToolText.text = $"Ferramenta atual: {playerInventoryHandler.EquippedTool.DataHandler.toolName} ({playerInventoryHandler.EquippedTool.CurrentDurability}/{playerInventoryHandler.EquippedTool.MaxDurability})";
         }
         else
         {

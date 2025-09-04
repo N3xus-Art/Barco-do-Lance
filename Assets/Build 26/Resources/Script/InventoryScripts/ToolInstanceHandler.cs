@@ -4,30 +4,31 @@ using UnityEngine;
 [Serializable]
 public class ToolInstanceHandler
 {
+    
     // Unique per-owned-item so you can track/equip/scrap specific copies
     [SerializeField] private string instanceId;
 
-    [SerializeField] private ToolData data;
+    [SerializeField] private ToolDataHandler dataHandler;
     [SerializeField] private int currentDurability;
 
     // ---- Events (for UI or sound hooks) ----
-    public event Action<ToolInstance> OnDurabilityChanged;
-    public event Action<ToolInstance> OnBroken;
+    public event Action<ToolInstanceHandler> OnDurabilityChanged;
+    public event Action<ToolInstanceHandler> OnBroken;
 
     // ---- Public API ----
     public string InstanceId => instanceId;
-    public ToolData Data => data;
+    public ToolDataHandler DataHandler => dataHandler;
     public int CurrentDurability => currentDurability;
-    public int MaxDurability => data != null ? data.maxDurability : 0;
+    public int MaxDurability => dataHandler != null ? dataHandler.maxDurability : 0;
     public bool IsBroken => currentDurability <= 0;
     public float Durability01 => MaxDurability > 0 ? (float)currentDurability / MaxDurability : 0f;
 
-    public ToolInstance(ToolData toolData)
+    public ToolInstanceHandler(ToolDataHandler toolData)
     {
         if (toolData == null) throw new ArgumentNullException(nameof(toolData));
-        data = toolData;
+        dataHandler = toolData;
         instanceId = Guid.NewGuid().ToString("N");
-        currentDurability = data.maxDurability;
+        currentDurability = dataHandler.maxDurability;
     }
 
     /// <summary>
@@ -72,12 +73,5 @@ public class ToolInstanceHandler
             currentDurability = MaxDurability;
             OnDurabilityChanged?.Invoke(this);
         }
-    }
-
-    public override string ToString()
-    {
-        return data != null
-            ? $"{data.toolName} [{currentDurability}/{MaxDurability}]"
-            : $"<Null ToolData> [{currentDurability}/{MaxDurability}]";
     }
 }

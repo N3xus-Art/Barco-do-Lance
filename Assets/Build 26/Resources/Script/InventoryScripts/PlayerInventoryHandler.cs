@@ -12,7 +12,7 @@ public class PlayerInventoryHandler : MonoBehaviour
     [SerializeField] private int maxSlots = 20;
 
     [Header("Itens do Jogador")]
-    [SerializeField] private List<ToolInstance> ownedTools = new List<ToolInstance>();
+    [SerializeField] private List<ToolInstanceHandler> ownedTools = new List<ToolInstanceHandler>();
 
     // Ferramenta equipada
     [SerializeField] private string equippedInstanceId;
@@ -20,13 +20,13 @@ public class PlayerInventoryHandler : MonoBehaviour
     // Eventos para UI/Audio/Gameplay 
     public event Action OnInventoryChanged;
     public event Action<int> OnMoneyChanged;
-    public event Action<ToolInstance> OnEquippedToolChanged;
-    public IReadOnlyList<ToolInstance> OwnedTools => ownedTools;
+    public event Action<ToolInstanceHandler> OnEquippedToolChanged;
+    public IReadOnlyList<ToolInstanceHandler> OwnedTools => ownedTools;
     public int MaxSlots => maxSlots;
     public int UsedSlots => ownedTools.Count;
     public bool HasFreeSlot => UsedSlots < MaxSlots;
 
-    public ToolInstance EquippedTool => ownedTools.FirstOrDefault(t => t.InstanceId == equippedInstanceId);
+    public ToolInstanceHandler EquippedTool => ownedTools.FirstOrDefault(t => t.InstanceId == equippedInstanceId);
 
     private void Awake()
     {
@@ -54,13 +54,13 @@ public class PlayerInventoryHandler : MonoBehaviour
     }
 
     // ---------- Core inventory ----------
-    public bool TryAddTool(ToolData data, out ToolInstance instance)
+    public bool TryAddTool(ToolDataHandler data, out ToolInstanceHandler instance)
     {
         instance = null;
         if (data == null) return false;
         if (!HasFreeSlot) return false;
 
-        instance = new ToolInstance(data);
+        instance = new ToolInstanceHandler(data);
         ownedTools.Add(instance);
 
         // Auto-equipa a primeira ferramenta
@@ -92,7 +92,7 @@ public class PlayerInventoryHandler : MonoBehaviour
         return true;
     }
 
-    public ToolInstance GetToolById(string instanceId) =>
+    public ToolInstanceHandler GetToolById(string instanceId) =>
         ownedTools.FirstOrDefault(t => t.InstanceId == instanceId);
 
     // ---------- Equip / cycle ----------
@@ -138,7 +138,7 @@ public class PlayerInventoryHandler : MonoBehaviour
 
     // ---------- Buy / Scrap ----------
     // Buys a brand-new tool using its shopPrice. Returns the new instance if successful.
-    public bool TryBuyTool(ToolData data, out ToolInstance instance)
+    public bool TryBuyTool(ToolDataHandler data, out ToolInstanceHandler instance)
     {
         instance = null;
         if (data == null) return false;
@@ -155,20 +155,6 @@ public class PlayerInventoryHandler : MonoBehaviour
             instance = null;
             return false;
         }
-        return true;
-    }
-
-    // Scraps a BROKEN tool for cash. Returns false if the tool isn't broken.
-    public bool TryScrapBroken(string instanceId, out int payout)
-    {
-        payout = 0;
-        var tool = GetToolById(instanceId);
-        if (tool == null) return false;
-        if (!tool.IsBroken) return false;
-
-        payout = tool.Data.scrapValue;
-        Receive(payout);
-        RemoveToolById(instanceId);
         return true;
     }
 

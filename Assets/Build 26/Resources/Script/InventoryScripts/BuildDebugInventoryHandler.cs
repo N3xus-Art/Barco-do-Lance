@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class DebugInventoryTesterHandler : MonoBehaviour
 {
-    public PlayerInventory playerInventory;
-    public ToolData hammerData;
-    public ToolData scissorsData;
+    public PlayerInventoryHandler playerInventory;
+    public ToolDataHandler scissorsData;
 
     void showInventory()
     {
@@ -16,16 +15,6 @@ public class DebugInventoryTesterHandler : MonoBehaviour
 
     void Update()
     {
-        // M - Compra um Martelo
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            if (playerInventory.TryBuyTool(hammerData, out var tool))
-                Debug.Log("Comprou " + hammerData.toolName);
-            else
-                Debug.Log("Não conseguiu comprar o Martelo");
-            showInventory();
-        }
-
         // T - Compra uma Tesoura
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -42,19 +31,6 @@ public class DebugInventoryTesterHandler : MonoBehaviour
             bool success = playerInventory.TryUseEquipped();
             Debug.Log(success ? "Usou a ferramenta equipada" : "Sem ferramentas para usar!");
 
-        }
-
-        // X - Vende a ferramenta quebrada
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            var equipped = playerInventory.EquippedTool;
-            if (equipped != null)
-            {
-                if (playerInventory.TryScrapBroken(equipped.InstanceId, out int payout))
-                    Debug.Log($"Scrapped {equipped.Data.toolName} for {payout} coins");
-                else
-                    Debug.Log("Equipped tool is not broken yet!");
-            }
         }
 
         // E - Equipa a proxima ferramenta
