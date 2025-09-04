@@ -12,15 +12,19 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] static public bool isInteracting;
     [SerializeField] static public bool isClicking;
     [Header("----Variaveis de Movimentação----")]
-    [SerializeField] private float speed;
+    [SerializeField] public float speed;
     [SerializeField] private float horizontalMoviment;
     [SerializeField] private float verticalMoviment;
     [SerializeField] private Rigidbody2D rb;
+    [Header("----Variaveis da Escada----")]
+    [SerializeField] private float vertical;
+    [SerializeField] private bool isLadder, isClimbing;
     [Header("----Verificação de Contato----")]
     [SerializeField] private Transform contactCheckPos;
-    [SerializeField] private Vector2 contactCheckSize = new Vector2(0.13f, 0.05f);
+    [SerializeField] private Vector2 contactCheckSize = new Vector2(0.43f, 0.05f);
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask waterLayer;
+
     #endregion
     //Input Methdos
     #region
@@ -73,6 +77,21 @@ public class BuildInputHandler : MonoBehaviour{
         return false;
     }
     #endregion
+    //Ladder Methods
+    #region
+    private void OnTriggerEnter2D(Collider2D collision){
+        if (collision.CompareTag("Ladder")){
+            rb.gravityScale = 0f;
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, (vertical * speed));
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision){
+        if (collision.CompareTag("Ladder")){
+            rb.gravityScale = 1f;
+        }
+    }
+    #endregion
     //Unity Methods
     #region
     public void Awake(){
@@ -101,6 +120,12 @@ public class BuildInputHandler : MonoBehaviour{
         //Click Update
         if (isClicking){
             Debug.Log("Clicking");
+        }
+        //Ladder Update
+        vertical = Input.GetAxis("Vertical");
+        if (isLadder && Mathf.Abs(vertical) > 0f)
+        {
+            isClimbing = true;
         }
     }
     #endregion
