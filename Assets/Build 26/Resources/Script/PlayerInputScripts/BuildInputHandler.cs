@@ -30,10 +30,10 @@ public class BuildInputHandler : MonoBehaviour{
     #region
     public void Move(InputAction.CallbackContext context){
        if(context.phase == InputActionPhase.Started){
-       }else if (context.phase == InputActionPhase.Performed){
-           isMoving = true;
-           horizontalMoviment = context.ReadValue<Vector2>().x;
-           verticalMoviment = context.ReadValue<Vector2>().y;
+        }else if (context.phase == InputActionPhase.Performed){
+            horizontalMoviment = context.ReadValue<Vector2>().x;
+            verticalMoviment = context.ReadValue<Vector2>().y;
+            isMoving = true;
        }else if(context.phase == InputActionPhase.Canceled){
            isMoving = false;
        }
@@ -88,14 +88,17 @@ public class BuildInputHandler : MonoBehaviour{
         if (isMoving && isGrounded()){
             rb.linearVelocity = new Vector2(horizontalMoviment * speed, 0);
             rb.gravityScale = 20;
-        }else if (isMoving && inWater()){
+        }
+        if (isMoving && inWater()){
             rb.linearVelocity = new Vector2(horizontalMoviment * speed, verticalMoviment * speed);
             rb.gravityScale = 0;
-        }else if (!isMoving){
+        }
+        if (!isMoving){
             rb.linearVelocity = new Vector2(0, 0);
             rb.gravityScale = 0;
-        }else if (isMoving && !isGrounded() && !inWater()){
-            rb.linearVelocity = new Vector2(horizontalMoviment * speed, verticalMoviment * speed);
+        }
+        if (!isGrounded() && !inWater()){
+            rb.linearVelocity = new Vector2(0, 0);
             rb.gravityScale = 20;
         }
         //Interact Update
