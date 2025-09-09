@@ -7,7 +7,7 @@ public class Tubarao : AnimalMarinho, IOperavel
     {
         base.Start();
         nome = "Tubarão";
-        velocidade = 10.0f;
+        velocidade = 8.0f;
         tamanho = 3.0f; // 3m
     }
 
