@@ -198,9 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da54c25face957f45892938dc5d18b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  horizontalMoviment: 1
-  verticalMoviment: 0
+  direction: {x: 0, y: 0}
+  speed: 3
   isDiagonal: 0
 --- !u!212 &332729374
 SpriteRenderer:
@@ -411,6 +410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2c8d0caff55ee438756ce80b3b1c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  O2cost: 0.1
+  O2: 50
 --- !u!1 &1551608762
 GameObject:
   m_ObjectHideFlags: 0

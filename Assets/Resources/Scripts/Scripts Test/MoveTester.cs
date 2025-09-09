@@ -35,7 +35,8 @@ public class MoveTester : MonoBehaviour
     {
         if (isMoving)
         {
-            // Como você usa 2D, o movimento está no plano XY (x,y,0)
+            
+            if (direction.x != 0) { gameObject.GetComponent<Transform>().localScale = new Vector3(direction.x, 1, 1); }
             transform.position += new Vector3(direction.x, direction.y, 0) * Time.deltaTime * speed;
         }
     }
