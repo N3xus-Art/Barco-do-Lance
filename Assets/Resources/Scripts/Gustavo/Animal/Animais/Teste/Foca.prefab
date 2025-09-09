@@ -105,6 +105,7 @@ MonoBehaviour:
   nome: 
   velocidade: 0
   tamanho: 0
+  animalSprite: {fileID: -3492684102185480064, guid: ae0f9b690c1e25a4ead907bbf73b411f, type: 3}
 --- !u!50 &7645550614000103667
 Rigidbody2D:
   serializedVersion: 5

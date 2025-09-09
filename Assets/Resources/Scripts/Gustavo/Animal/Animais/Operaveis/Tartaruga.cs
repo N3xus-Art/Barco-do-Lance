@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Tartaruga : AnimalMarinho, IOperavel
 {
+    public Sprite animalSprite;
     protected override void Start()
     {
         base.Start();
@@ -10,9 +11,23 @@ public class Tartaruga : AnimalMarinho, IOperavel
         tamanho = 0.8f; // 80cm
     }
 
-    public void Operar()
+    public Sprite GetSprite()
     {
-        Debug.Log("Você está operando a tartaruga!");
+        return animalSprite;
+    }
+
+    public void IniciarOperacao()
+    {
+        Time.timeScale = 0f;
+        OperacaoUI.Instance.AbrirOperacao(this);
+    }
+    public void FinalizarOperacao()
+    {
+        Debug.Log("Operação finalizada na tartaruga.");
+    }
+    private void OnMouseDown()
+    {
+        IniciarOperacao();
     }
 
 }
