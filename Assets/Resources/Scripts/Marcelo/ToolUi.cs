@@ -42,6 +42,7 @@ public class EquippedToolUI : MonoBehaviour
         {
             ToolText.text = $"Ferramenta atual: {tool.Data.toolName} ({tool.CurrentDurability}/{tool.MaxDurability})";
             image.sprite = tool.Data.icon;
+            ScrollUtil.fillAmount = ((float)playerInventory.EquippedTool.CurrentDurability / (float)playerInventory.EquippedTool.MaxDurability);
         }
         else
         {
