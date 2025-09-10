@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerInventoryHandler : MonoBehaviour
-{
+public class PlayerInventoryHandler : MonoBehaviour{
+    //Variables
+    #region
     [Header("Dinheiro")]
     [SerializeField] public int Money = 100;
 
@@ -14,10 +15,10 @@ public class PlayerInventoryHandler : MonoBehaviour
     [Header("Itens do Jogador")]
     [SerializeField] private List<ToolInstanceHandler> ownedTools = new List<ToolInstanceHandler>();
 
-    // Ferramenta equipada
+    [Header("Ferramenta Equipada")]
     [SerializeField] private string equippedInstanceId;
 
-    // Eventos para UI/Audio/Gameplay 
+    //Eventos para UI/Audio/Gameplay 
     public event Action OnInventoryChanged;
     public event Action<int> OnMoneyChanged;
     public event Action<ToolInstanceHandler> OnEquippedToolChanged;
@@ -27,7 +28,7 @@ public class PlayerInventoryHandler : MonoBehaviour
     public bool HasFreeSlot => UsedSlots < MaxSlots;
 
     public ToolInstanceHandler EquippedTool => ownedTools.FirstOrDefault(t => t.InstanceId == equippedInstanceId);
-
+    #endregion
     private void Awake()
     {
         RaiseMoneyChanged();
