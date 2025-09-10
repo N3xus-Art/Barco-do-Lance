@@ -20,15 +20,18 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private int missionValue;
     [SerializeField] private int currentID;
     [SerializeField] private List<ScriptableObjectMissions> nextMissions = new List<ScriptableObjectMissions>();
-    [SerializeField] private ScriptableObjectMissions[] avaliableMissions = new ScriptableObjectMissions[] { };
+    [SerializeField] private ScriptableObjectMissions[] avaliableMissions = new ScriptableObjectMissions[]{};
     [Header("----Variaveis das Abas----")]
     [SerializeField] private Button firstButton;
+    [SerializeField] private Button secondButton;
     [SerializeField] private Button centralButton;
+    [SerializeField] private Button fourthButton;
     [SerializeField] private Button lastButton;
     [Header("----Variaveis de Confirmação----")]
     [SerializeField] private bool onMission = false;
     [SerializeField] private bool outMission = false;
-    [SerializeField] private GameObject confirmButton;
+    [SerializeField] private GameObject confirmButtonGO;
+    [SerializeField] private Button confirmButton;
     [SerializeField] private TMP_Text confirmTMP;
     [SerializeField] private Color acceptColor;
     [SerializeField] private Color endColor;
@@ -48,42 +51,60 @@ public class DebackyHandler : MonoBehaviour {
     private void OnFirstTabClick(){
         currentID = 0;
     }
-    private void OnCentralTabClick(){
+    private void OnSecondTabClick(){
         currentID = 1;
     }
-    private void OnLastTabClick(){
+    private void OnCentralTabClick(){
         currentID = 2;
+    }
+    private void OnFourthTabClick(){
+        currentID = 3;
+    }
+    private void OnLastTabClick(){
+        currentID = 4;
     }
     //Missions Methods
     public void AcceptMissions(){
+        if (!onMission) { 
         GameObject currentMission = new GameObject();
         currentMission.name = "CurrentMission";
         currentMission.AddComponent<CurrentMission>();
-        currentMission.AddComponent<CurrentMission>().missionReward = avaliableMissions[currentID].missionReward;
-        currentMission.AddComponent<CurrentMission>().RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
-        currentMission.AddComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
+        currentMission.GetComponent<CurrentMission>().missionReward = avaliableMissions[currentID].missionReward;
+        currentMission.GetComponent<CurrentMission>().RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
+        currentMission.GetComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
         onMission = true;
+        }
     }
 
     public void EndMissions() {
-        money += GameObject.Find("CurrentMission").GetComponent<CurrentMission>().missionReward;
-        Destroy(GameObject.Find("CurrentMission"));
-        nextMissions.Add(avaliableMissions[currentID]);
-        avaliableMissions[currentID] = nextMissions[0];
-        nextMissions.RemoveAt(0);
-        onMission = false;
-        outMission = false;
+        if (outMission){
+            money += GameObject.Find("CurrentMission").GetComponent<CurrentMission>().missionReward;
+            Destroy(GameObject.Find("CurrentMission"));
+            nextMissions.Add(avaliableMissions[currentID]);
+            avaliableMissions[currentID] = nextMissions[0];
+            nextMissions.RemoveAt(0);
+            onMission = false;
+            outMission = false;
+        }
     }
 
     //Unity Methods
     private void Start(){
         //Tabs Handler
         Button firstTab = firstButton.GetComponent<Button>();
+        Button secondTab = secondButton.GetComponent<Button>();
         Button centralTab = centralButton.GetComponent<Button>();
+        Button fourthTab = fourthButton.GetComponent<Button>();
         Button lastTab = lastButton.GetComponent<Button>();
         firstTab.onClick.AddListener(OnFirstTabClick);
+        secondTab.onClick.AddListener(OnSecondTabClick);
         centralTab.onClick.AddListener(OnCentralTabClick);
+        fourthTab.onClick.AddListener(OnFourthTabClick);
         lastTab.onClick.AddListener(OnLastTabClick);
+        //Confirm Button
+        Button confirmButton = confirmButtonGO.GetComponent<Button>();
+        confirmButton.onClick.AddListener(AcceptMissions);
+        confirmButton.onClick.AddListener(EndMissions);
     }
     private void Update(){
         //Open DebackyScreen
@@ -100,9 +121,9 @@ public class DebackyHandler : MonoBehaviour {
         moneyTMP.SetText($"R${money}");
         //Updates the confirm button
         if (onMission){
-            confirmButton.GetComponent<Image>().color = endColor;
+            confirmButtonGO.GetComponent<Image>().color = endColor;
         }else {
-            confirmButton.GetComponent<Image>().color = acceptColor;
+            confirmButtonGO.GetComponent<Image>().color = acceptColor;
             confirmTMP.SetText("Aceitar");
         }
         if (!outMission && onMission && GameObject.Find("CurrentMission") != null && GameObject.Find("CurrentMission").GetComponent<CurrentMission>().End){ 
@@ -110,7 +131,7 @@ public class DebackyHandler : MonoBehaviour {
         }
         if (outMission){
             confirmTMP.SetText("Terminar Missão");
-            confirmButton.GetComponent<Image>().color = acceptColor;
+            confirmButtonGO.GetComponent<Image>().color = acceptColor;
         }
     }
     #endregion

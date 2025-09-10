@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36128abbab363ba40bbda7e862498462, type: 3}
+  m_Name: Mission_6E
+  m_EditorClassIdentifier: 
+  missionName: Facil - Mar do Caribe Dois
+  animalSprite: {fileID: 21300000, guid: 822fc2bb3c7d3b743a5811cb6786b75d, type: 3}
+  missionDescription: "s mergulhados da Associa\xE7\xE3o de Mergulhadores que Mergulham
+    (AMM) encontraram milhares de ovos de Peixe-le\xE3o no Norte do Mar do Caribe.
+    Essa esp\xE9cie \xE9 conhecida pela sua reprodu\xE7\xE3o r\xE1pida e alimenta\xE7\xE3o
+    voraz, o que pode acabar causando um desequil\xEDbrio ambiental na regi\xE3o. 
+    A princ\xEDpio, precisamos retirar cerca de dez exemplares at\xE9 que possamos
+    tomar as devidas provid\xEAncias. \r\n\nEquipamentos Obrigat\xF3rios \n\r\nTanque
+    de Oxig\xEAnio b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria; \r"
+  animalDescription: "O peixe-le\xE3o \xE9 um animal origin\xE1rio do Mar Vermelho.\r\nO
+    peixe-le\xE3o, com suas listras brancas e de tons quentes, s\xE3o invasores comuns
+    do Mar do Caribe, sua introdu\xE7\xE3o em novos ecossistemas geralmente ocorre
+    por meio de \xE1guas de lastro de navios ou pela soltura de esp\xE9cimes de aqu\xE1rio
+    por indiv\xEDduos. Uma vez estabelecido, sua alta taxa reprodutiva e a aus\xEAncia
+    de predadores naturais contribuem para sua r\xE1pida prolifera\xE7\xE3o.\r\n"
+  missionID: 0
+  missionReward: 70
+  rescueableAnimals: 10
+  operableAnimals: 0
