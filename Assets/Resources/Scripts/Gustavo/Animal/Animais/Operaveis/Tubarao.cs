@@ -10,7 +10,6 @@ public class Tubarao : AnimalMarinho, IOperavel
         velocidade = 8.0f;
         tamanho = 3.0f; // 3m
     }
-
     public Sprite GetSprite()
     {
         return animalSprite;

@@ -10,7 +10,6 @@ public class Tartaruga : AnimalMarinho, IOperavel
         velocidade = 0.3f;
         tamanho = 0.8f; // 80cm
     }
-
     public Sprite GetSprite()
     {
         return animalSprite;
