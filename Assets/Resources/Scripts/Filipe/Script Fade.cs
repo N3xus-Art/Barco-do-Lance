@@ -5,12 +5,12 @@ using UnityEngine.UI;
 public class ScriptFade : MonoBehaviour
 {
     [SerializeField]
-    Image ImagemFade;
+    GameObject ImagemFade, CanvaObject;
     
     bool teste = false;
     SceneController sceneController;
 
-    public void FadeIntoScene(Image FadeImage, string SceneName) {
+    public void FadeIntoScene(GameObject FadeImage, string SceneName) {
 
         if (FadeImage.GetComponent<CanvasGroup>().alpha < 1)
         {
@@ -20,14 +20,23 @@ public class ScriptFade : MonoBehaviour
         }
         else if (FadeImage.GetComponent<CanvasGroup>().alpha >= 1) {
             sceneController = new SceneController();
-            bool teste = true;
+            teste = true;
+            DontDestroyOnLoad(CanvaObject);
             DontDestroyOnLoad(gameObject);
-            DontDestroyOnLoad(FadeImage.gameObject);
-            // Fade out 
+            DontDestroyOnLoad(FadeImage);
             sceneController.LoadScene(SceneName);
         
         }
     
+    }
+    public void FadeOut(GameObject FadeImage) {
+
+        if (FadeImage.GetComponent<CanvasGroup>().alpha > 0) {
+
+            FadeImage.GetComponent<CanvasGroup>().alpha -= Time.deltaTime;
+
+        }
+
     }
 
    
@@ -37,5 +46,6 @@ public class ScriptFade : MonoBehaviour
         {
             FadeIntoScene(ImagemFade, "Scene Transition 2");
         }
+        else { FadeOut(ImagemFade); }
     }
 }

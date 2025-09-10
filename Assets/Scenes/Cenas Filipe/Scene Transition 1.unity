@@ -163,7 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1af5da37735ff499a5abdcd16a3d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImagemFade: {fileID: 235629409}
+  ImagemFade: {fileID: 235629407}
+  CanvaObject: {fileID: 1455404669}
 --- !u!1 &235629407
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +178,7 @@ GameObject:
   - component: {fileID: 235629409}
   - component: {fileID: 235629411}
   m_Layer: 5
-  m_Name: fade image
+  m_Name: Fade Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
