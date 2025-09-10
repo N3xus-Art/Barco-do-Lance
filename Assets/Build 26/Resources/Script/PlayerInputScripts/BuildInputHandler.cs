@@ -1,5 +1,3 @@
-using JetBrains.Annotations;
-using System;
 using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,24 +12,28 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] static public bool isInteracting;
     [SerializeField] static public bool isClicking;
     [Header("----Variaveis de Movimentação----")]
-    [SerializeField] private float speed;
+    [SerializeField] public float speed;
     [SerializeField] private float horizontalMoviment;
     [SerializeField] private float verticalMoviment;
     [SerializeField] private Rigidbody2D rb;
+    /*[Header("----Variaveis da Escada----")]
+    [SerializeField] private float vertical;
+    [SerializeField] private bool isLadder, isClimbing;*/
     [Header("----Verificação de Contato----")]
     [SerializeField] private Transform contactCheckPos;
-    [SerializeField] private Vector2 contactCheckSize = new Vector2(0.13f, 0.05f);
+    [SerializeField] private Vector2 contactCheckSize = new Vector2(0.43f, 0.14f);
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask waterLayer;
+
     #endregion
     //Input Methdos
     #region
     public void Move(InputAction.CallbackContext context){
        if(context.phase == InputActionPhase.Started){
-       }else if (context.phase == InputActionPhase.Performed){
-           isMoving = true;
-           horizontalMoviment = context.ReadValue<Vector2>().x;
-           verticalMoviment = context.ReadValue<Vector2>().y;
+        }else if (context.phase == InputActionPhase.Performed){
+            horizontalMoviment = context.ReadValue<Vector2>().x;
+            verticalMoviment = context.ReadValue<Vector2>().y;
+            isMoving = true;
        }else if(context.phase == InputActionPhase.Canceled){
            isMoving = false;
        }
@@ -49,8 +51,8 @@ public class BuildInputHandler : MonoBehaviour{
     }
     public void Click(InputAction.CallbackContext context){
         if(context.phase == InputActionPhase.Started){
-        }else if (context.phase == InputActionPhase.Performed){
             isClicking = true;
+        }else if (context.phase == InputActionPhase.Performed){
         }else if(context.phase == InputActionPhase.Canceled){
             isClicking = false;
         }
@@ -86,23 +88,24 @@ public class BuildInputHandler : MonoBehaviour{
         if (isMoving && isGrounded()){
             rb.linearVelocity = new Vector2(horizontalMoviment * speed, 0);
             rb.gravityScale = 20;
-        }else if (isMoving && inWater()){
+        }
+        if (isMoving && inWater()){
             rb.linearVelocity = new Vector2(horizontalMoviment * speed, verticalMoviment * speed);
             rb.gravityScale = 0;
-        }else if (!isMoving){
+        }
+        if (!isMoving){
             rb.linearVelocity = new Vector2(0, 0);
             rb.gravityScale = 0;
-        }else if (isMoving && !isGrounded() && !inWater()){
+        }
+        if (!isGrounded() && !inWater()){
             rb.linearVelocity = new Vector2(0, 0);
             rb.gravityScale = 20;
         }
         //Interact Update
         if (isInteracting){
-            Debug.Log("Interagindo");
         }
         //Click Update
         if (isClicking){
-            Debug.Log("Clicking");
         }
     }
     #endregion

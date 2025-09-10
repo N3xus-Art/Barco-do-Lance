@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36128abbab363ba40bbda7e862498462, type: 3}
+  m_Name: Mission_5E
+  m_EditorClassIdentifier: 
+  missionName: Facil - Vemelho Dois
+  animalSprite: {fileID: 21300000, guid: 8a2f31bebd2eddc41a8cc93a9b9491d1, type: 3}
+  missionDescription: "O resultado da pesquisa anual a respeito da biodiversidade
+    do Mar Vermelho foi publicado recentemente. Os dados mostram uma mudan\xE7a dr\xE1stica
+    nas esp\xE9cies nativas na regi\xE3o Norte do Mar Vermelho. Isso aconteceu pela
+    introdu\xE7\xE3o da esp\xE9cie invasora Truta-marrom que alterou intensamente
+    a cadeia alimentar dos animais da regi\xE3o. Inicialmente, para preservar a fauna
+    e flora, a realoca\xE7\xE3o de pelo menos cinco elementos dessa esp\xE9cie \xE9
+    necess\xE1ria.\r\n\nEquipamentos Obrigat\xF3rios \r\n\nTanque de Oxig\xEAnio
+    b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria; \r\n"
+  animalDescription: "A medusa-de-pintas \xE9 um animal origin\xE1rio do Mar do Caribe.\r\nA
+    medusa-de-pintas, com seu formato de cogumelo, suas cores variadas e pintas,
+    \xE9 uma esp\xE9cie invasora do Mar Mediterr\xE2neo. Normalmente, ela \xE9 introduzida
+    no ecossistema atrav\xE9s da \xE1gua de lastro de navios ou pela aquariofilia.\r\nSua
+    invas\xE3o no ecossistema provoca desequil\xEDbrios significativos, superando
+    as esp\xE9cies nativas na competi\xE7\xE3o por recursos e alterando a cadeia
+    alimentar.\r\n"
+  missionID: 0
+  missionReward: 87
+  rescueableAnimals: 5
+  operableAnimals: 0
