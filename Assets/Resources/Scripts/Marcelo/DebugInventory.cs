@@ -44,18 +44,6 @@ public class DebugInventoryTester : MonoBehaviour
 
         }
 
-        // X - Vende a ferramenta quebrada
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            var equipped = playerInventory.EquippedTool;
-            if (equipped != null)
-            {
-                if (playerInventory.TryScrapBroken(equipped.InstanceId, out int payout))
-                    Debug.Log($"Scrapped {equipped.Data.toolName} for {payout} coins");
-                else
-                    Debug.Log("Equipped tool is not broken yet!");
-            }
-        }
 
         // E - Equipa a proxima ferramenta
         if (Input.GetKeyDown(KeyCode.E))
