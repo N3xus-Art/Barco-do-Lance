@@ -5,4 +5,5 @@ public interface ICapturavel
     GameObject GetGameObject();
     Sprite GetSprite();
     void IniciarCaptura();
+    // void AnimalAction();
 }
