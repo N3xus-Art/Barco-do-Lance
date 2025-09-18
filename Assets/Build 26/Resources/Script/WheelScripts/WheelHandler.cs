@@ -6,7 +6,6 @@ public class WheelHandler : MonoBehaviour{
     #region
     [SerializeField] private bool inTrigger;
     [SerializeField] private SceneHandler sceneHandler;
-
     #endregion
 
     //Methdos

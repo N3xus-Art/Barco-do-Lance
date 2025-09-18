@@ -377,11 +377,16 @@ MonoBehaviour:
   waterLayer:
     serializedVersion: 2
     m_Bits: 16
+  ladderLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   rotation: 0
   o2: 100
   maxO2: 100
   o2Cost: 0.1
   pointer: {fileID: 0}
+  scene:
+    m_Handle: 0
 --- !u!114 &2296190767582020438
 MonoBehaviour:
   m_ObjectHideFlags: 0

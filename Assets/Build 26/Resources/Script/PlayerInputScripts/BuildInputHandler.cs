@@ -30,6 +30,7 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] private int maxO2 = 100;
     [SerializeField] private float o2Cost;
     [SerializeField] private GameObject pointer;
+    [SerializeField] private Scene scene;
 
     #endregion
     //Input Methdos
@@ -111,10 +112,18 @@ public class BuildInputHandler : MonoBehaviour{
     public void Awake(){
         speed = 5f;
         rb = this.GetComponent<Rigidbody2D>();
+        scene = SceneManager.GetActiveScene();
     }
     public void Update(){
+        if (scene.name == "MapScreen" && pointer == null){
+            return;
+        }
+        if (scene.name == "MapScreen"){
+            rb.gravityScale = 0f;
+        }
         //Moviment Update
-            if (isMoving && isGrounded()){
+        #region
+        if (isMoving && isGrounded()){
                 rb.linearVelocity = new Vector2(horizontalMoviment * speed, 0);
                 rb.gravityScale = 20;
                 if(horizontalMoviment != 0) {
@@ -135,16 +144,16 @@ public class BuildInputHandler : MonoBehaviour{
                     gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
                 }
             }
-            if (!isGrounded() && !(inWater() || inLadder()))
-        {
+            if (!isGrounded() && !(inWater() || inLadder())){
                 rb.linearVelocity = new Vector2(0, 0);
                 rb.gravityScale = 20;
                 if(horizontalMoviment != 0) {
                     gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
                 }
             }
+        #endregion
         //Interact Update
-            if (isInteracting){
+        if (isInteracting){
             }
         //Click Update
             if (isClicking){
