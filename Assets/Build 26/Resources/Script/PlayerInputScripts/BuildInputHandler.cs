@@ -113,14 +113,15 @@ public class BuildInputHandler : MonoBehaviour{
         speed = 5f;
         rb = this.GetComponent<Rigidbody2D>();
         scene = SceneManager.GetActiveScene();
+        if (scene.name == "MapScreen"){
+            rb.gravityScale = 0f;
+        }
     }
     public void Update(){
         if (scene.name == "MapScreen" && pointer == null){
             return;
         }
-        if (scene.name == "MapScreen"){
-            rb.gravityScale = 0f;
-        }
+
         //Moviment Update
         #region
         if (isMoving && isGrounded()){
