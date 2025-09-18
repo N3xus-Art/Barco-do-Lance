@@ -1,72 +1,101 @@
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CapturaUI : MonoBehaviour
 {
     public static CapturaUI Instance;
 
-    private Coroutine movimentCoroutine;
-    public GameObject painelCaptura;
-    public Image animalImage;
-    public Transform AreaCaptura;
+    [Header("UI")]
+    [SerializeField] private GameObject painelCaptura;
+    [SerializeField] private GameObject areaCaptura;
+    [SerializeField] private Image imagemAnimal;
 
-    private ICapturavel alvoCaptura;
+    [Header("Configura√ß√£o")]
+    [SerializeField] private int cliquesNecessarios = 3;
+    [SerializeField] private float tempoMovimento = 1.5f;
 
-    private IEnumerator SincronizeMovement()
-    {
-        var animalGO = alvoCaptura.GetGameObject();
-        var canvas = animalImage.canvas;
-        var camera = Camera.main;
-
-        while (painelCaptura.activeSelf && animalGO != null)
-        {
-            // Pega a posiÁ„o do animal no mundo
-            Vector3 posMundo = animalGO.transform.position;
-
-            // Converte para posiÁ„o de tela
-            Vector3 posTela = camera.WorldToScreenPoint(posMundo);
-
-            // Converte para posiÁ„o local do canvas
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                animalImage.rectTransform.parent as RectTransform,
-                posTela,
-                canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : camera,
-                out Vector2 posLocal
-            );
-
-            animalImage.rectTransform.localPosition.Equals(posLocal);
-
-            yield return null;
-        }
-    }
+    private ICapturavel alvo;
+    private Sprite animalSprite => alvo.GetSprite();
+    private RectTransform animalRect;
+    private Coroutine movimentoCoroutine;
+    private int cliquesAtuais;
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+
         painelCaptura.SetActive(false);
     }
 
-    public void AbrirCaptura(ICapturavel alvo)
+    public void AbrirCaptura(ICapturavel animal)
     {
-        alvoCaptura = alvo;
+        alvo = animal;
+        cliquesAtuais = 0;
+
+        imagemAnimal.sprite = animalSprite;
+
+        // Ajusta o tamanho do RectTransform baseado no tamanho do sprite
+        if (animalSprite != null)
+        {
+            float w = animalSprite.rect.width;
+            float h = animalSprite.rect.height;
+            imagemAnimal.SetNativeSize(); // mant√©m tamanho original
+            imagemAnimal.rectTransform.sizeDelta = new Vector2(w, h);
+        }
+
+        animalRect = imagemAnimal.GetComponent<RectTransform>();
 
         painelCaptura.SetActive(true);
-        animalImage.sprite = alvo.GetSprite();
+        alvo.IniciarCaptura();
 
-        if (movimentCoroutine != null)
-            StopCoroutine(movimentCoroutine);
-        movimentCoroutine = StartCoroutine(SincronizeMovement());
+        if (movimentoCoroutine != null) StopCoroutine(movimentoCoroutine);
+        movimentoCoroutine = StartCoroutine(MoverAnimal());
     }
-    public void EncerrarCaptura()
+
+    public void FecharCaptura()
     {
         painelCaptura.SetActive(false);
-        if (movimentCoroutine != null)
+        if (movimentoCoroutine != null) StopCoroutine(movimentoCoroutine);
+        Destroy(alvo.GetGameObject());
+        alvo = null;
+    }
+
+    public void RegistrarClique()
+    {
+        if (alvo == null) return;
+
+        cliquesAtuais++;
+        Debug.Log($"Cliques: {cliquesAtuais}/{cliquesNecessarios}");
+
+        if (cliquesAtuais >= cliquesNecessarios)
         {
-            StopCoroutine(movimentCoroutine);
-            movimentCoroutine = null;
+         // alvo.FinalizarCaptura();
+            FecharCaptura();
         }
-        Destroy(alvoCaptura.GetGameObject());
-        alvoCaptura = null;
+    }
+
+    private IEnumerator MoverAnimal()
+    {
+        RectTransform area = areaCaptura.GetComponent<RectTransform>();
+
+        while (true)
+        {
+            Vector2 alvoPos = new Vector2(
+                Random.Range(-area.rect.width / 2, area.rect.width / 2),
+                Random.Range(-area.rect.height / 2, area.rect.height / 2)
+            );
+
+            Vector2 inicioPos = animalRect.anchoredPosition;
+            float t = 0;
+
+            while (t < tempoMovimento)
+            {
+                t += Time.deltaTime;
+                animalRect.anchoredPosition = Vector2.Lerp(inicioPos, alvoPos, t / tempoMovimento);
+                yield return null;
+            }
+        }
     }
 }

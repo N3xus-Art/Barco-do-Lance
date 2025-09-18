@@ -74,9 +74,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d441523f112d184889d7ea64dda2b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: 
   velocidade: 0
   tamanho: 0
+  AnimalSprite: {fileID: 5966333359094073595, guid: 822fc2bb3c7d3b743a5811cb6786b75d, type: 3}
 --- !u!212 &157467562349007939
 SpriteRenderer:
   m_ObjectHideFlags: 0
