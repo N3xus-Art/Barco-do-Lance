@@ -30,6 +30,6 @@ public class AnimalSpawner : MonoBehaviour
         );
 
         // Instancia o animal na posição aleatória
-        Instantiate(animalToSpawn, spawnPosition, Quaternion.identity);
+        Instantiate(animalToSpawn, spawnPosition, Quaternion.identity, AreaSpawn);
     }
 }
