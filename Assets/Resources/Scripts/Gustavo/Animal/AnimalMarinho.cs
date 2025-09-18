@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class AnimalMarinho : MonoBehaviour
 {
     [Header("Características Básicas")]
-    public string nome;
+    protected string nome;
     public float velocidade;
     public float tamanho;
     private Vector2 targetPosition;

@@ -2,5 +2,8 @@ using UnityEngine;
 
 public interface IOperavel
 {
-    void Operar();
+    Sprite GetSprite();
+    void IniciarOperacao();
+    void FinalizarOperacao();
+
 }
