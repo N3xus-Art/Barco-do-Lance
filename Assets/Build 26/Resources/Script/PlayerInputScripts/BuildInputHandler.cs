@@ -11,29 +11,42 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] private bool isMoving;
     [SerializeField] static public bool isInteracting;
     [SerializeField] static public bool isClicking;
+    [SerializeField] static public bool isDashing;
+    [SerializeField] static public bool isDiagonal;
     [Header("----Variaveis de Movimentação----")]
     [SerializeField] public float speed;
     [SerializeField] private float horizontalMoviment;
     [SerializeField] private float verticalMoviment;
     [SerializeField] private Rigidbody2D rb;
-    /*[Header("----Variaveis da Escada----")]
-    [SerializeField] private float vertical;
-    [SerializeField] private bool isLadder, isClimbing;*/
     [Header("----Verificação de Contato----")]
     [SerializeField] private Transform contactCheckPos;
     [SerializeField] private Vector2 contactCheckSize = new Vector2(0.43f, 0.14f);
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask waterLayer;
+    [Header("----Verificação do o2----")]
+    [SerializeField] float rotation;
+    [SerializeField] private float o2 = 100;
+    [SerializeField] private int maxO2 = 100;
+    [SerializeField] private float o2Cost;
+    [SerializeField] private GameObject pointer;
 
     #endregion
     //Input Methdos
     #region
     public void Move(InputAction.CallbackContext context){
        if(context.phase == InputActionPhase.Started){
-        }else if (context.phase == InputActionPhase.Performed){
+       }else if (context.phase == InputActionPhase.Performed){
             horizontalMoviment = context.ReadValue<Vector2>().x;
             verticalMoviment = context.ReadValue<Vector2>().y;
             isMoving = true;
+            if (Mathf.Abs(horizontalMoviment) > 0 && Mathf.Abs(horizontalMoviment) < 1){
+                horizontalMoviment = 1 * Mathf.Sign(horizontalMoviment);
+            }
+            if (!isDiagonal) {
+                if (horizontalMoviment != 0){
+                    verticalMoviment = 0;
+                }
+            }
        }else if(context.phase == InputActionPhase.Canceled){
            isMoving = false;
        }
@@ -56,6 +69,15 @@ public class BuildInputHandler : MonoBehaviour{
         }else if(context.phase == InputActionPhase.Canceled){
             isClicking = false;
         }
+    }
+
+    public void Dash(InputAction.CallbackContext context){
+        if(context.phase == InputActionPhase.Performed){
+            isDashing = true;
+        }else if (context.phase == InputActionPhase.Canceled){
+            isDashing= false;
+        }
+
     }
     #endregion
     //ContactCheck Methods
@@ -85,28 +107,58 @@ public class BuildInputHandler : MonoBehaviour{
     }
     public void Update(){
         //Moviment Update
-        if (isMoving && isGrounded()){
-            rb.linearVelocity = new Vector2(horizontalMoviment * speed, 0);
-            rb.gravityScale = 20;
-        }
-        if (isMoving && inWater()){
-            rb.linearVelocity = new Vector2(horizontalMoviment * speed, verticalMoviment * speed);
-            rb.gravityScale = 0;
-        }
-        if (!isMoving){
-            rb.linearVelocity = new Vector2(0, 0);
-            rb.gravityScale = 0;
-        }
-        if (!isGrounded() && !inWater()){
-            rb.linearVelocity = new Vector2(0, 0);
-            rb.gravityScale = 20;
-        }
+            if (isMoving && isGrounded()){
+                rb.linearVelocity = new Vector2(horizontalMoviment * speed, 0);
+                rb.gravityScale = 20;
+                if(horizontalMoviment != 0) {
+                    gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
+                }
+            }
+            if (isMoving && inWater()){
+                rb.linearVelocity = new Vector2(horizontalMoviment * speed, verticalMoviment * speed);
+                rb.gravityScale = 0;
+                if(horizontalMoviment != 0) {
+                    gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
+                }
+            }
+            if (!isMoving){
+                rb.linearVelocity = new Vector2(0, 0);
+                rb.gravityScale = 0;
+                if(horizontalMoviment != 0) {
+                    gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
+                }
+            }
+            if (!isGrounded() && !inWater()){
+                rb.linearVelocity = new Vector2(0, 0);
+                rb.gravityScale = 20;
+                if(horizontalMoviment != 0) {
+                    gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
+                }
+            }
         //Interact Update
-        if (isInteracting){
-        }
+            if (isInteracting){
+            }
         //Click Update
-        if (isClicking){
+            if (isClicking){
+            }
+        //Dashing Update
+            if (isDashing){
+                if (horizontalMoviment != 0 && o2 > 0) {
+                    gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x + (5 * Time.deltaTime * Mathf.Sign(horizontalMoviment)), gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
+                    o2 -= o2Cost;
+                }
+                if (verticalMoviment != 0 && o2 > 0){
+                    gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y + (5 * Time.deltaTime * Mathf.Sign(verticalMoviment)), gameObject.transform.localPosition.z);
+                    o2 -= o2Cost;
+                }
         }
+        //o2 System
+            if (o2 > 0){
+                o2 -= 1 * Time.deltaTime;
+            }
+            rotation = -160f + (o2 / maxO2) * (160f - (-160f));
+            // tank full oxigen 160, zero oxigen -160
+            pointer.GetComponent<RectTransform>().rotation = Quaternion.Euler(0f, 0f, -rotation);
     }
     #endregion
 }

@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 21.9, y: 38, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2315309789080921715}
   - {fileID: 726554559103897879}
   - {fileID: 2269073469150282792}
   m_Father: {fileID: 0}
@@ -184,7 +185,7 @@ Transform:
   m_GameObject: {fileID: 3162359351988178993}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.215, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -224,7 +225,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.61847013, y: 0.21020007}
+  m_Offset: {x: 0.60809046, y: 0.26075536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -234,8 +235,59 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.24828255, y: 1.4204006}
+  m_Size: {x: 0.21676075, y: 1.5215079}
   m_EdgeRadius: 0
+--- !u!1 &6950185828729703328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2315309789080921715}
+  - component: {fileID: 1814560170727688614}
+  m_Layer: 0
+  m_Name: AnimalSpawer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2315309789080921715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950185828729703328}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.10380765, y: 0.36901608, z: 0.16014029}
+  m_LocalScale: {x: 0.0456621, y: 0.026315788, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2481994306150425288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814560170727688614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950185828729703328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6564df3bfbb8c4296ccf6889202a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalPrefabs: []
+  minX: 5.68
+  maxX: 8
+  minY: -4
+  maxY: 4
+  boxPos: {fileID: 2315309789080921715}
+  boxSize: {x: 8, y: 4}
 --- !u!1 &7043950697031139624
 GameObject:
   m_ObjectHideFlags: 0
