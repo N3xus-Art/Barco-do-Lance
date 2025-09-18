@@ -370,7 +370,7 @@ MonoBehaviour:
   verticalMoviment: 0
   rb: {fileID: 4594393413099154204}
   contactCheckPos: {fileID: 7702303080722848036}
-  contactCheckSize: {x: 0.43, y: 0.14}
+  contactCheckSize: {x: 0.6, y: 0.39}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -418,7 +418,7 @@ Transform:
   m_GameObject: {fileID: 8903335817540346762}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0628, y: -0.4695, z: 0}
+  m_LocalPosition: {x: -0.084, y: -0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
