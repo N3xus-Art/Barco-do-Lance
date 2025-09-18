@@ -56,6 +56,7 @@ MonoBehaviour:
   maxX: -22
   minY: -37
   maxY: -28
+  boxSize: {x: -22, y: -28}
 --- !u!1 &1224288755661295612
 GameObject:
   m_ObjectHideFlags: 0

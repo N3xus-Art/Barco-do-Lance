@@ -8,7 +8,6 @@ public class AnimalSpawnerHandler : MonoBehaviour{
     public float maxX = 8f;
     public float minY = -4f;
     public float maxY = 4f;
-    public Transform boxPos;
     public Vector2 boxSize = new Vector2(0, 0);
     #endregion
 
@@ -17,7 +16,7 @@ public class AnimalSpawnerHandler : MonoBehaviour{
     private void OnDrawGizmosSelected(){
         boxSize = new Vector2(maxX, maxY);
         Gizmos.color = Color.white;
-        Gizmos.DrawWireCube(boxPos.position, boxSize);
+        Gizmos.DrawWireCube(transform.position, boxSize);
     }
     void Start(){
         // Exemplo: spawna 5 animais ao iniciar
