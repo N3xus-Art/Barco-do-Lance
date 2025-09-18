@@ -6609,25 +6609,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4692551545531694783, guid: e6ed605e3262f3342973d76ea84a28b8, type: 3}
-      propertyPath: m_Radius
-      value: 0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 4692551545531694783, guid: e6ed605e3262f3342973d76ea84a28b8, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5122006120898124691, guid: e6ed605e3262f3342973d76ea84a28b8, type: 3}
       propertyPath: m_Name
-      value: LemeBeta
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726398646651383956, guid: e6ed605e3262f3342973d76ea84a28b8, type: 3}
-      propertyPath: m_Size.x
-      value: 1.1627175
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726398646651383956, guid: e6ed605e3262f3342973d76ea84a28b8, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.44017392
+      value: Wheel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6691,6 +6675,38 @@ PrefabInstance:
       propertyPath: pointer
       value: 
       objectReference: {fileID: 471016321}
+    - target: {fileID: 6307744505160990472, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: ladderLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532085233450272938, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532085233450272938, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532085233450272938, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4270446272505971207}
+    - target: {fileID: 7532085233450272938, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532085233450272938, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Dash
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532085233450272938, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BuildInputHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532085233450272938, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8174683534659020767, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6700,6 +6716,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+--- !u!114 &4270446272505971207 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6307744505160990472, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+  m_PrefabInstance: {fileID: 4270446272505971206}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be04078ab43188c4d8af7482a7aeda71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5041485000748897827
 PrefabInstance:
   m_ObjectHideFlags: 0

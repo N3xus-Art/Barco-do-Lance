@@ -366,7 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMoving: 0
   speed: 0
-  horizontalMoviment: 0
+  horizontalMoviment: 1
   verticalMoviment: 0
   rb: {fileID: 4594393413099154204}
   contactCheckPos: {fileID: 7702303080722848036}
@@ -377,6 +377,11 @@ MonoBehaviour:
   waterLayer:
     serializedVersion: 2
     m_Bits: 16
+  rotation: 0
+  o2: 100
+  maxO2: 100
+  o2Cost: 0.1
+  pointer: {fileID: 0}
 --- !u!114 &2296190767582020438
 MonoBehaviour:
   m_ObjectHideFlags: 0

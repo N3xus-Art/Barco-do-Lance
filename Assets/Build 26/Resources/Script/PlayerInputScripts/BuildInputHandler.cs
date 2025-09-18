@@ -23,6 +23,7 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] private Vector2 contactCheckSize = new Vector2(0.43f, 0.14f);
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask waterLayer;
+    [SerializeField] private LayerMask ladderLayer;
     [Header("----Verificação do o2----")]
     [SerializeField] float rotation;
     [SerializeField] private float o2 = 100;
@@ -98,6 +99,12 @@ public class BuildInputHandler : MonoBehaviour{
         }
         return false;
     }
+    private bool inLadder(){
+        if (Physics2D.OverlapBox(contactCheckPos.position, contactCheckSize, 0, ladderLayer)){
+            return true;
+        }
+        return false;
+    }
     #endregion
     //Unity Methods
     #region
@@ -114,7 +121,7 @@ public class BuildInputHandler : MonoBehaviour{
                     gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
                 }
             }
-            if (isMoving && inWater()){
+            if (isMoving && (inWater() || inLadder())){
                 rb.linearVelocity = new Vector2(horizontalMoviment * speed, verticalMoviment * speed);
                 rb.gravityScale = 0;
                 if(horizontalMoviment != 0) {
@@ -128,7 +135,8 @@ public class BuildInputHandler : MonoBehaviour{
                     gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
                 }
             }
-            if (!isGrounded() && !inWater()){
+            if (!isGrounded() && !(inWater() || inLadder()))
+        {
                 rb.linearVelocity = new Vector2(0, 0);
                 rb.gravityScale = 20;
                 if(horizontalMoviment != 0) {
@@ -142,7 +150,7 @@ public class BuildInputHandler : MonoBehaviour{
             if (isClicking){
             }
         //Dashing Update
-            if (isDashing){
+            if (isDashing && inWater()){
                 if (horizontalMoviment != 0 && o2 > 0) {
                     gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x + (5 * Time.deltaTime * Mathf.Sign(horizontalMoviment)), gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
                     o2 -= o2Cost;
@@ -153,7 +161,7 @@ public class BuildInputHandler : MonoBehaviour{
                 }
         }
         //o2 System
-            if (o2 > 0){
+            if (o2 > 0 && inWater()){
                 o2 -= 1 * Time.deltaTime;
             }
             rotation = -160f + (o2 / maxO2) * (160f - (-160f));

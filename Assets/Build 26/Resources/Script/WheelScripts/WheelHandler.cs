@@ -4,11 +4,9 @@ using UnityEngine;
 public class WheelHandler : MonoBehaviour{
     //Variables
     #region
-    [Header("----Variaveis de Trigger----")]
     [SerializeField] private bool inTrigger;
-    [SerializeField] private List<GameObject> seas = new List<GameObject>();
-    [SerializeField] private GameObject currentSea;
-    [SerializeField] private int counter = 0;
+    [SerializeField] private SceneHandler sceneHandler;
+
     #endregion
 
     //Methdos
@@ -20,18 +18,15 @@ public class WheelHandler : MonoBehaviour{
     private void OnTriggerExit2D(Collider2D collision){
         inTrigger = false;
     }
-    //Unity Methdos
-    public void Awake(){
-        currentSea = seas[counter];
+    //Scene Methdos
+    public void ChangeScene(){
+        sceneHandler = new SceneHandler();
+        sceneHandler.LoadScene("MapScreen");
     }
+    //Unity Methdos
     public void Update() {
-        if (inTrigger && Input.GetMouseButtonDown(1)) {
-            /*if (currentSea != seas[counter]) {
-                currentSea.SetActive(false);
-                seas[counter].SetActive(true);
-                currentSea = seas[counter];
-            }*/
-            Debug.Log("getget");
+        if (inTrigger && BuildInputHandler.isInteracting) {
+            ChangeScene();
         }
     }
     #endregion
