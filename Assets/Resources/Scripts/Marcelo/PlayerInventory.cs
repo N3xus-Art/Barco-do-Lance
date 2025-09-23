@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public static PlayerInventory Instance { get; private set; }
+
     [Header("Dinheiro")]
     [SerializeField] public int Money = 100;
 
@@ -30,6 +32,13 @@ public class PlayerInventory : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
         RaiseMoneyChanged();
         RaiseInventoryChanged();
     }
@@ -122,9 +131,27 @@ public class PlayerInventory : MonoBehaviour
         OnEquippedToolChanged?.Invoke(ownedTools[idx]);
     }
 
+    public void EquipToolByType(TipoFerramenta tipo)
+    {
+        var toolToEquip = ownedTools.FirstOrDefault(t => t.Data.tipo == tipo && !t.IsBroken);
+        if (toolToEquip != null)
+        {
+            Equip(toolToEquip.InstanceId);
+        }
+        else
+        {
+            Debug.Log($"Nenhuma ferramenta do tipo {tipo} encontrada no inventário.");
+        }
+    }
+
+    // --- Wrappers para botões da Unity ---
+    public void EquipFaca() => EquipToolByType(TipoFerramenta.Faca);
+    public void EquipAlicate() => EquipToolByType(TipoFerramenta.Alicate);
+    public void EquipTesoura() => EquipToolByType(TipoFerramenta.Tesoura);
+
     // ---------- Use (wear) ----------
 
-    /// Uses the currently equipped tool (wearAmount default 1). Returns false if none or broken.
+    /// Usa a ferramenta equipada (wearAmount default 1). Retorna false se nenhuma ou quebrada.
     public bool TryUseEquipped(int wearAmount = 1)
     {
         var tool = EquippedTool;
@@ -138,13 +165,13 @@ public class PlayerInventory : MonoBehaviour
             EquipNext();
         }
 
-        // Notify UI that a tool inside inventory changed state
+        // Notifica a UI que uma ferramenta dentro do inventário mudou de estado
         RaiseInventoryChanged();
         return true;
     }
 
     // ---------- Buy / Scrap ----------
-    // Buys a brand-new tool using its shopPrice. Returns the new instance if successful.
+    // Compra uma nova ferramenta usando seu preço de loja. Retorna a nova instância se bem-sucedido.
     public bool TryBuyTool(ToolData data, out ToolInstance instance)
     {
         instance = null;
@@ -157,7 +184,7 @@ public class PlayerInventory : MonoBehaviour
         bool added = TryAddTool(data, out instance);
         if (!added)
         {
-            // roll back spend if something went wrong
+            // rollback
             Receive(data.shopPrice);
             instance = null;
             return false;
@@ -165,16 +192,12 @@ public class PlayerInventory : MonoBehaviour
         return true;
     }
 
-    // Scraps a BROKEN tool for cash. Returns false if the tool isn't broken.
-    public bool TryScrapBroken(string instanceId, out int payout)
+    // Descarta uma ferramenta quebrada. Retorna false se a tool não estiver quebrada.
+    public bool TryScrapBroken(string instanceId)
     {
-        payout = 0;
         var tool = GetToolById(instanceId);
         if (tool == null) return false;
         if (!tool.IsBroken) return false;
-
-        payout = tool.Data.scrapValue;
-        Receive(payout);
         RemoveToolById(instanceId);
         return true;
     }
