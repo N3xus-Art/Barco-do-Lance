@@ -9,34 +9,39 @@ public class Lixo : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Ferramenta ferramenta = OperacaoUI.Instance.GetFerramentaAtual();
+        TentarRemover();
+    }
 
-        if (ferramenta == null)
+    public void TentarRemover()
+    {
+        ToolInstance ferramentaEquipada = PlayerInventory.Instance.EquippedTool;
+
+        if (ferramentaEquipada == null)
         {
-            Debug.Log("Nenhuma ferramenta selecionada!");
+            Debug.Log("Nenhuma ferramenta equipada!");
             return;
         }
 
-        TentarRemover(ferramenta);
-    }
-
-    public void TentarRemover(Ferramenta ferramenta)
-    {
         bool correto = false;
+        TipoFerramenta tipoFerramentaEquipada = ferramentaEquipada.Data.tipo;
 
-        if (tipo == TipoLixo.Craca && ferramenta.tipo == TipoFerramenta.Faca)
+        if (tipo == TipoLixo.Craca && tipoFerramentaEquipada == TipoFerramenta.Faca)
             correto = true;
 
         if ((tipo == TipoLixo.Linha || tipo == TipoLixo.Arame || tipo == TipoLixo.Anzol)
-            && ferramenta.tipo == TipoFerramenta.Alicate)
+            && tipoFerramentaEquipada == TipoFerramenta.Alicate)
             correto = true;
 
         if (correto)
         {
-            if (ferramenta.Usar())
+            if (PlayerInventory.Instance.TryUseEquipped())
             {
                 Destroy(gameObject);
                 Debug.Log("Lixo removido!");
+            }
+            else
+            {
+                Debug.Log("A ferramenta quebrou ou não pôde ser usada!");
             }
         }
         else
