@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fc72984733b676546a20aca8bd07a659
+guid: e35203acf9ed3164c8f8de80ec093cec
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2483199454832438804
-    second: Transcardo - Transportadora-4206_0
+      213: -1839400246384840625
+    second: Recardo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Transcardo - Transportadora-4206_0
+      name: Recardo_0
       rect:
         serializedVersion: 2
         x: 4
         y: 0
-        width: 122
-        height: 116
+        width: 121
+        height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce1d44c9047e98dd0800000000000000
-      internalID: -2483199454832438804
+      spriteID: f403772b8332976e0800000000000000
+      internalID: -1839400246384840625
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Transcardo - Transportadora-4206_0: -2483199454832438804
+      Recardo_0: -1839400246384840625
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

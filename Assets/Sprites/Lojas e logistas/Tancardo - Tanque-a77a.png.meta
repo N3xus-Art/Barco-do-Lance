@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cc8540719a7cda04b886d743ac8763e7
+guid: 872ced00e2e051e4dafab7290c041ef2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 781501889812231308
-    second: Recardo - Redes-4202_0
+      213: 4147354573358354012
+    second: Tancardo - Tanque-a77a_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Recardo - Redes-4202_0
+      name: Tancardo - Tanque-a77a_0
       rect:
         serializedVersion: 2
         x: 4
         y: 0
-        width: 122
+        width: 121
         height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c84fd8504d378da00800000000000000
-      internalID: 781501889812231308
+      spriteID: c5ecd96c20d5e8930800000000000000
+      internalID: 4147354573358354012
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Recardo - Redes-4202_0: 781501889812231308
+      Tancardo - Tanque-a77a_0: 4147354573358354012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
