@@ -60,6 +60,13 @@ public class PlayerInventory : MonoBehaviour
         if (data == null) return false;
         if (!HasFreeSlot) return false;
 
+        // Impede a adição de itens únicos duplicados
+        if (ownedTools.Any(t => t.Data.toolName == data.toolName))
+        {
+            Debug.Log("Item duplicado: " + data.toolName);
+            return false;
+        }
+
         instance = new ToolInstance(data);
         ownedTools.Add(instance);
 
