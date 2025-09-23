@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cc8540719a7cda04b886d743ac8763e7
+guid: ffb410c9dc049bd4780d0e425c9ac5df
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 781501889812231308
-    second: Recardo - Redes-4202_0
+      213: 6857225307141816832
+    second: Ilha trasnportadora_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Recardo - Redes-4202_0
+      name: Ilha trasnportadora_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 32
         y: 0
-        width: 122
-        height: 118
+        width: 199
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c84fd8504d378da00800000000000000
-      internalID: 781501889812231308
+      spriteID: 002c101f512c92f50800000000000000
+      internalID: 6857225307141816832
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Recardo - Redes-4202_0: 781501889812231308
+      Ilha trasnportadora_0: 6857225307141816832
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

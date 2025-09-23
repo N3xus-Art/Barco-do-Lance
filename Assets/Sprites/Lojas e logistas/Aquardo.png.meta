@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 02b665308978e1a46bd640afba8bdd17
+guid: 4f52ca38f15988a43bd00380bceb1013
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2714816080838833837
-    second: Tancardo - Tanque-4203_0
+      213: -5062611106510501075
+    second: Aquardo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tancardo - Tanque-4203_0
+      name: Aquardo_0
       rect:
         serializedVersion: 2
         x: 4
         y: 0
-        width: 122
+        width: 121
         height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 359451f7829035ad0800000000000000
-      internalID: -2714816080838833837
+      spriteID: d2b8e70850efdb9b0800000000000000
+      internalID: -5062611106510501075
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tancardo - Tanque-4203_0: -2714816080838833837
+      Aquardo_0: -5062611106510501075
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
