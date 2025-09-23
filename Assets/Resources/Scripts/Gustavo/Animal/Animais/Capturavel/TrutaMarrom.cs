@@ -18,13 +18,14 @@ public class TrutaMarrom : AnimalMarinho, ICapturavel
     {
         return AnimalSprite;
     }
-    public void IniciarCaptura()
+    public void OnMouseDown()
     {
-        Time.timeScale = 0f;
+        // Abre a UI de captura
         CapturaUI.Instance.AbrirCaptura(this);
     }
-    private void OnMouseDown()
+    public void IniciarCaptura()
     {
-        IniciarCaptura();
+        Debug.Log($"Captura iniciada no animal {name}");
     }
+
 }
