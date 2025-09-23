@@ -509,6 +509,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1067104122}
+    - target: {fileID: 7793730935242345297, guid: 4fc7299aa6e87d24984737b63f23f4cf, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 476030215
+      objectReference: {fileID: 0}
     - target: {fileID: 7866636345867993702, guid: 4fc7299aa6e87d24984737b63f23f4cf, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -686,6 +690,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1067104122}
+    - target: {fileID: 6323239416201174277, guid: f44d264a9586a2746b9f9036dbb3c53e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 476030215
+      objectReference: {fileID: 0}
     - target: {fileID: 9186072703514462977, guid: f44d264a9586a2746b9f9036dbb3c53e, type: 3}
       propertyPath: m_Name
       value: CapturaUI
@@ -701,6 +709,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1067104123}
   - {fileID: 531521134774562318}
+  - {fileID: 8128383151177569710}
   - {fileID: 504172028}
   - {fileID: 1527994877}
-  - {fileID: 8128383151177569710}

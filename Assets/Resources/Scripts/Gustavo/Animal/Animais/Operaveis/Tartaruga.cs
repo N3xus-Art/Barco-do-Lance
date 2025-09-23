@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Tartaruga : AnimalMarinho, IOperavel
 {
-    public Sprite animalSprite;
     protected override void Start()
     {
         base.Start();
@@ -12,9 +11,8 @@ public class Tartaruga : AnimalMarinho, IOperavel
     }
     public Sprite GetSprite()
     {
-        return animalSprite;
+        return gameObject.GetComponent<SpriteRenderer>().sprite;
     }
-
     public void IniciarOperacao()
     {
         Time.timeScale = 0f;

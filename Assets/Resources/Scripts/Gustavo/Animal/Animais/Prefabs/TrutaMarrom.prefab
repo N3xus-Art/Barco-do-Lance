@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1859567654874549345}
   - component: {fileID: 451996528035974592}
   - component: {fileID: 6953407697103488671}
-  - component: {fileID: 4575412515228935786}
+  - component: {fileID: 98575023885884848}
   m_Layer: 0
   m_Name: TrutaMarrom
   m_TagString: Untagged
@@ -61,7 +61,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &451996528035974592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +76,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 0
   tamanho: 0
-  AnimalSprite: {fileID: 4518568778237261228, guid: 8a2f31bebd2eddc41a8cc93a9b9491d1, type: 3}
 --- !u!212 &6953407697103488671
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -121,19 +120,19 @@ SpriteRenderer:
   m_SortingLayerID: 457124291
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 4518568778237261228, guid: 8a2f31bebd2eddc41a8cc93a9b9491d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a2f31bebd2eddc41a8cc93a9b9491d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 0.45}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &4575412515228935786
-PolygonCollider2D:
+--- !u!61 &98575023885884848
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -170,30 +169,11 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 0.45}
-    newSize: {x: 1.28, y: 0.45}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.64, y: -0.175}
-      - {x: 0.64, y: 0.155}
-      - {x: 0.37, y: 0.114999995}
-      - {x: 0.21, y: 0.105}
-      - {x: 0.06, y: 0.225}
-      - {x: -0.089999996, y: 0.225}
-      - {x: -0.31, y: 0.13499999}
-      - {x: -0.64, y: 0.024999999}
-      - {x: -0.64, y: -0.125}
-      - {x: -0.55, y: -0.145}
-      - {x: -0.04, y: -0.225}
-      - {x: 0.14999999, y: -0.225}
-      - {x: 0.24, y: -0.21499999}
-      - {x: 0.28, y: -0.225}
-      - {x: 0.39, y: -0.225}
-      - {x: 0.45, y: -0.13499999}
-      - {x: 0.55, y: -0.175}
-      - {x: 0.62, y: -0.185}
-  m_UseDelaunayMesh: 0
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0

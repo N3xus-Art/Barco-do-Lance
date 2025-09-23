@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Foca : AnimalMarinho, IOperavel
 {
-    public Sprite animalSprite; 
     protected override void Start()
     {
         base.Start();
@@ -12,7 +11,7 @@ public class Foca : AnimalMarinho, IOperavel
     }
     public Sprite GetSprite()
     {
-        return animalSprite;
+        return gameObject.GetComponent<SpriteRenderer>().sprite;
     }
     public void IniciarOperacao()
     {

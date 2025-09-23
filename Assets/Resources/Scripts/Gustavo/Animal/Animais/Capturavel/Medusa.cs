@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Medusa : AnimalMarinho, ICapturavel
 {
-    public Sprite AnimalSprite;
     protected override void Start()
     {
         base.Start();
@@ -16,7 +15,7 @@ public class Medusa : AnimalMarinho, ICapturavel
     }
     public Sprite GetSprite()
     {
-        return AnimalSprite;
+        return gameObject.GetComponent<SpriteRenderer>().sprite;
     }
     public void OnMouseDown()
     {
