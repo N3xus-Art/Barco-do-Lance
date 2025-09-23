@@ -1,6 +1,12 @@
 using System;
 using UnityEngine;
 
+public enum ToolState
+{
+    Normal,
+    Broken
+}
+
 [Serializable]
 public class ToolInstance
 {
@@ -9,6 +15,7 @@ public class ToolInstance
 
     [SerializeField] private ToolData data;
     [SerializeField] private int currentDurability;
+    [SerializeField] private ToolState state;
 
     // ---- Events (for UI or sound hooks) ----
     public event Action<ToolInstance> OnDurabilityChanged;
@@ -17,9 +24,10 @@ public class ToolInstance
     // ---- Public API ----
     public string InstanceId => instanceId;
     public ToolData Data => data;
+    public ToolState State => state;
     public int CurrentDurability => currentDurability;
     public int MaxDurability => data != null ? data.maxDurability : 0;
-    public bool IsBroken => currentDurability <= 0;
+    public bool IsBroken => state == ToolState.Broken;
     public float Durability01 => MaxDurability > 0 ? (float)currentDurability / MaxDurability : 0f;
 
     public ToolInstance(ToolData toolData)
@@ -28,6 +36,7 @@ public class ToolInstance
         data = toolData;
         instanceId = Guid.NewGuid().ToString("N");
         currentDurability = data.maxDurability;
+        state = ToolState.Normal;
     }
 
     /// <summary>
@@ -43,8 +52,11 @@ public class ToolInstance
         if (currentDurability != prev)
         {
             OnDurabilityChanged?.Invoke(this);
-            if (IsBroken)
+            if (currentDurability <= 0)
+            {
+                state = ToolState.Broken;
                 OnBroken?.Invoke(this);
+            }
         }
         return true;
     }
