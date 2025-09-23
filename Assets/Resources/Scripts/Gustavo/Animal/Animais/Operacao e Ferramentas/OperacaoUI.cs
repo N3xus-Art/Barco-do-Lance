@@ -11,9 +11,12 @@ public class OperacaoUI : MonoBehaviour
     public Image animalImage;
     public Transform areaLixos;
     public GameObject[] prefabsLixos;
+    public Ferramenta faca;
+    public Ferramenta alicate;
 
     private List<GameObject> lixosAtivos = new List<GameObject>();
     private IOperavel alvoOperacao;
+    private Ferramenta ferramentaAtual;
 
     private void Awake()
     {
@@ -67,5 +70,19 @@ public class OperacaoUI : MonoBehaviour
         painelOperacao.SetActive(false);
         alvoOperacao?.FinalizarOperacao();
         alvoOperacao = null;
+        ferramentaAtual = null;
+    }
+
+    public void SelecionarFerramenta(string nomeFerramenta)
+    {
+        if (nomeFerramenta == "Faca") ferramentaAtual = faca;
+        else if (nomeFerramenta == "Alicate") ferramentaAtual = alicate;
+
+        Debug.Log("Ferramenta atual: " + ferramentaAtual?.tipo);
+    }
+
+    public Ferramenta GetFerramentaAtual()
+    {
+        return ferramentaAtual;
     }
 }

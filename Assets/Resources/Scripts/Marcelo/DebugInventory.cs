@@ -3,9 +3,8 @@ using UnityEngine;
 public class DebugInventoryTester : MonoBehaviour
 {
     public PlayerInventory playerInventory;
-    public ToolData pliersData;
+    public ToolData hammerData;
     public ToolData scissorsData;
-    public ToolData knifeData;
 
     void showInventory()
     {
@@ -17,13 +16,13 @@ public class DebugInventoryTester : MonoBehaviour
 
     void Update()
     {
-        // P - Compra um Alicate
-        if (Input.GetKeyDown(KeyCode.P))
+        // M - Compra um Martelo
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            if (playerInventory.TryBuyTool(pliersData, out var tool))
-                Debug.Log("Comprou " + pliersData.toolName);
+            if (playerInventory.TryBuyTool(hammerData, out var tool))
+                Debug.Log("Comprou " + hammerData.toolName);
             else
-                Debug.Log("Não conseguiu comprar o Alicate");
+                Debug.Log("Não conseguiu comprar o Martelo");
             showInventory();
         }
 
@@ -31,19 +30,9 @@ public class DebugInventoryTester : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             if (playerInventory.TryBuyTool(scissorsData, out var tool))
-                Debug.Log("Comprou " + scissorsData.toolName);
+                Debug.Log("Bought " + scissorsData.toolName);
             else
-                Debug.Log("Não conseguiu comprar a Tesoura");
-            showInventory();
-        }
-
-        // F - Compra uma Faca
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (playerInventory.TryBuyTool(knifeData, out var tool))
-                Debug.Log("Comprou " + knifeData.toolName);
-            else
-                Debug.Log("Não conseguiu comprar a Faca");
+                Debug.Log("Não conseguiu comprar o Martelo");
             showInventory();
         }
 
