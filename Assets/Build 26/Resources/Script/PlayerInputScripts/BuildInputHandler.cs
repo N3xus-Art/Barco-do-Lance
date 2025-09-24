@@ -3,6 +3,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+using System.Collections.Generic;
+
 
 public class BuildInputHandler : MonoBehaviour{
     //Variables
@@ -13,6 +17,7 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] static public bool isClicking;
     [SerializeField] static public bool isDashing;
     [SerializeField] static public bool isDiagonal;
+    [SerializeField] static public float dindin;
     [Header("----Variaveis de Movimentação----")]
     [SerializeField] public float speed;
     [SerializeField] private float horizontalMoviment;
@@ -24,14 +29,22 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask waterLayer;
     [SerializeField] private LayerMask ladderLayer;
-    [Header("----Verificação do o2----")]
+    [Header("----Variaveis do o2----")]
     [SerializeField] float rotation;
     [SerializeField] private float o2 = 100;
     [SerializeField] private int maxO2 = 100;
     [SerializeField] private float o2Cost;
     [SerializeField] private GameObject pointer;
+    [Header("----Variaveis de sprite----")]
     [SerializeField] private Scene scene;
-
+    [SerializeField] private GameObject playerModel;
+    [SerializeField] private Sprite spriteBase;
+    [SerializeField] private Sprite spriteModel;
+    [SerializeField] private Sprite spriteBoat;
+    [Header("----Variaveis de Loja----")]
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private Canvas shopCanvas;
+    [SerializeField] private GameObject Canvas;
     #endregion
     //Input Methdos
     #region
@@ -113,18 +126,20 @@ public class BuildInputHandler : MonoBehaviour{
         speed = 5f;
         rb = this.GetComponent<Rigidbody2D>();
         scene = SceneManager.GetActiveScene();
+        playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
+        dindin = 100;
         if (scene.name == "MapScreen"){
             rb.gravityScale = 0f;
+            playerModel.GetComponent<SpriteRenderer>().sprite = spriteBoat;
+            playerModel.GetComponent <Transform>().localScale = new Vector3(0.15f, 0.15f, 0.15f);
+            this.GetComponent<BoxCollider2D>().size = new Vector2(0.5189194f, 0.4115877f);
+            this.GetComponent<BoxCollider2D>().offset = new Vector2(0.03019339f, 0.02307379f);
         }
     }
     public void Update(){
-        if (scene.name == "MapScreen" && pointer == null){
-            return;
-        }
-
         //Moviment Update
         #region
-        if (isMoving && isGrounded()){
+            if (isMoving && isGrounded()){
                 rb.linearVelocity = new Vector2(horizontalMoviment * speed, 0);
                 rb.gravityScale = 20;
                 if(horizontalMoviment != 0) {
@@ -145,15 +160,23 @@ public class BuildInputHandler : MonoBehaviour{
                     gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
                 }
             }
-            if (!isGrounded() && !(inWater() || inLadder())){
+            if (!isGrounded() && !(inWater() || inLadder()) && scene.name != "MapScreen"){
                 rb.linearVelocity = new Vector2(0, 0);
                 rb.gravityScale = 20;
                 if(horizontalMoviment != 0) {
                     gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
                 }
             }
+            if (isMoving && scene.name == "MapScreen"){
+                rb.linearVelocity = new Vector2(horizontalMoviment * speed, verticalMoviment * speed);
+                rb.gravityScale = 0;
+                if(horizontalMoviment != 0) {
+                    gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
+                }
+            }
         #endregion
         //Interact Update
+        #region
         if (isInteracting){
             }
         //Click Update
@@ -171,12 +194,22 @@ public class BuildInputHandler : MonoBehaviour{
                 }
         }
         //o2 System
+
             if (o2 > 0 && inWater()){
                 o2 -= 1 * Time.deltaTime;
             }
             rotation = -160f + (o2 / maxO2) * (160f - (-160f));
-            // tank full oxigen 160, zero oxigen -160
             pointer.GetComponent<RectTransform>().rotation = Quaternion.Euler(0f, 0f, -rotation);
+        #endregion
+        //Canvas Update
+        #region
+        Canvas = GameObject.FindGameObjectWithTag("ShopCanvas");
+        if (Canvas != null)
+        {
+            shopCanvas = Canvas.GetComponent<Canvas>();
+            shopCanvas.worldCamera = mainCamera;
+        }
+        #endregion
     }
     #endregion
 }

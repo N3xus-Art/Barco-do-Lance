@@ -6676,6 +6676,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 471016321}
     - target: {fileID: 6307744505160990472, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1108598572}
+    - target: {fileID: 6307744505160990472, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
       propertyPath: ladderLayer.m_Bits
       value: 1024
       objectReference: {fileID: 0}
