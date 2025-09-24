@@ -224,23 +224,45 @@ public class PlayerInventory : MonoBehaviour
     public bool TryBuyTool(ToolData data, out ToolInstance instance)
     {
         instance = null;
-        if (data == null) return false;
-        if (!HasFreeSlot) return false;
-        if (!CanAfford(data.shopPrice)) return false;
+        Debug.Log("Iniciando tentativa de compra de ferramenta...");
 
-        if (!Spend(data.shopPrice)) return false;
+        if (data == null)
+        {
+            Debug.LogWarning("Falha na compra: ToolData é nulo.");
+            return false;
+        }
 
+        if (!HasFreeSlot)
+        {
+            Debug.LogWarning("Falha na compra: Não há slots livres no inventário.");
+            return false;
+        }
+
+        if (!CanAfford(data.shopPrice))
+        {
+            Debug.LogWarning($"Falha na compra: Dinheiro insuficiente. Preço: {data.shopPrice}, Dinheiro atual: {Money}");
+            return false;
+        }
+
+        if (!Spend(data.shopPrice))
+        {
+            Debug.LogError("Falha na compra: Não foi possível gastar o dinheiro.");
+            return false;
+        }
+
+        Debug.Log($"Tentando adicionar a ferramenta '{data.toolName}' ao inventário...");
         bool added = TryAddTool(data, out instance);
         if (!added)
         {
-            // rollback
+            Debug.LogWarning($"Falha ao adicionar a ferramenta '{data.toolName}'. Realizando rollback...");
             Receive(data.shopPrice);
             instance = null;
             return false;
         }
+
+        Debug.Log($"Ferramenta '{data.toolName}' comprada com sucesso e adicionada ao inventário.");
         return true;
     }
-
     // Descarta uma ferramenta quebrada. Retorna false se a tool não estiver quebrada.
     public bool TryScrapBroken(string instanceId)
     {

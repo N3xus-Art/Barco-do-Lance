@@ -1188,9 +1188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 1956320158}
-  pliersData: {fileID: 11400000, guid: ad42b1711620e4e1d81a0d7aac78664e, type: 2}
-  scissorsData: {fileID: 11400000, guid: 736111ac6ff36445ab9f9d758fb995c0, type: 2}
-  knifeData: {fileID: 11400000, guid: 312f2acd8a31cf44e92134b1075efbf0, type: 2}
+  pliersData: {fileID: 11400000, guid: f631b5950db088046a50f8fdbd9b8d4c, type: 2}
+  scissorsData: {fileID: 11400000, guid: 6c438854dbbf8f84a80e47ec5a823b6d, type: 2}
+  knifeData: {fileID: 11400000, guid: 13e678b743245c5449eddc6cec45247b, type: 2}
 --- !u!4 &485622639
 Transform:
   m_ObjectHideFlags: 0
