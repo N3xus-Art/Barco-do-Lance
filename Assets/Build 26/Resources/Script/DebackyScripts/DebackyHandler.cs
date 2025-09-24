@@ -72,6 +72,7 @@ public class DebackyHandler : MonoBehaviour {
         currentMission.GetComponent<CurrentMission>().missionReward = avaliableMissions[currentID].missionReward;
         currentMission.GetComponent<CurrentMission>().RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
         currentMission.GetComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
+        currentMission.GetComponent<CurrentMission>().Level = avaliableMissions[currentID].Level;
         onMission = true;
         }
     }
@@ -80,31 +81,59 @@ public class DebackyHandler : MonoBehaviour {
         if (outMission){
             money += GameObject.Find("CurrentMission").GetComponent<CurrentMission>().missionReward;
             Destroy(GameObject.Find("CurrentMission"));
-            nextMissions.Add(avaliableMissions[currentID]);
-            avaliableMissions[currentID] = nextMissions[0];
-            nextMissions.RemoveAt(0);
+            
+
+            if (currentID == 0)
+            {
+                foreach(ScriptableObjectMissions S in nextMissions)
+                {
+
+                    if (S.Level == 1)
+                    {
+                        nextMissions.Add(avaliableMissions[currentID]);
+                        avaliableMissions[currentID] = S;
+                        nextMissions.RemoveAt(nextMissions.IndexOf(S));
+
+                    }
+
+                }
+            }
+            else if (currentID == 2)
+            {
+
+
+            }
             onMission = false;
             outMission = false;
         }
     }
 
+    public void CancelMission(){
+
+        if (onMission)
+        {
+
+            Destroy(GameObject.Find("CurrentMission"));
+            onMission = false;
+            money += GameObject.Find("CurrentMission").GetComponent<CurrentMission>().CurrentReward;
+
+        }
+
+    }
+
     //Unity Methods
     private void Start(){
         //Tabs Handler
-        Button firstTab = firstButton.GetComponent<Button>();
-        Button secondTab = secondButton.GetComponent<Button>();
-        Button centralTab = centralButton.GetComponent<Button>();
-        Button fourthTab = fourthButton.GetComponent<Button>();
-        Button lastTab = lastButton.GetComponent<Button>();
-        firstTab.onClick.AddListener(OnFirstTabClick);
-        secondTab.onClick.AddListener(OnSecondTabClick);
-        centralTab.onClick.AddListener(OnCentralTabClick);
-        fourthTab.onClick.AddListener(OnFourthTabClick);
-        lastTab.onClick.AddListener(OnLastTabClick);
+        
+        firstButton.onClick.AddListener(OnFirstTabClick);
+        secondButton.onClick.AddListener(OnSecondTabClick);
+        centralButton.onClick.AddListener(OnCentralTabClick);
+        fourthButton.onClick.AddListener(OnFourthTabClick);
+        lastButton.onClick.AddListener(OnLastTabClick);
         //Confirm Button
-        Button confirmButton = confirmButtonGO.GetComponent<Button>();
         confirmButton.onClick.AddListener(AcceptMissions);
         confirmButton.onClick.AddListener(EndMissions);
+        
     }
     private void Update(){
         //Open DebackyScreen
@@ -122,6 +151,7 @@ public class DebackyHandler : MonoBehaviour {
         //Updates the confirm button
         if (onMission){
             confirmButtonGO.GetComponent<Image>().color = endColor;
+            confirmTMP.SetText("Cancelar");
         }else {
             confirmButtonGO.GetComponent<Image>().color = acceptColor;
             confirmTMP.SetText("Aceitar");

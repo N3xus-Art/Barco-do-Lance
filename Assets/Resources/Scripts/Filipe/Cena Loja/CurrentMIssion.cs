@@ -7,6 +7,8 @@ public class CurrentMission : MonoBehaviour
     public int RescueableAnimals;
     public int OperableAnimals;
     public bool End = false;
+    public float CurrentReward;
+    public int Level;
     
     void Update()
     {
