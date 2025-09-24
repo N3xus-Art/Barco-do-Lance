@@ -149,6 +149,55 @@ public class PlayerInventory : MonoBehaviour
     public void EquipAlicate() => EquipToolByType(TipoFerramenta.Alicate);
     public void EquipTesoura() => EquipToolByType(TipoFerramenta.Tesoura);
 
+    public void UpgradeEquippedTool()
+    {
+        var equippedTool = EquippedTool;
+        if (equippedTool == null)
+        {
+            Debug.Log("Nenhuma ferramenta equipada para dar upgrade.");
+            return;
+        }
+
+        ToolData currentToolData = equippedTool.Data;
+        int nextLevel = currentToolData.itemLevel + 1;
+        string nextToolName = currentToolData.toolName;
+
+        // Assumindo que a convenção de nomeação para o ScriptableObject é ToolName+Level, por exemplo, Scissors2
+        string resourcePath = $"Scripts/Marcelo/Tools/{nextToolName}{nextLevel}";
+
+        ToolData nextToolData = Resources.Load<ToolData>(resourcePath);
+
+        if (nextToolData == null)
+        {
+            Debug.LogError($"Não foi possível encontrar o ToolData para o próximo nível em: {resourcePath}");
+            return;
+        }
+
+        // Remove a ferramenta antiga
+        int oldToolIndex = ownedTools.FindIndex(t => t.InstanceId == equippedInstanceId);
+        if (oldToolIndex != -1)
+        {
+            ownedTools.RemoveAt(oldToolIndex);
+        }
+
+        // Adiciona a nova ferramenta
+        var newToolInstance = new ToolInstance(nextToolData);
+        if (oldToolIndex != -1)
+        {
+            ownedTools.Insert(oldToolIndex, newToolInstance);
+        }
+        else
+        {
+            ownedTools.Add(newToolInstance);
+        }
+
+        // Equipa a nova ferramenta
+        Equip(newToolInstance.InstanceId);
+
+        Debug.Log($"Ferramenta {currentToolData.toolName} atualizada para o nível {nextLevel}!");
+        RaiseInventoryChanged();
+    }
+
     // ---------- Use (wear) ----------
 
     /// Usa a ferramenta equipada (wearAmount default 1). Retorna false se nenhuma ou quebrada.
