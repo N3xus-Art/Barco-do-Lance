@@ -3,7 +3,9 @@ using UnityEngine;
 public class DebugInventoryTesterHandler : MonoBehaviour
 {
     public PlayerInventoryHandler playerInventory;
+    public ToolDataHandler pliersData;
     public ToolDataHandler scissorsData;
+    public ToolDataHandler knifeData;
 
     void showInventory()
     {
@@ -15,13 +17,33 @@ public class DebugInventoryTesterHandler : MonoBehaviour
 
     void Update()
     {
+        // P - Compra um Alicate
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (playerInventory.TryBuyTool(pliersData, out var tool))
+                Debug.Log("Comprou " + pliersData.toolName);
+            else
+                Debug.Log("Não conseguiu comprar o Alicate");
+            showInventory();
+        }
+
         // T - Compra uma Tesoura
         if (Input.GetKeyDown(KeyCode.T))
         {
             if (playerInventory.TryBuyTool(scissorsData, out var tool))
-                Debug.Log("Bought " + scissorsData.toolName);
+                Debug.Log("Comprou " + scissorsData.toolName);
             else
-                Debug.Log("Não conseguiu comprar o Martelo");
+                Debug.Log("Não conseguiu comprar a Tesoura");
+            showInventory();
+        }
+
+        // F - Compra uma Faca
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (playerInventory.TryBuyTool(knifeData, out var tool))
+                Debug.Log("Comprou " + knifeData.toolName);
+            else
+                Debug.Log("Não conseguiu comprar a Faca");
             showInventory();
         }
 
@@ -33,11 +55,20 @@ public class DebugInventoryTesterHandler : MonoBehaviour
 
         }
 
+
         // E - Equipa a proxima ferramenta
         if (Input.GetKeyDown(KeyCode.E))
         {
             playerInventory.EquipNext();
             Debug.Log("Proxima ferramenta equipada: " + playerInventory.EquippedTool);
+        }
+
+        // M - Upgrade ferramenta equipada
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Debug.Log("Tentando Upgrade ferramenta equipada");
+            playerInventory.UpgradeEquippedTool();
+            showInventory();
         }
     }
 }

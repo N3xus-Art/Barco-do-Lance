@@ -20,6 +20,7 @@ public class Medusa : AnimalMarinho, ICapturavel
     public void OnMouseDown()
     {
         // Abre a UI de captura
+        Debug.Log($"Clicou na medusa {name}");
         CapturaUI.Instance.AbrirCaptura(this);
     }
     public void IniciarCaptura()
