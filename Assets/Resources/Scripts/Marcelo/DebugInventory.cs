@@ -62,5 +62,13 @@ public class DebugInventoryTester : MonoBehaviour
             playerInventory.EquipNext();
             Debug.Log("Proxima ferramenta equipada: " + playerInventory.EquippedTool);
         }
+
+        // M - Upgrade ferramenta equipada
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Debug.Log("Tentando Upgrade ferramenta equipada");
+            playerInventory.UpgradeEquippedTool();
+            showInventory();
+        }
     }
 }

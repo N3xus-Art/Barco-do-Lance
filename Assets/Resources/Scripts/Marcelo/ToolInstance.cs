@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public enum ToolState
+public enum ToolStatee
 {
     Normal,
     Broken

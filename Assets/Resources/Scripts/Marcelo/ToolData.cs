@@ -1,5 +1,5 @@
 using UnityEngine;
-public enum TipoFerramenta { Faca, Alicate, Tesoura,}
+public enum TipoFerramentaa { Faca, Alicate, Tesoura,}
 
 [CreateAssetMenu(fileName = "ToolData", menuName = "Scriptable Objects/ToolData")]
 public class ToolData : ScriptableObject

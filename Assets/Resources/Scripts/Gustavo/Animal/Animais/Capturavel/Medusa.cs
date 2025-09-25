@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Medusa : AnimalMarinho, ICapturavel
 {
-    public Sprite AnimalSprite;
     protected override void Start()
     {
         base.Start();
@@ -16,11 +15,12 @@ public class Medusa : AnimalMarinho, ICapturavel
     }
     public Sprite GetSprite()
     {
-        return AnimalSprite;
+        return gameObject.GetComponent<SpriteRenderer>().sprite;
     }
     public void OnMouseDown()
     {
         // Abre a UI de captura
+        Debug.Log($"Clicou na medusa {name}");
         CapturaUI.Instance.AbrirCaptura(this);
     }
     public void IniciarCaptura()

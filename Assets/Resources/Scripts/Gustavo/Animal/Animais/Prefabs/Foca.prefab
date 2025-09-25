@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8037804745682596653}
   - component: {fileID: 4234564011519078673}
   - component: {fileID: 7645550614000103667}
-  - component: {fileID: -2213528681753558379}
+  - component: {fileID: 5989699856819190826}
   m_Layer: 0
   m_Name: Foca
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.6037081, y: -0.22090268, z: 0.033258997}
-  m_LocalScale: {x: 0.1, y: 0.15, z: 1}
+  m_LocalScale: {x: 0.03, y: 0.06, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,7 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 0
   tamanho: 0
-  animalSprite: {fileID: 21300000, guid: ae0f9b690c1e25a4ead907bbf73b411f, type: 3}
 --- !u!50 &7645550614000103667
 Rigidbody2D:
   serializedVersion: 5
@@ -131,9 +130,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!60 &-2213528681753558379
-PolygonCollider2D:
+  m_Constraints: 4
+--- !u!61 &5989699856819190826
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -176,28 +175,5 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.85499996, y: -0.225}
-      - {x: 0.875, y: -0.21499999}
-      - {x: 0.875, y: -0.125}
-      - {x: 0.835, y: -0.035}
-      - {x: 0.435, y: 0.13499999}
-      - {x: 0.285, y: 0.235}
-      - {x: 0.105, y: 0.285}
-      - {x: -0.195, y: 0.285}
-      - {x: -0.345, y: 0.255}
-      - {x: -0.53499997, y: 0.155}
-      - {x: -0.625, y: 0.225}
-      - {x: -0.815, y: 0.175}
-      - {x: -0.875, y: 0.114999995}
-      - {x: -0.875, y: 0.044999998}
-      - {x: -0.85499996, y: -0.005}
-      - {x: -0.745, y: -0.074999996}
-      - {x: -0.545, y: -0.155}
-      - {x: -0.355, y: -0.285}
-      - {x: -0.265, y: -0.285}
-      - {x: -0.21499999, y: -0.16499999}
-      - {x: -0.125, y: -0.13499999}
-      - {x: 0.355, y: -0.13499999}
-  m_UseDelaunayMesh: 0
+  m_Size: {x: 2.921875, y: 1.375}
+  m_EdgeRadius: 0

@@ -1,15 +1,21 @@
 using System;
 using UnityEngine;
 
+public enum ToolState
+{
+    Normal,
+    Broken
+}
+
 [Serializable]
 public class ToolInstanceHandler
 {
-    
     // Unique per-owned-item so you can track/equip/scrap specific copies
     [SerializeField] private string instanceId;
 
-    [SerializeField] private ToolDataHandler dataHandler;
+    [SerializeField] private ToolDataHandler data;
     [SerializeField] private int currentDurability;
+    [SerializeField] private ToolState state;
 
     // ---- Events (for UI or sound hooks) ----
     public event Action<ToolInstanceHandler> OnDurabilityChanged;
@@ -17,18 +23,20 @@ public class ToolInstanceHandler
 
     // ---- Public API ----
     public string InstanceId => instanceId;
-    public ToolDataHandler DataHandler => dataHandler;
+    public ToolDataHandler Data => data;
+    public ToolState State => state;
     public int CurrentDurability => currentDurability;
-    public int MaxDurability => dataHandler != null ? dataHandler.maxDurability : 0;
-    public bool IsBroken => currentDurability <= 0;
+    public int MaxDurability => data != null ? data.maxDurability : 0;
+    public bool IsBroken => state == ToolState.Broken;
     public float Durability01 => MaxDurability > 0 ? (float)currentDurability / MaxDurability : 0f;
 
     public ToolInstanceHandler(ToolDataHandler toolData)
     {
         if (toolData == null) throw new ArgumentNullException(nameof(toolData));
-        dataHandler = toolData;
+        data = toolData;
         instanceId = Guid.NewGuid().ToString("N");
-        currentDurability = dataHandler.maxDurability;
+        currentDurability = data.maxDurability;
+        state = ToolState.Normal;
     }
 
     /// <summary>
@@ -44,8 +52,11 @@ public class ToolInstanceHandler
         if (currentDurability != prev)
         {
             OnDurabilityChanged?.Invoke(this);
-            if (IsBroken)
+            if (currentDurability <= 0)
+            {
+                state = ToolState.Broken;
                 OnBroken?.Invoke(this);
+            }
         }
         return true;
     }
@@ -73,5 +84,12 @@ public class ToolInstanceHandler
             currentDurability = MaxDurability;
             OnDurabilityChanged?.Invoke(this);
         }
+    }
+
+    public override string ToString()
+    {
+        return data != null
+            ? $"{data.toolName} [{currentDurability}/{MaxDurability}]"
+            : $"<Null ToolData> [{currentDurability}/{MaxDurability}]";
     }
 }

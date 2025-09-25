@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a094a5b47462040bd963bfb7129a1cc0, type: 3}
-  m_Name: Pliers
+  m_Script: {fileID: 11500000, guid: 58f7261aa3a76e74cb1a00881306d9d2, type: 3}
+  m_Name: Faca
   m_EditorClassIdentifier: 
-  tipo: 1
-  toolName: Alicate
-  icon: {fileID: 5098028742389839143, guid: 7b9a839d9a99a9b4ea0a1014050ebf05, type: 3}
+  tipo: 0
+  toolName: Faca
+  icon: {fileID: 21300000, guid: 307efb5b8e0107646b484b4d3fd5324f, type: 3}
   maxDurability: 10
-  shopPrice: 50
-  scrapValue: 20
-  itemLevel: 0
+  shopPrice: 24
+  scrapValue: 0
+  itemLevel: 1

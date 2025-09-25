@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58f7261aa3a76e74cb1a00881306d9d2, type: 3}
-  m_Name: Hammer
+  m_Name: Faca2
   m_EditorClassIdentifier: 
-  toolName: 
-  icon: {fileID: 0}
-  maxDurability: 10
+  tipo: 0
+  toolName: Faca
+  icon: {fileID: 21300000, guid: b6bf7bbcd6c9714428958771db259c8a, type: 3}
+  maxDurability: 1000
   shopPrice: 50
   scrapValue: 0
-  itemLevel: 0
+  itemLevel: 2
