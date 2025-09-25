@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IOperavel
+public interface IOperavel : IInteractble
 {
     Sprite GetSprite();
     void IniciarOperacao();

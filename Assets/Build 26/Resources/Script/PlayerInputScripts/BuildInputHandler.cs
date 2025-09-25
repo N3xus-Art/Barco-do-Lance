@@ -1,3 +1,4 @@
+using System.Linq;
 using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -57,6 +58,18 @@ public class BuildInputHandler : MonoBehaviour{
        if(context.phase == InputActionPhase.Started){
        }else if (context.phase == InputActionPhase.Performed){
             if (isInteracting){
+                // Detecta objetos interagíveis próximos
+                var interagiveis = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).OfType<IInteractble>();
+                foreach (var obj in interagiveis)
+                {
+                    // Exemplo: verifica distância
+                    var mono = obj as MonoBehaviour;
+                    if (mono != null && Vector2.Distance(transform.position, mono.transform.position) < 3.0f)
+                    {
+                        obj.Interact();
+                        break;
+                    }
+                }
                 isInteracting = false;
             }else{
                 isInteracting = true;
