@@ -953,7 +953,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Index: 
-  Collider2D: {fileID: 0}
+  ison: 0
+  moneyGO: {fileID: 0}
+  moneytext: {fileID: 0}
 --- !u!1 &361174178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Index: 
-  Collider2D: {fileID: 0}
+  ison: 0
+  moneyGO: {fileID: 0}
+  moneytext: {fileID: 0}
 --- !u!1 &419471163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1329,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Index: 
-  Collider2D: {fileID: 0}
+  ison: 0
+  moneyGO: {fileID: 0}
+  moneytext: {fileID: 0}
 --- !u!1 &458624926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1999,7 +2005,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Index: 
-  Collider2D: {fileID: 0}
+  ison: 0
+  moneyGO: {fileID: 0}
+  moneytext: {fileID: 0}
 --- !u!1 &800495707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,7 +2448,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Index: 
-  Collider2D: {fileID: 0}
+  ison: 0
+  moneyGO: {fileID: 0}
+  moneytext: {fileID: 0}
 --- !u!1 &1037658492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3296,7 +3306,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Index: 
-  Collider2D: {fileID: 0}
+  ison: 0
+  moneyGO: {fileID: 0}
+  moneytext: {fileID: 0}
 --- !u!1 &1710843413
 GameObject:
   m_ObjectHideFlags: 0

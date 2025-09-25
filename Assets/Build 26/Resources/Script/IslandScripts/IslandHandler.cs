@@ -23,12 +23,16 @@ public class IslandHandler : MonoBehaviour{
     void OnTriggerExit2D(Collider2D other){
         Index = "";
         ison = false;
-    }
 
-    private void Update(){
-        if (ison){
+    }
+    private void Start(){
             moneyGO = GameObject.FindGameObjectWithTag("ShopMoneyText");
-            moneytext = moneyGO.GetComponent<TMP_Text>();
+            moneytext = moneyGO.GetComponent<TMP_Text>();    
+    }
+    private void Update(){
+        Debug.Log(moneyGO);
+        Debug.Log(moneytext);
+        if (ison){
             moneytext.SetText("Dinheiro: " + BuildInputHandler.dindin);
         }
     }

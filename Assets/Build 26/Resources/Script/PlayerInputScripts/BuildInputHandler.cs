@@ -17,7 +17,6 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] static public bool isClicking;
     [SerializeField] static public bool isDashing;
     [SerializeField] static public bool isDiagonal;
-    [SerializeField] static public float dindin;
     [Header("----Variaveis de Movimentação----")]
     [SerializeField] public float speed;
     [SerializeField] private float horizontalMoviment;
@@ -42,9 +41,7 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] private Sprite spriteModel;
     [SerializeField] private Sprite spriteBoat;
     [Header("----Variaveis de Loja----")]
-    [SerializeField] private Camera mainCamera;
-    [SerializeField] private Canvas shopCanvas;
-    [SerializeField] private GameObject Canvas;
+    [SerializeField] static public float playerMoney;
     #endregion
     //Input Methdos
     #region
@@ -127,7 +124,6 @@ public class BuildInputHandler : MonoBehaviour{
         rb = this.GetComponent<Rigidbody2D>();
         scene = SceneManager.GetActiveScene();
         playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
-        dindin = 100;
         if (scene.name == "MapScreen"){
             rb.gravityScale = 0f;
             playerModel.GetComponent<SpriteRenderer>().sprite = spriteBoat;
@@ -202,14 +198,6 @@ public class BuildInputHandler : MonoBehaviour{
             pointer.GetComponent<RectTransform>().rotation = Quaternion.Euler(0f, 0f, -rotation);
         #endregion
         //Canvas Update
-        #region
-        Canvas = GameObject.FindGameObjectWithTag("ShopCanvas");
-        if (Canvas != null)
-        {
-            shopCanvas = Canvas.GetComponent<Canvas>();
-            shopCanvas.worldCamera = mainCamera;
-        }
-        #endregion
     }
     #endregion
 }
