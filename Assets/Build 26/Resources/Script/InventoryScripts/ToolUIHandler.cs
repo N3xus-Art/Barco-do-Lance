@@ -23,8 +23,8 @@ public class EquippedToolUIHandler : MonoBehaviour
     {
         if (playerInventory != null)
         {
-            playerInventory.OnInventoryChanged += UpdateToolText;
-            playerInventory.OnEquippedToolChanged += UpdateToolText;
+            playerInventory.OnInventoryChanged -= UpdateToolText;
+            playerInventory.OnEquippedToolChanged -= UpdateToolText;
         }
     }
 

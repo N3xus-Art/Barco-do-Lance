@@ -8,12 +8,13 @@ using TMPro;
 using System.Collections.Generic;
 
 
-public class BuildInputHandler : MonoBehaviour{
+public class BuildInputHandler : MonoBehaviour {
     //Variables
     #region
     [Header("----Boleanas----")]
     [SerializeField] private bool isMoving;
     [SerializeField] static public bool isInteracting;
+    [SerializeField] static public bool isChangingItem;
     [SerializeField] static public bool isClicking;
     [SerializeField] static public bool isDashing;
     [SerializeField] static public bool isDiagonal;
@@ -42,55 +43,79 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] private Sprite spriteBoat;
     [Header("----Variaveis de Loja----")]
     [SerializeField] static public float playerMoney;
+    [Header("----Variaveis Item----")]
+    [SerializeField] private int itemIndex;
+    [SerializeField] private PlayerInventoryHandler playerInventory;
+    [SerializeField] private ToolDataHandler pliersData;
+    [SerializeField] private ToolDataHandler scissorsData;
+    [SerializeField] private ToolDataHandler knifeData;
     #endregion
     //Input Methdos
     #region
-    public void Move(InputAction.CallbackContext context){
-       if(context.phase == InputActionPhase.Started){
-       }else if (context.phase == InputActionPhase.Performed){
+    public void Move(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Started) {
+        } else if (context.phase == InputActionPhase.Performed) {
             horizontalMoviment = context.ReadValue<Vector2>().x;
             verticalMoviment = context.ReadValue<Vector2>().y;
             isMoving = true;
-            if (Mathf.Abs(horizontalMoviment) > 0 && Mathf.Abs(horizontalMoviment) < 1){
+            if (Mathf.Abs(horizontalMoviment) > 0 && Mathf.Abs(horizontalMoviment) < 1) {
                 horizontalMoviment = 1 * Mathf.Sign(horizontalMoviment);
             }
             if (!isDiagonal) {
-                if (horizontalMoviment != 0){
+                if (horizontalMoviment != 0) {
                     verticalMoviment = 0;
                 }
             }
-       }else if(context.phase == InputActionPhase.Canceled){
-           isMoving = false;
-       }
+        } else if (context.phase == InputActionPhase.Canceled) {
+            isMoving = false;
+        }
     }
-    public void Interact(InputAction.CallbackContext context){
-       if(context.phase == InputActionPhase.Started){
-       }else if (context.phase == InputActionPhase.Performed){
-            if (isInteracting){
+    public void Interact(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Started) {
+        } else if (context.phase == InputActionPhase.Performed) {
+            if (isInteracting) {
                 isInteracting = false;
-            }else{
+            } else {
                 isInteracting = true;
             }
-       }else if(context.phase == InputActionPhase.Canceled){
-       }
+        } else if (context.phase == InputActionPhase.Canceled) {
+        }
     }
-    public void Click(InputAction.CallbackContext context){
-        if(context.phase == InputActionPhase.Started){
+    public void Click(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Started) {
             isClicking = true;
-        }else if (context.phase == InputActionPhase.Performed){
-        }else if(context.phase == InputActionPhase.Canceled){
+        } else if (context.phase == InputActionPhase.Performed) {
+        } else if (context.phase == InputActionPhase.Canceled) {
             isClicking = false;
         }
     }
 
-    public void Dash(InputAction.CallbackContext context){
-        if(context.phase == InputActionPhase.Performed){
+    public void Dash(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
             isDashing = true;
-        }else if (context.phase == InputActionPhase.Canceled){
-            isDashing= false;
+        } else if (context.phase == InputActionPhase.Canceled) {
+            isDashing = false;
         }
 
     }
+
+    public void ChangeItem(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Started) {
+                isChangingItem = true;
+        } else if (context.phase == InputActionPhase.Performed) {
+
+        } else if (context.phase == InputActionPhase.Canceled) {
+            isChangingItem = false;
+        }
+    }
+
+     void showInventory(){
+        Debug.Log("\nLista de ferramentas:" + string.Join(", ", playerInventory.OwnedTools) +
+                  "\nDinheiro:" + playerInventory.Money +
+                  "\nFerramenta equipada: " + playerInventory.EquippedTool
+                  );
+     }
+
     #endregion
     //ContactCheck Methods
     #region
@@ -196,6 +221,56 @@ public class BuildInputHandler : MonoBehaviour{
             }
             rotation = -160f + (o2 / maxO2) * (160f - (-160f));
             pointer.GetComponent<RectTransform>().rotation = Quaternion.Euler(0f, 0f, -rotation);
+        #endregion
+        //Item Update
+        #region
+        if (isChangingItem) { 
+            playerInventory.EquipNext();
+            Debug.Log("Proxima ferramenta equipada: " + playerInventory.EquippedTool);
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (playerInventory.TryBuyTool(pliersData, out var tool))
+                Debug.Log("Comprou " + pliersData.toolName);
+            else
+                Debug.Log("Não conseguiu comprar o Alicate");
+            showInventory();
+        }
+
+        // T - Compra uma Tesoura
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (playerInventory.TryBuyTool(scissorsData, out var tool))
+                Debug.Log("Comprou " + scissorsData.toolName);
+            else
+                Debug.Log("Não conseguiu comprar a Tesoura");
+            showInventory();
+        }
+
+        // F - Compra uma Faca
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (playerInventory.TryBuyTool(knifeData, out var tool))
+                Debug.Log("Comprou " + knifeData.toolName);
+            else
+                Debug.Log("Não conseguiu comprar a Faca");
+            showInventory();
+        }
+
+        // U - Use Equipped Tool
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            bool success = playerInventory.TryUseEquipped();
+            Debug.Log(success ? "Usou a ferramenta equipada" : "Sem ferramentas para usar!");
+
+        }
+        // M - Upgrade ferramenta equipada
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Debug.Log("Tentando Upgrade ferramenta equipada");
+            playerInventory.UpgradeEquippedTool();
+            showInventory();
+        }
         #endregion
         //Canvas Update
     }

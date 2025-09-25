@@ -372,7 +372,19 @@ MonoBehaviour:
     m_ActionId: f92136d9-988b-47e6-9b05-6f7632fd3c68
     m_ActionName: 'Player/Secondary[/Keyboard/i]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6307744505160990472}
+        m_TargetAssemblyTypeName: BuildInputHandler, Assembly-CSharp
+        m_MethodName: ChangeItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: cf2015be-cd37-47ba-b039-6fa503b42f5b
     m_ActionName: 'Player/Tetriary[/Keyboard/q]'
   - m_PersistentCalls:
@@ -392,7 +404,19 @@ MonoBehaviour:
     m_ActionId: b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba
     m_ActionName: 'Player/Next[/Keyboard/2]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6307744505160990472}
+        m_TargetAssemblyTypeName: BuildInputHandler, Assembly-CSharp
+        m_MethodName: Dash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 641cd816-40e6-41b4-8c3d-04687c349290
     m_ActionName: 'Player/Sprint[/Keyboard/leftShift]'
   - m_PersistentCalls:
@@ -476,13 +500,18 @@ MonoBehaviour:
   o2: 100
   maxO2: 100
   o2Cost: 0.1
-  pointer: {fileID: 7310658176599443984}
+  pointer: {fileID: 0}
   scene:
     m_Handle: 0
   playerModel: {fileID: 3525301303533993492}
   spriteBase: {fileID: 21300000, guid: 5ab8891c6b0e0414bbc3a2bc3c4ab6ca, type: 3}
   spriteModel: {fileID: 21300000, guid: 5ab8891c6b0e0414bbc3a2bc3c4ab6ca, type: 3}
   spriteBoat: {fileID: 21300000, guid: 675a602e7b503e2428e10d59ae718434, type: 3}
+  itemIndex: 0
+  playerInventory: {fileID: 2296190767582020438}
+  pliersData: {fileID: 11400000, guid: 90405cae0f5cc65438c3baeb993f2def, type: 2}
+  scissorsData: {fileID: 11400000, guid: 15aeca2f3f0147d4eb4008261c08eed2, type: 2}
+  knifeData: {fileID: 11400000, guid: ed6b05d783c73b544840aadcacc97a9c, type: 2}
 --- !u!114 &2296190767582020438
 MonoBehaviour:
   m_ObjectHideFlags: 0
