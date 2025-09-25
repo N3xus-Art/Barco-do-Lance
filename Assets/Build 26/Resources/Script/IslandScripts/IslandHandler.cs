@@ -33,7 +33,7 @@ public class IslandHandler : MonoBehaviour{
         Debug.Log(moneyGO);
         Debug.Log(moneytext);
         if (ison){
-            moneytext.SetText("Dinheiro: " + BuildInputHandler.dindin);
+            moneytext.SetText("Dinheiro: " + BuildInputHandler.playerMoney);
         }
     }
 
