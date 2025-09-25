@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4945940800908542639}
   - component: {fileID: 1696554086842944619}
   - component: {fileID: 5795670570804755893}
-  - component: {fileID: 2679979050185671654}
   m_Layer: 5
   m_Name: SecondButton
   m_TagString: Untagged
@@ -121,7 +120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2679979050185671654}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Comprahandler, Assembly-CSharp
         m_MethodName: Comprar
         m_Mode: 1
@@ -133,22 +132,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &2679979050185671654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223730455501005317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a769b9de45570d408e92a711b4af3f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nome: Alicate
-  TelaConfirmacao: {fileID: 9145221965064010258}
-  Preco: 50
-  Confirmar: {fileID: 535402397706812849}
 --- !u!1 &384758411130403241
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,7 +894,6 @@ GameObject:
   - component: {fileID: 7153719904286685913}
   - component: {fileID: 2225610530869193026}
   - component: {fileID: 4016585620555649931}
-  - component: {fileID: 6549650055673754529}
   m_Layer: 5
   m_Name: DenyImage
   m_TagString: Untagged
@@ -1021,7 +1003,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6549650055673754529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ConfirmarHanddler, Assembly-CSharp
         m_MethodName: Cancelar
         m_Mode: 1
@@ -1033,22 +1015,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &6549650055673754529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3798888262310811399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2041997b0895ad34e8fb909612adc9ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  TelaConfirmacao: {fileID: 9145221965064010258}
-  TelaFaltaGrana: {fileID: 0}
-  Custo: 0
 --- !u!1 &3860216241675306059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1065,6 @@ GameObject:
   - component: {fileID: 4920988158119594459}
   - component: {fileID: 7080042188158238262}
   - component: {fileID: 5858714158184337183}
-  - component: {fileID: 535402397706812849}
   m_Layer: 5
   m_Name: ConfirmButton
   m_TagString: Untagged
@@ -1209,7 +1174,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 535402397706812849}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ConfirmarHanddler, Assembly-CSharp
         m_MethodName: Confirmar
         m_Mode: 1
@@ -1221,22 +1186,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &535402397706812849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3864639724405708978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2041997b0895ad34e8fb909612adc9ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  TelaConfirmacao: {fileID: 9145221965064010258}
-  TelaFaltaGrana: {fileID: 6823127935293785840}
-  Custo: 50
 --- !u!1 &5537592859110536730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +1336,6 @@ GameObject:
   - component: {fileID: 5650902908557702100}
   - component: {fileID: 3858201491574616864}
   - component: {fileID: 1098837930185427558}
-  - component: {fileID: 7144164686123856473}
   m_Layer: 5
   m_Name: PoorButton
   m_TagString: Untagged
@@ -1497,7 +1445,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7144164686123856473}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ConfirmarHanddler, Assembly-CSharp
         m_MethodName: Continuar
         m_Mode: 1
@@ -1509,22 +1457,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &7144164686123856473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6036341629375769451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2041997b0895ad34e8fb909612adc9ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  TelaConfirmacao: {fileID: 9145221965064010258}
-  TelaFaltaGrana: {fileID: 6823127935293785840}
-  Custo: 0
 --- !u!1 &6070998288249667673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,7 +1977,6 @@ GameObject:
   - component: {fileID: 6119625016721914535}
   - component: {fileID: 8520591178826324027}
   - component: {fileID: 4909680651500237355}
-  - component: {fileID: 3905525723005543630}
   m_Layer: 5
   m_Name: FirstButton
   m_TagString: Untagged
@@ -2154,7 +2085,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3905525723005543630}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Comprahandler, Assembly-CSharp
         m_MethodName: Comprar
         m_Mode: 1
@@ -2166,22 +2097,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &3905525723005543630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7503317275499428543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a769b9de45570d408e92a711b4af3f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nome: Faca
-  TelaConfirmacao: {fileID: 9145221965064010258}
-  Preco: 100
-  Confirmar: {fileID: 535402397706812849}
 --- !u!1 &7754554437665455961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,7 +2878,6 @@ GameObject:
   - component: {fileID: 8829553407937981235}
   - component: {fileID: 238991563862293451}
   - component: {fileID: 1866354958953913806}
-  - component: {fileID: 7704010860324079226}
   m_Layer: 5
   m_Name: ThirdButton
   m_TagString: Untagged
@@ -3072,7 +2986,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7704010860324079226}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Comprahandler, Assembly-CSharp
         m_MethodName: Comprar
         m_Mode: 1
@@ -3084,22 +2998,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &7704010860324079226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9042135339479130241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a769b9de45570d408e92a711b4af3f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nome: Tesoura
-  TelaConfirmacao: {fileID: 9145221965064010258}
-  Preco: 75
-  Confirmar: {fileID: 535402397706812849}
 --- !u!1 &9145221965064010258
 GameObject:
   m_ObjectHideFlags: 0
