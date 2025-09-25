@@ -2,6 +2,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
+using System.Reflection;
 
 public class DebackyHandler : MonoBehaviour {
     //Variables
@@ -35,10 +38,15 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private TMP_Text confirmTMP;
     [SerializeField] private Color acceptColor;
     [SerializeField] private Color endColor;
+    [SerializeField] private GameObject CurrentMissionGO;
+    [SerializeField] private int MissionID;
+
+
     #endregion
     //Methods
-    #region
+
     //Trigger Methods
+    #region
     private void OnTriggerEnter2D(Collider2D collision){
         inTrigger = true;
         keyGO.SetActive(true);
@@ -47,64 +55,54 @@ public class DebackyHandler : MonoBehaviour {
         inTrigger = false;
         keyGO.SetActive(false);
     }
+    #endregion
     //Tabs Methods
-    private void OnFirstTabClick(){
-        currentID = 0;
+    #region
+    private void OnTabClick(int TabIndex){
+
+        currentID = TabIndex;
+
+        //Import data to the canva
+        animalImage.sprite = avaliableMissions[currentID].animalSprite;
+        animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
+        missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
+        missionTMP.SetText($"Recompensa: {avaliableMissions[currentID].missionReward}");
+
     }
-    private void OnSecondTabClick(){
-        currentID = 1;
-    }
-    private void OnCentralTabClick(){
-        currentID = 2;
-    }
-    private void OnFourthTabClick(){
-        currentID = 3;
-    }
-    private void OnLastTabClick(){
-        currentID = 4;
-    }
+    #endregion
     //Missions Methods
+    #region
     public void AcceptMissions(){
         if (!onMission) { 
-        GameObject currentMission = new GameObject();
-        currentMission.name = "CurrentMission";
-        currentMission.AddComponent<CurrentMission>();
-        currentMission.GetComponent<CurrentMission>().missionReward = avaliableMissions[currentID].missionReward;
-        currentMission.GetComponent<CurrentMission>().RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
-        currentMission.GetComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
-        currentMission.GetComponent<CurrentMission>().Level = avaliableMissions[currentID].Level;
-        onMission = true;
+
+            GameObject currentMission = new GameObject();
+            currentMission.name = "CurrentMission";
+            currentMission.AddComponent<CurrentMission>();
+            currentMission.GetComponent<CurrentMission>().missionReward = avaliableMissions[currentID].missionReward;
+            currentMission.GetComponent<CurrentMission>().RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
+            currentMission.GetComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
+            currentMission.GetComponent<CurrentMission>().Level = avaliableMissions[currentID].Level;
+            CurrentMissionGO = currentMission;
+            onMission = true;
+
+
+            confirmButtonGO.GetComponent<Image>().color = endColor; // mudar isso dps, pra adicionar o botão vermelho
+            confirmTMP.SetText("Cancelar");
         }
     }
 
     public void EndMissions() {
         if (outMission){
-            money += GameObject.Find("CurrentMission").GetComponent<CurrentMission>().missionReward;
-            Destroy(GameObject.Find("CurrentMission"));
-            
+            money += CurrentMissionGO.GetComponent<CurrentMission>().missionReward;
+            Destroy(CurrentMissionGO);
 
-            if (currentID == 0)
-            {
-                foreach(ScriptableObjectMissions S in nextMissions)
-                {
+            SortMission(nextMissions,2);
 
-                    if (S.Level == 1)
-                    {
-                        nextMissions.Add(avaliableMissions[currentID]);
-                        avaliableMissions[currentID] = S;
-                        nextMissions.RemoveAt(nextMissions.IndexOf(S));
-
-                    }
-
-                }
-            }
-            else if (currentID == 2)
-            {
-
-
-            }
-            onMission = false;
+            confirmButtonGO.GetComponent<Image>().color = acceptColor; // mudar isso dps, pra adicionar o botão verde normal
+            confirmTMP.SetText("Aceitar");
             outMission = false;
+            onMission = false;
+
         }
     }
 
@@ -113,56 +111,97 @@ public class DebackyHandler : MonoBehaviour {
         if (onMission)
         {
 
-            Destroy(GameObject.Find("CurrentMission"));
+            money += CurrentMissionGO.GetComponent<CurrentMission>().CurrentReward;
+            Destroy(CurrentMissionGO);
             onMission = false;
-            money += GameObject.Find("CurrentMission").GetComponent<CurrentMission>().CurrentReward;
 
         }
 
     }
 
+    private void SortMission(List<ScriptableObjectMissions> MissionList, int MissionLevel = 0)
+    {
+        
+        if (MissionLevel != 0)
+        {
+            
+            var CapableMissions = new List<ScriptableObjectMissions>();
+
+            foreach (var Mission in MissionList)
+            {
+
+                if (Mission.Level == MissionLevel)
+                {
+
+                    CapableMissions.Add(Mission);
+
+                }
+
+            }
+
+            var Rand = Random.Range(0,CapableMissions.Count);
+
+            avaliableMissions[currentID] = CapableMissions[Rand];
+
+        }
+        else {
+
+
+            var Rand = Random.Range(0, MissionList.Count);
+
+            avaliableMissions[currentID] = MissionList[Rand];
+
+
+        }
+
+    }
+    #endregion
     //Unity Methods
+    #region
     private void Start(){
         //Tabs Handler
-        
-        firstButton.onClick.AddListener(OnFirstTabClick);
-        secondButton.onClick.AddListener(OnSecondTabClick);
-        centralButton.onClick.AddListener(OnCentralTabClick);
-        fourthButton.onClick.AddListener(OnFourthTabClick);
-        lastButton.onClick.AddListener(OnLastTabClick);
+
+        firstButton.onClick.AddListener(()=> { OnTabClick(0); });
+        secondButton.onClick.AddListener(() => { OnTabClick(1); });
+        centralButton.onClick.AddListener(() => { OnTabClick(2); });
+        fourthButton.onClick.AddListener(() => { OnTabClick(3); });
+        lastButton.onClick.AddListener(() => { OnTabClick(4); });
+
         //Confirm Button
+        
         confirmButton.onClick.AddListener(AcceptMissions);
         confirmButton.onClick.AddListener(EndMissions);
-        
+
+        //Inicialization data to the canva
+
+        animalImage.sprite = avaliableMissions[currentID].animalSprite;
+        animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
+        missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
+        missionTMP.SetText($"Recompensa: {avaliableMissions[currentID].missionReward}");
+
+
     }
     private void Update(){
         //Open DebackyScreen
+
         if (BuildInputHandler.isInteracting && inTrigger){
             debackyScreen.SetActive(true);
         }else if(!BuildInputHandler.isInteracting && inTrigger){
             debackyScreen.SetActive(false);
         }
+
         //Import data to the canva
         animalImage.sprite = avaliableMissions[currentID].animalSprite;
         animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
         missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
         missionTMP.SetText($"Recompensa: {avaliableMissions[currentID].missionReward}");
-        moneyTMP.SetText($"R${money}");
-        //Updates the confirm button
-        if (onMission){
-            confirmButtonGO.GetComponent<Image>().color = endColor;
-            confirmTMP.SetText("Cancelar");
-        }else {
-            confirmButtonGO.GetComponent<Image>().color = acceptColor;
-            confirmTMP.SetText("Aceitar");
-        }
-        if (!outMission && onMission && GameObject.Find("CurrentMission") != null && GameObject.Find("CurrentMission").GetComponent<CurrentMission>().End){ 
+
+        if (!outMission && onMission && CurrentMissionGO != null && CurrentMissionGO.GetComponent<CurrentMission>().End){ 
             outMission = true;
-        }
-        if (outMission){
             confirmTMP.SetText("Terminar Missão");
             confirmButtonGO.GetComponent<Image>().color = acceptColor;
         }
+        moneyTMP.SetText($"R${money}");
     }
     #endregion
 }
