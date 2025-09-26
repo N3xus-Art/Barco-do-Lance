@@ -62,11 +62,7 @@ public class DebackyHandler : MonoBehaviour {
 
         currentID = TabIndex;
 
-        //Import data to the canva
-        animalImage.sprite = avaliableMissions[currentID].animalSprite;
-        animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
-        missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
-        missionTMP.SetText($"Recompensa: {avaliableMissions[currentID].missionReward}");
+        ImportDataToCanva();
 
     }
     #endregion
@@ -94,9 +90,10 @@ public class DebackyHandler : MonoBehaviour {
     public void EndMissions() {
         if (outMission){
             money += CurrentMissionGO.GetComponent<CurrentMission>().missionReward;
+            moneyTMP.SetText($"R${money}");
             Destroy(CurrentMissionGO);
-
-            SortMission(nextMissions,2);
+            if (currentID == 1) { SortMission(nextMissions,currentID, 1); } else if (currentID == 2) { SortMission(nextMissions,currentID, 2); }else {  SortMission(nextMissions,currentID, 0);}
+                ImportDataToCanva();
 
             confirmButtonGO.GetComponent<Image>().color = acceptColor; // mudar isso dps, pra adicionar o botão verde normal
             confirmTMP.SetText("Aceitar");
@@ -119,7 +116,7 @@ public class DebackyHandler : MonoBehaviour {
 
     }
 
-    private void SortMission(List<ScriptableObjectMissions> MissionList, int MissionLevel = 0)
+    private void SortMission(List<ScriptableObjectMissions> MissionList,int ID, int MissionLevel = 0)
     {
         
         if (MissionLevel != 0)
@@ -141,20 +138,30 @@ public class DebackyHandler : MonoBehaviour {
 
             var Rand = Random.Range(0,CapableMissions.Count);
 
-            avaliableMissions[currentID] = CapableMissions[Rand];
+            avaliableMissions[ID] = CapableMissions[Rand];
+            
 
         }
         else {
 
-
             var Rand = Random.Range(0, MissionList.Count);
 
-            avaliableMissions[currentID] = MissionList[Rand];
-
+            avaliableMissions[ID] = MissionList[Rand];
 
         }
+            MissionList.Remove(avaliableMissions[ID]);
+    }
+
+    private void ImportDataToCanva(){
+
+        //Import data to the canva
+        animalImage.sprite = avaliableMissions[currentID].animalSprite;
+        animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
+        missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
+        missionTMP.SetText($"Recompensa: {avaliableMissions[currentID].missionReward}");
 
     }
+
     #endregion
     //Unity Methods
     #region
@@ -172,12 +179,14 @@ public class DebackyHandler : MonoBehaviour {
         confirmButton.onClick.AddListener(AcceptMissions);
         confirmButton.onClick.AddListener(EndMissions);
 
-        //Inicialization data to the canva
+        SortMission(nextMissions, 0, 1);
+        SortMission(nextMissions, 1, 2);
+        SortMission(nextMissions, 2, 0);
+        SortMission(nextMissions, 3, 0);
+        SortMission(nextMissions, 4, 0);
 
-        animalImage.sprite = avaliableMissions[currentID].animalSprite;
-        animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
-        missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
-        missionTMP.SetText($"Recompensa: {avaliableMissions[currentID].missionReward}");
+
+        ImportDataToCanva();
 
 
     }
@@ -190,18 +199,12 @@ public class DebackyHandler : MonoBehaviour {
             debackyScreen.SetActive(false);
         }
 
-        //Import data to the canva
-        animalImage.sprite = avaliableMissions[currentID].animalSprite;
-        animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
-        missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
-        missionTMP.SetText($"Recompensa: {avaliableMissions[currentID].missionReward}");
-
         if (!outMission && onMission && CurrentMissionGO != null && CurrentMissionGO.GetComponent<CurrentMission>().End){ 
             outMission = true;
             confirmTMP.SetText("Terminar Missão");
             confirmButtonGO.GetComponent<Image>().color = acceptColor;
         }
-        moneyTMP.SetText($"R${money}");
+        
     }
     #endregion
 }

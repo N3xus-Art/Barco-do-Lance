@@ -6914,6 +6914,26 @@ PrefabInstance:
       propertyPath: missionDescription
       value: 
       objectReference: {fileID: 467556803}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'avaliableMissions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'avaliableMissions.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'avaliableMissions.Array.data[2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'avaliableMissions.Array.data[3]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'avaliableMissions.Array.data[4]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3946145786480467425, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.134
