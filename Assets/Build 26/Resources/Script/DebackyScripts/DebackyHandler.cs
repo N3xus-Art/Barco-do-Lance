@@ -30,6 +30,7 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private Button centralButton;
     [SerializeField] private Button fourthButton;
     [SerializeField] private Button lastButton;
+    [SerializeField] private int MissionTabID = -1;
     [Header("----Variaveis de Confirmação----")]
     [SerializeField] private bool onMission = false;
     [SerializeField] private bool outMission = false;
@@ -39,7 +40,6 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private Color acceptColor;
     [SerializeField] private Color endColor;
     [SerializeField] private GameObject CurrentMissionGO;
-    [SerializeField] private int MissionID;
 
 
     #endregion
@@ -62,7 +62,19 @@ public class DebackyHandler : MonoBehaviour {
 
         currentID = TabIndex;
 
-        ImportDataToCanva();
+        if (currentID == MissionTabID && onMission) {
+
+            confirmButtonGO.SetActive(true);
+
+        }
+        else if(onMission)
+        {
+
+            confirmButtonGO.SetActive(false);
+
+        }
+
+            ImportDataToCanva();
 
     }
     #endregion
@@ -79,6 +91,7 @@ public class DebackyHandler : MonoBehaviour {
             currentMission.GetComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
             currentMission.GetComponent<CurrentMission>().Level = avaliableMissions[currentID].Level;
             CurrentMissionGO = currentMission;
+            MissionTabID = currentID;
             onMission = true;
 
 
@@ -92,8 +105,9 @@ public class DebackyHandler : MonoBehaviour {
             money += CurrentMissionGO.GetComponent<CurrentMission>().missionReward;
             moneyTMP.SetText($"R${money}");
             Destroy(CurrentMissionGO);
-            if (currentID == 1) { SortMission(nextMissions,currentID, 1); } else if (currentID == 2) { SortMission(nextMissions,currentID, 2); }else {  SortMission(nextMissions,currentID, 0);}
-                ImportDataToCanva();
+            if (currentID == 0) { SortMission(nextMissions,currentID, 1); } else if (currentID == 1) { SortMission(nextMissions,currentID, 2); }else {  SortMission(nextMissions,currentID, 0);}
+            
+            ImportDataToCanva();
 
             confirmButtonGO.GetComponent<Image>().color = acceptColor; // mudar isso dps, pra adicionar o botão verde normal
             confirmTMP.SetText("Aceitar");
@@ -149,7 +163,7 @@ public class DebackyHandler : MonoBehaviour {
             avaliableMissions[ID] = MissionList[Rand];
 
         }
-            MissionList.Remove(avaliableMissions[ID]);
+         if (avaliableMissions[ID].Level != 1) MissionList.Remove(avaliableMissions[ID]); 
     }
 
     private void ImportDataToCanva(){

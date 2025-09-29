@@ -6915,6 +6915,82 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 467556803}
     - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: nextMissions.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7f121eed37cb9d44198ed1597cc7b8ed, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a2be799aacb7ee14bb20dfc7a513b94c, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 697938501fdc37d4e98fd7d98210c8fe, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ab2d66d8e52be214fb97e4e0a6c31334, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f4b736efdccb003419056201f595d737, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 15e571ca19bf3b3408f4d9f2bfda1059, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b27feeddf1db994b84dbd9dd4aa4db4, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b9e8a913a4da0d44694a6386a434270d, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 60046aa46df56e34f9b25e25b6be6be8, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[9]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c44fc004db010374eaf8fee0ae7d9e85, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[10]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 380b881b3bcfce14fb914951c9fd3409, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[11]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d6827dff93cb80c44bb402fcfc56e4e6, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[12]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1992737484dd68f42bfa1f96518d2461, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[13]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a5b4357dc51c7e54b9a5bb5fa8e2d294, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[14]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 35b67d4ce48200d48b26dc77ab0c374f, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[15]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 072a6daf1d17c7f42845b505c1866d78, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[16]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a6c09bc867208c04d8b739e343867719, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
+      propertyPath: 'nextMissions.Array.data[17]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 074f55f794f01b14baf745814c3590e5, type: 2}
+    - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
       propertyPath: 'avaliableMissions.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
