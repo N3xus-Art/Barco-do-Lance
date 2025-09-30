@@ -9,7 +9,7 @@ public class ScriptableObjectMissions : ScriptableObject{
     [TextArea] public string missionDescription;
     [TextArea] public string animalDescription;
     public int missionID;
-    public float missionReward;
+    public int missionReward;
     public int rescueableAnimals;
     public int operableAnimals;
 }

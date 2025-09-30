@@ -12,8 +12,9 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private bool inTrigger;
     [SerializeField] private GameObject keyGO;
     [SerializeField] private GameObject debackyScreen;
+    [SerializeField] private PlayerInventoryHandler playerInventory;
     [Header("----Variaveis do Canvas----")]
-    [SerializeField] private float money;
+    [SerializeField] private int money;
     [SerializeField] private TMP_Text moneyTMP;
     [SerializeField] private Image animalImage;
     [SerializeField] private TMP_Text animalDescription;
@@ -103,7 +104,8 @@ public class DebackyHandler : MonoBehaviour {
     public void EndMissions() {
         if (outMission){
             money += CurrentMissionGO.GetComponent<CurrentMission>().missionReward;
-            moneyTMP.SetText($"R${money}");
+            playerInventory.Receive(money);
+            moneyTMP.SetText($"R${playerInventory.Money}");
             Destroy(CurrentMissionGO);
 
             
@@ -124,8 +126,8 @@ public class DebackyHandler : MonoBehaviour {
 
         if (onMission)
         {
-
             money += CurrentMissionGO.GetComponent<CurrentMission>().CurrentReward;
+            playerInventory.Receive(money);
             Destroy(CurrentMissionGO);
             onMission = false;
 
@@ -199,7 +201,6 @@ public class DebackyHandler : MonoBehaviour {
     }
     private void Update(){
         //Open DebackyScreen
-
         if (BuildInputHandler.isInteracting && inTrigger){
             debackyScreen.SetActive(true);
         }else if(!BuildInputHandler.isInteracting && inTrigger){
