@@ -1,11 +1,14 @@
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class EquippedToolUI : MonoBehaviour
 {
     public PlayerInventory playerInventory;
     public TextMeshProUGUI ToolText;
+    public Image image;
+    public Image ScrollUtil;
 
     private void OnEnable()
     {
@@ -13,17 +16,15 @@ public class EquippedToolUI : MonoBehaviour
         {
             playerInventory.OnInventoryChanged += UpdateToolText;
             playerInventory.OnEquippedToolChanged += UpdateToolText;
-        }
-
-            
+        }         
     }
 
     private void OnDisable()
     {
         if (playerInventory != null)
         {
-            playerInventory.OnInventoryChanged += UpdateToolText;
-            playerInventory.OnEquippedToolChanged += UpdateToolText;
+            playerInventory.OnInventoryChanged -= UpdateToolText;
+            playerInventory.OnEquippedToolChanged -= UpdateToolText;
         }
     }
 
@@ -33,26 +34,24 @@ public class EquippedToolUI : MonoBehaviour
     }
 
 
-    private void UpdateToolText(ToolInstance tool)
+    // Atualiza a UI da ferramenta equipada
+    private void UpdateToolUI(ToolInstance tool)
     {
-        if (playerInventory.EquippedTool != null)
+        if (ToolText == null || image == null || ScrollUtil == null) return;
+
+        var currentTool = tool ?? playerInventory?.EquippedTool;
+        if (currentTool != null)
         {
-            ToolText.text = $"Ferramenta atual: {tool.Data.toolName} ({tool.CurrentDurability}/{tool.MaxDurability})";
+            ToolText.text = $"Ferramenta atual: {currentTool.Data.toolName} ({currentTool.CurrentDurability}/{currentTool.MaxDurability})";
+            image.sprite = currentTool.Data.icon;
+            ScrollUtil.fillAmount = (float)currentTool.CurrentDurability / currentTool.MaxDurability;
         }
         else
         {
             ToolText.text = "Ferramenta atual: Nenhuma";
         }
     }
-    private void UpdateToolText()
-    {
-        if (playerInventory.EquippedTool != null)
-        {
-            ToolText.text = $"Ferramenta atual: {playerInventory.EquippedTool.Data.toolName} ({playerInventory.EquippedTool.CurrentDurability}/{playerInventory.EquippedTool.MaxDurability})";
-        }
-        else
-        {
-            ToolText.text = "Ferramenta atual: Nenhuma";
-        }
-}
+
+    private void UpdateToolText(ToolInstance tool) => UpdateToolUI(tool);
+    private void UpdateToolText() => UpdateToolUI(null);
 }

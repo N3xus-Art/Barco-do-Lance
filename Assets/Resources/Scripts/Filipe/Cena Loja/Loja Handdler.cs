@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class LojaHanddler : MonoBehaviour
 {
 
-public PlayerHandlerLoja Player;
-public TMP_Text Texto;
+    public PlayerHandlerLoja Player;
+    public TMP_Text Texto;
 
     void Update()
     {

@@ -3,10 +3,12 @@ using UnityEngine;
 public class CurrentMission : MonoBehaviour
 {
 
-    public float missionReward;
+    public int missionReward;
     public int RescueableAnimals;
     public int OperableAnimals;
     public bool End = false;
+    public int CurrentReward;
+    public int Level;
     
     void Update()
     {

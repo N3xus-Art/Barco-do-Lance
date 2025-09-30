@@ -3,8 +3,11 @@ using UnityEngine.InputSystem;
 
 public class ScriptDash : MonoBehaviour
 {
-    bool isDashing = false; 
+    bool isDashing = false;
+    public float O2cost;
+    public float O2;
 
+    
     public void Dash(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
@@ -18,12 +21,25 @@ public class ScriptDash : MonoBehaviour
 
     private void Update()
     {
+
         if (isDashing) {
 
-            gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x + (5 * Time.deltaTime) * gameObject.GetComponent<MoveTester>().horizontalMoviment, gameObject.transform.localPosition.y,gameObject.transform.localPosition.z);
-        
+            if (gameObject.GetComponent<MoveTester>().direction.x != 0 && O2 > 0)
+            {
+                gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x + (5 * Time.deltaTime * Mathf.Sign(gameObject.GetComponent<MoveTester>().direction.x)), gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
+                O2 -= O2cost;
+                Debug.Log(O2);
+            }
+
+            if (gameObject.GetComponent<MoveTester>().direction.y != 0 && O2 > 0)
+            {
+                gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y + (5 * Time.deltaTime * Mathf.Sign(gameObject.GetComponent<MoveTester>().direction.y)), gameObject.transform.localPosition.z);
+                O2 -= O2cost;
+                Debug.Log(O2);
+
+            }
         }
 
-        gameObject.GetComponent<Transform>().localScale = new Vector3(gameObject.GetComponent<MoveTester>().horizontalMoviment, 1,1);
+        
     }
 }

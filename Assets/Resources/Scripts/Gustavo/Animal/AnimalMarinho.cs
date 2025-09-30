@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class AnimalMarinho : MonoBehaviour
 {
     [Header("Características Básicas")]
-    public string nome;
+    protected string nome;
     public float velocidade;
     public float tamanho;
     private Vector2 targetPosition;
@@ -28,7 +28,27 @@ public abstract class AnimalMarinho : MonoBehaviour
 
     private Vector2 GetRandomTargetPosition()
     {
-        //limites da área de movimento
+        // Verifica se o objeto tem um pai  
+        if (transform.parent != null)
+        {
+            // Obtém o tamanho do objeto pai  
+            var parentTransform = transform.parent;
+            var parentRenderer = parentTransform.GetComponent<Renderer>();
+
+            if (parentRenderer != null)
+            {
+                // Calcula os limites com base no tamanho do Renderer do pai  
+                Bounds bounds = parentRenderer.bounds;
+                float parentMinX = bounds.min.x;
+                float parentMaxX = bounds.max.x;
+                float parentMinY = bounds.min.y;
+                float parentMaxY = bounds.max.y;
+
+                return new Vector2(Random.Range(parentMinX, parentMaxX), Random.Range(parentMinY, parentMaxY));
+            }
+        }
+
+        // Caso não tenha um pai ou o pai não tenha um Renderer, retorna um valor padrão  
         float minX = -10f, maxX = 10f, minY = -5f, maxY = 5f;
         return new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
     }

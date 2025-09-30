@@ -30,6 +30,9 @@ Transform:
   m_LocalScale: {x: 21.9, y: 38, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2315309789080921715}
+  - {fileID: 8548889848667701712}
+  - {fileID: 8606572370713079942}
   - {fileID: 726554559103897879}
   - {fileID: 2269073469150282792}
   m_Father: {fileID: 0}
@@ -184,7 +187,7 @@ Transform:
   m_GameObject: {fileID: 3162359351988178993}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.215, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -224,7 +227,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.61847013, y: 0.21020007}
+  m_Offset: {x: 0.60809046, y: 0.26075536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -234,8 +237,112 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.24828255, y: 1.4204006}
+  m_Size: {x: 0.21676075, y: 1.5215079}
   m_EdgeRadius: 0
+--- !u!1 &4489760378499620426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8606572370713079942}
+  - component: {fileID: 8261684623453131764}
+  m_Layer: 0
+  m_Name: AnimalSpawerHard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8606572370713079942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489760378499620426}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.331, z: 0.16014029}
+  m_LocalScale: {x: 0.0456621, y: 0.026315788, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2481994306150425288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8261684623453131764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489760378499620426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6564df3bfbb8c4296ccf6889202a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalPrefabs:
+  - {fileID: 3997299628125722017, guid: 309bf7aaf9518d04a85d729de133f0a9, type: 3}
+  - {fileID: 3997299628125722017, guid: 5a8b807129794854cade4f7b09a09c4d, type: 3}
+  minX: 0
+  maxX: -19.93
+  minY: 0
+  maxY: 11.09
+  boxSize: {x: -19.93, y: 11.09}
+--- !u!1 &6950185828729703328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2315309789080921715}
+  - component: {fileID: 1814560170727688614}
+  m_Layer: 0
+  m_Name: AnimalSpawerEasy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2315309789080921715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950185828729703328}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.33, z: 0.16014029}
+  m_LocalScale: {x: 0.0456621, y: 0.026315788, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2481994306150425288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814560170727688614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950185828729703328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6564df3bfbb8c4296ccf6889202a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalPrefabs:
+  - {fileID: 2832956871920246886, guid: f4da5bf2782ade743ac3a7776cc1e735, type: 3}
+  - {fileID: 2228100970441931406, guid: 5aa11d6e8979c9a468df0b7758247433, type: 3}
+  minX: 0
+  maxX: -19.93
+  minY: 0
+  maxY: 11.09
+  boxSize: {x: -19.93, y: 11.09}
 --- !u!1 &7043950697031139624
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +508,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8240403087386300895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8548889848667701712}
+  - component: {fileID: 5902047307960992906}
+  m_Layer: 0
+  m_Name: AnimalSpawerMid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8548889848667701712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8240403087386300895}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0.16014029}
+  m_LocalScale: {x: 0.0456621, y: 0.026315788, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2481994306150425288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5902047307960992906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8240403087386300895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6564df3bfbb8c4296ccf6889202a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalPrefabs:
+  - {fileID: 5535530233051476922, guid: be8c51d1dcdafbc43b6b31f924e4fca1, type: 3}
+  - {fileID: 5769674068124204445, guid: b8061febfda26b5449704e934e907e5c, type: 3}
+  minX: 0
+  maxX: -19.93
+  minY: 0
+  maxY: 11.09
+  boxSize: {x: -19.93, y: 11.09}
 --- !u!1 &8585151301389231200
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,9 +9,21 @@ public class Foca : AnimalMarinho, IOperavel
         velocidade = 5.0f;
         tamanho = 1.5f; // 1.5m
     }
-
-     public void Operar()
+    public Sprite GetSprite()
     {
-        Debug.Log("Você está operando a foca!");
+        return gameObject.GetComponent<SpriteRenderer>().sprite;
+    }
+    public void IniciarOperacao()
+    {
+        Time.timeScale = 0f;
+        OperacaoUI.Instance.AbrirOperacao(this);
+    }
+    public void FinalizarOperacao()
+    {
+        Debug.Log("Operação finalizada na foca.");
+    }
+    private void OnMouseDown()
+    {
+        IniciarOperacao();
     }
 }

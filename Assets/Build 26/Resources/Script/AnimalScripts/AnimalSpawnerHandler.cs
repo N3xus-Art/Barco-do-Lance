@@ -18,7 +18,6 @@ public class AnimalSpawnerHandler : MonoBehaviour{
             SpawnAnimal();
         }
     }
-
     void SpawnAnimal(){
         // Escolhe um prefab aleatoriamente do array
         GameObject animalToSpawn = animalPrefabs[Random.Range(0, animalPrefabs.Length)];

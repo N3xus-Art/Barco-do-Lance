@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public static PlayerInventory Instance { get; private set; }
+
     [Header("Dinheiro")]
     [SerializeField] public int Money = 100;
 
@@ -30,6 +32,13 @@ public class PlayerInventory : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
         RaiseMoneyChanged();
         RaiseInventoryChanged();
     }
@@ -59,6 +68,13 @@ public class PlayerInventory : MonoBehaviour
         instance = null;
         if (data == null) return false;
         if (!HasFreeSlot) return false;
+
+        // Impede a adição de itens únicos duplicados
+        if (ownedTools.Any(t => t.Data.toolName == data.toolName))
+        {
+            Debug.Log("Item duplicado: " + data.toolName);
+            return false;
+        }
 
         instance = new ToolInstance(data);
         ownedTools.Add(instance);
@@ -115,9 +131,76 @@ public class PlayerInventory : MonoBehaviour
         OnEquippedToolChanged?.Invoke(ownedTools[idx]);
     }
 
+    public void EquipToolByType(TipoFerramenta tipo)
+    {
+        var toolToEquip = ownedTools.FirstOrDefault(t => t.Data.tipo == tipo && !t.IsBroken);
+        if (toolToEquip != null)
+        {
+            Equip(toolToEquip.InstanceId);
+        }
+        else
+        {
+            Debug.Log($"Nenhuma ferramenta do tipo {tipo} encontrada no inventário.");
+        }
+    }
+
+    // --- Wrappers para botões da Unity ---
+    public void EquipFaca() => EquipToolByType(TipoFerramenta.Faca);
+    public void EquipAlicate() => EquipToolByType(TipoFerramenta.Alicate);
+    public void EquipTesoura() => EquipToolByType(TipoFerramenta.Tesoura);
+
+    public void UpgradeEquippedTool()
+    {
+        var equippedTool = EquippedTool;
+        if (equippedTool == null)
+        {
+            Debug.Log("Nenhuma ferramenta equipada para dar upgrade.");
+            return;
+        }
+
+        ToolData currentToolData = equippedTool.Data;
+        int nextLevel = currentToolData.itemLevel + 1;
+        string nextToolName = currentToolData.toolName;
+
+        // Assumindo que a convenção de nomeação para o ScriptableObject é ToolName+Level, por exemplo, Scissors2
+        string resourcePath = $"Scripts/Marcelo/Tools/{nextToolName}{nextLevel}";
+
+        ToolData nextToolData = Resources.Load<ToolData>(resourcePath);
+
+        if (nextToolData == null)
+        {
+            Debug.LogError($"Não foi possível encontrar o ToolData para o próximo nível em: {resourcePath}");
+            return;
+        }
+
+        // Remove a ferramenta antiga
+        int oldToolIndex = ownedTools.FindIndex(t => t.InstanceId == equippedInstanceId);
+        if (oldToolIndex != -1)
+        {
+            ownedTools.RemoveAt(oldToolIndex);
+        }
+
+        // Adiciona a nova ferramenta
+        var newToolInstance = new ToolInstance(nextToolData);
+        if (oldToolIndex != -1)
+        {
+            ownedTools.Insert(oldToolIndex, newToolInstance);
+        }
+        else
+        {
+            ownedTools.Add(newToolInstance);
+        }
+
+        // Equipa a nova ferramenta
+        Equip(newToolInstance.InstanceId);
+
+        Debug.Log($"Ferramenta {currentToolData.toolName} atualizada para o nível {nextLevel}!");
+        RaiseInventoryChanged();
+    }
+
     // ---------- Use (wear) ----------
 
-    /// Uses the currently equipped tool (wearAmount default 1). Returns false if none or broken.
+    /// Usa a ferramenta equipada (wearAmount default 1). Retorna false se nenhuma ou quebrada.
     public bool TryUseEquipped(int wearAmount = 1)
     {
         var tool = EquippedTool;
@@ -131,43 +214,61 @@ public class PlayerInventory : MonoBehaviour
             EquipNext();
         }
 
-        // Notify UI that a tool inside inventory changed state
+        // Notifica a UI que uma ferramenta dentro do inventário mudou de estado
         RaiseInventoryChanged();
         return true;
     }
 
     // ---------- Buy / Scrap ----------
-    // Buys a brand-new tool using its shopPrice. Returns the new instance if successful.
+    // Compra uma nova ferramenta usando seu preço de loja. Retorna a nova instância se bem-sucedido.
     public bool TryBuyTool(ToolData data, out ToolInstance instance)
     {
         instance = null;
-        if (data == null) return false;
-        if (!HasFreeSlot) return false;
-        if (!CanAfford(data.shopPrice)) return false;
+        Debug.Log("Iniciando tentativa de compra de ferramenta...");
 
-        if (!Spend(data.shopPrice)) return false;
+        if (data == null)
+        {
+            Debug.LogWarning("Falha na compra: ToolData é nulo.");
+            return false;
+        }
 
+        if (!HasFreeSlot)
+        {
+            Debug.LogWarning("Falha na compra: Não há slots livres no inventário.");
+            return false;
+        }
+
+        if (!CanAfford(data.shopPrice))
+        {
+            Debug.LogWarning($"Falha na compra: Dinheiro insuficiente. Preço: {data.shopPrice}, Dinheiro atual: {Money}");
+            return false;
+        }
+
+        if (!Spend(data.shopPrice))
+        {
+            Debug.LogError("Falha na compra: Não foi possível gastar o dinheiro.");
+            return false;
+        }
+
+        Debug.Log($"Tentando adicionar a ferramenta '{data.toolName}' ao inventário...");
         bool added = TryAddTool(data, out instance);
         if (!added)
         {
-            // roll back spend if something went wrong
+            Debug.LogWarning($"Falha ao adicionar a ferramenta '{data.toolName}'. Realizando rollback...");
             Receive(data.shopPrice);
             instance = null;
             return false;
         }
+
+        Debug.Log($"Ferramenta '{data.toolName}' comprada com sucesso e adicionada ao inventário.");
         return true;
     }
-
-    // Scraps a BROKEN tool for cash. Returns false if the tool isn't broken.
-    public bool TryScrapBroken(string instanceId, out int payout)
+    // Descarta uma ferramenta quebrada. Retorna false se a tool não estiver quebrada.
+    public bool TryScrapBroken(string instanceId)
     {
-        payout = 0;
         var tool = GetToolById(instanceId);
         if (tool == null) return false;
         if (!tool.IsBroken) return false;
-
-        payout = tool.Data.scrapValue;
-        Receive(payout);
         RemoveToolById(instanceId);
         return true;
     }

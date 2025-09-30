@@ -3,8 +3,9 @@ using UnityEngine;
 public class DebugInventoryTester : MonoBehaviour
 {
     public PlayerInventory playerInventory;
-    public ToolData hammerData;
+    public ToolData pliersData;
     public ToolData scissorsData;
+    public ToolData knifeData;
 
     void showInventory()
     {
@@ -16,13 +17,13 @@ public class DebugInventoryTester : MonoBehaviour
 
     void Update()
     {
-        // M - Compra um Martelo
-        if (Input.GetKeyDown(KeyCode.M))
+        // P - Compra um Alicate
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            if (playerInventory.TryBuyTool(hammerData, out var tool))
-                Debug.Log("Comprou " + hammerData.toolName);
+            if (playerInventory.TryBuyTool(pliersData, out var tool))
+                Debug.Log("Comprou " + pliersData.toolName);
             else
-                Debug.Log("Não conseguiu comprar o Martelo");
+                Debug.Log("Não conseguiu comprar o Alicate");
             showInventory();
         }
 
@@ -30,9 +31,19 @@ public class DebugInventoryTester : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             if (playerInventory.TryBuyTool(scissorsData, out var tool))
-                Debug.Log("Bought " + scissorsData.toolName);
+                Debug.Log("Comprou " + scissorsData.toolName);
             else
-                Debug.Log("Não conseguiu comprar o Martelo");
+                Debug.Log("Não conseguiu comprar a Tesoura");
+            showInventory();
+        }
+
+        // F - Compra uma Faca
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (playerInventory.TryBuyTool(knifeData, out var tool))
+                Debug.Log("Comprou " + knifeData.toolName);
+            else
+                Debug.Log("Não conseguiu comprar a Faca");
             showInventory();
         }
 
@@ -44,24 +55,20 @@ public class DebugInventoryTester : MonoBehaviour
 
         }
 
-        // X - Vende a ferramenta quebrada
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            var equipped = playerInventory.EquippedTool;
-            if (equipped != null)
-            {
-                if (playerInventory.TryScrapBroken(equipped.InstanceId, out int payout))
-                    Debug.Log($"Scrapped {equipped.Data.toolName} for {payout} coins");
-                else
-                    Debug.Log("Equipped tool is not broken yet!");
-            }
-        }
 
         // E - Equipa a proxima ferramenta
         if (Input.GetKeyDown(KeyCode.E))
         {
             playerInventory.EquipNext();
             Debug.Log("Proxima ferramenta equipada: " + playerInventory.EquippedTool);
+        }
+
+        // M - Upgrade ferramenta equipada
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Debug.Log("Tentando Upgrade ferramenta equipada");
+            playerInventory.UpgradeEquippedTool();
+            showInventory();
         }
     }
 }
