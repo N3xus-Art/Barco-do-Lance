@@ -2,9 +2,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEngine.EventSystems;
-using UnityEngine.Rendering;
-using System.Reflection;
+using Unity.VisualScripting;
+using System.Linq;
 
 public class DebackyHandler : MonoBehaviour {
     //Variables
@@ -95,8 +94,9 @@ public class DebackyHandler : MonoBehaviour {
             onMission = true;
 
 
-            confirmButtonGO.GetComponent<Image>().color = endColor; // mudar isso dps, pra adicionar o botão vermelho
-            confirmTMP.SetText("Cancelar");
+            
+            confirmButton.interactable = false;
+            confirmTMP.SetText("Em Missão");
         }
     }
 
@@ -105,6 +105,9 @@ public class DebackyHandler : MonoBehaviour {
             money += CurrentMissionGO.GetComponent<CurrentMission>().missionReward;
             moneyTMP.SetText($"R${money}");
             Destroy(CurrentMissionGO);
+
+            
+
             if (currentID == 0) { SortMission(nextMissions,currentID, 1); } else if (currentID == 1) { SortMission(nextMissions,currentID, 2); }else {  SortMission(nextMissions,currentID, 0);}
             
             ImportDataToCanva();
@@ -132,16 +135,13 @@ public class DebackyHandler : MonoBehaviour {
 
     private void SortMission(List<ScriptableObjectMissions> MissionList,int ID, int MissionLevel = 0)
     {
-        
-        if (MissionLevel != 0)
-        {
             
-            var CapableMissions = new List<ScriptableObjectMissions>();
+        var CapableMissions = new List<ScriptableObjectMissions>();
 
-            foreach (var Mission in MissionList)
+        foreach (var Mission in MissionList)
             {
 
-                if (Mission.Level == MissionLevel)
+                if ( ( (Mission.Level == MissionLevel && Mission != avaliableMissions[ID]) || (MissionLevel == 0) ) && !avaliableMissions.Contains(Mission) )
                 {
 
                     CapableMissions.Add(Mission);
@@ -150,20 +150,13 @@ public class DebackyHandler : MonoBehaviour {
 
             }
 
-            var Rand = Random.Range(0,CapableMissions.Count);
+        var Rand = Random.Range(0,CapableMissions.Count);
 
-            avaliableMissions[ID] = CapableMissions[Rand];
-            
+        avaliableMissions[ID] = CapableMissions[Rand];
+        
 
-        }
-        else {
-
-            var Rand = Random.Range(0, MissionList.Count);
-
-            avaliableMissions[ID] = MissionList[Rand];
-
-        }
-         if (avaliableMissions[ID].Level != 1) MissionList.Remove(avaliableMissions[ID]); 
+        
+        if (avaliableMissions[ID].Level == 3) MissionList.Remove(avaliableMissions[ID]); 
     }
 
     private void ImportDataToCanva(){
@@ -216,6 +209,7 @@ public class DebackyHandler : MonoBehaviour {
         if (!outMission && onMission && CurrentMissionGO != null && CurrentMissionGO.GetComponent<CurrentMission>().End){ 
             outMission = true;
             confirmTMP.SetText("Terminar Missão");
+            confirmButton.interactable = true;
             confirmButtonGO.GetComponent<Image>().color = acceptColor;
         }
         
