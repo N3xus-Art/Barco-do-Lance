@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScriptableObjectMissions : ScriptableObject{
     public string missionName;
     public Sprite animalSprite;
+    [Range(1,3)]public int Level = 1;
     [TextArea] public string missionDescription;
     [TextArea] public string animalDescription;
     public int missionID;
