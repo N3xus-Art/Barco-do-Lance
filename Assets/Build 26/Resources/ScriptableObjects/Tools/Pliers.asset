@@ -16,6 +16,6 @@ MonoBehaviour:
   toolName: Alicate
   icon: {fileID: 21300000, guid: 730d425396debe547b9a4e603e4cf917, type: 3}
   maxDurability: 1000
-  shopPrice: 50
+  shopPrice: 30
   scrapValue: 0
   itemLevel: 3

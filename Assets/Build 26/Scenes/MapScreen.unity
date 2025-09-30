@@ -1052,6 +1052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
+  playerInventory: {fileID: 2104679773}
   shopGO: {fileID: 844576876}
   normalScreen: {fileID: 844576875}
   confirmScreen: {fileID: 844576874}
@@ -1063,16 +1064,19 @@ MonoBehaviour:
   firstItemName: Aquario nv1
   firstItemPrice: 10
   firstGameObject: {fileID: 1918866733}
+  firstData: {fileID: 0}
   firstItemText: {fileID: 1867311056}
   firstSprite: {fileID: 21300000, guid: 9573060ffb26dce4b869721fbf81f448, type: 3}
   secondItemName: Aquario nv2
   secondItemPrice: 20
   secondGameObject: {fileID: 272742891}
+  secondData: {fileID: 0}
   secondItemText: {fileID: 1235344750}
   secondSprite: {fileID: 21300000, guid: 64194901b6596ad44b9fe18668a17fae, type: 3}
   thirdItemName: Aquario nv3
   thirdItemPrice: 30
   thirdGameObject: {fileID: 710831335}
+  thirdData: {fileID: 0}
   thirdItemText: {fileID: 1102731428}
   thirdSprite: {fileID: 6528339877313051009, guid: beead88ca70433746837a5926c528315, type: 3}
   firstButton: {fileID: 844576870}
@@ -1464,6 +1468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
+  playerInventory: {fileID: 2104679773}
   shopGO: {fileID: 1596484573}
   normalScreen: {fileID: 1596484576}
   confirmScreen: {fileID: 1596484575}
@@ -1475,16 +1480,19 @@ MonoBehaviour:
   firstItemName: Test1
   firstItemPrice: 10
   firstGameObject: {fileID: 25497288}
+  firstData: {fileID: 0}
   firstItemText: {fileID: 161133531}
   firstSprite: {fileID: 21300000, guid: 0175435363412b743928fd450047fb12, type: 3}
   secondItemName: Test2
   secondItemPrice: 20
   secondGameObject: {fileID: 1401648025}
+  secondData: {fileID: 0}
   secondItemText: {fileID: 1769964547}
   secondSprite: {fileID: 21300000, guid: 5e5269958ed8adf418039b07bd6bb720, type: 3}
   thirdItemName: Test3
   thirdItemPrice: 30
   thirdGameObject: {fileID: 1269709843}
+  thirdData: {fileID: 0}
   thirdItemText: {fileID: 1292582331}
   thirdSprite: {fileID: 21300000, guid: fab8107cd3bc8954887f48feec0c287b, type: 3}
   firstButton: {fileID: 733393419}
@@ -2457,6 +2465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
+  playerInventory: {fileID: 2104679773}
   shopGO: {fileID: 1370829733}
   normalScreen: {fileID: 1370829732}
   confirmScreen: {fileID: 1370829731}
@@ -2468,16 +2477,19 @@ MonoBehaviour:
   firstItemName: Faca
   firstItemPrice: 10
   firstGameObject: {fileID: 273556626}
+  firstData: {fileID: 11400000, guid: ed6b05d783c73b544840aadcacc97a9c, type: 2}
   firstItemText: {fileID: 675436066}
   firstSprite: {fileID: 21300000, guid: 307efb5b8e0107646b484b4d3fd5324f, type: 3}
   secondItemName: 'Tesoura '
   secondItemPrice: 20
   secondGameObject: {fileID: 1626020841}
+  secondData: {fileID: 11400000, guid: 15aeca2f3f0147d4eb4008261c08eed2, type: 2}
   secondItemText: {fileID: 639767327}
   secondSprite: {fileID: 21300000, guid: b6bf7bbcd6c9714428958771db259c8a, type: 3}
   thirdItemName: Alicate
   thirdItemPrice: 30
   thirdGameObject: {fileID: 1985350435}
+  thirdData: {fileID: 11400000, guid: 90405cae0f5cc65438c3baeb993f2def, type: 2}
   thirdItemText: {fileID: 285396229}
   thirdSprite: {fileID: 21300000, guid: 730d425396debe547b9a4e603e4cf917, type: 3}
   firstButton: {fileID: 1370829727}
@@ -2670,6 +2682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
+  playerInventory: {fileID: 2104679773}
   shopGO: {fileID: 199464025}
   normalScreen: {fileID: 199464024}
   confirmScreen: {fileID: 199464023}
@@ -2681,16 +2694,19 @@ MonoBehaviour:
   firstItemName: Rede 1
   firstItemPrice: 10
   firstGameObject: {fileID: 322349308}
+  firstData: {fileID: 0}
   firstItemText: {fileID: 153746863}
   firstSprite: {fileID: 21300000, guid: 940ba8faf38d3204982ab54a9fdffa75, type: 3}
   secondItemName: Rede 2
   secondItemPrice: 20
   secondGameObject: {fileID: 2043443493}
+  secondData: {fileID: 0}
   secondItemText: {fileID: 1090697649}
   secondSprite: {fileID: 21300000, guid: 31ac2b936cd77a64c821f00c2de9091e, type: 3}
   thirdItemName: Rede 3
   thirdItemPrice: 30
   thirdGameObject: {fileID: 738369172}
+  thirdData: {fileID: 0}
   thirdItemText: {fileID: 2143000565}
   thirdSprite: {fileID: 6528339877313051009, guid: beead88ca70433746837a5926c528315, type: 3}
   firstButton: {fileID: 199464019}
@@ -3041,6 +3057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
+  playerInventory: {fileID: 2104679773}
   shopGO: {fileID: 2091101553}
   normalScreen: {fileID: 2091101552}
   confirmScreen: {fileID: 2091101551}
@@ -3052,16 +3069,19 @@ MonoBehaviour:
   firstItemName: Tank1
   firstItemPrice: 10
   firstGameObject: {fileID: 575150483}
+  firstData: {fileID: 0}
   firstItemText: {fileID: 1195592054}
   firstSprite: {fileID: 21300000, guid: 079c2f8cde2086e45a78bce007c8aff6, type: 3}
   secondItemName: Tank2
   secondItemPrice: 20
   secondGameObject: {fileID: 505376297}
+  secondData: {fileID: 0}
   secondItemText: {fileID: 2102002898}
   secondSprite: {fileID: 21300000, guid: 07e0c284c079a3e4190f3bcbf9415638, type: 3}
   thirdItemName: Tank3
   thirdItemPrice: 30
   thirdGameObject: {fileID: 904579971}
+  thirdData: {fileID: 0}
   thirdItemText: {fileID: 1594868033}
   thirdSprite: {fileID: 21300000, guid: 11a4871502255a84e99c046ddf815e26, type: 3}
   firstButton: {fileID: 2091101547}
@@ -3684,6 +3704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
+  playerInventory: {fileID: 2104679773}
   shopGO: {fileID: 2026072171}
   normalScreen: {fileID: 2026072170}
   confirmScreen: {fileID: 2026072169}
@@ -3695,16 +3716,19 @@ MonoBehaviour:
   firstItemName: Test1
   firstItemPrice: 10
   firstGameObject: {fileID: 1391894569}
+  firstData: {fileID: 0}
   firstItemText: {fileID: 700296578}
   firstSprite: {fileID: 21300000, guid: 6d5b955ec2324504bb8c68d118339db0, type: 3}
   secondItemName: Test2
   secondItemPrice: 20
   secondGameObject: {fileID: 1400178854}
+  secondData: {fileID: 0}
   secondItemText: {fileID: 140253582}
   secondSprite: {fileID: 21300000, guid: 675a602e7b503e2428e10d59ae718434, type: 3}
   thirdItemName: Test3
   thirdItemPrice: 30
   thirdGameObject: {fileID: 1545661011}
+  thirdData: {fileID: 0}
   thirdItemText: {fileID: 325667079}
   thirdSprite: {fileID: 21300000, guid: d27b028e0fb293446b916324c31b962c, type: 3}
   firstButton: {fileID: 2026072165}
@@ -5976,6 +6000,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3211765220757160149, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
   m_PrefabInstance: {fileID: 2104679771}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2104679773 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2296190767582020438, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+  m_PrefabInstance: {fileID: 2104679771}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a360784317ea85b4ebc453b283ab1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2125483703
 GameObject:
   m_ObjectHideFlags: 0

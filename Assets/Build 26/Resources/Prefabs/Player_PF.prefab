@@ -500,7 +500,7 @@ MonoBehaviour:
   o2: 100
   maxO2: 100
   o2Cost: 0.1
-  pointer: {fileID: 0}
+  pointer: {fileID: 7310658176599443984}
   scene:
     m_Handle: 0
   playerModel: {fileID: 3525301303533993492}

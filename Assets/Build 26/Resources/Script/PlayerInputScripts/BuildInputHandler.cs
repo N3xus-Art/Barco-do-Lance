@@ -11,6 +11,7 @@ using System.Collections.Generic;
 public class BuildInputHandler : MonoBehaviour {
     //Variables
     #region
+    public static BuildInputHandler Instance { get; private set; }
     [Header("----Boleanas----")]
     [SerializeField] private bool isMoving;
     [SerializeField] static public bool isInteracting;
@@ -101,7 +102,7 @@ public class BuildInputHandler : MonoBehaviour {
 
     public void ChangeItem(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Started) {
-                isChangingItem = true;
+            isChangingItem = true;
         } else if (context.phase == InputActionPhase.Performed) {
 
         } else if (context.phase == InputActionPhase.Canceled) {
@@ -198,7 +199,9 @@ public class BuildInputHandler : MonoBehaviour {
         #endregion
         //Interact Update
         #region
-        if (isInteracting){
+            if (isInteracting){
+                bool success = playerInventory.TryUseEquipped();
+                Debug.Log(success ? "Usou a ferramenta equipada" : "Sem ferramentas para usar!");
             }
         //Click Update
             if (isClicking){
@@ -224,46 +227,10 @@ public class BuildInputHandler : MonoBehaviour {
         #endregion
         //Item Update
         #region
-        if (isChangingItem) { 
-            playerInventory.EquipNext();
-            Debug.Log("Proxima ferramenta equipada: " + playerInventory.EquippedTool);
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (playerInventory.TryBuyTool(pliersData, out var tool))
-                Debug.Log("Comprou " + pliersData.toolName);
-            else
-                Debug.Log("Não conseguiu comprar o Alicate");
-            showInventory();
-        }
-
-        // T - Compra uma Tesoura
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            if (playerInventory.TryBuyTool(scissorsData, out var tool))
-                Debug.Log("Comprou " + scissorsData.toolName);
-            else
-                Debug.Log("Não conseguiu comprar a Tesoura");
-            showInventory();
-        }
-
-        // F - Compra uma Faca
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (playerInventory.TryBuyTool(knifeData, out var tool))
-                Debug.Log("Comprou " + knifeData.toolName);
-            else
-                Debug.Log("Não conseguiu comprar a Faca");
-            showInventory();
-        }
-
-        // U - Use Equipped Tool
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            bool success = playerInventory.TryUseEquipped();
-            Debug.Log(success ? "Usou a ferramenta equipada" : "Sem ferramentas para usar!");
-
-        }
+            if (isChangingItem) { 
+                playerInventory.EquipNext();
+                Debug.Log("Proxima ferramenta equipada: " + playerInventory.EquippedTool);
+            }
         // M - Upgrade ferramenta equipada
         if (Input.GetKeyDown(KeyCode.M))
         {

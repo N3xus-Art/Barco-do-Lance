@@ -16,6 +16,6 @@ MonoBehaviour:
   toolName: Faca
   icon: {fileID: 21300000, guid: 307efb5b8e0107646b484b4d3fd5324f, type: 3}
   maxDurability: 10
-  shopPrice: 24
+  shopPrice: 10
   scrapValue: 0
   itemLevel: 1

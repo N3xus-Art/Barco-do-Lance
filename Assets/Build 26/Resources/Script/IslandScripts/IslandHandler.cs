@@ -9,6 +9,7 @@ public class IslandHandler : MonoBehaviour{
     #region
     [Header("----Variaveis de Trigger----")]
     [SerializeField] private bool ison;
+    [SerializeField] private PlayerInventoryHandler playerInventory;
     [Header("----Variaveis de Canva----")]
     [SerializeField] private GameObject shopGO;
     [SerializeField] private GameObject normalScreen;
@@ -16,24 +17,26 @@ public class IslandHandler : MonoBehaviour{
     [SerializeField] private GameObject poorScreen;
     [SerializeField] private Button closeButton;
     [SerializeField] private TMP_Text moneyText;
-    [SerializeField] private int money;
     [SerializeField] private int itemSlot;
     [Header("----Variaveis do primeiro item----")]
     [SerializeField] private string firstItemName;
     [SerializeField] private int firstItemPrice;
     [SerializeField] private GameObject firstGameObject;
+    [SerializeField] private ToolDataHandler firstData;
     [SerializeField] private TMP_Text firstItemText;
     [SerializeField] private Sprite firstSprite;
     [Header("----Variaveis do segundo item----")]
     [SerializeField] private string secondItemName;
     [SerializeField] private int secondItemPrice;
     [SerializeField] private GameObject secondGameObject;
+    [SerializeField] private ToolDataHandler secondData;
     [SerializeField] private TMP_Text secondItemText;
     [SerializeField] private Sprite secondSprite;
     [Header("----Variaveis do terceiro item----")]
     [SerializeField] private string thirdItemName;
     [SerializeField] private int thirdItemPrice;
     [SerializeField] private GameObject thirdGameObject;
+    [SerializeField] private ToolDataHandler thirdData;
     [SerializeField] private TMP_Text thirdItemText;
     [SerializeField] private Sprite thirdSprite;
     [Header("----Variaveis dos Botões----")]
@@ -46,7 +49,7 @@ public class IslandHandler : MonoBehaviour{
     //Methods
     #region
     //Trigger Methods
-    void OnTriggerEnter2D(Collider2D collider2D){
+        void OnTriggerEnter2D(Collider2D collider2D){
             ison = true;
         }
 
@@ -63,50 +66,50 @@ public class IslandHandler : MonoBehaviour{
             BuildInputHandler.isInteracting = false;
         }
 
-        //Confirms
-            public void OnFirst() {
-                if (money < firstItemPrice){
-                    poorScreen.SetActive(true);
-                    return;
-                }
-                itemSlot = 0;
-                confirmScreen.SetActive(true);
+    //Confirms
+        private void OnTabClick(int TabIndex){
+            if (playerInventory.Money < firstItemPrice || playerInventory.Money < secondItemPrice || playerInventory.Money < thirdItemPrice){
+                poorScreen.SetActive(true);
             }
-            public void OnSecound() {
-                if (money < secondItemPrice){
-                    poorScreen.SetActive(true);
-                    return;
-                }
-                itemSlot = 1;
-                confirmScreen.SetActive(true);
-            }
-            public void OnThird() {
-                if (money < thirdItemPrice){
-                    poorScreen.SetActive(true);
-                    return;
-                }
-                itemSlot = 2;
-                confirmScreen.SetActive(true);
-            }
-            public bool ConfirmCheck(int price){ 
-                money -= price;
-                confirmScreen.SetActive(false);
-                return true; 
-            }
-            public void OnDeny() { 
-                confirmScreen.SetActive(false);
-            }
+            itemSlot = TabIndex;
+            confirmScreen.SetActive(true);
+        }
+        public bool ConfirmCheck(int price){
 
-            public void OnConfirm(){
-                if(itemSlot == 0){
-                    ConfirmCheck(firstItemPrice);
-                }else if (itemSlot == 1) { 
-                    ConfirmCheck(secondItemPrice);
-                }else if(itemSlot == 2) {
-                    ConfirmCheck(thirdItemPrice);       
-                }
-                itemSlot = 4;
+            if (itemSlot == 0){
+                if (playerInventory.TryBuyTool(firstData, out var tool))
+                    Debug.Log("Comprou " + firstData.toolName);
+                else
+                    Debug.Log("Não conseguiu comprar o Alicate");
             }
+            else if (itemSlot == 1) {
+                if (playerInventory.TryBuyTool(secondData, out var tool))
+                    Debug.Log("Comprou " + secondData.toolName);
+                else
+                    Debug.Log("Não conseguiu comprar o Alicate");
+            }else if (itemSlot == 2) {
+                if (playerInventory.TryBuyTool(thirdData, out var tool))
+                    Debug.Log("Comprou " + thirdData.toolName);
+                else
+                    Debug.Log("Não conseguiu comprar o Alicate");
+            }
+            confirmScreen.SetActive(false);
+            return true; 
+        }
+        public void OnDeny() { 
+            confirmScreen.SetActive(false);
+        }
+
+        public void OnConfirm(){
+            if(itemSlot == 0){
+                ConfirmCheck(firstItemPrice);
+            }else if (itemSlot == 1) { 
+                ConfirmCheck(secondItemPrice);
+            }else if(itemSlot == 2) {
+                ConfirmCheck(thirdItemPrice);       
+            }
+            itemSlot = 4;
+        }
 
     //Unity Methods
         private void Start(){
@@ -118,9 +121,9 @@ public class IslandHandler : MonoBehaviour{
                 Button confirmTab = confirmButton.GetComponent<Button>();
                 Button denyTab = denyButton.GetComponent<Button>();
                 closeTab.onClick.AddListener(OnCloseClick);
-                firstTab.onClick.AddListener(OnFirst);
-                secoundTab.onClick.AddListener(OnSecound);
-                thirdTab.onClick.AddListener(OnThird);
+                firstTab.onClick.AddListener(() => { OnTabClick(0); });
+                secoundTab.onClick.AddListener(() => { OnTabClick(1); });
+                thirdTab.onClick.AddListener(() => { OnTabClick(2); });
                 confirmTab.onClick.AddListener(OnConfirm);
                 denyTab.onClick.AddListener(OnDeny);
             //Item Startres
@@ -137,7 +140,7 @@ public class IslandHandler : MonoBehaviour{
                 shopGO.SetActive(true);
                 normalScreen.SetActive(true);
             }
-            moneyText.SetText("Dinheiro: " + money);
+            moneyText.SetText("Dinheiro: " + playerInventory.Money);
             if (ison == false){
                 shopGO.SetActive(false);
                 Time.timeScale = 1;

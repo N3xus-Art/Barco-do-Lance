@@ -16,6 +16,6 @@ MonoBehaviour:
   toolName: Tesoura
   icon: {fileID: 21300000, guid: b6bf7bbcd6c9714428958771db259c8a, type: 3}
   maxDurability: 500
-  shopPrice: 30
+  shopPrice: 20
   scrapValue: 0
   itemLevel: 2
