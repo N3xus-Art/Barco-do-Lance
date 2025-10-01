@@ -14,7 +14,6 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private GameObject debackyScreen;
     [SerializeField] private PlayerInventoryHandler playerInventory;
     [Header("----Variaveis do Canvas----")]
-    [SerializeField] private int money;
     [SerializeField] private TMP_Text moneyTMP;
     [SerializeField] private Image animalImage;
     [SerializeField] private TMP_Text animalDescription;
@@ -39,7 +38,7 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private TMP_Text confirmTMP;
     [SerializeField] private Color acceptColor;
     [SerializeField] private Color endColor;
-    [SerializeField] private GameObject CurrentMissionGO;
+    public static GameObject CurrentMissionGO { get; private set ;}
 
 
     #endregion
@@ -103,7 +102,7 @@ public class DebackyHandler : MonoBehaviour {
 
     public void EndMissions() {
         if (outMission){
-            money += CurrentMissionGO.GetComponent<CurrentMission>().missionReward;
+            var money = CurrentMissionGO.GetComponent<CurrentMission>().missionReward;
             playerInventory.Receive(money);
             moneyTMP.SetText($"R${playerInventory.Money}");
             Destroy(CurrentMissionGO);
@@ -126,7 +125,7 @@ public class DebackyHandler : MonoBehaviour {
 
         if (onMission)
         {
-            money += CurrentMissionGO.GetComponent<CurrentMission>().CurrentReward;
+            var money = CurrentMissionGO.GetComponent<CurrentMission>().CurrentReward;
             playerInventory.Receive(money);
             Destroy(CurrentMissionGO);
             onMission = false;
