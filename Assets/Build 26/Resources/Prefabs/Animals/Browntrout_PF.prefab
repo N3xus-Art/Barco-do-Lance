@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3149614304308103266}
   - component: {fileID: 1859567654874549345}
   - component: {fileID: 6953407697103488671}
-  - component: {fileID: 4575412515228935786}
   - component: {fileID: 6780980506151427350}
+  - component: {fileID: 5863411144008623150}
   m_Layer: 0
   m_Name: Browntrout_PF
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.46, y: -1.51, z: 0.0578872}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.025, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,7 +61,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &6953407697103488671
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -117,7 +117,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &4575412515228935786
+--- !u!114 &6780980506151427350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832956871920246886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848dab031fc78af44aef42d5066c16ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 0
+  tamanho: 0
+--- !u!60 &5863411144008623150
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,37 +177,24 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.64, y: -0.175}
-      - {x: 0.64, y: 0.155}
-      - {x: 0.37, y: 0.114999995}
-      - {x: 0.21, y: 0.105}
-      - {x: 0.06, y: 0.225}
-      - {x: -0.089999996, y: 0.225}
-      - {x: -0.31, y: 0.13499999}
-      - {x: -0.64, y: 0.024999999}
-      - {x: -0.64, y: -0.125}
-      - {x: -0.55, y: -0.145}
-      - {x: -0.04, y: -0.225}
-      - {x: 0.14999999, y: -0.225}
-      - {x: 0.24, y: -0.21499999}
-      - {x: 0.28, y: -0.225}
-      - {x: 0.39, y: -0.225}
-      - {x: 0.45, y: -0.13499999}
-      - {x: 0.55, y: -0.175}
-      - {x: 0.62, y: -0.185}
+    - - {x: 1, y: 0.25}
+      - {x: 1, y: 0.671875}
+      - {x: 0.96875, y: 0.703125}
+      - {x: 0.875, y: 0.71875}
+      - {x: 0.328125, y: 0.671875}
+      - {x: 0.046875, y: 0.875}
+      - {x: -0.09375, y: 0.875}
+      - {x: -0.390625, y: 0.71875}
+      - {x: -0.625, y: 0.6875}
+      - {x: -1, y: 0.546875}
+      - {x: -1, y: 0.3125}
+      - {x: -0.328125, y: 0.1875}
+      - {x: 0.046875, y: 0.140625}
+      - {x: 0.140625, y: 0.140625}
+      - {x: 0.1875, y: 0.234375}
+      - {x: 0.46875, y: 0.140625}
+      - {x: 0.609375, y: 0.140625}
+      - {x: 0.703125, y: 0.296875}
+      - {x: 0.859375, y: 0.234375}
+      - {x: 0.96875, y: 0.21875}
   m_UseDelaunayMesh: 0
---- !u!114 &6780980506151427350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2832956871920246886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848dab031fc78af44aef42d5066c16ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  speed: 0
-  size: 0

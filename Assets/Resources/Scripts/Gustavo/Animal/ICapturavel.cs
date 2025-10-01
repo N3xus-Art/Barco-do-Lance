@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface ICapturavel
+public interface ICapturavel : IInteractble
 {
     GameObject GetGameObject();
     Sprite GetSprite();

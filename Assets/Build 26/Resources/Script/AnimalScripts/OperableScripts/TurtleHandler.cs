@@ -1,17 +1,30 @@
 using UnityEngine;
 
-public class TurtleHandler : MarineAnimalHandler, IOperable{
-    //Methdos
-    #region
-    protected override void Start(){
+public class TurtleHandler : AnimalMarinho, IOperavel
+{
+    protected override void Start()
+    {
         base.Start();
-        name = "Tartaruga";
-        speed = 0.3f;
-        size = 0.8f; // 80cm
+        nome = "Tartaruga";
+        velocidade = 1.5f;
+        // tamanho = 3.0f; // 3m
+    }
+    public Sprite GetSprite()
+    {
+        return gameObject.GetComponent<SpriteRenderer>().sprite;
     }
 
-    public void Operate(){
-        Debug.Log($"Você está operando {name}!");
+    public void IniciarOperacao()
+    {
+        Time.timeScale = 0f;
+        OperacaoUIHandler.Instance.AbrirOperacao(this);
     }
-    #endregion
+    public void FinalizarOperacao()
+    {
+        Debug.Log("Operação finalizada no tubarão.");
+    }
+    public void Interact()
+    {
+        IniciarOperacao();
+    }
 }
