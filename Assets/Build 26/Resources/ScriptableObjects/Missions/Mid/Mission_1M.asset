@@ -15,7 +15,10 @@ MonoBehaviour:
   missionName: 
   animalSprite: {fileID: 0}
   Level: 2
-  missionDescription: 
+  missionDescription: " Um grande cruzeiro entre It\xE1lia-Cuba libera um grande
+    n\xFAmero de Medusas-de-pintas no mar do caribe ao soltar sua \xE1gua de lastro,
+    o jogador deve colet\xE1 las em adi\xE7\xE3o aos animais de costume, o jogador
+    deve coletar trinta Medusas-de-pintas, dois Peixes-Le\xE3o e liberar uma Tartaruga-verde"
   animalDescription: 
   missionID: 0
   missionReward: 0

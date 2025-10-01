@@ -16,7 +16,12 @@ MonoBehaviour:
   animalSprite: {fileID: 0}
   Level: 2
   missionDescription: 
-  animalDescription: 
+  animalDescription: " Um veleiro de Pescadores de Camar\xE3o Sauditas, localizado
+    no Mar Vermelho, relatou uma diminui\xE7\xE3o de sua reprodu\xE7\xE3o, nossa
+    organiza\xE7\xE3o percebeu que este fen\xF4meno est\xE1 ligado com o aumento
+    no n\xFAmero de Trutas-marrom. Necessitamos de um exemplar para realocar um total
+    de oito Trutas-marrom e operar dois Tubar\xF5es-galha-branca-oce\xE2nicos para
+    amenizar o problema. \r\n"
   missionID: 0
   missionReward: 0
   rescueableAnimals: 0

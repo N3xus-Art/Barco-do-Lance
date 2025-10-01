@@ -15,7 +15,11 @@ MonoBehaviour:
   missionName: 
   animalSprite: {fileID: 0}
   Level: 2
-  missionDescription: 
+  missionDescription: " Durante o transporte de um grande carregamento de caf\xE9
+    do Brasieliro para a Turquia um container mal preso cai no mar. liberando diversos
+    pl\xE1sticos no Mediterraneo, banhistas est\xE3o relatando diversos casos de
+    Focas-monge-do-mediterr\xE2neo com pl\xE1sticos presos nos seus corpos. Libere
+    seis Focas-monge-do-mediterr\xE2neo e vinte Medusas-de-pintas\r\n"
   animalDescription: 
   missionID: 0
   missionReward: 0
