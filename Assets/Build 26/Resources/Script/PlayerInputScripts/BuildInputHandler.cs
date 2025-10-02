@@ -15,6 +15,7 @@ public class BuildInputHandler : MonoBehaviour {
     [Header("----Boleanas----")]
     [SerializeField] private bool isMoving;
     [SerializeField] static public bool isInteracting;
+    [SerializeField] static public bool isInteracting2;
     [SerializeField] static public bool isChangingItem;
     [SerializeField] static public bool isClicking;
     [SerializeField] static public bool isDashing;
@@ -78,6 +79,17 @@ public class BuildInputHandler : MonoBehaviour {
                 isInteracting = false;
             } else {
                 isInteracting = true;
+            }
+        } else if (context.phase == InputActionPhase.Canceled) {
+        }
+    }
+    public void Interact2(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Started) {
+        } else if (context.phase == InputActionPhase.Performed) {
+            if (isInteracting) {
+                isInteracting2 = false;
+            } else {
+                isInteracting2 = true;
             }
         } else if (context.phase == InputActionPhase.Canceled) {
         }
@@ -199,7 +211,7 @@ public class BuildInputHandler : MonoBehaviour {
         #endregion
         //Interact Update
         #region
-            if (isInteracting){
+            if (isInteracting2){
                 bool success = playerInventory.TryUseEquipped();
                 Debug.Log(success ? "Usou a ferramenta equipada" : "Sem ferramentas para usar!");
             }
@@ -228,8 +240,9 @@ public class BuildInputHandler : MonoBehaviour {
         //Item Update
         #region
             if (isChangingItem) { 
+                Debug.Log("Proxima 1 ferramenta equipada: " + playerInventory.EquippedTool);
                 playerInventory.EquipNext();
-                Debug.Log("Proxima ferramenta equipada: " + playerInventory.EquippedTool);
+                Debug.Log("Proxima 2 ferramenta equipada: " + playerInventory.EquippedTool);
             }
         // M - Upgrade ferramenta equipada
         if (Input.GetKeyDown(KeyCode.M))

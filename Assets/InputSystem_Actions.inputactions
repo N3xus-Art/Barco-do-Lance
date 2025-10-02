@@ -60,6 +60,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "COMPRA",
+                    "type": "Button",
+                    "id": "6d23cd9e-921e-492e-908d-c5cb2986a976",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Crouch",
                     "type": "Button",
                     "id": "27c5f898-bc57-4ee1-8800-db469aca5fe3",
@@ -651,6 +660,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Tetriary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "92608474-8806-4567-b457-67df52d91761",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "COMPRA",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

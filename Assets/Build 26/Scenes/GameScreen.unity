@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327b1bd4f5bcbfe44a5f499f37ea7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventory: {fileID: 319852457}
+  playerInventory: {fileID: 0}
   ToolText: {fileID: 218317270}
   image: {fileID: 967456757}
   ScrollUtil: {fileID: 1090428032}
@@ -207,6 +207,17 @@ Transform:
   - {fileID: 1458606676}
   m_Father: {fileID: 594381957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &58281501 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3008120526369223002, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+  m_PrefabInstance: {fileID: 9134703617537361810}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a360784317ea85b4ebc453b283ab1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &105697728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,17 +1449,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319390408}
   m_CullTransparentMesh: 1
---- !u!114 &319852457 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2296190767582020438, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
-  m_PrefabInstance: {fileID: 4270446272505971206}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a360784317ea85b4ebc453b283ab1830, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &322566209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c22f380034916a47a3d1bd7a6d367f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventoryHandler: {fileID: 319852457}
+  playerInventoryHandler: {fileID: 58281501}
   moneyText: {fileID: 308220507}
 --- !u!1 &354113759
 GameObject:
@@ -5104,7 +5104,7 @@ PrefabInstance:
     - target: {fileID: 3114813610284078788, guid: 4fc7299aa6e87d24984737b63f23f4cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 319852457}
+      objectReference: {fileID: 0}
     - target: {fileID: 3114813610284078788, guid: 4fc7299aa6e87d24984737b63f23f4cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EquipFaca
@@ -5124,7 +5124,7 @@ PrefabInstance:
     - target: {fileID: 7213403114217912879, guid: 4fc7299aa6e87d24984737b63f23f4cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 319852457}
+      objectReference: {fileID: 0}
     - target: {fileID: 7213403114217912879, guid: 4fc7299aa6e87d24984737b63f23f4cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EquipAlicate
@@ -7477,6 +7477,10 @@ PrefabInstance:
       propertyPath: pointer
       value: 
       objectReference: {fileID: 471016321}
+    - target: {fileID: 6307744505160990472, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 58281501}
     - target: {fileID: 8174683534659020767, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -7688,7 +7692,7 @@ PrefabInstance:
     - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
       propertyPath: playerInventory
       value: 
-      objectReference: {fileID: 319852457}
+      objectReference: {fileID: 58281501}
     - target: {fileID: 3389304396238894327, guid: 77d516e007140084489fa055ffa3af3a, type: 3}
       propertyPath: animalDescription
       value: 
@@ -7855,6 +7859,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3008120526369223002, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: ownedTools.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
       propertyPath: buttons
       value: 

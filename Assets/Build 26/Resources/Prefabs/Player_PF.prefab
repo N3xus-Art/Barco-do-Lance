@@ -192,7 +192,6 @@ GameObject:
   - component: {fileID: 1472663523757593498}
   - component: {fileID: 7532085233450272938}
   - component: {fileID: 6307744505160990472}
-  - component: {fileID: 2296190767582020438}
   m_Layer: 7
   m_Name: Player_PF
   m_TagString: Untagged
@@ -463,6 +462,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6307744505160990472}
+        m_TargetAssemblyTypeName: BuildInputHandler, Assembly-CSharp
+        m_MethodName: Interact2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6d23cd9e-921e-492e-908d-c5cb2986a976
+    m_ActionName: 'Player/COMPRA[/Keyboard/i]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -500,7 +515,7 @@ MonoBehaviour:
   o2: 100
   maxO2: 100
   o2Cost: 0.1
-  pointer: {fileID: 7310658176599443984}
+  pointer: {fileID: 0}
   scene:
     m_Handle: 0
   playerModel: {fileID: 3525301303533993492}
@@ -508,26 +523,10 @@ MonoBehaviour:
   spriteModel: {fileID: 21300000, guid: 5ab8891c6b0e0414bbc3a2bc3c4ab6ca, type: 3}
   spriteBoat: {fileID: 21300000, guid: 675a602e7b503e2428e10d59ae718434, type: 3}
   itemIndex: 0
-  playerInventory: {fileID: 2296190767582020438}
+  playerInventory: {fileID: 0}
   pliersData: {fileID: 11400000, guid: 90405cae0f5cc65438c3baeb993f2def, type: 2}
   scissorsData: {fileID: 11400000, guid: 15aeca2f3f0147d4eb4008261c08eed2, type: 2}
   knifeData: {fileID: 11400000, guid: ed6b05d783c73b544840aadcacc97a9c, type: 2}
---- !u!114 &2296190767582020438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8174683534659020767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a360784317ea85b4ebc453b283ab1830, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Money: 100
-  maxSlots: 20
-  ownedTools: []
-  equippedInstanceId: 
 --- !u!1 &8903335817540346762
 GameObject:
   m_ObjectHideFlags: 0

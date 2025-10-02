@@ -7,8 +7,14 @@ using UnityEngine.UI;
 public class BuildGameManager : MonoBehaviour {
     //Variables
     #region
-    static BuildGameManager Instance;
-    [SerializeField] private bool isPaused;
+    static private BuildGameManager _instance;
+    public static BuildGameManager Instance{
+        get{
+            if (_instance == null){
+                Debug.LogError("O GameManager não foi inicializado. Certifique-se de que está na cena!");
+            }
+            return _instance;}}
+    /*[SerializeField] private bool isPaused;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject confirmExit;
     [SerializeField] private GameObject buttons;
@@ -18,18 +24,19 @@ public class BuildGameManager : MonoBehaviour {
     [SerializeField] private Button homeButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private Button confirmButton;
-    [SerializeField] private Button backButton;
+    [SerializeField] private Button backButton;*/
     #endregion
 
     //Methods
     #region
     void Awake() {
-        if (Instance == null) {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        } else if (Instance != this) {
+        if (_instance != null && _instance != this){
             Destroy(gameObject);
+            return;
         }
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+        /*
         Button resume = resumeButton.GetComponent<Button>();
         Button config = configButton.GetComponent<Button>();
         Button home = homeButton.GetComponent<Button>();
@@ -41,9 +48,9 @@ public class BuildGameManager : MonoBehaviour {
         home.onClick.AddListener(Home);
         quit.onClick.AddListener(Confirm);
         //confirm.onClick.AddListener(Quit);
-        back.onClick.AddListener(Back);
+        back.onClick.AddListener(Back);*/
     }
-    private void Update() {
+    /*private void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (isPaused) {
                 ResumeGame();
@@ -81,6 +88,6 @@ public class BuildGameManager : MonoBehaviour {
     }
     public void Quit(){
         Application.Quit();
-    }
+    }*/
     #endregion
 }

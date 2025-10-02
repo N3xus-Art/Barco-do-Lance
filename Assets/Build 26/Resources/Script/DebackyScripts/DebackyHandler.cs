@@ -84,11 +84,11 @@ public class DebackyHandler : MonoBehaviour {
 
             GameObject currentMission = new GameObject();
             currentMission.name = "CurrentMission";
-            currentMission.AddComponent<CurrentMission>();
-            currentMission.GetComponent<CurrentMission>().missionReward = avaliableMissions[currentID].missionReward;
-            currentMission.GetComponent<CurrentMission>().RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
-            currentMission.GetComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
-            currentMission.GetComponent<CurrentMission>().Level = avaliableMissions[currentID].Level;
+            var Scr_CurrentMission = currentMission.AddComponent<CurrentMission>();
+            Scr_CurrentMission.missionReward = avaliableMissions[currentID].missionReward;
+            Scr_CurrentMission.RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
+            Scr_CurrentMission.OperableAnimals = avaliableMissions[currentID].operableAnimals;
+            Scr_CurrentMission.Level = avaliableMissions[currentID].Level;
             CurrentMissionGO = currentMission;
             MissionTabID = currentID;
             onMission = true;
@@ -175,7 +175,7 @@ public class DebackyHandler : MonoBehaviour {
     #region
     private void Start(){
         //Tabs Handler
-
+        playerInventory = BuildGameManager.Instance.GetComponent<PlayerInventoryHandler>();
         firstButton.onClick.AddListener(()=> { OnTabClick(0); });
         secondButton.onClick.AddListener(() => { OnTabClick(1); });
         centralButton.onClick.AddListener(() => { OnTabClick(2); });

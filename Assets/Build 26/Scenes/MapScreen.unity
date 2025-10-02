@@ -288,99 +288,6 @@ RectTransform:
   m_AnchoredPosition: {x: 347.5, y: -168.75}
   m_SizeDelta: {x: 480, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &71755404
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: buttons
-      value: 
-      objectReference: {fileID: 1834405038}
-    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 859846418}
-    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: backButton
-      value: 
-      objectReference: {fileID: 54530867}
-    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: homeButton
-      value: 
-      objectReference: {fileID: 1983662642}
-    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: quitButton
-      value: 
-      objectReference: {fileID: 1771939170}
-    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: confirmExit
-      value: 
-      objectReference: {fileID: 2094821283}
-    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: configButton
-      value: 
-      objectReference: {fileID: 1979432816}
-    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: resumeButton
-      value: 
-      objectReference: {fileID: 1710843417}
-    - target: {fileID: 5834473407118717771, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: confirmButton
-      value: 
-      objectReference: {fileID: 137569558}
-    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.4539967
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.421383
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7222918912750533569, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
-      propertyPath: m_Name
-      value: BuildGameManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
 --- !u!1 &137569554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +911,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &376423408
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.4539967
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.421383
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524492762156670349, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222918912750533569, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_Name
+      value: BuildGameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
 --- !u!1 &388390961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,14 +1016,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 768599263}
   shopGO: {fileID: 844576876}
   normalScreen: {fileID: 844576875}
   confirmScreen: {fileID: 844576874}
   poorScreen: {fileID: 844576873}
   closeButton: {fileID: 844576872}
   moneyText: {fileID: 844576871}
-  money: 100
   itemSlot: 0
   firstItemName: Aquario nv1
   firstItemPrice: 10
@@ -1468,14 +1431,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 768599263}
   shopGO: {fileID: 1596484573}
   normalScreen: {fileID: 1596484576}
   confirmScreen: {fileID: 1596484575}
   poorScreen: {fileID: 1596484574}
   closeButton: {fileID: 1630171521}
   moneyText: {fileID: 1342641881}
-  money: 100
   itemSlot: 0
   firstItemName: Test1
   firstItemPrice: 10
@@ -2010,6 +1972,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8563391350437381424, guid: b316b24ab3a9abc439a8662b081ed088, type: 3}
   m_PrefabInstance: {fileID: 199464013}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &768599263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3008120526369223002, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+  m_PrefabInstance: {fileID: 376423408}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a360784317ea85b4ebc453b283ab1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &839575684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,14 +2438,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 768599263}
   shopGO: {fileID: 1370829733}
   normalScreen: {fileID: 1370829732}
   confirmScreen: {fileID: 1370829731}
   poorScreen: {fileID: 1370829730}
   closeButton: {fileID: 1370829729}
   moneyText: {fileID: 1370829728}
-  money: 100
   itemSlot: 0
   firstItemName: Faca
   firstItemPrice: 10
@@ -2682,14 +2654,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 768599263}
   shopGO: {fileID: 199464025}
   normalScreen: {fileID: 199464024}
   confirmScreen: {fileID: 199464023}
   poorScreen: {fileID: 199464022}
   closeButton: {fileID: 199464021}
   moneyText: {fileID: 199464020}
-  money: 100
   itemSlot: 0
   firstItemName: Rede 1
   firstItemPrice: 10
@@ -3057,14 +3028,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 768599263}
   shopGO: {fileID: 2091101553}
   normalScreen: {fileID: 2091101552}
   confirmScreen: {fileID: 2091101551}
   poorScreen: {fileID: 2091101550}
   closeButton: {fileID: 2091101549}
   moneyText: {fileID: 2091101548}
-  money: 100
   itemSlot: 0
   firstItemName: Tank1
   firstItemPrice: 10
@@ -3704,14 +3674,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 768599263}
   shopGO: {fileID: 2026072171}
   normalScreen: {fileID: 2026072170}
   confirmScreen: {fileID: 2026072169}
   poorScreen: {fileID: 2026072168}
   closeButton: {fileID: 2026072167}
   moneyText: {fileID: 2026072166}
-  money: 100
   itemSlot: 0
   firstItemName: Test1
   firstItemPrice: 10
@@ -5983,9 +5952,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6307744505160990472, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: pointer
+      value: 
+      objectReference: {fileID: 2104679773}
+    - target: {fileID: 6307744505160990472, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1939114353}
+    - target: {fileID: 6307744505160990472, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8174683534659020767, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6000,17 +5977,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3211765220757160149, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
   m_PrefabInstance: {fileID: 2104679771}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2104679773 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2296190767582020438, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
+--- !u!1 &2104679773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7310658176599443984, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
   m_PrefabInstance: {fileID: 2104679771}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a360784317ea85b4ebc453b283ab1830, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2125483703
 GameObject:
   m_ObjectHideFlags: 0
@@ -6132,4 +6103,4 @@ SceneRoots:
   - {fileID: 859318208}
   - {fileID: 32663605}
   - {fileID: 508341548}
-  - {fileID: 71755404}
+  - {fileID: 376423408}
