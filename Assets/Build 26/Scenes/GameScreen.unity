@@ -4028,6 +4028,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2994883051994498375, guid: 8b9a8ec68f677334b904ecaf61c21567, type: 3}
+      propertyPath: maxAnimals
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994883051994498375, guid: 8b9a8ec68f677334b904ecaf61c21567, type: 3}
       propertyPath: animalPrefabs.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -6263,6 +6267,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2994883051994498375, guid: 8b9a8ec68f677334b904ecaf61c21567, type: 3}
+      propertyPath: maxAnimals
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994883051994498375, guid: 8b9a8ec68f677334b904ecaf61c21567, type: 3}
       propertyPath: animalPrefabs.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -6347,6 +6355,10 @@ PrefabInstance:
     - target: {fileID: 2898136521756990233, guid: 8b9a8ec68f677334b904ecaf61c21567, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994883051994498375, guid: 8b9a8ec68f677334b904ecaf61c21567, type: 3}
+      propertyPath: maxAnimals
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2994883051994498375, guid: 8b9a8ec68f677334b904ecaf61c21567, type: 3}
       propertyPath: animalPrefabs.Array.size
