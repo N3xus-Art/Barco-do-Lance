@@ -47,6 +47,7 @@ public class BuildInputHandler : MonoBehaviour {
     [SerializeField] static public float playerMoney;
     [Header("----Variaveis Item----")]
     [SerializeField] private int itemIndex;
+    [SerializeField] private GameObject buildGameManager;
     [SerializeField] private PlayerInventoryHandler playerInventory;
     [SerializeField] private ToolDataHandler pliersData;
     [SerializeField] private ToolDataHandler scissorsData;
@@ -114,8 +115,8 @@ public class BuildInputHandler : MonoBehaviour {
 
     public void ChangeItem(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Started) {
-            isChangingItem = true;
         } else if (context.phase == InputActionPhase.Performed) {
+            isChangingItem = true;
 
         } else if (context.phase == InputActionPhase.Canceled) {
             isChangingItem = false;
@@ -162,6 +163,8 @@ public class BuildInputHandler : MonoBehaviour {
         rb = this.GetComponent<Rigidbody2D>();
         scene = SceneManager.GetActiveScene();
         playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
+        buildGameManager = GameObject.FindWithTag("GameManager");
+        playerInventory = buildGameManager.GetComponent<PlayerInventoryHandler>();
         if (scene.name == "MapScreen"){
             rb.gravityScale = 0f;
             playerModel.GetComponent<SpriteRenderer>().sprite = spriteBoat;
@@ -240,9 +243,8 @@ public class BuildInputHandler : MonoBehaviour {
         //Item Update
         #region
             if (isChangingItem) { 
-                Debug.Log("Proxima 1 ferramenta equipada: " + playerInventory.EquippedTool);
                 playerInventory.EquipNext();
-                Debug.Log("Proxima 2 ferramenta equipada: " + playerInventory.EquippedTool);
+                
             }
         // M - Upgrade ferramenta equipada
         if (Input.GetKeyDown(KeyCode.M))

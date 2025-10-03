@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327b1bd4f5bcbfe44a5f499f37ea7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildGameManager: {fileID: 0}
   playerInventory: {fileID: 0}
   ToolText: {fileID: 218317270}
   image: {fileID: 967456757}
@@ -1306,6 +1307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CapturaUI
       objectReference: {fileID: 0}
+    - target: {fileID: 9186072703514462977, guid: f44d264a9586a2746b9f9036dbb3c53e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1573,6 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c22f380034916a47a3d1bd7a6d367f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildGameManager: {fileID: 0}
   playerInventoryHandler: {fileID: 58281501}
   moneyText: {fileID: 308220507}
 --- !u!1 &354113759
@@ -5117,6 +5123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OperacaoUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5191828865125930965, guid: 4fc7299aa6e87d24984737b63f23f4cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7213403114217912879, guid: 4fc7299aa6e87d24984737b63f23f4cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -7480,7 +7490,7 @@ PrefabInstance:
     - target: {fileID: 6307744505160990472, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
       propertyPath: playerInventory
       value: 
-      objectReference: {fileID: 58281501}
+      objectReference: {fileID: 0}
     - target: {fileID: 8174683534659020767, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -7942,6 +7952,10 @@ PrefabInstance:
     - target: {fileID: 7222918912750533569, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
       propertyPath: m_Name
       value: BuildGameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222918912750533569, guid: 9f849218ca7ede24980eb57d6675778b, type: 3}
+      propertyPath: m_TagString
+      value: GameManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
