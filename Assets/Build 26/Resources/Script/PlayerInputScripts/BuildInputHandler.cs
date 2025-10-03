@@ -115,9 +115,9 @@ public class BuildInputHandler : MonoBehaviour {
 
     public void ChangeItem(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Started) {
-        } else if (context.phase == InputActionPhase.Performed) {
             isChangingItem = true;
-
+        } else if (context.phase == InputActionPhase.Performed) {
+            playerInventory.EquipNext();
         } else if (context.phase == InputActionPhase.Canceled) {
             isChangingItem = false;
         }
@@ -243,7 +243,6 @@ public class BuildInputHandler : MonoBehaviour {
         //Item Update
         #region
             if (isChangingItem) { 
-                playerInventory.EquipNext();
                 
             }
         // M - Upgrade ferramenta equipada
