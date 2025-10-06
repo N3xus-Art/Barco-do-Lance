@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using System.Linq;
 
 
 public class BuildInputHandler : MonoBehaviour {
@@ -73,16 +74,26 @@ public class BuildInputHandler : MonoBehaviour {
             isMoving = false;
         }
     }
-    public void Interact(InputAction.CallbackContext context) {
-        if (context.phase == InputActionPhase.Started) {
-        } else if (context.phase == InputActionPhase.Performed) {
-            if (isInteracting) {
+    public void Interact(InputAction.CallbackContext context){
+       if(context.phase == InputActionPhase.Started){
+       }else if (context.phase == InputActionPhase.Performed){
+            if (isInteracting){
+                // Detecta objetos interagíveis próximos
+                var interagiveis = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).OfType<IInteractble>();
+                foreach (var obj in interagiveis){
+                    // Exemplo: verifica distância
+                    var mono = obj as MonoBehaviour;
+                    if (mono != null && Vector2.Distance(transform.position, mono.transform.position) < 3.0f){
+                        obj.Interact();
+                        break;
+                    }
+                }
                 isInteracting = false;
-            } else {
+            }else{
                 isInteracting = true;
             }
-        } else if (context.phase == InputActionPhase.Canceled) {
-        }
+       }else if(context.phase == InputActionPhase.Canceled){
+       }
     }
     public void Interact2(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Started) {
