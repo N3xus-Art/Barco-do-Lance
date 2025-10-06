@@ -80,11 +80,14 @@ public class BuildInputHandler : MonoBehaviour {
             if (isInteracting){
                 // Detecta objetos interagíveis próximos
                 var interagiveis = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).OfType<IInteractble>();
+                Debug.Log(interagiveis);
                 foreach (var obj in interagiveis){
                     // Exemplo: verifica distância
                     var mono = obj as MonoBehaviour;
+                    Debug.Log(mono);
                     if (mono != null && Vector2.Distance(transform.position, mono.transform.position) < 3.0f){
                         obj.Interact();
+                        Debug.Log(obj);
                         break;
                     }
                 }
