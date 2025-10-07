@@ -22,14 +22,13 @@ MonoBehaviour:
     a cadeia alimentar dos animais da regi\xE3o. Inicialmente, para preservar a fauna
     e flora, a realoca\xE7\xE3o de pelo menos cinco elementos dessa esp\xE9cie \xE9
     necess\xE1ria.\r\n\nEquipamentos Obrigat\xF3rios \r\n\nTanque de Oxig\xEAnio
-    b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria; \r\n"
-  animalDescription: "A medusa-de-pintas \xE9 um animal origin\xE1rio do Mar do Caribe.\r\nA
-    medusa-de-pintas, com seu formato de cogumelo, suas cores variadas e pintas,
-    \xE9 uma esp\xE9cie invasora do Mar Mediterr\xE2neo. Normalmente, ela \xE9 introduzida
-    no ecossistema atrav\xE9s da \xE1gua de lastro de navios ou pela aquariofilia.\r\nSua
-    invas\xE3o no ecossistema provoca desequil\xEDbrios significativos, superando
-    as esp\xE9cies nativas na competi\xE7\xE3o por recursos e alterando a cadeia
-    alimentar.\r\n"
+    b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria.\r"
+  animalDescription: "A truta-marrom \xE9 um animal origin\xE1rio do Mar Mediterr\xE2neo.\r\nA
+    truta marrom, com seu corpo esguio e cores amarronzadas, \xE9 uma esp\xE9cie
+    invasora comum no Mar Vermelho. Normalmente, ela \xE9 introduzida no ecossistema
+    por acompanhar os barcos em dire\xE7\xE3o ao seu novo habitat. Ela afeta diretamente
+    o ecossistema e a cadeia alimentar das esp\xE9cies nativas devido ao seu comportamento
+    competitivo e territorial.\r"
   missionID: 0
   missionReward: 87
   rescueableAnimals: 5

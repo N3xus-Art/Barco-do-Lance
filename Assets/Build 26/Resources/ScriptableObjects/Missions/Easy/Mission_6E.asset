@@ -21,13 +21,13 @@ MonoBehaviour:
     voraz, o que pode acabar causando um desequil\xEDbrio ambiental na regi\xE3o. 
     A princ\xEDpio, precisamos retirar cerca de dez exemplares at\xE9 que possamos
     tomar as devidas provid\xEAncias. \r\n\nEquipamentos Obrigat\xF3rios \n\r\nTanque
-    de Oxig\xEAnio b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria; \r"
+    de Oxig\xEAnio b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria. \r"
   animalDescription: "O peixe-le\xE3o \xE9 um animal origin\xE1rio do Mar Vermelho.\r\nO
     peixe-le\xE3o, com suas listras brancas e de tons quentes, s\xE3o invasores comuns
     do Mar do Caribe, sua introdu\xE7\xE3o em novos ecossistemas geralmente ocorre
     por meio de \xE1guas de lastro de navios ou pela soltura de esp\xE9cimes de aqu\xE1rio
     por indiv\xEDduos. Uma vez estabelecido, sua alta taxa reprodutiva e a aus\xEAncia
-    de predadores naturais contribuem para sua r\xE1pida prolifera\xE7\xE3o.\r\n"
+    de predadores naturais contribuem para sua r\xE1pida prolifera\xE7\xE3o.\r"
   missionID: 0
   missionReward: 70
   rescueableAnimals: 10
