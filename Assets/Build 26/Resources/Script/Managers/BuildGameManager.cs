@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,12 +9,15 @@ public class BuildGameManager : MonoBehaviour {
     //Variables
     #region
     static private BuildGameManager _instance;
-    public static BuildGameManager Instance{
-        get{
-            if (_instance == null){
+    public static BuildGameManager Instance {
+        get {
+            if (_instance == null) {
                 Debug.LogError("O GameManager não foi inicializado. Certifique-se de que está na cena!");
             }
-            return _instance;}}
+            return _instance; } }
+    [SerializeField] private List<GameObject> SeaPrefabs = new List<GameObject>();
+    [SerializeField] private GameObject currentSeaGO;
+    [SerializeField] public static int currentSea = 0;
     /*[SerializeField] private bool isPaused;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject confirmExit;
@@ -29,6 +33,12 @@ public class BuildGameManager : MonoBehaviour {
 
     //Methods
     #region
+    void SpawnOcean(){
+        if (BuildInputHandler.scene.name == "GameScreen" && currentSeaGO == null){
+            Instantiate(SeaPrefabs[currentSea], new Vector3(0, -95.76f, 0), Quaternion.identity);
+            currentSeaGO = GameObject.FindWithTag("Sea");
+        }
+    }
     void Awake() {
         if (_instance != null && _instance != this){
             Destroy(gameObject);
@@ -36,6 +46,7 @@ public class BuildGameManager : MonoBehaviour {
         }
         _instance = this;
         DontDestroyOnLoad(gameObject);
+        currentSeaGO = GameObject.FindWithTag("Sea");
         /*
         Button resume = resumeButton.GetComponent<Button>();
         Button config = configButton.GetComponent<Button>();
@@ -50,8 +61,16 @@ public class BuildGameManager : MonoBehaviour {
         //confirm.onClick.AddListener(Quit);
         back.onClick.AddListener(Back);*/
     }
-    /*private void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+    private void Update() {
+        SpawnOcean();
+
+        if (currentSea >= 4 || currentSea < 0) { 
+            currentSea = 0;
+        }
+    
+    }
+    
+    /*    if (Input.GetKeyDown(KeyCode.Escape)) {
             if (isPaused) {
                 ResumeGame();
             } else {

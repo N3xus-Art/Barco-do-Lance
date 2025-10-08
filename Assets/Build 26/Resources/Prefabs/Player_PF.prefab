@@ -521,8 +521,9 @@ MonoBehaviour:
   playerModel: {fileID: 3525301303533993492}
   spriteBase: {fileID: 21300000, guid: 5ab8891c6b0e0414bbc3a2bc3c4ab6ca, type: 3}
   spriteModel: {fileID: 21300000, guid: 5ab8891c6b0e0414bbc3a2bc3c4ab6ca, type: 3}
-  spriteBoat: {fileID: 21300000, guid: 675a602e7b503e2428e10d59ae718434, type: 3}
+  spriteBoat: {fileID: 21300000, guid: ef7077c9b601518489de93372772b161, type: 3}
   itemIndex: 0
+  buildGameManager: {fileID: 0}
   playerInventory: {fileID: 0}
   pliersData: {fileID: 11400000, guid: 90405cae0f5cc65438c3baeb993f2def, type: 2}
   scissorsData: {fileID: 11400000, guid: 15aeca2f3f0147d4eb4008261c08eed2, type: 2}

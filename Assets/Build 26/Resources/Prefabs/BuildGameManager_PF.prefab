@@ -45,16 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839f15ed3c62be5469b9533439d2977e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPaused: 0
-  pauseMenu: {fileID: 0}
-  confirmExit: {fileID: 0}
-  buttons: {fileID: 0}
-  resumeButton: {fileID: 0}
-  configButton: {fileID: 0}
-  homeButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  confirmButton: {fileID: 0}
-  backButton: {fileID: 0}
+  SeaPrefabs:
+  - {fileID: 2541520854083856520, guid: 5c0ad1150739d5943b3a96aae68926d8, type: 3}
+  - {fileID: 2541520854083856520, guid: a9611ac4e82353044a549d1e60f19fb5, type: 3}
+  - {fileID: 2541520854083856520, guid: b90b698f05228b544a22d550fc3a2c4e, type: 3}
 --- !u!114 &3008120526369223002
 MonoBehaviour:
   m_ObjectHideFlags: 0

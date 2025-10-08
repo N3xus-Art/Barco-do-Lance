@@ -39,7 +39,7 @@ public class BuildInputHandler : MonoBehaviour {
     [SerializeField] private float o2Cost;
     [SerializeField] private GameObject pointer;
     [Header("----Variaveis de sprite----")]
-    [SerializeField] private Scene scene;
+    [SerializeField] public static Scene scene;
     [SerializeField] private GameObject playerModel;
     [SerializeField] private Sprite spriteBase;
     [SerializeField] private Sprite spriteModel;
@@ -137,6 +137,7 @@ public class BuildInputHandler : MonoBehaviour {
         }
     }
 
+
      void showInventory(){
         Debug.Log("\nLista de ferramentas:" + string.Join(", ", playerInventory.OwnedTools) +
                   "\nDinheiro:" + playerInventory.Money +
@@ -178,6 +179,7 @@ public class BuildInputHandler : MonoBehaviour {
         scene = SceneManager.GetActiveScene();
         playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
         buildGameManager = GameObject.FindWithTag("GameManager");
+        isInteracting = false;
         playerInventory = buildGameManager.GetComponent<PlayerInventoryHandler>();
         if (scene.name == "MapScreen"){
             rb.gravityScale = 0f;
@@ -266,6 +268,7 @@ public class BuildInputHandler : MonoBehaviour {
             playerInventory.UpgradeEquippedTool();
             showInventory();
         }
+        Debug.Log(BuildGameManager.currentSea);
         #endregion
         //Canvas Update
     }
