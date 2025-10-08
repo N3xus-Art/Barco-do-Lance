@@ -166,7 +166,7 @@ public class DebackyHandler : MonoBehaviour {
         animalImage.sprite = avaliableMissions[currentID].animalSprite;
         animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
         missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
-        missionTMP.SetText($"Recompensa: {avaliableMissions[currentID].missionReward}");
+        missionTMP.SetText($"Recompensa:    R${avaliableMissions[currentID].missionReward}");
 
     }
 
