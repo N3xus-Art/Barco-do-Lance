@@ -268,7 +268,7 @@ public class BuildInputHandler : MonoBehaviour {
             playerInventory.UpgradeEquippedTool();
             showInventory();
         }
-        Debug.Log(BuildGameManager.currentSea);
+        //Debug.Log(BuildGameManager.currentSea);
         #endregion
         //Canvas Update
     }
