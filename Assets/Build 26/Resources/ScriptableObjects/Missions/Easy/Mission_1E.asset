@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36128abbab363ba40bbda7e862498462, type: 3}
+  m_Name: Mission_1E
+  m_EditorClassIdentifier: 
+  missionName: Facil - Mar do Caribe
+  animalSprite: {fileID: 21300000, guid: 00a713a6eb0f2974bae36e72ca99c380, type: 3}
+  Level: 1
+  missionDescription: "Turistas reportaram grande quantidade de lixo na \xE1rea costeira
+    da praia do Mar do Caribe. Considerando a \xE9poca de desova das Tartarugas-Verdes,
+    achamos necess\xE1rio a verifica\xE7\xE3o vinda de nossos membros para assegurar
+    que as f\xEAmeas consigam retornar ao mar sem nenhuma complica\xE7\xE3o. Registros
+    mostram cerca de tr\xEAs ninhos no local. \n\r\nEquipamentos Obrigat\xF3rios:
+    \n\r\nTanque de Oxig\xEAnio b\xE1sico; \r\nRede b\xE1sica; \r\nTesoura b\xE1sica.\r"
+  animalDescription: "A tartaruga-verde \xE9 um animal origin\xE1rio do Mar do Caribe.\r\nEssas
+    tartarugas s\xE3o migrat\xF3rias e podem viajar longas dist\xE2ncias entre seus
+    locais de alimenta\xE7\xE3o e de nidifica\xE7\xE3o. Elas se alimentam principalmente
+    de algas e capim-marinho quando adultas, dando \xE0 sua gordura uma colora\xE7\xE3o
+    esverdeada, foi da\xED que veio o seu nome. Elas podem viver at\xE9 80 anos na
+    natureza.\r"
+  missionID: 0
+  missionReward: 52
+  rescueableAnimals: 0
+  operableAnimals: 3
