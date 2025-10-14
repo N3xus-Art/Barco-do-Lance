@@ -163,8 +163,7 @@ public class DebackyHandler : MonoBehaviour {
     private void ImportDataToCanva(){
 
         //Import data to the canva
-        animalImage.sprite = avaliableMissions[currentID].animalSprite;
-        animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
+        //animalImage.sprite = avaliableMissions[currentID].animalSprite;
         missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
         missionTMP.SetText($"Recompensa:    R${avaliableMissions[currentID].missionReward}");
 
