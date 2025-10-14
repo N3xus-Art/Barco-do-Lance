@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Cima_4_M
+  m_Name: Cima_1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: ddb9f9592ed9fda44aa3d2cbfc4909de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d3d67c30d9f3c947810d954a67da623, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

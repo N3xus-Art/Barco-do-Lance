@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Baixo_1_M
+  m_Name: Baixo_4
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 525e41a124eaddf4ab7ffbae2c14fe30, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55500978301296b44a1d82635aecaf13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
