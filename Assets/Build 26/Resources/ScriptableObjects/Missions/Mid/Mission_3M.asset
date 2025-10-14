@@ -12,29 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36128abbab363ba40bbda7e862498462, type: 3}
   m_Name: Mission_3M
   m_EditorClassIdentifier: 
-  missionName: "M\xE9dio - Mar Vermelho"
+  missionName: 
   animalSprite: {fileID: 0}
-  missionDescription: "Um veleiro de Pescadores de Camar\xE3o Sauditas, localizado
+  Level: 2
+  missionDescription: 
+  animalDescription: " Um veleiro de Pescadores de Camar\xE3o Sauditas, localizado
     no Mar Vermelho, relatou uma diminui\xE7\xE3o de sua reprodu\xE7\xE3o, nossa
     organiza\xE7\xE3o percebeu que este fen\xF4meno est\xE1 ligado com o aumento
     no n\xFAmero de Trutas-marrom. Necessitamos de um exemplar para realocar um total
     de oito Trutas-marrom e operar dois Tubar\xF5es-galha-branca-oce\xE2nicos para
-    amenizar o problema. \r\n\nEquipamentos Obrigat\xF3rios: \r\n\nTanque de Oxig\xEAnio
-    b\xE1sico;\r\nRede Intermedi\xE1ria;\r\nAlicate B\xE1sico;\r\nTransportador B\xE1sico.\r\n\r\n\nEquipamentos
-    Sugeridos:\r\n\nTanque intermedi\xE1rio.\r\n"
-  animalDescription: "A truta-marrom \xE9 um animal origin\xE1rio do Mar Mediterr\xE2neo.\r\nA
-    truta marrom, com seu corpo esguio e cores amarronzadas, \xE9 uma esp\xE9cie
-    invasora comum no Mar Vermelho. Normalmente, ela \xE9 introduzida no ecossistema
-    por acompanhar os barcos em dire\xE7\xE3o ao seu novo habitat. Ela afeta diretamente
-    o ecossistema e a cadeia alimentar das esp\xE9cies nativas devido ao seu comportamento
-    competitivo e territorial.\r\n\nO tubar\xE3o-galha-branca-oce\xE2nico \xE9 um
-    animal origin\xE1rio do Mar Vermelho.\r\nSeu corpo robusto e nadadeiras grandes
-    n\xE3o s\xE3o somente para exibi\xE7\xE3o; eles o tornam incrivelmente \xE1gil
-    e resistente debaixo d'\xE1gua.\r\nDiferente de outros tubar\xF5es, o Galha-Branca-Oce\xE2nico
-    \xE9 infame por sua ousadia. Ele n\xE3o hesita em se aproximar de embarca\xE7\xF5es,
-    e sua curiosidade pode ser uma faca de dois gumes: tanto uma oportunidade para
-    estud\xE1-lo de perto, quanto um risco iminente de ataque.\r"
+    amenizar o problema. \r\n"
   missionID: 0
-  missionReward: 175
-  rescueableAnimals: 8
-  operableAnimals: 2
+  missionReward: 0
+  rescueableAnimals: 0
+  operableAnimals: 0

@@ -1,17 +1,30 @@
 using UnityEngine;
 
-public class SharkHandler : MarineAnimalHandler, IOperable{
-    //Methdos
-    #region
-    protected override void Start(){
+public class SharkHandler : AnimalMarinho, IOperavel
+{
+    protected override void Start()
+    {
         base.Start();
-        name = "Tubarão";
-        speed = 10.0f;
-        size = 3.0f; // 300cm
+        nome = "Tubarão";
+        velocidade = 8.0f;
+        // tamanho = 3.0f; // 3m
+    }
+    public Sprite GetSprite()
+    {
+        return gameObject.GetComponent<SpriteRenderer>().sprite;
     }
 
-    public void Operate(){
-        Debug.Log($"Você está operando {name}!");
+    public void IniciarOperacao()
+    {
+        Time.timeScale = 0f;
+        OperacaoUIHandler.Instance.AbrirOperacao(this);
     }
-    #endregion
+    public void FinalizarOperacao()
+    {
+        Debug.Log("Operação finalizada no tubarão.");
+    }
+    public void Interact()
+    {
+        IniciarOperacao();
+    }
 }

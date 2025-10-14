@@ -1,17 +1,29 @@
 using UnityEngine;
 
-public class JellyfishHandler : MarineAnimalHandler, IRescuable{
-    //Methdos
-    #region
-    protected override void Start(){
+public class JellyfishHandler : AnimalMarinho, ICapturavel
+{
+    protected override void Start()
+    {
         base.Start();
-        name = "Medusa";
-        speed = 1.0f;
-        size = 0.1f; // 10cm
+        nome = "Medusa";
+        velocidade = 3.5f;
+        // tamanho = 0.4f; // 40cm
     }
-
-    public void Rescue(){
-        Debug.Log($"Você resgatou {name}!");
+    public GameObject GetGameObject()
+    {
+        return this.gameObject;
     }
-    #endregion
+    public Sprite GetSprite()
+    {
+        return gameObject.GetComponent<SpriteRenderer>().sprite;
+    }
+    public void IniciarCaptura()
+    {
+        Debug.Log($"Captura iniciada no animal {name}");
+    }
+    public void Interact()
+    {
+        // Abre a UI de captura
+        CapturaUI.Instance.AbrirCaptura(this);
+    }
 }

@@ -7,7 +7,7 @@ public class TrutaMarrom : AnimalMarinho, ICapturavel
         base.Start();
         nome = "Truta Marrom";
         velocidade = 5.0f;
-        tamanho = 0.6f; // 60cm
+        // tamanho = 0.6f; // 60cm
     }
     public GameObject GetGameObject()
     {
@@ -17,14 +17,14 @@ public class TrutaMarrom : AnimalMarinho, ICapturavel
     {
         return gameObject.GetComponent<SpriteRenderer>().sprite;
     }
-    public void OnMouseDown()
-    {
-        // Abre a UI de captura
-        CapturaUI.Instance.AbrirCaptura(this);
-    }
     public void IniciarCaptura()
     {
         Debug.Log($"Captura iniciada no animal {name}");
+    }
+    public void Interact()
+    {
+        // Abre a UI de captura
+        CapturaUI.Instance.AbrirCaptura(this);
     }
 
 }

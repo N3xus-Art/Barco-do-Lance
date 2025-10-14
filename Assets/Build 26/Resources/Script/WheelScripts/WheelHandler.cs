@@ -25,11 +25,11 @@ public class WheelHandler : MonoBehaviour{
         scene = SceneManager.GetActiveScene();
         if (scene.name == "GameScreen"){
             sceneHandler.LoadScene("MapScreen");
-            BuildInputHandler.isInteracting = false;
+            BuildInputHandler.isInteracting = true;
         }
         if (scene.name == "MapScreen"){
             sceneHandler.LoadScene("GameScreen");
-            BuildInputHandler.isInteracting = false;
+            BuildInputHandler.isInteracting = true;
         }
     }
     //Unity Methdos
