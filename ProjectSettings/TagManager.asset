@@ -7,6 +7,10 @@ TagManager:
   - Ladder
   - Water
   - Item
+  - ShopCanvas
+  - ShopMoneyText
+  - GameManager
+  - Sea
   layers:
   - Default
   - TransparentFX

@@ -14,20 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionName: Facil - Mar Vermelho
   animalSprite: {fileID: 21300000, guid: 980291ec80efd9f40b7a086763587e4d, type: 3}
+  Level: 1
   missionDescription: "Nossos radares captaram a presen\xE7a de barcos ao Norte do
     Mar Vermelho, aparentemente se tratam de barcos de pesca ilegal. As redes utilizadas
     por esses pescadores podem capturar acidentalmente os Tubar\xF5es-galha-branca-oce\xE2nicos.
     Na \xE1rea indicada, verifique a situa\xE7\xE3o dos quatro animais registrados
     em nosso banco de dados. \r\n\nEquipamentos Obrigat\xF3rios:\n\r\nTanque de Oxig\xEAnio
-    b\xE1sico; \r\nRede b\xE1sica; \r\nTesoura b\xE1sica; \r\nAlicate b\xE1sico:
+    b\xE1sico; \r\nRede b\xE1sica; \r\nTesoura b\xE1sica; \r\nAlicate b\xE1sico.
     \r"
-  animalDescription: " tubar\xE3o-galha-branca-oce\xE2nico \xE9 um animal origin\xE1rio
+  animalDescription: "O tubar\xE3o-galha-branca-oce\xE2nico \xE9 um animal origin\xE1rio
     do Mar Vermelho.\r\nSeu corpo robusto e nadadeiras grandes n\xE3o s\xE3o somente
     para exibi\xE7\xE3o; eles o tornam incrivelmente \xE1gil e resistente debaixo
     d'\xE1gua.\r\nDiferente de outros tubar\xF5es, o Galha-Branca-Oce\xE2nico \xE9
     infame por sua ousadia. Ele n\xE3o hesita em se aproximar de embarca\xE7\xF5es,
     e sua curiosidade pode ser uma faca de dois gumes: tanto uma oportunidade para
-    estud\xE1-lo de perto, quanto um risco iminente de ataque.\r\n"
+    estud\xE1-lo de perto, quanto um risco iminente de ataque.\r"
   missionID: 0
   missionReward: 70
   rescueableAnimals: 0

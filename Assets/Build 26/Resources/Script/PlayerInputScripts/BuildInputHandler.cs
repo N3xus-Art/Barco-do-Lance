@@ -1,16 +1,23 @@
-using System.Linq;
 using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+using System.Collections.Generic;
+using System.Linq;
 
-public class BuildInputHandler : MonoBehaviour{
+
+public class BuildInputHandler : MonoBehaviour {
     //Variables
     #region
+    public static BuildInputHandler Instance { get; private set; }
     [Header("----Boleanas----")]
     [SerializeField] private bool isMoving;
     [SerializeField] static public bool isInteracting;
+    [SerializeField] static public bool isInteracting2;
+    [SerializeField] static public bool isChangingItem;
     [SerializeField] static public bool isClicking;
     [SerializeField] static public bool isDashing;
     [SerializeField] static public bool isDiagonal;
@@ -25,34 +32,47 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask waterLayer;
     [SerializeField] private LayerMask ladderLayer;
-    [Header("----Verificação do o2----")]
+    [Header("----Variaveis do o2----")]
     [SerializeField] float rotation;
     [SerializeField] private float o2 = 100;
     [SerializeField] private int maxO2 = 100;
     [SerializeField] private float o2Cost;
     [SerializeField] private GameObject pointer;
-    [SerializeField] private Scene scene;
-
+    [Header("----Variaveis de sprite----")]
+    [SerializeField] public static Scene scene;
+    [SerializeField] private GameObject playerModel;
+    [SerializeField] private Sprite spriteBase;
+    [SerializeField] private Sprite spriteModel;
+    [SerializeField] private Sprite spriteBoat;
+    [Header("----Variaveis de Loja----")]
+    [SerializeField] static public float playerMoney;
+    [Header("----Variaveis Item----")]
+    [SerializeField] private int itemIndex;
+    [SerializeField] private GameObject buildGameManager;
+    [SerializeField] private PlayerInventoryHandler playerInventory;
+    [SerializeField] private ToolDataHandler pliersData;
+    [SerializeField] private ToolDataHandler scissorsData;
+    [SerializeField] private ToolDataHandler knifeData;
     #endregion
     //Input Methdos
     #region
-    public void Move(InputAction.CallbackContext context){
-       if(context.phase == InputActionPhase.Started){
-       }else if (context.phase == InputActionPhase.Performed){
+    public void Move(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Started) {
+        } else if (context.phase == InputActionPhase.Performed) {
             horizontalMoviment = context.ReadValue<Vector2>().x;
             verticalMoviment = context.ReadValue<Vector2>().y;
             isMoving = true;
-            if (Mathf.Abs(horizontalMoviment) > 0 && Mathf.Abs(horizontalMoviment) < 1){
+            if (Mathf.Abs(horizontalMoviment) > 0 && Mathf.Abs(horizontalMoviment) < 1) {
                 horizontalMoviment = 1 * Mathf.Sign(horizontalMoviment);
             }
             if (!isDiagonal) {
-                if (horizontalMoviment != 0){
+                if (horizontalMoviment != 0) {
                     verticalMoviment = 0;
                 }
             }
-       }else if(context.phase == InputActionPhase.Canceled){
-           isMoving = false;
-       }
+        } else if (context.phase == InputActionPhase.Canceled) {
+            isMoving = false;
+        }
     }
     public void Interact(InputAction.CallbackContext context){
        if(context.phase == InputActionPhase.Started){
@@ -60,13 +80,14 @@ public class BuildInputHandler : MonoBehaviour{
             if (isInteracting){
                 // Detecta objetos interagíveis próximos
                 var interagiveis = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).OfType<IInteractble>();
-                foreach (var obj in interagiveis)
-                {
+                Debug.Log(interagiveis);
+                foreach (var obj in interagiveis){
                     // Exemplo: verifica distância
                     var mono = obj as MonoBehaviour;
-                    if (mono != null && Vector2.Distance(transform.position, mono.transform.position) < 3.0f)
-                    {
+                    Debug.Log(mono);
+                    if (mono != null && Vector2.Distance(transform.position, mono.transform.position) < 3.0f){
                         obj.Interact();
+                        Debug.Log(obj);
                         break;
                     }
                 }
@@ -77,23 +98,53 @@ public class BuildInputHandler : MonoBehaviour{
        }else if(context.phase == InputActionPhase.Canceled){
        }
     }
-    public void Click(InputAction.CallbackContext context){
-        if(context.phase == InputActionPhase.Started){
+    public void Interact2(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Started) {
+        } else if (context.phase == InputActionPhase.Performed) {
+            if (isInteracting) {
+                isInteracting2 = false;
+            } else {
+                isInteracting2 = true;
+            }
+        } else if (context.phase == InputActionPhase.Canceled) {
+        }
+    }
+    public void Click(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Started) {
             isClicking = true;
-        }else if (context.phase == InputActionPhase.Performed){
-        }else if(context.phase == InputActionPhase.Canceled){
+        } else if (context.phase == InputActionPhase.Performed) {
+        } else if (context.phase == InputActionPhase.Canceled) {
             isClicking = false;
         }
     }
 
-    public void Dash(InputAction.CallbackContext context){
-        if(context.phase == InputActionPhase.Performed){
+    public void Dash(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
             isDashing = true;
-        }else if (context.phase == InputActionPhase.Canceled){
-            isDashing= false;
+        } else if (context.phase == InputActionPhase.Canceled) {
+            isDashing = false;
         }
 
     }
+
+    public void ChangeItem(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Started) {
+            isChangingItem = true;
+        } else if (context.phase == InputActionPhase.Performed) {
+            playerInventory.EquipNext();
+        } else if (context.phase == InputActionPhase.Canceled) {
+            isChangingItem = false;
+        }
+    }
+
+
+     void showInventory(){
+        Debug.Log("\nLista de ferramentas:" + string.Join(", ", playerInventory.OwnedTools) +
+                  "\nDinheiro:" + playerInventory.Money +
+                  "\nFerramenta equipada: " + playerInventory.EquippedTool
+                  );
+     }
+
     #endregion
     //ContactCheck Methods
     #region
@@ -126,18 +177,22 @@ public class BuildInputHandler : MonoBehaviour{
         speed = 5f;
         rb = this.GetComponent<Rigidbody2D>();
         scene = SceneManager.GetActiveScene();
+        playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
+        buildGameManager = GameObject.FindWithTag("GameManager");
+        isInteracting = false;
+        playerInventory = buildGameManager.GetComponent<PlayerInventoryHandler>();
         if (scene.name == "MapScreen"){
             rb.gravityScale = 0f;
+            playerModel.GetComponent<SpriteRenderer>().sprite = spriteBoat;
+            playerModel.GetComponent <Transform>().localScale = new Vector3(0.15f, 0.15f, 0.15f);
+            this.GetComponent<BoxCollider2D>().size = new Vector2(0.5189194f, 0.4115877f);
+            this.GetComponent<BoxCollider2D>().offset = new Vector2(0.03019339f, 0.02307379f);
         }
     }
     public void Update(){
-        if (scene.name == "MapScreen" && pointer == null){
-            return;
-        }
-
         //Moviment Update
         #region
-        if (isMoving && isGrounded()){
+            if (isMoving && isGrounded()){
                 rb.linearVelocity = new Vector2(horizontalMoviment * speed, 0);
                 rb.gravityScale = 20;
                 if(horizontalMoviment != 0) {
@@ -158,16 +213,26 @@ public class BuildInputHandler : MonoBehaviour{
                     gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
                 }
             }
-            if (!isGrounded() && !(inWater() || inLadder())){
+            if (!isGrounded() && !(inWater() || inLadder()) && scene.name != "MapScreen"){
                 rb.linearVelocity = new Vector2(0, 0);
                 rb.gravityScale = 20;
                 if(horizontalMoviment != 0) {
                     gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
                 }
             }
+            if (isMoving && scene.name == "MapScreen"){
+                rb.linearVelocity = new Vector2(horizontalMoviment * speed, verticalMoviment * speed);
+                rb.gravityScale = 0;
+                if(horizontalMoviment != 0) {
+                    gameObject.GetComponent<Transform>().localScale = new Vector3(horizontalMoviment, 1, 1);
+                }
+            }
         #endregion
         //Interact Update
-        if (isInteracting){
+        #region
+            if (isInteracting2){
+                bool success = playerInventory.TryUseEquipped();
+                Debug.Log(success ? "Usou a ferramenta equipada" : "Sem ferramentas para usar!");
             }
         //Click Update
             if (isClicking){
@@ -184,12 +249,28 @@ public class BuildInputHandler : MonoBehaviour{
                 }
         }
         //o2 System
+
             if (o2 > 0 && inWater()){
                 o2 -= 1 * Time.deltaTime;
             }
             rotation = -160f + (o2 / maxO2) * (160f - (-160f));
-            // tank full oxigen 160, zero oxigen -160
             pointer.GetComponent<RectTransform>().rotation = Quaternion.Euler(0f, 0f, -rotation);
+        #endregion
+        //Item Update
+        #region
+            if (isChangingItem) { 
+                
+            }
+        // M - Upgrade ferramenta equipada
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Debug.Log("Tentando Upgrade ferramenta equipada");
+            playerInventory.UpgradeEquippedTool();
+            showInventory();
+        }
+        Debug.Log(BuildGameManager.currentSea);
+        #endregion
+        //Canvas Update
     }
     #endregion
 }

@@ -1574,7 +1574,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1509296737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2470,14 +2470,14 @@ MonoBehaviour:
   Valor_Missao: 50
   ID_Atual: 0
   ProximasMissoes:
-  - {fileID: 11400000, guid: f2be7a4ebfdf1f34a84b48d2d17f67d4, type: 2}
-  - {fileID: 11400000, guid: 950797ce28cca3349b62a299157acd15, type: 2}
-  - {fileID: 11400000, guid: bce810c59ca46a747983830d94f363d2, type: 2}
+  - {fileID: 11400000, guid: ab2d66d8e52be214fb97e4e0a6c31334, type: 2}
+  - {fileID: 11400000, guid: f4b736efdccb003419056201f595d737, type: 2}
+  - {fileID: 11400000, guid: 15e571ca19bf3b3408f4d9f2bfda1059, type: 2}
   - {fileID: 11400000, guid: e3e12fc0ba08f75459fbbb4b141e958c, type: 2}
   MissoesDisponiveis:
-  - {fileID: 11400000, guid: ffef3787ff34d7148b8af0ffd4895719, type: 2}
-  - {fileID: 11400000, guid: e36ea8acc1ee0874386e8a7c7715029f, type: 2}
-  - {fileID: 11400000, guid: 0dea0bc8288891d4cb19de191c8e17fc, type: 2}
+  - {fileID: 11400000, guid: 7f121eed37cb9d44198ed1597cc7b8ed, type: 2}
+  - {fileID: 11400000, guid: a2be799aacb7ee14bb20dfc7a513b94c, type: 2}
+  - {fileID: 11400000, guid: 697938501fdc37d4e98fd7d98210c8fe, type: 2}
 --- !u!1 &2065224849
 GameObject:
   m_ObjectHideFlags: 0

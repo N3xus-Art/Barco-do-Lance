@@ -6,7 +6,6 @@ public class AnimalSpawner : MonoBehaviour
     public GameObject[] animalPrefabs;
     public Transform AreaSpawn;
     
-    /*
     public GameObject SpecificAnimal;
     public int MissionLevel;
     public int SpecificAnimalQtt;
@@ -15,7 +14,6 @@ public class AnimalSpawner : MonoBehaviour
     {
         SpawnAnimal(5, SpecificAnimal, SpecificAnimalQtt); // Exemplo: spawna 10 animais
     }
-    */
 
     // maxAnimals: número máximo de animais a serem spawnados por instancia
     // specificAnimal: animal específico a ser spawnado (pode ser null)

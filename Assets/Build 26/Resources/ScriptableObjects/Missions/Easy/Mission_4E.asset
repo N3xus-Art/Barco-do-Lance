@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionName: "Facil - Mediterr\xE2neo Dois"
   animalSprite: {fileID: 21300000, guid: 7055026bb9f007c40a0fc233d0f89b00, type: 3}
+  Level: 1
   missionDescription: "Recebemos muitas reclama\xE7\xF5es vindas das praias ao Norte
     do Mar Mediterr\xE2neo. Aparentemente, os visitantes da praia saem com uma irrita\xE7\xE3o
     na pele nunca antes presenciada. Enviamos pesquisadores at\xE9 o local e descobrimos
@@ -21,7 +22,7 @@ MonoBehaviour:
     esp\xE9cie invasora que causa queimadura e irrita\xE7\xE3o ao entrar em contato
     com a pele humana, por isso \xE9 vital a realoca\xE7\xE3o dessas esp\xE9cies
     para seu habitat natural. Foram reportadas cerca de vinte esp\xE9cies na regi\xE3o.\r\n\nEquipamentos
-    Obrigat\xF3rios :\n\n\rTanque de Oxig\xEAnio b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria;
+    Obrigat\xF3rios :\n\n\rTanque de Oxig\xEAnio b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria.
     \r"
   animalDescription: "A medusa-de-pintas \xE9 um animal origin\xE1rio do Mar do Caribe.\r\nA
     medusa-de-pintas, com seu formato de cogumelo, suas cores variadas e pintas,
@@ -29,7 +30,7 @@ MonoBehaviour:
     no ecossistema atrav\xE9s da \xE1gua de lastro de navios ou pela aquariofilia.\r\nSua
     invas\xE3o no ecossistema provoca desequil\xEDbrios significativos, superando
     as esp\xE9cies nativas na competi\xE7\xE3o por recursos e alterando a cadeia
-    alimentar.\r\n"
+    alimentar.\r"
   missionID: 0
   missionReward: 70
   rescueableAnimals: 5
