@@ -12,34 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36128abbab363ba40bbda7e862498462, type: 3}
   m_Name: Mission_1M
   m_EditorClassIdentifier: 
-  missionName: "M\xE9dio - Mar Caribe"
+  missionName: 
   animalSprite: {fileID: 0}
-  missionDescription: "Um grande cruzeiro entre It\xE1lia-Cuba libera um grande n\xFAmero
-    de Medusas-de-pintas no mar do caribe ao soltar sua \xE1gua de lastro, o jogador
-    deve colet\xE1 las em adi\xE7\xE3o aos animais de costume, o jogador deve coletar
-    trinta Medusas-de-pintas, dois Peixes-Le\xE3o e liberar uma Tartaruga-verde\r\n
-    \r\nEquipamentos Obrigat\xF3rios:\n \r\nTanque de Oxig\xEAnio b\xE1sico; \r\nRede
-    b\xE1sica; \r\nTesoura intermedi\xE1ria;\r\nAlicate Intermedi\xE1rio; \r\nTransportador
-    intermedi\xE1rio.\n\n\nEquipamentos Sugeridos:\n\r\nTanque Intermedi\xE1rio.\r"
-  animalDescription: "A medusa-de-pintas \xE9 um animal origin\xE1rio do Mar do Caribe.\r\nA
-    medusa-de-pintas, com seu formato de cogumelo, suas cores variadas e pintas,
-    \xE9 uma esp\xE9cie invasora do Mar Mediterr\xE2neo. Normalmente, ela \xE9 introduzida
-    no ecossistema atrav\xE9s da \xE1gua de lastro de navios ou pela aquariofilia.\r\nSua
-    invas\xE3o no ecossistema provoca desequil\xEDbrios significativos, superando
-    as esp\xE9cies nativas na competi\xE7\xE3o por recursos e alterando a cadeia
-    alimentar.\n\n\rO peixe-le\xE3o \xE9 um animal origin\xE1rio do Mar Vermelho.\r\nO
-    peixe-le\xE3o, com suas listras brancas e de tons quentes, s\xE3o invasores comuns
-    do Mar do Caribe, sua introdu\xE7\xE3o em novos ecossistemas geralmente ocorre
-    por meio de \xE1guas de lastro de navios ou pela soltura de esp\xE9cimes de aqu\xE1rio
-    por indiv\xEDduos. Uma vez estabelecido, sua alta taxa reprodutiva e a aus\xEAncia
-    de predadores naturais contribuem para sua r\xE1pida prolifera\xE7\xE3o.\r\n\n\nA
-    tartaruga-verde \xE9 um animal origin\xE1rio do Mar do Caribe.\r\nEssas tartarugas
-    s\xE3o migrat\xF3rias e podem viajar longas dist\xE2ncias entre seus locais de
-    alimenta\xE7\xE3o e de nidifica\xE7\xE3o. Elas se alimentam principalmente de
-    algas e capim-marinho quando adultas, dando \xE0 sua gordura uma colora\xE7\xE3o
-    esverdeada, foi da\xED que veio o seu nome. Elas podem viver at\xE9 80 anos na
-    natureza.\r"
+  Level: 2
+  missionDescription: " Um grande cruzeiro entre It\xE1lia-Cuba libera um grande
+    n\xFAmero de Medusas-de-pintas no mar do caribe ao soltar sua \xE1gua de lastro,
+    o jogador deve colet\xE1 las em adi\xE7\xE3o aos animais de costume, o jogador
+    deve coletar trinta Medusas-de-pintas, dois Peixes-Le\xE3o e liberar uma Tartaruga-verde"
+  animalDescription: 
   missionID: 0
-  missionReward: 136
-  rescueableAnimals: 32
-  operableAnimals: 1
+  missionReward: 0
+  rescueableAnimals: 0
+  operableAnimals: 0

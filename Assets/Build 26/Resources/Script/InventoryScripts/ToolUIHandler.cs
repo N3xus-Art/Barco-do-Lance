@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class EquippedToolUIHandler : MonoBehaviour
 {
+    public GameObject buildGameManager;
     public PlayerInventoryHandler playerInventory;
     public TextMeshProUGUI ToolText;
     public Image image;
@@ -30,6 +31,8 @@ public class EquippedToolUIHandler : MonoBehaviour
 
     private void Start()
     {
+        buildGameManager = GameObject.FindWithTag("GameManager");
+        playerInventory = buildGameManager.GetComponent<PlayerInventoryHandler>();
         UpdateToolText();
     }
 
@@ -50,6 +53,10 @@ public class EquippedToolUIHandler : MonoBehaviour
         {
             ToolText.text = "Ferramenta atual: Nenhuma";
         }
+    }
+    private void Update(){
+        UpdateToolUI(playerInventory?.EquippedTool);
+        UpdateToolText();
     }
 
     private void UpdateToolText(ToolInstanceHandler tool) => UpdateToolUI(tool);

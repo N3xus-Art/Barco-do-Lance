@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using System.Linq;
 
 
 public class BuildInputHandler : MonoBehaviour {
@@ -15,6 +16,7 @@ public class BuildInputHandler : MonoBehaviour {
     [Header("----Boleanas----")]
     [SerializeField] private bool isMoving;
     [SerializeField] static public bool isInteracting;
+    [SerializeField] static public bool isInteracting2;
     [SerializeField] static public bool isChangingItem;
     [SerializeField] static public bool isClicking;
     [SerializeField] static public bool isDashing;
@@ -37,7 +39,7 @@ public class BuildInputHandler : MonoBehaviour {
     [SerializeField] private float o2Cost;
     [SerializeField] private GameObject pointer;
     [Header("----Variaveis de sprite----")]
-    [SerializeField] private Scene scene;
+    [SerializeField] public static Scene scene;
     [SerializeField] private GameObject playerModel;
     [SerializeField] private Sprite spriteBase;
     [SerializeField] private Sprite spriteModel;
@@ -46,6 +48,7 @@ public class BuildInputHandler : MonoBehaviour {
     [SerializeField] static public float playerMoney;
     [Header("----Variaveis Item----")]
     [SerializeField] private int itemIndex;
+    [SerializeField] private GameObject buildGameManager;
     [SerializeField] private PlayerInventoryHandler playerInventory;
     [SerializeField] private ToolDataHandler pliersData;
     [SerializeField] private ToolDataHandler scissorsData;
@@ -71,13 +74,37 @@ public class BuildInputHandler : MonoBehaviour {
             isMoving = false;
         }
     }
-    public void Interact(InputAction.CallbackContext context) {
+    public void Interact(InputAction.CallbackContext context){
+       if(context.phase == InputActionPhase.Started){
+       }else if (context.phase == InputActionPhase.Performed){
+            if (isInteracting){
+                // Detecta objetos interagíveis próximos
+                var interagiveis = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).OfType<IInteractble>();
+                Debug.Log(interagiveis);
+                foreach (var obj in interagiveis){
+                    // Exemplo: verifica distância
+                    var mono = obj as MonoBehaviour;
+                    Debug.Log(mono);
+                    if (mono != null && Vector2.Distance(transform.position, mono.transform.position) < 3.0f){
+                        obj.Interact();
+                        Debug.Log(obj);
+                        break;
+                    }
+                }
+                isInteracting = false;
+            }else{
+                isInteracting = true;
+            }
+       }else if(context.phase == InputActionPhase.Canceled){
+       }
+    }
+    public void Interact2(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Started) {
         } else if (context.phase == InputActionPhase.Performed) {
             if (isInteracting) {
-                isInteracting = false;
+                isInteracting2 = false;
             } else {
-                isInteracting = true;
+                isInteracting2 = true;
             }
         } else if (context.phase == InputActionPhase.Canceled) {
         }
@@ -104,11 +131,12 @@ public class BuildInputHandler : MonoBehaviour {
         if (context.phase == InputActionPhase.Started) {
             isChangingItem = true;
         } else if (context.phase == InputActionPhase.Performed) {
-
+            playerInventory.EquipNext();
         } else if (context.phase == InputActionPhase.Canceled) {
             isChangingItem = false;
         }
     }
+
 
      void showInventory(){
         Debug.Log("\nLista de ferramentas:" + string.Join(", ", playerInventory.OwnedTools) +
@@ -150,6 +178,9 @@ public class BuildInputHandler : MonoBehaviour {
         rb = this.GetComponent<Rigidbody2D>();
         scene = SceneManager.GetActiveScene();
         playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
+        buildGameManager = GameObject.FindWithTag("GameManager");
+        isInteracting = false;
+        playerInventory = buildGameManager.GetComponent<PlayerInventoryHandler>();
         if (scene.name == "MapScreen"){
             rb.gravityScale = 0f;
             playerModel.GetComponent<SpriteRenderer>().sprite = spriteBoat;
@@ -199,7 +230,7 @@ public class BuildInputHandler : MonoBehaviour {
         #endregion
         //Interact Update
         #region
-            if (isInteracting){
+            if (isInteracting2){
                 bool success = playerInventory.TryUseEquipped();
                 Debug.Log(success ? "Usou a ferramenta equipada" : "Sem ferramentas para usar!");
             }
@@ -228,8 +259,7 @@ public class BuildInputHandler : MonoBehaviour {
         //Item Update
         #region
             if (isChangingItem) { 
-                playerInventory.EquipNext();
-                Debug.Log("Proxima ferramenta equipada: " + playerInventory.EquippedTool);
+                
             }
         // M - Upgrade ferramenta equipada
         if (Input.GetKeyDown(KeyCode.M))
@@ -238,6 +268,7 @@ public class BuildInputHandler : MonoBehaviour {
             playerInventory.UpgradeEquippedTool();
             showInventory();
         }
+        //Debug.Log(BuildGameManager.currentSea);
         #endregion
         //Canvas Update
     }

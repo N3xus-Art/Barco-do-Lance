@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6524492762156670349}
   - component: {fileID: 5834473407118717771}
+  - component: {fileID: 3008120526369223002}
   m_Layer: 0
   m_Name: BuildGameManager_PF
   m_TagString: Untagged
@@ -44,3 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839f15ed3c62be5469b9533439d2977e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SeaPrefabs:
+  - {fileID: 2541520854083856520, guid: 5c0ad1150739d5943b3a96aae68926d8, type: 3}
+  - {fileID: 2541520854083856520, guid: a9611ac4e82353044a549d1e60f19fb5, type: 3}
+  - {fileID: 2541520854083856520, guid: b90b698f05228b544a22d550fc3a2c4e, type: 3}
+--- !u!114 &3008120526369223002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222918912750533569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a360784317ea85b4ebc453b283ab1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Money: 100
+  maxSlots: 20
+  ownedTools: []
+  equippedInstanceId: 
