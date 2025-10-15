@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8539233126707883103}
   - component: {fileID: 6174555444854980864}
   - component: {fileID: 2476932962702691981}
+  - component: {fileID: 7905579362618992344}
   m_Layer: 0
   m_Name: Jellyfish_PF
   m_TagString: Untagged
@@ -190,3 +191,25 @@ PolygonCollider2D:
       - {x: 0.3046875, y: -0.359375}
       - {x: 0.3046875, y: 0.359375}
   m_UseDelaunayMesh: 0
+--- !u!95 &7905579362618992344
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2228100970441931406}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d397fe9007c53244bfd47534cc98574, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

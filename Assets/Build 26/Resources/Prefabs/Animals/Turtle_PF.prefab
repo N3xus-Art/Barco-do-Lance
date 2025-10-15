@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2063666415028198309}
   - component: {fileID: 5753766673931053141}
   - component: {fileID: -4372553694056621845}
+  - component: {fileID: 4566822235204391708}
   m_Layer: 0
   m_Name: Turtle_PF
   m_TagString: Untagged
@@ -198,3 +199,25 @@ PolygonCollider2D:
       - {x: -0.171875, y: -0.25}
       - {x: 0.09375, y: -0.234375}
   m_UseDelaunayMesh: 0
+--- !u!95 &4566822235204391708
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997299628125722017}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9aad73d5f0bbcf34493f2203cdc124f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

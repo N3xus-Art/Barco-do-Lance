@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2063666415028198309}
   - component: {fileID: 3587155690997841285}
   - component: {fileID: 4365618824266187077}
+  - component: {fileID: 3922711710662573832}
   m_Layer: 0
   m_Name: Shark_PF
   m_TagString: Untagged
@@ -201,3 +202,25 @@ PolygonCollider2D:
       - {x: 0.28125, y: -0.265625}
       - {x: 0.5, y: -0.375}
   m_UseDelaunayMesh: 0
+--- !u!95 &3922711710662573832
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997299628125722017}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f45673fd888ca324796fd5572e044173, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
