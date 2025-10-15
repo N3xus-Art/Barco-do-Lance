@@ -20,22 +20,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Build 26/Scenes/MapScreen.unity
     guid: 16357d11aafb2b24180a457c3a498dd0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Build 26/Scenes/ShopScenes/SceneShop_Aquarrium.unity
     guid: 58af53a177dd11b46ba4dc6a9ce11063
-  - enabled: 0
+  - enabled: 1
     path: Assets/Build 26/Scenes/ShopScenes/SceneShop_Cut.unity
     guid: df2ff4c4f1324764bac58f190a3e73d6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Build 26/Scenes/ShopScenes/SceneShop_Net.unity
     guid: 52e60b1ef96a54b4184a2e6dd960d570
-  - enabled: 0
+  - enabled: 1
     path: Assets/Build 26/Scenes/ShopScenes/SceneShop_Tank.unity
     guid: 1a4db5f4ba1e8b342bf714e878502b04
-  - enabled: 0
+  - enabled: 1
     path: Assets/Build 26/Scenes/ShopScenes/SceneShop_Transporter.unity
     guid: 320f22a0ffe54334d84b98c8d7e3c0eb
-  - enabled: 0
+  - enabled: 1
     path: Assets/Build 26/Scenes/ShopScenes/SceneShop_Treat.unity
     guid: 154c97521de869b4b85911e936cb10fa
   m_configObjects:

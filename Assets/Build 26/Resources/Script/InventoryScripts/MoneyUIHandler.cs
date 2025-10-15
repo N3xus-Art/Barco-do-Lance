@@ -3,7 +3,6 @@ using TMPro;
 
 public class MoneyUIHandler : MonoBehaviour
 {
-    public GameObject buildGameManager;
     public PlayerInventoryHandler playerInventoryHandler;
     public TextMeshProUGUI moneyText;
 
@@ -21,13 +20,9 @@ public class MoneyUIHandler : MonoBehaviour
 
     private void Start()
     {
-        buildGameManager = GameObject.FindWithTag("GameManager");
-        playerInventoryHandler = buildGameManager.GetComponent<PlayerInventoryHandler>();
         UpdateMoneyText(playerInventoryHandler.Money);
     }
-    private void Update(){
-        UpdateMoneyText(playerInventoryHandler.Money);
-    }
+
     private void UpdateMoneyText(int currentMoney)
     {
         moneyText.text = $"Money: {currentMoney}";

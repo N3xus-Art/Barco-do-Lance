@@ -7,7 +7,7 @@ public class Tubarao : AnimalMarinho, IOperavel
         base.Start();
         nome = "Tubarão";
         velocidade = 8.0f;
-        // tamanho = 3.0f; // 3m
+        tamanho = 3.0f; // 3m
     }
     public Sprite GetSprite()
     {
@@ -23,7 +23,7 @@ public class Tubarao : AnimalMarinho, IOperavel
     {
         Debug.Log("Operação finalizada no tubarão.");
     }
-    public void Interact()
+    private void OnMouseDown()
     {
         IniciarOperacao();
     }

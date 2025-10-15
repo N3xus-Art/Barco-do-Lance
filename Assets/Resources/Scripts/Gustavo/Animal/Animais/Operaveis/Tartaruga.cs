@@ -7,7 +7,7 @@ public class Tartaruga : AnimalMarinho, IOperavel
         base.Start();
         nome = "Tartaruga";
         velocidade = 0.3f;
-        // tamanho = 0.8f; // 80cm
+        tamanho = 0.8f; // 80cm
     }
     public Sprite GetSprite()
     {
@@ -22,7 +22,7 @@ public class Tartaruga : AnimalMarinho, IOperavel
     {
         Debug.Log("Operação finalizada na tartaruga.");
     }
-    public void Interact()
+    private void OnMouseDown()
     {
         IniciarOperacao();
     }

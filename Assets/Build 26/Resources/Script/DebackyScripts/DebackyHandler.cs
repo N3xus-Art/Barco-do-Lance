@@ -14,6 +14,7 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private GameObject debackyScreen;
     [SerializeField] private PlayerInventoryHandler playerInventory;
     [Header("----Variaveis do Canvas----")]
+    [SerializeField] private int money;
     [SerializeField] private TMP_Text moneyTMP;
     [SerializeField] private Image animalImage;
     [SerializeField] private TMP_Text animalDescription;
@@ -38,7 +39,7 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private TMP_Text confirmTMP;
     [SerializeField] private Color acceptColor;
     [SerializeField] private Color endColor;
-    public static GameObject CurrentMissionGO { get; private set ;}
+    [SerializeField] private GameObject CurrentMissionGO;
 
 
     #endregion
@@ -84,11 +85,11 @@ public class DebackyHandler : MonoBehaviour {
 
             GameObject currentMission = new GameObject();
             currentMission.name = "CurrentMission";
-            var Scr_CurrentMission = currentMission.AddComponent<CurrentMission>();
-            Scr_CurrentMission.missionReward = avaliableMissions[currentID].missionReward;
-            Scr_CurrentMission.RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
-            Scr_CurrentMission.OperableAnimals = avaliableMissions[currentID].operableAnimals;
-            Scr_CurrentMission.Level = avaliableMissions[currentID].Level;
+            currentMission.AddComponent<CurrentMission>();
+            currentMission.GetComponent<CurrentMission>().missionReward = avaliableMissions[currentID].missionReward;
+            currentMission.GetComponent<CurrentMission>().RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
+            currentMission.GetComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
+            currentMission.GetComponent<CurrentMission>().Level = avaliableMissions[currentID].Level;
             CurrentMissionGO = currentMission;
             MissionTabID = currentID;
             onMission = true;
@@ -102,7 +103,7 @@ public class DebackyHandler : MonoBehaviour {
 
     public void EndMissions() {
         if (outMission){
-            var money = CurrentMissionGO.GetComponent<CurrentMission>().missionReward;
+            money += CurrentMissionGO.GetComponent<CurrentMission>().missionReward;
             playerInventory.Receive(money);
             moneyTMP.SetText($"R${playerInventory.Money}");
             Destroy(CurrentMissionGO);
@@ -125,7 +126,7 @@ public class DebackyHandler : MonoBehaviour {
 
         if (onMission)
         {
-            var money = CurrentMissionGO.GetComponent<CurrentMission>().CurrentReward;
+            money += CurrentMissionGO.GetComponent<CurrentMission>().CurrentReward;
             playerInventory.Receive(money);
             Destroy(CurrentMissionGO);
             onMission = false;
@@ -166,7 +167,7 @@ public class DebackyHandler : MonoBehaviour {
         animalImage.sprite = avaliableMissions[currentID].animalSprite;
         animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
         missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
-        missionTMP.SetText($"Recompensa:    R${avaliableMissions[currentID].missionReward}");
+        missionTMP.SetText($"Recompensa: {avaliableMissions[currentID].missionReward}");
 
     }
 
@@ -175,7 +176,7 @@ public class DebackyHandler : MonoBehaviour {
     #region
     private void Start(){
         //Tabs Handler
-        playerInventory = BuildGameManager.Instance.GetComponent<PlayerInventoryHandler>();
+
         firstButton.onClick.AddListener(()=> { OnTabClick(0); });
         secondButton.onClick.AddListener(() => { OnTabClick(1); });
         centralButton.onClick.AddListener(() => { OnTabClick(2); });
