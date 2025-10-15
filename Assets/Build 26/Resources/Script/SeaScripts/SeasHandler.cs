@@ -28,6 +28,11 @@ public class SeasHandler : MonoBehaviour {
         if (isOn && BuildInputHandler.isInteracting){
             BuildGameManager.currentSea = seaValue;
             sceneHandler.LoadScene("GameScreen");
+            if (DebackyHandler.CurrentMissionGO != null) {
+
+                Debug.Log(DebackyHandler.CurrentMissionGO.GetComponent<CurrentMission>().missionReward);
+            
+            }
         }
     }
     #endregion

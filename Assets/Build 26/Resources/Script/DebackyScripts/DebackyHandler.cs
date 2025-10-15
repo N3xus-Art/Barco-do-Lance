@@ -126,7 +126,7 @@ public class DebackyHandler : MonoBehaviour {
             MissionTabID = currentID;
             onMission = true;
 
-
+            DontDestroyOnLoad(currentMission);
             
             confirmButton.interactable = false;
             confirmTMP.SetText("Em Missão");

@@ -10,4 +10,5 @@ public class ScriptableObjectMissions : ScriptableObject{
     public int missionReward;
     public int rescueableAnimals;
     public int operableAnimals;
+    [Range(0,2)]public int MissionSea = 0;
 }

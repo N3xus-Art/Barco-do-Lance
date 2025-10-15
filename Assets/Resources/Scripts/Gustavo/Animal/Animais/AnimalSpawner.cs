@@ -12,7 +12,7 @@ public class AnimalSpawner : MonoBehaviour
 
     void Start()
     {
-        SpawnAnimal(5, SpecificAnimal, SpecificAnimalQtt); // Exemplo: spawna 10 animais
+        //SpawnAnimal(5, SpecificAnimal, SpecificAnimalQtt); // Exemplo: spawna 10 animais
     }
 
     // maxAnimals: número máximo de animais a serem spawnados por instancia
