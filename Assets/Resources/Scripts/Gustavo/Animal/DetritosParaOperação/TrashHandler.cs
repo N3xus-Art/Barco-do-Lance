@@ -33,7 +33,7 @@ public class TrashHandler : MonoBehaviour, IPointerClickHandler
 
         if (correto)
         {
-            if (PlayerInventory.Instance.TryUseEquipped())
+            if (PlayerInventoryHandler.Instance.TryUseEquipped())
             {
                 Destroy(gameObject);
                 Debug.Log("Lixo removido!");

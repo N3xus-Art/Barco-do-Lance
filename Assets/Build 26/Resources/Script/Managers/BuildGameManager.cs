@@ -17,7 +17,7 @@ public class BuildGameManager : MonoBehaviour {
             return _instance; } }
     [SerializeField] private List<GameObject> SeaPrefabs = new List<GameObject>();
     [SerializeField] private GameObject currentSeaGO;
-    [SerializeField] public static int currentSea = 0;
+    [SerializeField] public static int currentSea = 1;
     /*[SerializeField] private bool isPaused;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject confirmExit;
