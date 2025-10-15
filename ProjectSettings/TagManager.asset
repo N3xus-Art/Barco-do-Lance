@@ -9,8 +9,7 @@ TagManager:
   - Item
   - ShopCanvas
   - ShopMoneyText
-  - GameManager
-  - Sea
+  - Audio
   layers:
   - Default
   - TransparentFX

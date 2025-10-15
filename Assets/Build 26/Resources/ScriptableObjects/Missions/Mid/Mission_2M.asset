@@ -12,16 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36128abbab363ba40bbda7e862498462, type: 3}
   m_Name: Mission_2M
   m_EditorClassIdentifier: 
-  missionName: 
+  missionName: "M\xE9dio - Mar Mediterraneo"
   animalSprite: {fileID: 0}
-  Level: 2
-  missionDescription: " Durante o transporte de um grande carregamento de caf\xE9
+  missionDescription: "Durante o transporte de um grande carregamento de caf\xE9
     do Brasieliro para a Turquia um container mal preso cai no mar. liberando diversos
     pl\xE1sticos no Mediterraneo, banhistas est\xE3o relatando diversos casos de
     Focas-monge-do-mediterr\xE2neo com pl\xE1sticos presos nos seus corpos. Libere
-    seis Focas-monge-do-mediterr\xE2neo e vinte Medusas-de-pintas\r\n"
-  animalDescription: 
+    seis Focas-monge-do-mediterr\xE2neo e vinte Medusas-de-pintas\r\n\nEquipamentos
+    Obrigat\xF3rios:\n \r\nTanque de Oxig\xEAnio b\xE1sico; \r\nRede Intermedi\xE1ria;\r\nAlicate
+    B\xE1sico;\r\nTransportador B\xE1sico.\r\n\r\n\nEquipamentos Sugeridos:\r\n\nTanque
+    intermedi\xE1rio.\r"
+  animalDescription: "A foca-monge-do-mediterr\xE2neo \xE9 um animal origin\xE1rio
+    do Mar Mediterr\xE2neo.\r\nEla possui nadadeiras adaptadas para nata\xE7\xE3o
+    e locomo\xE7\xE3o em terra, embora seja mais \xE1gil na \xE1gua.\r\nSua pele
+    \xE9 grossa e a camada de gordura (tamb\xE9m conhecida como blubber) ajuda a
+    manter a temperatura corporal em \xE1guas mais frias. \xC9 um animal solit\xE1rio
+    e territorial, conhecido por sua curiosidade e intelig\xEAncia, o que o torna
+    um desafio interessante.\r\n\nA medusa-de-pintas \xE9 um animal origin\xE1rio
+    do Mar do Caribe.\r\nA medusa-de-pintas, com seu formato de cogumelo, suas cores
+    variadas e pintas, \xE9 uma esp\xE9cie invasora do Mar Mediterr\xE2neo. Normalmente,
+    ela \xE9 introduzida no ecossistema atrav\xE9s da \xE1gua de lastro de navios
+    ou pela aquariofilia.\r\nSua invas\xE3o no ecossistema provoca desequil\xEDbrios
+    significativos, superando as esp\xE9cies nativas na competi\xE7\xE3o por recursos
+    e alterando a cadeia alimentar.\r"
   missionID: 0
-  missionReward: 0
-  rescueableAnimals: 0
-  operableAnimals: 0
+  missionReward: 175
+  rescueableAnimals: 20
+  operableAnimals: 6

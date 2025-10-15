@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,17 +7,8 @@ using UnityEngine.UI;
 public class BuildGameManager : MonoBehaviour {
     //Variables
     #region
-    static private BuildGameManager _instance;
-    public static BuildGameManager Instance {
-        get {
-            if (_instance == null) {
-                Debug.LogError("O GameManager não foi inicializado. Certifique-se de que está na cena!");
-            }
-            return _instance; } }
-    [SerializeField] private List<GameObject> SeaPrefabs = new List<GameObject>();
-    [SerializeField] private GameObject currentSeaGO;
-    [SerializeField] public static int currentSea = 0;
-    /*[SerializeField] private bool isPaused;
+    static BuildGameManager Instance;
+    [SerializeField] private bool isPaused;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject confirmExit;
     [SerializeField] private GameObject buttons;
@@ -28,26 +18,18 @@ public class BuildGameManager : MonoBehaviour {
     [SerializeField] private Button homeButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private Button confirmButton;
-    [SerializeField] private Button backButton;*/
+    [SerializeField] private Button backButton;
     #endregion
 
     //Methods
     #region
-    void SpawnOcean(){
-        if (BuildInputHandler.scene.name == "GameScreen" && currentSeaGO == null){
-            Instantiate(SeaPrefabs[currentSea], new Vector3(0, -95.76f, 0), Quaternion.identity);
-            currentSeaGO = GameObject.FindWithTag("Sea");
-        }
-    }
     void Awake() {
-        if (_instance != null && _instance != this){
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else if (Instance != this) {
             Destroy(gameObject);
-            return;
         }
-        _instance = this;
-        DontDestroyOnLoad(gameObject);
-        currentSeaGO = GameObject.FindWithTag("Sea");
-        /*
         Button resume = resumeButton.GetComponent<Button>();
         Button config = configButton.GetComponent<Button>();
         Button home = homeButton.GetComponent<Button>();
@@ -59,18 +41,10 @@ public class BuildGameManager : MonoBehaviour {
         home.onClick.AddListener(Home);
         quit.onClick.AddListener(Confirm);
         //confirm.onClick.AddListener(Quit);
-        back.onClick.AddListener(Back);*/
+        back.onClick.AddListener(Back);
     }
     private void Update() {
-        SpawnOcean();
-
-        if (currentSea >= 4 || currentSea < 0) { 
-            currentSea = 0;
-        }
-    
-    }
-    
-    /*    if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             if (isPaused) {
                 ResumeGame();
             } else {
@@ -107,6 +81,6 @@ public class BuildGameManager : MonoBehaviour {
     }
     public void Quit(){
         Application.Quit();
-    }*/
+    }
     #endregion
 }
