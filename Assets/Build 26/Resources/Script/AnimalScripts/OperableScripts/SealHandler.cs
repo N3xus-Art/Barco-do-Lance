@@ -1,30 +1,17 @@
 using UnityEngine;
 
-public class SealHandler : AnimalMarinho, IOperavel
-{
-    protected override void Start()
-    {
+public class SealHandler : MarineAnimalHandler, IOperable{
+    //Methdos
+    #region
+    protected override void Start(){
         base.Start();
-        nome = "foca";
-        velocidade = 5.0f;
-        // tamanho = 3.0f; // 3m
-    }
-    public Sprite GetSprite()
-    {
-        return gameObject.GetComponent<SpriteRenderer>().sprite;
+        name = "Foca";
+        speed = 0.5f;
+        size = 1.5f; // 80cm
     }
 
-    public void IniciarOperacao()
-    {
-        Time.timeScale = 0f;
-        OperacaoUIHandler.Instance.AbrirOperacao(this);
+    public void Operate(){
+        Debug.Log($"Você está operando {name}!");
     }
-    public void FinalizarOperacao()
-    {
-        Debug.Log("Operação finalizada no tubarão.");
-    }
-    public void Interact()
-    {
-        IniciarOperacao();
-    }
+    #endregion
 }

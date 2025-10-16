@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 3885483377207685242}
   - component: {fileID: 7112492925326337611}
   - component: {fileID: 2063666415028198309}
+  - component: {fileID: 5174100023044837194}
   - component: {fileID: 5753766673931053141}
-  - component: {fileID: -4372553694056621845}
-  - component: {fileID: 4566822235204391708}
   m_Layer: 0
   m_Name: Turtle_PF
   m_TagString: Untagged
@@ -117,22 +116,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &5753766673931053141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997299628125722017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b312ecfc308ea4e448564cdfea7b3b24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidade: 0
-  tamanho: 0
---- !u!60 &-4372553694056621845
+  m_Constraints: 0
+--- !u!60 &5174100023044837194
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,46 +163,41 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.421875, y: -0.21875}
-      - {x: 0.859375, y: -0.40625}
-      - {x: 0.921875, y: -0.296875}
-      - {x: 0.921875, y: -0.109375}
-      - {x: 0.828125, y: 0.03125}
-      - {x: 0.5, y: 0.265625}
-      - {x: 0.328125, y: 0.34375}
-      - {x: -0.328125, y: 0.34375}
-      - {x: -0.59375, y: 0.1875}
-      - {x: -0.6875, y: 0.3125}
-      - {x: -0.96875, y: 0.21875}
-      - {x: -0.96875, y: 0.03125}
-      - {x: -0.796875, y: -0.078125}
-      - {x: -0.578125, y: -0.21875}
-      - {x: -0.5625, y: -0.40625}
-      - {x: -0.421875, y: -0.453125}
-      - {x: -0.15625, y: -0.453125}
-      - {x: -0.140625, y: -0.4375}
-      - {x: -0.171875, y: -0.25}
-      - {x: 0.09375, y: -0.234375}
+    - - {x: 0.38, y: -0.225}
+      - {x: 0.41, y: -0.21499999}
+      - {x: 0.41, y: -0.114999995}
+      - {x: 0.63, y: 0.035}
+      - {x: 0.63, y: 0.125}
+      - {x: 0.26, y: 0.015}
+      - {x: 0.22999999, y: 0.065}
+      - {x: 0.03, y: 0.074999996}
+      - {x: 0.01, y: 0.21499999}
+      - {x: 0, y: 0.225}
+      - {x: -0.099999994, y: 0.225}
+      - {x: -0.19, y: 0.114999995}
+      - {x: -0.39999998, y: 0.074999996}
+      - {x: -0.56, y: 0.015}
+      - {x: -0.63, y: -0.015}
+      - {x: -0.63, y: -0.095}
+      - {x: -0.26, y: -0.185}
+      - {x: -0.17999999, y: -0.225}
+      - {x: -0.04, y: -0.225}
+      - {x: 0.03, y: -0.145}
+      - {x: 0.19, y: -0.155}
+      - {x: 0.32999998, y: -0.225}
   m_UseDelaunayMesh: 0
---- !u!95 &4566822235204391708
-Animator:
-  serializedVersion: 7
+--- !u!114 &5753766673931053141
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3997299628125722017}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9aad73d5f0bbcf34493f2203cdc124f1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b312ecfc308ea4e448564cdfea7b3b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  speed: 0
+  size: 0

@@ -1324,7 +1324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 0}
   shopGO: {fileID: 844576876}
   normalScreen: {fileID: 844576875}
   confirmScreen: {fileID: 844576874}
@@ -1393,7 +1393,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.5, y: 1.96875}
+    oldSize: {x: 1.6, y: 1.26}
     newSize: {x: 1.6, y: 1.26}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1663,7 +1663,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.59375, y: 3.5}
+    oldSize: {x: 2.3, y: 2.24}
     newSize: {x: 2.3, y: 2.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1739,7 +1739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 0}
   shopGO: {fileID: 1596484573}
   normalScreen: {fileID: 1596484576}
   confirmScreen: {fileID: 1596484575}
@@ -2204,7 +2204,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ff0549ec0e4b4c428ad2e192085fa2a, type: 3}
   m_Color: {r: 0, g: 0.7693858, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2999,7 +2999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 0}
   shopGO: {fileID: 1370829733}
   normalScreen: {fileID: 1370829732}
   confirmScreen: {fileID: 1370829731}
@@ -3068,7 +3068,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.84375, y: 3.6875}
+    oldSize: {x: 2.46, y: 2.36}
     newSize: {x: 2.46, y: 2.36}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3215,7 +3215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 0}
   shopGO: {fileID: 199464025}
   normalScreen: {fileID: 199464024}
   confirmScreen: {fileID: 199464023}
@@ -3284,7 +3284,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.265625, y: 3.03125}
+    oldSize: {x: 2.09, y: 1.94}
     newSize: {x: 2.09, y: 1.94}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3589,7 +3589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 0}
   shopGO: {fileID: 2091101553}
   normalScreen: {fileID: 2091101552}
   confirmScreen: {fileID: 2091101551}
@@ -3658,7 +3658,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.078125, y: 2.53125}
+    oldSize: {x: 1.97, y: 1.62}
     newSize: {x: 1.97, y: 1.62}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4511,7 +4511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ison: 0
-  playerInventory: {fileID: 2104679773}
+  playerInventory: {fileID: 0}
   shopGO: {fileID: 2026072171}
   normalScreen: {fileID: 2026072170}
   confirmScreen: {fileID: 2026072169}
@@ -4580,8 +4580,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.53125, y: 2.703125}
-    newSize: {x: 1.97, y: 1.62}
+    oldSize: {x: 1.62, y: 1.73}
+    newSize: {x: 1.62, y: 1.73}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -4673,7 +4673,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.97, y: 1.62}
+  m_Size: {x: 1.62, y: 1.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7650,17 +7650,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3211765220757160149, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
   m_PrefabInstance: {fileID: 2104679771}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2104679773 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2296190767582020438, guid: bbcb0d2b7c8d2fb41a416a01487aa8b5, type: 3}
-  m_PrefabInstance: {fileID: 2104679771}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a360784317ea85b4ebc453b283ab1830, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2125483703
 GameObject:
   m_ObjectHideFlags: 0
