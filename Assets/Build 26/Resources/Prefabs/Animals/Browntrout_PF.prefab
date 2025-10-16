@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 3149614304308103266}
   - component: {fileID: 1859567654874549345}
   - component: {fileID: 6953407697103488671}
+  - component: {fileID: 4575412515228935786}
   - component: {fileID: 6780980506151427350}
-  - component: {fileID: 5863411144008623150}
-  - component: {fileID: 8368189801886304837}
   m_Layer: 0
   m_Name: Browntrout_PF
   m_TagString: Untagged
@@ -62,7 +61,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!212 &6953407697103488671
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -118,21 +117,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6780980506151427350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2832956871920246886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848dab031fc78af44aef42d5066c16ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidade: 0
-  tamanho: 0
---- !u!60 &5863411144008623150
+--- !u!60 &4575412515228935786
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,7 +153,7 @@ PolygonCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 1.171875, z: 0, w: 0.15625}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2, y: 2}
     newSize: {x: 2, y: 2}
@@ -178,52 +163,37 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.61799455, y: 0.37327158}
-      - {x: 0.97238994, y: 0.22735918}
-      - {x: 1.0190339, y: 0.42722654}
-      - {x: 0.9631407, y: 0.68859535}
-      - {x: 0.7219517, y: 0.582624}
-      - {x: 0.58577967, y: 0.57738626}
-      - {x: 0.5854206, y: 0.6347239}
-      - {x: 0.5217092, y: 0.6479101}
-      - {x: 0.4356687, y: 0.6141447}
-      - {x: 0.14983892, y: 0.64382756}
-      - {x: 0.16090226, y: 0.7686563}
-      - {x: -0.038294077, y: 0.8716722}
-      - {x: -0.24042892, y: 0.6911279}
-      - {x: -0.5583432, y: 0.655905}
-      - {x: -1.007503, y: 0.4930476}
-      - {x: -0.9942746, y: 0.37495893}
-      - {x: -0.8252115, y: 0.3038212}
-      - {x: -0.15717983, y: 0.26460743}
-      - {x: -0.06544304, y: 0.2714032}
-      - {x: 0.05283618, y: 0.1823703}
-      - {x: 0.14416695, y: 0.19231653}
-      - {x: 0.15147996, y: 0.27973795}
-      - {x: 0.30592203, y: 0.29257405}
-      - {x: 0.45744967, y: 0.1766268}
-      - {x: 0.58880615, y: 0.1687789}
-      - {x: 0.6281953, y: 0.2821616}
+    - - {x: 0.64, y: -0.175}
+      - {x: 0.64, y: 0.155}
+      - {x: 0.37, y: 0.114999995}
+      - {x: 0.21, y: 0.105}
+      - {x: 0.06, y: 0.225}
+      - {x: -0.089999996, y: 0.225}
+      - {x: -0.31, y: 0.13499999}
+      - {x: -0.64, y: 0.024999999}
+      - {x: -0.64, y: -0.125}
+      - {x: -0.55, y: -0.145}
+      - {x: -0.04, y: -0.225}
+      - {x: 0.14999999, y: -0.225}
+      - {x: 0.24, y: -0.21499999}
+      - {x: 0.28, y: -0.225}
+      - {x: 0.39, y: -0.225}
+      - {x: 0.45, y: -0.13499999}
+      - {x: 0.55, y: -0.175}
+      - {x: 0.62, y: -0.185}
   m_UseDelaunayMesh: 0
---- !u!95 &8368189801886304837
-Animator:
-  serializedVersion: 7
+--- !u!114 &6780980506151427350
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2832956871920246886}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 86bd9098c3965ef4781acf279cf688fb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848dab031fc78af44aef42d5066c16ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  speed: 0
+  size: 0

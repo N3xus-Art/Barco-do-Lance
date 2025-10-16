@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,7 +9,7 @@ public class IslandHandler : MonoBehaviour{
     #region
     [Header("----Variaveis de Trigger----")]
     [SerializeField] private bool ison;
-    [SerializeField] public PlayerInventoryHandler playerInventory;
+    [SerializeField] private PlayerInventoryHandler playerInventory;
     [Header("----Variaveis de Canva----")]
     [SerializeField] private GameObject shopGO;
     [SerializeField] private GameObject normalScreen;
@@ -132,7 +133,6 @@ public class IslandHandler : MonoBehaviour{
                 firstGameObject.GetComponent<Image>().sprite = firstSprite;
                 secondGameObject.GetComponent<Image>().sprite = secondSprite;
                 thirdGameObject.GetComponent<Image>().sprite = thirdSprite;
-                playerInventory = BuildGameManager.Instance.GetComponent<PlayerInventoryHandler>();
     }
         private void Update(){
             if (BuildInputHandler.isInteracting && ison){

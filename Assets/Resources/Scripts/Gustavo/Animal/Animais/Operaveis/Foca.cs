@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Foca : AnimalMarinho, IOperavel
 {
@@ -8,7 +7,7 @@ public class Foca : AnimalMarinho, IOperavel
         base.Start();
         nome = "Foca";
         velocidade = 5.0f;
-        // tamanho = 1.5f; // 1.5m
+        tamanho = 1.5f; // 1.5m
     }
     public Sprite GetSprite()
     {
@@ -23,8 +22,8 @@ public class Foca : AnimalMarinho, IOperavel
     {
         Debug.Log("Operação finalizada na foca.");
     }
-    public void Interact()
-    {   
+    private void OnMouseDown()
+    {
         IniciarOperacao();
     }
 }

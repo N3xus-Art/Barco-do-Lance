@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 7787471169720213846}
   - component: {fileID: 2422814137468464808}
   - component: {fileID: 8539233126707883103}
+  - component: {fileID: 989748674749403989}
   - component: {fileID: 6174555444854980864}
-  - component: {fileID: 2476932962702691981}
-  - component: {fileID: 7905579362618992344}
   m_Layer: 0
   m_Name: Jellyfish_PF
   m_TagString: Untagged
@@ -62,7 +61,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!212 &8539233126707883103
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -118,21 +117,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6174555444854980864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2228100970441931406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c341cb38082e7f943b43c9b12b387d83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidade: 0
-  tamanho: 0
---- !u!60 &2476932962702691981
+--- !u!60 &989748674749403989
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,38 +163,31 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.2109375, y: 0.40625}
-      - {x: -0.1953125, y: 0.40625}
-      - {x: -0.2734375, y: 0.34375}
-      - {x: -0.3046875, y: 0.234375}
-      - {x: -0.3046875, y: -0.015625}
-      - {x: -0.2734375, y: -0.03125}
-      - {x: -0.3046875, y: -0.09375}
-      - {x: -0.3046875, y: -0.296875}
-      - {x: -0.2265625, y: -0.40625}
-      - {x: 0.1328125, y: -0.40625}
-      - {x: 0.3046875, y: -0.359375}
-      - {x: 0.3046875, y: 0.359375}
+    - - {x: 0.13499999, y: 0.26}
+      - {x: -0.125, y: 0.26}
+      - {x: -0.175, y: 0.22}
+      - {x: -0.195, y: 0.14999999}
+      - {x: -0.195, y: -0.01}
+      - {x: -0.175, y: -0.02}
+      - {x: -0.195, y: -0.06}
+      - {x: -0.195, y: -0.19}
+      - {x: -0.145, y: -0.26}
+      - {x: 0.085, y: -0.26}
+      - {x: 0.195, y: -0.22999999}
+      - {x: 0.195, y: 0.22999999}
   m_UseDelaunayMesh: 0
---- !u!95 &7905579362618992344
-Animator:
-  serializedVersion: 7
+--- !u!114 &6174555444854980864
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2228100970441931406}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5d397fe9007c53244bfd47534cc98574, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c341cb38082e7f943b43c9b12b387d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  speed: 0
+  size: 0

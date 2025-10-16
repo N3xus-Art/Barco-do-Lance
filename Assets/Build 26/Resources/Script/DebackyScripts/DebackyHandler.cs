@@ -14,6 +14,8 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private GameObject debackyScreen;
     [SerializeField] private PlayerInventoryHandler playerInventory;
     [Header("----Variaveis do Canvas----")]
+    [SerializeField] private int money;
+    [SerializeField] private TMP_Text moneyTMP;
     [SerializeField] private Image animalImage;
     [SerializeField] private TMP_Text animalDescription;
     [SerializeField] private TMP_Text missionTMP;
@@ -29,15 +31,15 @@ public class DebackyHandler : MonoBehaviour {
     [SerializeField] private Button fourthButton;
     [SerializeField] private Button lastButton;
     [SerializeField] private int MissionTabID = -1;
-    [SerializeField] private Button NextButton;
-    [SerializeField] private Button PreviousButton;
     [Header("----Variaveis de Confirmação----")]
     [SerializeField] private bool onMission = false;
     [SerializeField] private bool outMission = false;
     [SerializeField] private GameObject confirmButtonGO;
     [SerializeField] private Button confirmButton;
     [SerializeField] private TMP_Text confirmTMP;
-    public static GameObject CurrentMissionGO { get; private set ;}
+    [SerializeField] private Color acceptColor;
+    [SerializeField] private Color endColor;
+    [SerializeField] private GameObject CurrentMissionGO;
 
 
     #endregion
@@ -72,43 +74,9 @@ public class DebackyHandler : MonoBehaviour {
 
         }
 
-        if (currentID == 0) { PreviousButton.gameObject.SetActive(false); } else { PreviousButton.gameObject.SetActive(true); }
-        if (currentID == avaliableMissions.Length - 1) { NextButton.gameObject.SetActive(false); } else { NextButton.gameObject.SetActive(true); }
-
-        ImportDataToCanva();
-
-    }
-
-    private void TabChange(int i)
-    {
-
-        var j = currentID + i;
-
-        if ((j != -1) && (j != avaliableMissions.Length)) {
-
-            currentID = j; 
             ImportDataToCanva();
 
-            if (currentID == 0) { PreviousButton.gameObject.SetActive(false); } else { PreviousButton.gameObject.SetActive(true); }
-            if (currentID == avaliableMissions.Length - 1) { NextButton.gameObject.SetActive(false); } else { NextButton.gameObject.SetActive(true); }
-
-            if (currentID == MissionTabID && onMission)
-            {
-
-                confirmButtonGO.SetActive(true);
-
-            }
-            else if (onMission)
-            {
-
-                confirmButtonGO.SetActive(false);
-
-            }
-
-        }
-
     }
-
     #endregion
     //Missions Methods
     #region
@@ -117,16 +85,16 @@ public class DebackyHandler : MonoBehaviour {
 
             GameObject currentMission = new GameObject();
             currentMission.name = "CurrentMission";
-            var Scr_CurrentMission = currentMission.AddComponent<CurrentMission>();
-            Scr_CurrentMission.missionReward = avaliableMissions[currentID].missionReward;
-            Scr_CurrentMission.RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
-            Scr_CurrentMission.OperableAnimals = avaliableMissions[currentID].operableAnimals;
-            Scr_CurrentMission.Level = avaliableMissions[currentID].Level;
+            currentMission.AddComponent<CurrentMission>();
+            currentMission.GetComponent<CurrentMission>().missionReward = avaliableMissions[currentID].missionReward;
+            currentMission.GetComponent<CurrentMission>().RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
+            currentMission.GetComponent<CurrentMission>().OperableAnimals = avaliableMissions[currentID].operableAnimals;
+            currentMission.GetComponent<CurrentMission>().Level = avaliableMissions[currentID].Level;
             CurrentMissionGO = currentMission;
             MissionTabID = currentID;
             onMission = true;
 
-            DontDestroyOnLoad(currentMission);
+
             
             confirmButton.interactable = false;
             confirmTMP.SetText("Em Missão");
@@ -135,8 +103,9 @@ public class DebackyHandler : MonoBehaviour {
 
     public void EndMissions() {
         if (outMission){
-            var money = CurrentMissionGO.GetComponent<CurrentMission>().missionReward;
+            money += CurrentMissionGO.GetComponent<CurrentMission>().missionReward;
             playerInventory.Receive(money);
+            moneyTMP.SetText($"R${playerInventory.Money}");
             Destroy(CurrentMissionGO);
 
             
@@ -145,6 +114,7 @@ public class DebackyHandler : MonoBehaviour {
             
             ImportDataToCanva();
 
+            confirmButtonGO.GetComponent<Image>().color = acceptColor; // mudar isso dps, pra adicionar o botão verde normal
             confirmTMP.SetText("Aceitar");
             outMission = false;
             onMission = false;
@@ -156,7 +126,7 @@ public class DebackyHandler : MonoBehaviour {
 
         if (onMission)
         {
-            var money = CurrentMissionGO.GetComponent<CurrentMission>().CurrentReward;
+            money += CurrentMissionGO.GetComponent<CurrentMission>().CurrentReward;
             playerInventory.Receive(money);
             Destroy(CurrentMissionGO);
             onMission = false;
@@ -194,9 +164,10 @@ public class DebackyHandler : MonoBehaviour {
     private void ImportDataToCanva(){
 
         //Import data to the canva
-        //animalImage.sprite = avaliableMissions[currentID].animalSprite;
+        animalImage.sprite = avaliableMissions[currentID].animalSprite;
+        animalDescription.SetText($"{avaliableMissions[currentID].animalDescription}");
         missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
-        missionTMP.SetText($"Recompensa:    R${avaliableMissions[currentID].missionReward}");
+        missionTMP.SetText($"Recompensa: {avaliableMissions[currentID].missionReward}");
 
     }
 
@@ -205,17 +176,15 @@ public class DebackyHandler : MonoBehaviour {
     #region
     private void Start(){
         //Tabs Handler
-        playerInventory = BuildGameManager.Instance.GetComponent<PlayerInventoryHandler>();
+
         firstButton.onClick.AddListener(()=> { OnTabClick(0); });
         secondButton.onClick.AddListener(() => { OnTabClick(1); });
         centralButton.onClick.AddListener(() => { OnTabClick(2); });
         fourthButton.onClick.AddListener(() => { OnTabClick(3); });
         lastButton.onClick.AddListener(() => { OnTabClick(4); });
-        PreviousButton.onClick.AddListener(() => { TabChange(-1); });
-        NextButton.onClick.AddListener(() => { TabChange(1); });
 
         //Confirm Button
-
+        
         confirmButton.onClick.AddListener(AcceptMissions);
         confirmButton.onClick.AddListener(EndMissions);
 
@@ -242,6 +211,7 @@ public class DebackyHandler : MonoBehaviour {
             outMission = true;
             confirmTMP.SetText("Terminar Missão");
             confirmButton.interactable = true;
+            confirmButtonGO.GetComponent<Image>().color = acceptColor;
         }
         
     }

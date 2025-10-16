@@ -78,10 +78,6 @@ public class PlayerInventoryHandler : MonoBehaviour{
         instance = new ToolInstanceHandler(data);
         ownedTools.Add(instance);
 
-        Debug.Log($"PlayerInventoryHandler.TryAddTool - Tool Instance: {instance}");
-        Debug.Log($"PlayerInventoryHandler.TryAddTool -Tool Instance: {instance}");
-        Debug.Log($"PlayerInventoryHandler.TryAddTool -Tool name: {instance.Data.itemLevel}, {instance.Data.toolName}");
-
         // Auto-equipa a primeira ferramenta
         if (EquippedTool == null)
         {
