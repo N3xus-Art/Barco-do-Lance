@@ -641,7 +641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3173133310972656880, guid: b316b24ab3a9abc439a8662b081ed088, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3275557895267024020, guid: b316b24ab3a9abc439a8662b081ed088, type: 3}
       propertyPath: m_fontAsset
