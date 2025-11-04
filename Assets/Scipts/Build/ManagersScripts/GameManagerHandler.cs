@@ -24,27 +24,52 @@ public class GameManagerHandler : MonoBehaviour{
     [SerializeField] private bool hasSpwn;
     [SerializeField] public static Scene CurrentScene;
     #endregion
+
+    public static void SpawnAnimalsInCurrentSea(CurrentMission mission)
+    {
+        Debug.Log($"GameManagerHandler.SapwnOcean - ocean.GetComponentsInChildren<AnimalSpawnerHandler>() {Instance.currentSeaGO.GetComponentsInChildren<AnimalSpawnerHandler>().Length}");
+        List<AnimalSpawnerHandler> animalSpawners = new List<AnimalSpawnerHandler>(Instance.currentSeaGO.GetComponentsInChildren<AnimalSpawnerHandler>());
+        foreach(AnimalSpawnerHandler spawner in animalSpawners)
+        {
+            spawner.SpawnAnimal(mission.OperableAnimals);
+        }
+    } 
     //Methods
     #region
     void SpawnOcean(int _currentSea) {
         SeaIdHandler sea = SeaPrefabs.First(item => item.GetSeaId == currentSea);
-        GameObject ocean = Instantiate(sea.gameObject, new Vector3(0, -124.5f, 0), Quaternion.identity);
-        List<AnimalSpawnerHandler> animalSpawners = ocean.GetComponentsInChildren<AnimalSpawnerHandler>().ToList<AnimalSpawnerHandler>();
+        currentSeaGO = Instantiate(sea.gameObject, new Vector3(0, -124.5f, 0), Quaternion.identity);
+        currentSea = sea.GetSeaId;
         hasSpwn = true;
     }
     public void Awake(){
-        _instance = this;
-        DontDestroyOnLoad(gameObject);
-        CurrentScene = SceneManager.GetActiveScene();
-        hasSpwn = false;
         if (_instance != null && _instance != this){
             Destroy(gameObject);
             return;
         }
-        if (!hasSpwn && CurrentScene.name == "GameScreen") { 
-            SpawnOcean(currentSea);
-        }
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     } 
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        CurrentScene = SceneManager.GetActiveScene();
+        Debug.Log($"GameManagerHandler.OnSceneLoaded - Carregou a cena {CurrentScene.name} - hasSpwn: {hasSpwn}");
+        if (!hasSpwn && CurrentScene.name == "GameScreen")
+        {
+            Debug.Log($"GameManagerHandler.OnSceneLoaded - Carregou a cena {scene.name}"); 
+            SpawnOcean(currentSea);
+            SceneManager.activeSceneChanged += OnChangeScene;
+        }
+    }
+
+    public void OnChangeScene(Scene currentScene, Scene newScene)
+    {
+        Debug.Log($"GameManagerHandler.OnChangeScene - currentScene = {currentScene.name} - newScene = {newScene} - hasSpw = {hasSpwn}"); 
+        hasSpwn = false;
+    }
+
     #endregion
 
 }
