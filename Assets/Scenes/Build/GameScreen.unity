@@ -1040,7 +1040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &489379365
 Transform:
   m_ObjectHideFlags: 0
@@ -4591,6 +4591,10 @@ PrefabInstance:
     - target: {fileID: 6448736959459092085, guid: c8785d50e1628894abd094dee02a8c47, type: 3}
       propertyPath: m_Name
       value: Debarcky
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448736959459092085, guid: c8785d50e1628894abd094dee02a8c47, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
