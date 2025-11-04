@@ -11,11 +11,12 @@ TagManager:
   - ShopMoneyText
   - GameManager
   - Sea
+  - Audio
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Backgroung
+  - Background
   - Water
   - UI
   - Ground
@@ -49,13 +50,13 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 3776554269
+    uniqueID: 1022931279
     locked: 0
   - name: Player
-    uniqueID: 457124291
+    uniqueID: 1926435533
     locked: 0
   - name: UI
-    uniqueID: 476030215
+    uniqueID: 1759948983
     locked: 0
   m_RenderingLayers:
   - Default
