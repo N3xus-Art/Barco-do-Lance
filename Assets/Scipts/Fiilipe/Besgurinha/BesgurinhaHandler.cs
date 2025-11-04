@@ -8,7 +8,7 @@ public class BesgurinhaHandler : MonoBehaviour
     [SerializeField] private int PageMax;
     [SerializeField] private Button NextButton;
     [SerializeField] private Button PreviousButton;
-    [SerializeField] public Sprite[] Sprites;
+    [SerializeField] public Sprite[] SpritesAnimals;
     [SerializeField] public Sprite DefaultSprite;
 
     public delegate void ChangePageDelegate(int i);
@@ -17,13 +17,19 @@ public class BesgurinhaHandler : MonoBehaviour
 
     public void ChangePageMethod(int i)
     {
+        if (Page == 0 && i == -1)
+        {
+
+            enabled = false;
+            return;
+        }
+
         Page += i;
 
-        if (Page == 0) { PreviousButton.gameObject.SetActive(false); } else { PreviousButton.gameObject.SetActive(true); }
         if (Page == PageMax) { NextButton.gameObject.SetActive(false); } else { NextButton.gameObject.SetActive(true); }
 
         ChangePageEvent?.Invoke(i);
-
+        
     }
 
     private void Awake()
@@ -31,7 +37,7 @@ public class BesgurinhaHandler : MonoBehaviour
         NextButton.onClick.AddListener(() => ChangePageMethod(1));
         PreviousButton.onClick.AddListener(() => ChangePageMethod(-1));
 
-        PageMax = Mathf.CeilToInt((Sprites.Length - 1) / 4);
+        PageMax = Mathf.CeilToInt((SpritesAnimals.Length - 1) / 4);
 
     }
 

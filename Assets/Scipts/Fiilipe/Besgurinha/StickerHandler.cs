@@ -17,15 +17,16 @@ public class StickerHandler : MonoBehaviour
     {
         Index += i * 4;
 
-        if (Index <= Besgurinha.Sprites.Length - 1)
+        if (Index <= Besgurinha.SpritesAnimals.Length - 1)
         {
-            if (Besgurinha.Sprites[Index] != null)
+            if (Besgurinha.SpritesAnimals[Index] != null)
             {
                 Image.enabled = true;
-                Image.sprite = Besgurinha.Sprites[Index];
+                Image.sprite = Besgurinha.SpritesAnimals[Index];
             }
             else
             {
+                Image.enabled = true;
                 Image.sprite = Besgurinha.DefaultSprite;
 
             }

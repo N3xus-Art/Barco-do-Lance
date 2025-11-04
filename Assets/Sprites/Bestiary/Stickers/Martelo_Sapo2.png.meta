@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 50d40f1900e6b724a80cc2b5254a5115
+guid: fa55f7298c88c2845b3be3d73436a67a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1411483180641356564
-    second: "Pagina do Peixe-Le\xE3o_0"
+      213: -6523666396814056431
+    second: Martelo_Sapo2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Pagina do Peixe-Le\xE3o_0"
+      name: Martelo_Sapo2_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 8
-        width: 172
-        height: 100
+        x: 27
+        y: 11
+        width: 75
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 41b01947978969310800000000000000
-      internalID: 1411483180641356564
+      spriteID: 114eeb8d9f74775a0800000000000000
+      internalID: -6523666396814056431
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Pagina do Peixe-Le\xE3o_0": 1411483180641356564
+      Martelo_Sapo2_0: -6523666396814056431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
