@@ -35,4 +35,4 @@ MonoBehaviour:
   missionReward: 70
   rescueableAnimals: 5
   operableAnimals: 2
-  MissionSea: 0
+  MissionSea: 1
