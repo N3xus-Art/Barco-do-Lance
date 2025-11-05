@@ -26,6 +26,7 @@ public class BesgurinhaHandler : MonoBehaviour
         {
             enabled = false;
             gameObject.GetComponent<BestiaryHandler>().enabled = true;
+            gameObject.GetComponent<BestiaryHandler>().Curiosities.enabled = true;
 
             foreach (GameObject S in Stickers)
             {

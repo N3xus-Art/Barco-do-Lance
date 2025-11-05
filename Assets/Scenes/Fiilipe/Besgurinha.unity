@@ -345,6 +345,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1137168454}
+  - {fileID: 600549596}
   - {fileID: 704937636}
   - {fileID: 122203603}
   m_Father: {fileID: 0}
@@ -418,6 +419,43 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3e83ffc4a919a644db4450af465b0592, type: 3}
   - {fileID: 21300000, guid: 2f6db735716458e4599d4c9eef6ef832, type: 3}
   - {fileID: 21300000, guid: ec55d90d4cbda274bb66510e8ba66ff1, type: 3}
+  Strings:
+  - " A truta-marrom \xE9 um animal origin\xE1rio do Mar Mediterr\xE2neo.\n\r\nA
+    truta-marrom, com seu corpo esguio e de cores amarronzadas, \xE9 uma esp\xE9cie
+    invasora do Mar Vermelho, normalmente descem juntos a bairros onde a pesca predat\xF3ria
+    \xE9 um problema.\r\n\r\nEla compete com as esp\xE9cies nativas por alimento
+    e espa\xE7o, alterando o equil\xEDbrio do ecossistema marinho. Al\xE9m disso,
+    a truta-marrom pode ser portadora de doen\xE7as que afetam outras esp\xE9cies
+    de peixes.\r"
+  - "A tartaruga-verde \xE9 um animal origin\xE1rio do Mar do Caribe.\r\n\r\nEssas
+    tartarugas s\xE3o migrat\xF3rias e podem viajar longas dist\xE2ncias entre seus
+    locais de alimenta\xE7\xE3o e de nidifica\xE7\xE3o.\r"
+  - "O peixe-le\xE3o \xE9 um animal origin\xE1rio do Mar Vermelho. \n\nO peixe-le\xE3o,
+    com suas listras brancas e de tons quentes, s\xE3o invasores comuns do Mar do
+    Caribe, sua introdu\xE7\xE3o em novos ecossistemas geralmente ocorre por meio
+    de \xE1guas de lastro de navios ou pela soltura de esp\xE9cimes de aqu\xE1rio
+    por indiv\xEDduos. \n\nUma vez estabelecido, sua alta taxa reprodutiva e a aus\xEAncia
+    de predadores naturais contribuem para sua r\xE1pida prolifera\xE7\xE3o. "
+  - "A foca-monge-do-mediterr\xE2neo \xE9 um animal origin\xE1rio do Mar Mediterr\xE2neo.\r\n\r\nEla
+    possui nadadeiras adaptadas para nata\xE7\xE3o e locomo\xE7\xE3o em terra, embora
+    seja mais \xE1gil na \xE1gua.\r\n\r\nSua pele \xE9 grossa e a camada de gordura
+    (tamb\xE9m conhecida como blubber) ajuda a manter a temperatura corporal em \xE1guas
+    mais frias. \xC9 um animal solit\xE1rio e territorial, conhecido por sua curiosidade
+    e intelig\xEAncia, o que o torna um desafio interessante.\r"
+  - "A medusa-de-pintas \xE9 um animal origin\xE1rio do Mar do Caribe.\r\n\r\nA medusa-de-pintas,
+    com seu formato de cogumelo, suas cores variadas e pintas, \xE9 uma esp\xE9cie
+    invasora do Mar Mediterr\xE2neo. Normalmente, ela \xE9 introduzida no ecossistema
+    atrav\xE9s da \xE1gua de lastro de navios ou pela aquariofilia.\r\n\r\nSua invas\xE3o
+    no ecossistema provoca desequil\xEDbrios significativos, superando as esp\xE9cies
+    nativas na competi\xE7\xE3o por recursos e alterando a cadeia alimentar.\r"
+  - "O tubar\xE3o-galha-branca-oce\xE2nico \xE9 um animal origin\xE1rio do Mar Vermelho.\r\n\r\nSeu
+    corpo robusto e nadadeiras grandes n\xE3o s\xE3o somente para exibi\xE7\xE3o;
+    eles o tornam incrivelmente \xE1gil e resistente debaixo d'\xE1gua.\r\n\r\nDiferente
+    de outros tubar\xF5es, o Galha-Branca-Oce\xE2nico \xE9 infame por sua ousadia.
+    Ele n\xE3o hesita em se aproximar de embarca\xE7\xF5es, e sua curiosidade pode
+    ser uma faca de dois gumes: tanto uma oportunidade para estud\xE1-lo de perto,
+    quanto um risco iminente de ataque.\r"
+  Curiosities: {fileID: 0}
 --- !u!1 &515472965
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +591,142 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515472965}
+  m_CullTransparentMesh: 1
+--- !u!1 &600549595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 600549596}
+  - component: {fileID: 600549598}
+  - component: {fileID: 600549597}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &600549596
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600549595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 515395073}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 151, y: 449}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &600549597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600549595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4282466111
+  m_fontColor: {r: 0.24705882, g: 0.24705882, b: 0.25490198, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 72
+  m_fontSizeBase: 72
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -584.89404, w: -718.7257}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &600549598
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600549595}
   m_CullTransparentMesh: 1
 --- !u!1 &612016229
 GameObject:
@@ -1785,5 +1959,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 119135213}
-  - {fileID: 515395073}
   - {fileID: 2004217958}
+  - {fileID: 515395073}

@@ -35,7 +35,7 @@ public class StickerHandler : MonoBehaviour
             {
                 Image.enabled = true;
                 Texto.enabled = true;
-                Texto.text = $"NO. {Index + 1}";
+                Texto.text = $"{Index + 1}";
                 Image.sprite = Besgurinha.DefaultSprite;
 
             }
