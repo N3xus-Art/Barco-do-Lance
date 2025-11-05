@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 939024814058986295}
   - component: {fileID: 2842146784092250701}
   m_Layer: 4
-  m_Name: AreaModel
+  m_Name: AnimalSpawnerPF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3741923216983998708}
   - component: {fileID: 733091346491455723}
   - component: {fileID: 7344627380523034766}
-  - component: {fileID: 3818350326708493324}
   m_Layer: 7
   m_Name: Player_Prefab
   m_TagString: Player
@@ -102,7 +101,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0004896298, y: -0.00048017502}
+  m_Offset: {x: 0.0004896298, y: -0.00072950125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -112,7 +111,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.17419778, y: 0.8599987}
+  m_Size: {x: 0.17419778, y: 0.86049736}
   m_EdgeRadius: 0
 --- !u!114 &6088404565991079948
 MonoBehaviour:
@@ -320,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   biHandler: {fileID: 733091346491455723}
-  CurrentMission: {fileID: 3818350326708493324}
+  CurrentMission: {fileID: 0}
   rotation: 0
   o2: 100
   maxO2: 100
@@ -335,25 +334,6 @@ MonoBehaviour:
   pliersData: {fileID: 11400000, guid: 9aeefcb19875c0940aa83407db9fb5a7, type: 2}
   scissorsData: {fileID: 11400000, guid: 5b5c9980bca29754cb7a6fc46aae56e4, type: 2}
   knifeData: {fileID: 11400000, guid: cce73977e2f092e41ad2e80279fa1a6f, type: 2}
---- !u!114 &3818350326708493324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012311066116273635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8083fa5e382676e4bbd9067dd91815fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missionReward: 0
-  RescueableAnimals: 0
-  OperableAnimals: 0
-  End: 0
-  CurrentReward: 0
-  Level: 0
-  MissionSea: 0
 --- !u!1 &2465818758151283328
 GameObject:
   m_ObjectHideFlags: 0

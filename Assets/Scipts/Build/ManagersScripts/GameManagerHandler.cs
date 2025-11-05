@@ -23,14 +23,14 @@ public class GameManagerHandler : MonoBehaviour{
     [SerializeField] public bool onScene;
     [SerializeField] private bool hasSpwn;
     [SerializeField] public static Scene CurrentScene;
+    [SerializeField] private PlayerControlerHandler pcHandler;
+    [SerializeField] public bool fishSpwn = false;
     #endregion
 
-    public static void SpawnAnimalsInCurrentSea(CurrentMission mission)
-    {
+    public static void SpawnAnimalsInCurrentSea(CurrentMission mission){
         Debug.Log($"GameManagerHandler.SapwnOcean - ocean.GetComponentsInChildren<AnimalSpawnerHandler>() {Instance.currentSeaGO.GetComponentsInChildren<AnimalSpawnerHandler>().Length}");
         List<AnimalSpawnerHandler> animalSpawners = new List<AnimalSpawnerHandler>(Instance.currentSeaGO.GetComponentsInChildren<AnimalSpawnerHandler>());
-        foreach(AnimalSpawnerHandler spawner in animalSpawners)
-        {
+        foreach(AnimalSpawnerHandler spawner in animalSpawners){
             spawner.SpawnAnimal(mission.OperableAnimals);
         }
     } 
@@ -56,20 +56,27 @@ public class GameManagerHandler : MonoBehaviour{
     {
         CurrentScene = SceneManager.GetActiveScene();
         Debug.Log($"GameManagerHandler.OnSceneLoaded - Carregou a cena {CurrentScene.name} - hasSpwn: {hasSpwn}");
-        if (!hasSpwn && CurrentScene.name == "GameScreen")
-        {
+        if (!hasSpwn && CurrentScene.name == "GameScreen"){
             Debug.Log($"GameManagerHandler.OnSceneLoaded - Carregou a cena {scene.name}"); 
             SpawnOcean(currentSea);
             SceneManager.activeSceneChanged += OnChangeScene;
+            onScene = true;
+            if (pcHandler.CurrentMission != null && !fishSpwn && (pcHandler.CurrentMission.MissionSea == currentSea)){
+                SpawnAnimalsInCurrentSea(pcHandler.CurrentMission);
+                fishSpwn = true;
+            }
         }
     }
 
-    public void OnChangeScene(Scene currentScene, Scene newScene)
-    {
+    public void OnChangeScene(Scene currentScene, Scene newScene){
         Debug.Log($"GameManagerHandler.OnChangeScene - currentScene = {currentScene.name} - newScene = {newScene} - hasSpw = {hasSpwn}"); 
         hasSpwn = false;
+        fishSpwn = false;
     }
 
+    public void Update(){
+
+    }
     #endregion
 
 }

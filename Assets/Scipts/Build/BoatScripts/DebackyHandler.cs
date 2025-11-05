@@ -105,17 +105,17 @@ public class DebackyHandler : MonoBehaviour{
     public void AcceptMissions(){
         if (!onMission){
             playerCH.CurrentMission = playerCH.AddComponent<CurrentMission>();
-
             playerCH.CurrentMission.missionReward = avaliableMissions[currentID].missionReward;
             playerCH.CurrentMission.RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
             playerCH.CurrentMission.OperableAnimals = avaliableMissions[currentID].operableAnimals;
             playerCH.CurrentMission.Level = avaliableMissions[currentID].Level;
             playerCH.CurrentMission.MissionSea = avaliableMissions[currentID].MissionSea;
+            playerCH.CurrentMission.onMission = true;
             MissionTabID = currentID;
             onMission = true;
 
             //Criar os animais do oceano atual
-            if (playerCH.CurrentMission.MissionSea == GameManagerHandler.currentSea){
+            if (playerCH.CurrentMission.MissionSea == GameManagerHandler.currentSea ){
                 GameManagerHandler.SpawnAnimalsInCurrentSea(playerCH.CurrentMission);
                 Debug.Log("teste");
             }

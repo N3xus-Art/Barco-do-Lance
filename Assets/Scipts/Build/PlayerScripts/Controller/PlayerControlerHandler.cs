@@ -16,6 +16,7 @@ public class PlayerControlerHandler : MonoBehaviour{
     }
     [Header("----Variaveis de Controle----")]
     [SerializeField] public BuildInputHandler biHandler;
+    [SerializeField] public GameManagerHandler gmHandler;
     [SerializeField] public CurrentMission CurrentMission;
     [Header("----Variaveis do o2----")]
     [SerializeField] public float rotation;

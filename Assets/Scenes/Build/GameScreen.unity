@@ -1040,7 +1040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &489379365
 Transform:
   m_ObjectHideFlags: 0
@@ -2672,6 +2672,17 @@ RectTransform:
   m_AnchoredPosition: {x: -5.31, y: -4.48}
   m_SizeDelta: {x: 3.6826, y: 0.5346}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1514552160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4558340854685449920, guid: 41033644f9b68964a97acf9eb7de040f, type: 3}
+  m_PrefabInstance: {fileID: 3527698699097125537}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b0822eb1894fc43b28f144ed05a439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620966791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4242,6 +4253,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4558340854685449920, guid: 41033644f9b68964a97acf9eb7de040f, type: 3}
+      propertyPath: pcHandler
+      value: 
+      objectReference: {fileID: 2036207516}
+    - target: {fileID: 4558340854685449920, guid: 41033644f9b68964a97acf9eb7de040f, type: 3}
       propertyPath: SeaPrefabs.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -4379,13 +4394,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7839255652071640687, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
-      propertyPath: m_Size.y
-      value: 0.86049736
-      objectReference: {fileID: 0}
-    - target: {fileID: 7839255652071640687, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.00072950125
+    - target: {fileID: 7344627380523034766, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: gmHandler
+      value: 
+      objectReference: {fileID: 1514552160}
+    - target: {fileID: 7344627380523034766, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: CurrentMission
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

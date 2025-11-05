@@ -31,5 +31,5 @@ MonoBehaviour:
   missionID: 0
   missionReward: 70
   rescueableAnimals: 10
-  operableAnimals: 0
-  MissionSea: 2
+  operableAnimals: 2
+  MissionSea: 0

@@ -5,6 +5,7 @@ public class CurrentMission : MonoBehaviour{
     public int missionReward;
     public int RescueableAnimals;
     public int OperableAnimals;
+    public bool onMission;
     public bool End = false;
     public int CurrentReward;
     public int Level;
