@@ -104,6 +104,8 @@ public class DebackyHandler : MonoBehaviour{
     #region Missions Methods
     public void AcceptMissions(){
         if (!onMission){
+            playerCH.CurrentMission = playerCH.AddComponent<CurrentMission>();
+
             playerCH.CurrentMission.missionReward = avaliableMissions[currentID].missionReward;
             playerCH.CurrentMission.RescueableAnimals = avaliableMissions[currentID].rescueableAnimals;
             playerCH.CurrentMission.OperableAnimals = avaliableMissions[currentID].operableAnimals;
@@ -127,11 +129,7 @@ public class DebackyHandler : MonoBehaviour{
         if (outMission){
             var money = playerCH.CurrentMission.GetComponent<CurrentMission>().missionReward;
             playerInventory.Receive(money);
-            playerCH.CurrentMission.missionReward = 0;
-            playerCH.CurrentMission.RescueableAnimals = 0;
-            playerCH.CurrentMission.OperableAnimals = 0;
-            playerCH.CurrentMission.Level = 0;
-            playerCH.CurrentMission.MissionSea = 0;
+            Destroy(playerCH.CurrentMission);
             if (currentID == 0){ 
                 SortMission(nextMissions, currentID, 1); 
             }else if (currentID == 1){ 
