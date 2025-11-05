@@ -3,5 +3,7 @@ using UnityEngine;
 public interface ICapturable{
     GameObject GetGameObject();
     Sprite GetSprite();
-    void startCapture();
+    void StartCapture();
+    void Run(Vector3 posicaoDoPlayer);
+    void ReturnBehaviour();
 }

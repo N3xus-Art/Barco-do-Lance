@@ -30,6 +30,10 @@ public class ToolInstanceHandler
     public bool IsBroken => state == ToolState.Broken;
     public float Durability01 => MaxDurability > 0 ? (float)currentDurability / MaxDurability : 0f;
 
+    protected virtual void RaiseDurabilityChanged(){
+        OnDurabilityChanged?.Invoke(this);
+    }
+
     public ToolInstanceHandler(ToolDataHandler toolData)
     {
         if (toolData == null) throw new ArgumentNullException(nameof(toolData));

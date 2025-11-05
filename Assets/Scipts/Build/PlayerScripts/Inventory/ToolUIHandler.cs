@@ -3,12 +3,13 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 
+// O nome do seu arquivo é ToolUIHandler.cs, mas a classe é EquippedToolUIHandler <-- meu mano copilot julgou o nome da classe
 public class EquippedToolUIHandler : MonoBehaviour
 {
     public PlayerInventoryHandler playerInventory;
-    public TextMeshProUGUI toolText;
+    public TextMeshProUGUI ToolText;
     public Image image;
-    public Image scrollCurrent;
+    public Image ScrollUtil;
 
     private void OnEnable()
     {
@@ -33,22 +34,36 @@ public class EquippedToolUIHandler : MonoBehaviour
         UpdateToolText();
     }
 
-
     // Atualiza a UI da ferramenta equipada
     private void UpdateToolUI(ToolInstanceHandler tool)
     {
-        if (toolText == null || image == null || scrollCurrent == null) return;
+        if (ToolText == null || image == null || ScrollUtil == null) return;
 
         var currentTool = tool ?? playerInventory?.EquippedTool;
         if (currentTool != null)
         {
-            toolText.text = $"Ferramenta atual: {currentTool.Data.toolName} ({currentTool.CurrentDurability}/{currentTool.MaxDurability})";
             image.sprite = currentTool.Data.icon;
-            scrollCurrent.fillAmount = (float)currentTool.CurrentDurability / currentTool.MaxDurability;
+
+            // Verifica se a ferramenta equipada é uma instância de Sambura.
+            if (currentTool is SamburaInstanceHandler sambura)
+            {
+                // Se for uma Sambura, exibe a informação de capacidade.
+                ToolText.text = $"{sambura.Data.toolName} ({sambura.occupiedSpace}/{sambura.maxCapacity})";
+                // A barra de preenchimento (ScrollUtil) reflete o espaço ocupado.
+                ScrollUtil.fillAmount = (float)sambura.occupiedSpace / sambura.maxCapacity;
+            }
+            else
+            {
+                // Se for qualquer outra ferramenta, exibe a durabilidade normalmente.
+                ToolText.text = $"{currentTool.Data.toolName} ({currentTool.CurrentDurability}/{currentTool.MaxDurability})";
+                ScrollUtil.fillAmount = (float)currentTool.CurrentDurability / currentTool.MaxDurability;
+            }
         }
         else
         {
-            toolText.text = "Ferramenta atual: Nenhuma";
+            ToolText.text = "Ferramenta atual: Nenhuma";
+            image.sprite = null; // Opcional: Limpar o ícone se não houver ferramenta
+            ScrollUtil.fillAmount = 0;
         }
     }
 

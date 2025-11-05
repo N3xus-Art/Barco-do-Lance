@@ -25,38 +25,65 @@ public class CaptureUI : MonoBehaviour{
         capturePanel.SetActive(false);
     }
 
-    public void OpenCapture(ICapturable animal){
+    public void OpenCapture(ICapturable animal)
+    {
+        if (animal == null) return;
         target = animal;
         currentClicks = 0;
-        animalImage.sprite = animalSprite;
-        // Ajusta o tamanho do RectTransform baseado no tamanho do sprite
-        if (animalSprite != null){
-            float w = animalSprite.rect.width;
-            float h = animalSprite.rect.height;
-            animalImage.SetNativeSize(); // mantém tamanho original
-            animalImage.rectTransform.sizeDelta = new Vector2(w, h);
+        animalImage.sprite = target.GetSprite();
+
+        if (target.GetSprite() != null)
+        {
+            animalImage.SetNativeSize();
         }
+
         animalRect = animalImage.GetComponent<RectTransform>();
         capturePanel.SetActive(true);
-        target.startCapture();
+        target.StartCapture();
+
         if (coroutineMoviment != null) StopCoroutine(coroutineMoviment);
         coroutineMoviment = StartCoroutine(MoveAnimal());
     }
 
-    public void CloseCapture(){
+    private void CloseWithSuccess(){
         capturePanel.SetActive(false);
         if (coroutineMoviment != null) StopCoroutine(coroutineMoviment);
-        Destroy(target.GetGameObject());
+
+        if (target != null && target.GetGameObject() != null)
+        {
+            Destroy(target.GetGameObject());
+        }
+        target = null;
+    }
+
+    private void CloseWithoutSuccess(){
+        capturePanel.SetActive(false);
+        if (coroutineMoviment != null) StopCoroutine(coroutineMoviment);
         target = null;
     }
 
     public void RegisterClick(){
         if (target == null) return;
+
         currentClicks++;
         Debug.Log($"Cliques: {currentClicks}/{minClicks}");
-        if (currentClicks >= minClicks) {
-            // alvo.FinalizarCaptura();
-            CloseCapture();
+
+        if (currentClicks >= minClicks)
+        {
+            bool capturaComSucesso = PlayerInventoryHandler.Instance.TryCaptureAnimal(target);
+
+            if (capturaComSucesso)
+            {
+                Debug.Log("SUCESSO FINAL: Animal capturado e armazenado!");
+                CloseWithSuccess();
+            }
+            else
+            {
+                Debug.Log("FALHA FINAL: O animal escapou!");
+                Vector3 playerPosition = PlayerInventoryHandler.Instance.transform.position;
+                target.Run(playerPosition);
+                CloseWithoutSuccess();
+            }
         }
     }
 

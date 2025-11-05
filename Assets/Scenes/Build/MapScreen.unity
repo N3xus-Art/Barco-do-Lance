@@ -176,6 +176,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1571026190}
     - target: {fileID: 4444420192902018388, guid: cd443bb0dfa8a3941aeb102ca0deb0ee, type: 3}
+      propertyPath: firstData
+      value: 
+      objectReference: {fileID: 11400000, guid: f2b4f1f457771b1408d59fd125c30d19, type: 2}
+    - target: {fileID: 4444420192902018388, guid: cd443bb0dfa8a3941aeb102ca0deb0ee, type: 3}
       propertyPath: moneyText
       value: 
       objectReference: {fileID: 1571026185}
@@ -2132,6 +2136,10 @@ PrefabInstance:
       propertyPath: shopGO
       value: 
       objectReference: {fileID: 925129255}
+    - target: {fileID: 4444420192902018388, guid: 10c6b2a08e023794f9e2d9fc7e21b084, type: 3}
+      propertyPath: firstData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9018d67329a5c19479806454eb0e8fab, type: 2}
     - target: {fileID: 4444420192902018388, guid: 10c6b2a08e023794f9e2d9fc7e21b084, type: 3}
       propertyPath: moneyText
       value: 
