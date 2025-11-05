@@ -4,13 +4,16 @@ using UnityEngine.UI;
 public class StickerHandler : MonoBehaviour
 {
     [SerializeField] private int Index = 0;
+
     [SerializeField] private Image Image;
+
     [SerializeField] private BesgurinhaHandler Besgurinha;
 
     private void Awake()
     {
         Image = GetComponent<Image>();
         Besgurinha.ChangePageEvent += ChangeImage;
+        Besgurinha.Stickers.Add(gameObject);
     }
 
     private void ChangeImage(int i)
