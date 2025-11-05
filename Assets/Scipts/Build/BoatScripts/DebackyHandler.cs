@@ -112,9 +112,12 @@ public class DebackyHandler : MonoBehaviour{
             MissionTabID = currentID;
             onMission = true;
 
+            //Criar os animais do oceano atual
             if (playerCH.CurrentMission.MissionSea == GameManagerHandler.currentSea){
+                GameManagerHandler.SpawnAnimalsInCurrentSea(playerCH.CurrentMission);
                 Debug.Log("teste");
             }
+            //Definir o que acontece quando não está no oceano atual
             confirmButton.interactable = false;
             confirmTMP.SetText("Em Missão");
         }

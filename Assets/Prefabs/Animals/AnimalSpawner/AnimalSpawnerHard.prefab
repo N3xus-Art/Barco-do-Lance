@@ -137,5 +137,5 @@ MonoBehaviour:
   - {fileID: 218619888168782972, guid: fb35c344e021c384f8bd932dc8d7c5cc, type: 3}
   AreaSpawn: {fileID: 7479049368501796297}
   SpecificAnimal: {fileID: 0}
-  MissionLevel: 0
+  MissionLevel: 3
   SpecificAnimalQtt: 0

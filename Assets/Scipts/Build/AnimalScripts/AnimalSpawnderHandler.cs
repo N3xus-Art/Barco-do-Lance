@@ -18,11 +18,11 @@ public class AnimalSpawnerHandler : MonoBehaviour {
             // Usa o animal específico se fornecido, senão escolhe aleatoriamente
             GameObject animalToSpawn;
 
-            if (missionLevel == 3 && AreaSpawn.name != "AreaSpawnHard")
+            if (missionLevel == 3 && gameObject.name != "AnimalSpawnerHard")
                 specificAnimalQtt = 0;
-            else if (missionLevel == 2 && AreaSpawn.name == "AreaSpawnMedium")
+            else if (missionLevel == 2 && gameObject.name == "AnimalSpawnerMedium")
                 specificAnimalQtt = 0;
-            else if (missionLevel == 1 && AreaSpawn.name == "AreaSpawnEasy")
+            else if (missionLevel == 1 && gameObject.name == "AnimalSpawnerEasy")
                 specificAnimalQtt = 0;
 
             if (specificAnimal != null && i < specificAnimalQtt)
