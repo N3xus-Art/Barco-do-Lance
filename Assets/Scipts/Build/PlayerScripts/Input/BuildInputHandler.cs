@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -9,6 +10,7 @@ public class BuildInputHandler : MonoBehaviour{
     [Header("----Boleanas----")]
     [SerializeField] static public bool isMoving;
     [SerializeField] static public bool isInteracting;
+    [SerializeField] static public bool isStarted;
     [SerializeField] static public bool isTertriary;
     [SerializeField] static public bool isChangingItem;
     [SerializeField] static public bool isClicking;
@@ -48,8 +50,22 @@ public class BuildInputHandler : MonoBehaviour{
         }
     }
     public void Interact(InputAction.CallbackContext context){
-        if (context.phase == InputActionPhase.Performed){
-            isInteracting = true;
+        if(context.phase == InputActionPhase.Started){
+            isStarted = true;
+        }else if (context.phase == InputActionPhase.Performed){
+            isInteracting = !isInteracting;
+            if (isInteracting){
+                var interagiveis = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None)
+                    .OfType<>()
+                    .Where(obj => Vector2.Distance(transform.position, (obj as MonoBehaviour)?.transform.position ?? Vector2.positiveInfinity) < 3.0f);
+                foreach (var obj in interagiveis)
+                {
+                    obj.Interact();
+                    Debug.Log(obj);
+                    break;
+
+                }
+            }
         }else if (context.phase == InputActionPhase.Canceled){
             isInteracting = false;
         }
@@ -58,7 +74,6 @@ public class BuildInputHandler : MonoBehaviour{
         if (context.phase == InputActionPhase.Performed){
             isTertriary = true;
         }else if (context.phase == InputActionPhase.Canceled){
-            isTertriary = false;
         }
     }
     public void Click (InputAction.CallbackContext context){
