@@ -251,7 +251,19 @@ MonoBehaviour:
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 733091346491455723}
+        m_TargetAssemblyTypeName: BuildInputHandler, Assembly-CSharp
+        m_MethodName: Tertriary
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_ActionId: 0878aa6b-f2d7-4eeb-90ec-25eeb3eaa676
     m_ActionName: 'Player/Tertriary[/Keyboard/q]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -319,6 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   biHandler: {fileID: 733091346491455723}
+  gmHandler: {fileID: 0}
   CurrentMission: {fileID: 0}
   rotation: 0
   o2: 100

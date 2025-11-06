@@ -127,6 +127,7 @@ public class PlayerInventoryHandler : MonoBehaviour
 
         equippedInstanceId = tool.InstanceId;
         OnEquippedToolChanged?.Invoke(tool);
+        Debug.Log("Equip do PlayerInv");
         return true;
     }
 
@@ -137,6 +138,7 @@ public class PlayerInventoryHandler : MonoBehaviour
         idx = (idx + 1) % ownedTools.Count;
         equippedInstanceId = ownedTools[idx].InstanceId;
         OnEquippedToolChanged?.Invoke(ownedTools[idx]);
+        Debug.Log("EquipNext do PlayerInv " + ownedTools[idx]);
     }
 
     public void EquipToolByType(ToolType type)
@@ -145,6 +147,7 @@ public class PlayerInventoryHandler : MonoBehaviour
         if (toolToEquip != null)
         {
             Equip(toolToEquip.InstanceId);
+            Debug.Log("EquipToolByType do PlayerInv");
         }
         else
         {
@@ -173,6 +176,7 @@ public class PlayerInventoryHandler : MonoBehaviour
         }
 
         RaiseInventoryChanged();
+        Debug.Log("TryUseEquipped do PlayerInv");
         return true;
     }
 

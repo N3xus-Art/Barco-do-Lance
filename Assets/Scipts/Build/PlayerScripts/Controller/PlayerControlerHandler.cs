@@ -149,15 +149,15 @@ public class PlayerControlerHandler : MonoBehaviour{
             FlipPlayerModel();
         }
 
-        /*
-        if (BuildInputHandler.isMoving && GameManagerHandler.CurrentScene.name == "MapScreen"){
-            biHandler.rb.linearVelocity = new Vector2(biHandler.horizontalMoviment * biHandler.speed, biHandler.verticalMoviment * biHandler.speed);
-            biHandler.rb.gravityScale = 0;
-            if (biHandler.horizontalMoviment != 0)
-            {
-                gameObject.GetComponent<Transform>().localScale = new Vector3(biHandler.horizontalMoviment, 1, 1);
-            }
-        }*/
+        if (BuildInputHandler.isStarted){
+            playerInventory.TryUseEquipped();
+            BuildInputHandler.isStarted = false;
+        }
+
+        if (BuildInputHandler.isTertriary){
+            playerInventory.EquipNext();
+            BuildInputHandler.isTertriary = false;
+        }
     }
     #endregion
 }

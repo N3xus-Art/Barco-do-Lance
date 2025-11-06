@@ -6,26 +6,26 @@ using UnityEngine.UI;
 // O nome do seu arquivo é ToolUIHandler.cs, mas a classe é EquippedToolUIHandler <-- meu mano copilot julgou o nome da classe
 public class EquippedToolUIHandler : MonoBehaviour
 {
-    public PlayerInventoryHandler playerInventory;
+    public PlayerInventoryHandler playerInventoryHandler;
     public TextMeshProUGUI ToolText;
     public Image image;
     public Image ScrollUtil;
 
     private void OnEnable()
     {
-        if (playerInventory != null)
+        if (playerInventoryHandler != null)
         {
-            playerInventory.OnInventoryChanged += UpdateToolText;
-            playerInventory.OnEquippedToolChanged += UpdateToolText;
+            playerInventoryHandler.OnInventoryChanged += UpdateToolText;
+            playerInventoryHandler.OnEquippedToolChanged += UpdateToolText;
         }
     }
 
     private void OnDisable()
     {
-        if (playerInventory != null)
+        if (playerInventoryHandler != null)
         {
-            playerInventory.OnInventoryChanged -= UpdateToolText;
-            playerInventory.OnEquippedToolChanged -= UpdateToolText;
+            playerInventoryHandler.OnInventoryChanged -= UpdateToolText;
+            playerInventoryHandler.OnEquippedToolChanged -= UpdateToolText;
         }
     }
 
@@ -39,10 +39,12 @@ public class EquippedToolUIHandler : MonoBehaviour
     {
         if (ToolText == null || image == null || ScrollUtil == null) return;
 
-        var currentTool = tool ?? playerInventory?.EquippedTool;
+        var currentTool = tool ?? playerInventoryHandler?.EquippedTool;
+            Debug.Log("Primeiro check ui");
         if (currentTool != null)
         {
             image.sprite = currentTool.Data.icon;
+            Debug.Log("Antes do If");
 
             // Verifica se a ferramenta equipada é uma instância de Sambura.
             if (currentTool is SamburaInstanceHandler sambura)
@@ -57,6 +59,7 @@ public class EquippedToolUIHandler : MonoBehaviour
                 // Se for qualquer outra ferramenta, exibe a durabilidade normalmente.
                 ToolText.text = $"{currentTool.Data.toolName} ({currentTool.CurrentDurability}/{currentTool.MaxDurability})";
                 ScrollUtil.fillAmount = (float)currentTool.CurrentDurability / currentTool.MaxDurability;
+            Debug.Log("n sambura");
             }
         }
         else
@@ -64,6 +67,7 @@ public class EquippedToolUIHandler : MonoBehaviour
             ToolText.text = "Ferramenta atual: Nenhuma";
             image.sprite = null; // Opcional: Limpar o ícone se não houver ferramenta
             ScrollUtil.fillAmount = 0;
+            Debug.Log("Else toolui");
         }
     }
 

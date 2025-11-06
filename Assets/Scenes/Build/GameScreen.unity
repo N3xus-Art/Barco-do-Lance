@@ -3287,9 +3287,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 769691119}
-  toolText: {fileID: 1261665656}
+  ToolText: {fileID: 1261665656}
   image: {fileID: 1883847547}
-  scrollCurrent: {fileID: 1360627233}
+  ScrollUtil: {fileID: 1360627233}
 --- !u!1 &1849579893
 GameObject:
   m_ObjectHideFlags: 0
@@ -4398,10 +4398,6 @@ PrefabInstance:
       propertyPath: gmHandler
       value: 
       objectReference: {fileID: 1514552160}
-    - target: {fileID: 7344627380523034766, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
-      propertyPath: CurrentMission
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
