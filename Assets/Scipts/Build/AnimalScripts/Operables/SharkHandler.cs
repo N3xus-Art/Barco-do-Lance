@@ -18,7 +18,7 @@ public class SharkHandler : MarineAnimalHandler, IOperable {
     public void FinalizeOperation() {
         Debug.Log("Operação finalizada na tubarão.");
     }
-    private void OnMouseDown() {
+    public void Interact(){
         StartOperation();
     }
     #endregion

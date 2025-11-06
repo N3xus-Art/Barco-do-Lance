@@ -39,7 +39,6 @@ public class CaptureUI : MonoBehaviour{
 
         animalRect = animalImage.GetComponent<RectTransform>();
         capturePanel.SetActive(true);
-        target.StartCapture();
 
         if (coroutineMoviment != null) StopCoroutine(coroutineMoviment);
         coroutineMoviment = StartCoroutine(MoveAnimal());

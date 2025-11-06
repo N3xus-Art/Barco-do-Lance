@@ -26,6 +26,7 @@ public class BrowntroutHandler : MarineAnimalHandler, ICapturable {
         Debug.Log("Medusa iniciando captura. Parando movimento.");
         // Usa o método público da classe base para pausar/retomar o movimento
         SetCanMove(false);
+        CaptureUI.Instance.OpenCapture(this);
     }
 
     public void ReturnBehaviour()
@@ -47,8 +48,8 @@ public class BrowntroutHandler : MarineAnimalHandler, ICapturable {
 
         Vector2 escapeDirection = ((Vector2)transform.position - (Vector2)playerPos).normalized;
         Vector2 escapeDestination = (Vector2)transform.position + escapeDirection * 10f;
-        float escapeSpeed = speed * 2f;
-        float escapeDuration = 2.0f;
+        float escapeSpeed = speed * 20f;
+        float escapeDuration = 60.0f;
         float elapsedTime = 0f;
 
         while (elapsedTime < escapeDuration)
@@ -60,5 +61,10 @@ public class BrowntroutHandler : MarineAnimalHandler, ICapturable {
 
         Debug.Log("Medusa terminou de fugir.");
         ReturnBehaviour(); // Volta a nadar normalmente
+    }
+
+    public void Interact()
+    {
+        StartCapture();
     }
 }

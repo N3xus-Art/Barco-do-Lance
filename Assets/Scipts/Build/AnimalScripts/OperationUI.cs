@@ -20,6 +20,7 @@ public class OperationUI : MonoBehaviour{
         operationTarget = target;
 
         operationPanel.SetActive(true);
+        
         animalImage.sprite = target.GetSprite();
 
         // Limpa lixos antigos
@@ -48,11 +49,9 @@ public class OperationUI : MonoBehaviour{
                 rt.localScale = Vector3.one;
                 rt.anchoredPosition = new Vector2(randomX, randomY);
             }
-
             activeTrashs.Add(trash);
         }
     }
-
     public void EndOperation() {
         Time.timeScale = 1f;
         operationPanel.SetActive(false);

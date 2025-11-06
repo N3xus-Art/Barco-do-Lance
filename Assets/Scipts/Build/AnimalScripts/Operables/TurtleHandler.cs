@@ -20,7 +20,7 @@ public class TurtleHandler : MarineAnimalHandler, IOperable {
     public void FinalizeOperation() {
         Debug.Log("Operação finalizada na tartaruga.");
     }
-    private void OnMouseDown() {
+    public void Interact(){
         StartOperation();
     }
     #endregion

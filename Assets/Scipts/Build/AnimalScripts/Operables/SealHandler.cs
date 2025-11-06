@@ -20,7 +20,7 @@ public class SealHandler : MarineAnimalHandler, IOperable {
     public void FinalizeOperation() {
         Debug.Log("Operação finalizada na foca.");
     }
-    private void OnMouseDown() {
+    public void Interact(){
         StartOperation();
     }
     #endregion

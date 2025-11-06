@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 152795247916144468}
   - component: {fileID: 7974426620957737800}
   - component: {fileID: 1357910607267764327}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: AnimalImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 6061235674881350405}
   - component: {fileID: 8307220457392515137}
   - component: {fileID: 8344052590478503759}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CaptureArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,8 @@ GameObject:
   - component: {fileID: 1058413219537037797}
   - component: {fileID: 5958721141815446169}
   - component: {fileID: 6207270582952789422}
-  m_Layer: 0
+  - component: {fileID: 3441195895977490661}
+  m_Layer: 5
   m_Name: CaptureUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,6 +272,18 @@ MonoBehaviour:
   animalImage: {fileID: 1357910607267764327}
   minClicks: 3
   movmentTime: 1.5
+--- !u!114 &3441195895977490661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4474410244639534789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b14f1740ae251041bc113cba55d903a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6357849457316460157
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +295,7 @@ GameObject:
   - component: {fileID: 3898800398477336065}
   - component: {fileID: 7248913780565952966}
   - component: {fileID: 3900886963663792883}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CaputePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
