@@ -53,7 +53,6 @@ public class BuildInputHandler : MonoBehaviour{
         if(context.phase == InputActionPhase.Started){
             isStarted = true;
         }else if (context.phase == InputActionPhase.Performed){
-<<<<<<< Updated upstream
             isInteracting = !isInteracting;
             if (isInteracting){
                 var interagiveis = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None)
@@ -67,9 +66,7 @@ public class BuildInputHandler : MonoBehaviour{
 
                 }
             }
-=======
             isInteracting = true;
->>>>>>> Stashed changes
         }else if (context.phase == InputActionPhase.Canceled){
             isInteracting = false;
         }
