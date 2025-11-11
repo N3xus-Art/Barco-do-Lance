@@ -23,16 +23,16 @@ public class BrowntroutHandler : MarineAnimalHandler, ICapturable {
 
     public void StartCapture()
     {
-        Debug.Log("Medusa iniciando captura. Parando movimento.");
-        // Usa o método público da classe base para pausar/retomar o movimento
+        Debug.Log("Truta iniciando captura. Parando movimento.");
+        // Usa o mï¿½todo pï¿½blico da classe base para pausar/retomar o movimento
         SetCanMove(false);
         CaptureUI.Instance.OpenCapture(this);
     }
 
     public void ReturnBehaviour()
     {
-        Debug.Log("Medusa retomando comportamento normal.");
-        // Usa o método público da classe base para voltar a nadar.
+        Debug.Log("Truta retomando comportamento normal.");
+        // Usa o mï¿½todo pï¿½blico da classe base para voltar a nadar.
         SetCanMove(true);
     }
 
@@ -43,8 +43,8 @@ public class BrowntroutHandler : MarineAnimalHandler, ICapturable {
 
     private IEnumerator EscapeRoutine(Vector3 playerPos)
     {
-        Debug.Log("Medusa está fugindo!");
-        SetCanMove(false); // Garante que o movimento normal não interfira
+        Debug.Log("Truta esta fugindo!");
+        SetCanMove(false); // Garante que o movimento normal nï¿½o interfira
 
         Vector2 escapeDirection = ((Vector2)transform.position - (Vector2)playerPos).normalized;
         Vector2 escapeDestination = (Vector2)transform.position + escapeDirection * 10f;
@@ -59,7 +59,7 @@ public class BrowntroutHandler : MarineAnimalHandler, ICapturable {
             yield return null;
         }
 
-        Debug.Log("Medusa terminou de fugir.");
+        Debug.Log("Truta terminou de fugir.");
         ReturnBehaviour(); // Volta a nadar normalmente
     }
 

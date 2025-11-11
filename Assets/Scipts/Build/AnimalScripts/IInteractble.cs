@@ -1,5 +1,5 @@
 using UnityEngine;
 
-public interface IInteractble{
+public interface IInteractable{
     void Interact();
 }

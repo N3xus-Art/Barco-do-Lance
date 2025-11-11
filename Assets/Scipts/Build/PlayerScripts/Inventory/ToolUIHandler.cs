@@ -3,7 +3,7 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 
-// O nome do seu arquivo é ToolUIHandler.cs, mas a classe é EquippedToolUIHandler <-- meu mano copilot julgou o nome da classe
+// O nome do seu arquivo ï¿½ ToolUIHandler.cs, mas a classe ï¿½ EquippedToolUIHandler <-- meu mano copilot julgou o nome da classe
 public class EquippedToolUIHandler : MonoBehaviour
 {
     public PlayerInventoryHandler playerInventoryHandler;
@@ -46,12 +46,12 @@ public class EquippedToolUIHandler : MonoBehaviour
             image.sprite = currentTool.Data.icon;
             Debug.Log("Antes do If");
 
-            // Verifica se a ferramenta equipada é uma instância de Sambura.
+            // Verifica se a ferramenta equipada ï¿½ uma instï¿½ncia de Sambura.
             if (currentTool is SamburaInstanceHandler sambura)
             {
-                // Se for uma Sambura, exibe a informação de capacidade.
+                // Se for uma Sambura, exibe a informaï¿½ï¿½o de capacidade.
                 ToolText.text = $"{sambura.Data.toolName} ({sambura.occupiedSpace}/{sambura.maxCapacity})";
-                // A barra de preenchimento (ScrollUtil) reflete o espaço ocupado.
+                // A barra de preenchimento (ScrollUtil) reflete o espaï¿½o ocupado.
                 ScrollUtil.fillAmount = (float)sambura.occupiedSpace / sambura.maxCapacity;
             }
             else
@@ -65,7 +65,7 @@ public class EquippedToolUIHandler : MonoBehaviour
         else
         {
             ToolText.text = "Ferramenta atual: Nenhuma";
-            image.sprite = null; // Opcional: Limpar o ícone se não houver ferramenta
+            image.sprite = null; // Opcional: Limpar o ï¿½cone se nï¿½o houver ferramenta
             ScrollUtil.fillAmount = 0;
             Debug.Log("Else toolui");
         }

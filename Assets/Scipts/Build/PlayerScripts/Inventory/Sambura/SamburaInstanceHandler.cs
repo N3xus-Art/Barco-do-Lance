@@ -1,56 +1,49 @@
-// SamburaInstanceHandler.cs
-
 using System.Collections.Generic;
 using UnityEngine;
 
-// Esta classe herda tudo da ToolInstanceHandler e adiciona a funcionalidade de armazenamento
 [System.Serializable]
 public class SamburaInstanceHandler : ToolInstanceHandler
 {
-    // Lista para armazenar os peixes capturados
     [SerializeField]
-    private List<ICapturable> storageFish = new List<ICapturable>();
+    private List<GameObject> peixesArmazenados = new List<GameObject>();
 
-    public IReadOnlyList<ICapturable> StorageFish => storageFish;
-    public int maxCapacity { get; private set; } // A durabilidade ser· usada como capacidade
-    public int occupiedSpace => storageFish.Count;
-    public bool isFull => occupiedSpace >= maxCapacity;
+    public IReadOnlyList<GameObject> PeixesArmazenados => peixesArmazenados;
+    public int maxCapacity { get; private set; }
+    public int occupiedSpace => peixesArmazenados.Count;
+    public bool EstaCheia => occupiedSpace >= maxCapacity;
 
-    // Construtor que passa os dados da ferramenta para a classe base
     public SamburaInstanceHandler(ToolDataHandler toolData) : base(toolData)
     {
-        // Usamos a durabilidade m·xima do ScriptableObject como a capacidade da Sambura
         maxCapacity = toolData.maxDurability;
     }
 
-    /// <summary>
-    /// Tenta adicionar um peixe na Sambura. Retorna true se conseguir.
-    /// </summary>
-    public bool TryAddFish(ICapturable peixe)
+    public bool TentarAdicionarPeixe(GameObject peixeObjeto)
     {
-        if (isFull)
+        if (EstaCheia)
         {
-            Debug.Log("A Sambura est· cheia!");
+            Debug.Log("A Sambura est√° cheia!");
             return false;
         }
 
-        storageFish.Add(peixe);
-        Debug.Log($"Peixe '{peixe.GetGameObject().name}' adicionado ‡ Sambura. EspaÁo: {occupiedSpace}/{maxCapacity}");
-        // Dispara um evento para a UI saber que a durabilidade (capacidade) mudou
+        peixeObjeto.SetActive(false);
+
+        if (PlayerInventoryHandler.Instance != null)
+        {
+            peixeObjeto.transform.SetParent(PlayerInventoryHandler.Instance.transform);
+        }
+
+        peixesArmazenados.Add(peixeObjeto);
+        Debug.Log($"Peixe '{peixeObjeto.name}' adicionado √† Sambura. Espa√ßo: {occupiedSpace}/{maxCapacity}");
         RaiseDurabilityChanged();
         return true;
     }
 
-    /// <summary>
-    /// Limpa a Sambura, por exemplo, ao descarregar os peixes no aqu·rio.
-    /// </summary>
-    public void CleanSambura()
+    public void LimparSambura()
     {
-        storageFish.Clear();
+        peixesArmazenados.Clear();
         Debug.Log("Sambura esvaziada.");
         RaiseDurabilityChanged();
     }
 
-    // Sobrescrevemos a propriedade CurrentDurability para refletir o espaÁo ocupado
     public new int CurrentDurability => maxCapacity - occupiedSpace;
 }

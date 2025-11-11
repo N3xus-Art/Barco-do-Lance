@@ -16,13 +16,13 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] static public bool isClicking;
     [SerializeField] static public bool isDashing;
     [SerializeField] static public bool isDiagonal;
-    [Header("----Variaveis de Movimentação----")]
+    [Header("----Variaveis de Movimentaï¿½ï¿½o----")]
     [SerializeField] public float speed;
     [SerializeField] public float horizontalMoviment;
     [SerializeField] public float verticalMoviment;
     [SerializeField] public Rigidbody2D rb;
     [SerializeField] public BoxCollider2D box2D;
-    [Header("----Verificação de Contato----")]
+    [Header("----Verificaï¿½ï¿½o de Contato----")]
     [SerializeField] public Transform inicialPos;
     [SerializeField] public Transform contactCheckPos;
     [SerializeField] public GameObject contactCheckTop;
@@ -56,7 +56,7 @@ public class BuildInputHandler : MonoBehaviour{
             isInteracting = !isInteracting;
             if (isInteracting){
                 var interagiveis = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None)
-                    .OfType<IInteractble>()
+                    .OfType<IInteractable>()
                     .Where(obj => Vector2.Distance(transform.position, (obj as MonoBehaviour)?.transform.position ?? Vector2.positiveInfinity) < 3.0f);
                 foreach (var obj in interagiveis)
                 {
