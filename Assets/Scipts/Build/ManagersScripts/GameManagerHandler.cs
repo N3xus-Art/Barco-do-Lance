@@ -23,6 +23,7 @@ public class GameManagerHandler : MonoBehaviour{
     [SerializeField] public bool onScene;
     [SerializeField] private bool hasSpwn;
     [SerializeField] public static Scene CurrentScene;
+    [SerializeField] public ScriptableObjectMissions[] CurrentAvaliableMissions = { };
     #endregion
 
     public static void SpawnAnimalsInCurrentSea(CurrentMission mission)
