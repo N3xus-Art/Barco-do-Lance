@@ -295,7 +295,16 @@ public class PlayerInventoryHandler : MonoBehaviour
 
     public bool TryStoreFishInSambura(ICapturable peixe)
     {
-        SamburaInstanceHandler sambura = ownedTools.OfType<SamburaInstanceHandler>().FirstOrDefault(s => !s.EstaCheia);
+        var samburas = ownedTools.OfType<SamburaInstanceHandler>().ToList();
+        Debug.Log($"Quantidade de samburas no inventário: {samburas.Count}");
+        foreach (var tool in ownedTools)
+        {
+            Debug.Log($"Ferramenta: {tool.Data.toolName}, Tipo: {tool.Data.type}, Instância: {tool.GetType().Name}");
+        }
+
+        SamburaInstanceHandler sambura = samburas.FirstOrDefault(s => !s.EstaCheia);
+
+
 
         if (sambura == null)
         {
@@ -303,7 +312,6 @@ public class PlayerInventoryHandler : MonoBehaviour
             return false;
         }
 
-        // Passa o GameObject real do peixe para a sambura
         return sambura.TentarAdicionarPeixe(peixe.GetGameObject());
     }
     #endregion

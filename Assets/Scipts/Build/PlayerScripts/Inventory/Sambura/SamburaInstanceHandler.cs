@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 [System.Serializable]
+
 public class SamburaInstanceHandler : ToolInstanceHandler
 {
     [SerializeField]
@@ -19,18 +19,21 @@ public class SamburaInstanceHandler : ToolInstanceHandler
 
     public bool TentarAdicionarPeixe(GameObject peixeObjeto)
     {
+        Debug.Log($"Tentando adicionar peixe. Espaço ocupado: {occupiedSpace}, Capacidade máxima: {maxCapacity}");
         if (EstaCheia)
         {
             Debug.Log("A Sambura está cheia!");
             return false;
         }
 
-        peixeObjeto.SetActive(false);
-
-        if (PlayerInventoryHandler.Instance != null)
+        if (PlayerInventoryHandler.Instance == null)
         {
-            peixeObjeto.transform.SetParent(PlayerInventoryHandler.Instance.transform);
+            Debug.LogError("PlayerInventoryHandler.Instance está nulo!");
+            return false;
         }
+
+        peixeObjeto.SetActive(false);
+        peixeObjeto.transform.SetParent(PlayerInventoryHandler.Instance.transform);
 
         peixesArmazenados.Add(peixeObjeto);
         Debug.Log($"Peixe '{peixeObjeto.name}' adicionado à Sambura. Espaço: {occupiedSpace}/{maxCapacity}");

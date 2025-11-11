@@ -57,9 +57,10 @@ public class BuildInputHandler : MonoBehaviour{
             if (isInteracting){
                 var interagiveis = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None)
                     .OfType<IInteractable>()
-                    .Where(obj => Vector2.Distance(transform.position, (obj as MonoBehaviour)?.transform.position ?? Vector2.positiveInfinity) < 3.0f);
+                    .Where(obj => Vector2.Distance(transform.position, (obj as MonoBehaviour)?.transform.position ?? Vector2.positiveInfinity) < 5.0f);
                 foreach (var obj in interagiveis)
                 {
+                    Debug.Log($"Encontrado: {obj.GetType().Name}, posição: {(obj as MonoBehaviour)?.transform.position}");
                     obj.Interact();
                     Debug.Log(obj);
                     break;

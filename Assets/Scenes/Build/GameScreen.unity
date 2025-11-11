@@ -693,7 +693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 210122182}
   - component: {fileID: 210122181}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AquariumGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,9 +741,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1926435533
-  m_SortingLayer: 2
-  m_SortingOrder: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.7471075, g: 0.9716981, b: 0.9631668, a: 0.24705882}
   m_FlipX: 0
@@ -900,7 +900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 235400760}
   - component: {fileID: 235400759}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AquariumBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,9 +948,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1926435533
-  m_SortingLayer: 2
-  m_SortingOrder: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -987,7 +987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 289042106}
   - component: {fileID: 289042107}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AquariumWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1050,9 +1050,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1926435533
-  m_SortingLayer: 2
-  m_SortingOrder: -2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0.3202755, b: 0.9811321, a: 0.24705882}
   m_FlipX: 0
@@ -2574,6 +2574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165160295}
   - component: {fileID: 1165160296}
+  - component: {fileID: 1165160297}
   m_Layer: 0
   m_Name: Aquarium
   m_TagString: Untagged
@@ -2613,6 +2614,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishSwimArea: {fileID: 289042106}
+--- !u!61 &1165160297
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165160294}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.020233154, y: 2.6505258}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 15.851044, y: 4.844276}
+  m_EdgeRadius: 0
 --- !u!1 &1261665654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2880,7 +2927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1342636454}
   - component: {fileID: 1342636453}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AquariumTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2928,9 +2975,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1926435533
-  m_SortingLayer: 2
-  m_SortingOrder: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -4751,13 +4798,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: ownedTools.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: ownedTools.Array.data[0].data
+      value: 
+      objectReference: {fileID: 11400000, guid: 29ad347a811262842a91d09b7ca748d7, type: 2}
+    - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: ownedTools.Array.data[1].data
+      value: 
+      objectReference: {fileID: 11400000, guid: f2b4f1f457771b1408d59fd125c30d19, type: 2}
+    - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: ownedTools.Array.data[0].instanceId
+      value: Sambura
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: ownedTools.Array.data[1].instanceId
+      value: Net
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: ownedTools.Array.data[0].currentDurability
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: ownedTools.Array.data[1].currentDurability
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6246745718549352033, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.26
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6246745718549352033, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6246745718549352033, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: m_LocalPosition.z
