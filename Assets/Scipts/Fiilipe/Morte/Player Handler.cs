@@ -10,6 +10,7 @@ public class PlayerHandler : MonoBehaviour
     [SerializeField] private MoveTester _MoveTester;
     [SerializeField] private Transform _Transform;
     [SerializeField] private bool Dead;
+    [SerializeField] private bool _Recover;
     [SerializeField] private float Speed;
     [SerializeField] private TMP_Text _Text;
 
@@ -30,13 +31,13 @@ public class PlayerHandler : MonoBehaviour
             if (CurrentO2 <= 0)
             {
                 //toca a animação de fade
-                _FadeHandler.FadeOut();
+                _FadeHandler.FadeOut(4,Morrer);
 
             }
         }
 
 
-        if (Dead)
+        if (_Recover)
         {
 
             Recover();
@@ -48,7 +49,12 @@ public class PlayerHandler : MonoBehaviour
     public void Morrer()
     {
 
-        StartCoroutine(Die());
+        // move o player pro inicio
+        _Transform.position = Vector3.zero;
+
+        Dead = true;
+        
+        StartCoroutine(CutsceneMorte());
 
     }
 
@@ -69,28 +75,28 @@ public class PlayerHandler : MonoBehaviour
     }
 
 
-    private IEnumerator Die()
+    private IEnumerator CutsceneMorte()
     {
 
         // desabilita a o movimento
         _MoveTester.enabled = false;
 
-        // move o player pro inicio
-        _Transform.position = Vector3.zero;
-
-        Dead = true;
-
+        // espera meio segundo
         yield return new WaitForSecondsRealtime(0.5f);
 
+        // habilita o texto de "Desmaiou"
         _Text.enabled = true;
 
+        // espera 4s
         yield return new WaitForSecondsRealtime(4f);
 
+        // desabilita o texto de "Desmaiou"
         _Text.enabled = false;
 
-        yield return new WaitForSecondsRealtime(0.5f);
 
-        _FadeHandler.FadeIn();
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        _FadeHandler.FadeIn(1.5f,Spawn);
 
     }
 
