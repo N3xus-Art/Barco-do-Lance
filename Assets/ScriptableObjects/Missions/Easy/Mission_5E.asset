@@ -34,3 +34,4 @@ MonoBehaviour:
   rescueableAnimals: 0
   operableAnimals: 2
   MissionSea: 2
+  rescueableSea: -1
