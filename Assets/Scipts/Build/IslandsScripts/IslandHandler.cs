@@ -82,6 +82,7 @@ public class IslandHandler : MonoBehaviour {
         itemSlot = TabIndex;
         confirmScreen.SetActive(true);
     }
+
     public bool ConfirmCheck(int price) {
         if (itemSlot == 0) {
             if (playerInventory.TryBuyTool(firstData, out var tool)) {

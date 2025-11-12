@@ -3730,10 +3730,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 445ea9d2e608fbf4d86a3463398ab3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventoryHandler: {fileID: 769691119}
-  ToolText: {fileID: 1261665656}
-  image: {fileID: 1883847547}
-  ScrollUtil: {fileID: 1360627233}
+  _playerInventoryHandler: {fileID: 769691119}
+  _toolText: {fileID: 1261665656}
+  _image: {fileID: 1883847547}
+  _scrollUtil: {fileID: 1360627233}
 --- !u!1 &1849579893
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,7 +4820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: ownedTools.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: ownedTools.Array.data[0].data
