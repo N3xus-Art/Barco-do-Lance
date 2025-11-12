@@ -2644,7 +2644,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -3730,7 +3730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 445ea9d2e608fbf4d86a3463398ab3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventoryHandler: {fileID: 0}
+  playerInventoryHandler: {fileID: 769691119}
   ToolText: {fileID: 1261665656}
   image: {fileID: 1883847547}
   ScrollUtil: {fileID: 1360627233}
@@ -4570,9 +4570,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5187928411517402173, guid: 5d9bbb7b0ce6744498596bb3443b2975, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5700652789911395893, guid: 5d9bbb7b0ce6744498596bb3443b2975, type: 3}
       propertyPath: m_Name
       value: Wheel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700652789911395893, guid: 5d9bbb7b0ce6744498596bb3443b2975, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4807,20 +4815,24 @@ PrefabInstance:
       value: Player_Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: Money
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: ownedTools.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: ownedTools.Array.data[0].data
       value: 
-      objectReference: {fileID: 11400000, guid: 29ad347a811262842a91d09b7ca748d7, type: 2}
+      objectReference: {fileID: 11400000, guid: f2b4f1f457771b1408d59fd125c30d19, type: 2}
     - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: ownedTools.Array.data[1].data
       value: 
       objectReference: {fileID: 11400000, guid: f2b4f1f457771b1408d59fd125c30d19, type: 2}
     - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: ownedTools.Array.data[0].instanceId
-      value: Sambura
+      value: Net
       objectReference: {fileID: 0}
     - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: ownedTools.Array.data[1].instanceId
@@ -4828,7 +4840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: ownedTools.Array.data[0].currentDurability
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3741923216983998708, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: ownedTools.Array.data[1].currentDurability
