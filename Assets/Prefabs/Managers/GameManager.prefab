@@ -44,3 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b0822eb1894fc43b28f144ed05a439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SeaPrefabs: []
+  currentSeaGO: {fileID: 0}
+  onScene: 0
+  hasSpwn: 0
+  pcHandler: {fileID: 0}
+  fishSpwn: 0
+  CurrentAvaliableMissions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

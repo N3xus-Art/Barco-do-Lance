@@ -128,6 +128,7 @@ public class DebackyHandler : MonoBehaviour{
             currentMission.OperableAnimals = avaliableMissions[currentID].operableAnimals;
             currentMission.Level = avaliableMissions[currentID].Level;
             currentMission.MissionSea = avaliableMissions[currentID].MissionSea;
+            currentMission.RescubleSea = avaliableMissions[currentID].rescueableSea;
 
             // atribuindo a tab na qual pegou a missão
             MissionTabID = currentID;

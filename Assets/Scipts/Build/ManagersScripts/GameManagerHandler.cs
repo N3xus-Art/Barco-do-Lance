@@ -32,9 +32,8 @@ public class GameManagerHandler : MonoBehaviour{
     public static void SpawnAnimalsInCurrentSea(CurrentMission mission){
         Debug.Log($"GameManagerHandler.SapwnOcean - ocean.GetComponentsInChildren<AnimalSpawnerHandler>() {Instance.currentSeaGO.GetComponentsInChildren<AnimalSpawnerHandler>().Length}");
         List<AnimalSpawnerHandler> animalSpawners = new List<AnimalSpawnerHandler>(Instance.currentSeaGO.GetComponentsInChildren<AnimalSpawnerHandler>());
-        foreach(AnimalSpawnerHandler spawner in animalSpawners){
-            spawner.SpawnAnimal(mission.OperableAnimals);
-        }
+
+        animalSpawners[mission.Level - 1].SpawnAnimal(mission.OperableAnimals);
     } 
     //Methods
     #region
@@ -67,6 +66,17 @@ public class GameManagerHandler : MonoBehaviour{
                 SpawnAnimalsInCurrentSea(pcHandler.CurrentMission);
                 fishSpwn = true;
             }
+            if (pcHandler.CurrentMission != null && (pcHandler.CurrentMission.RescubleSea == currentSea)){
+
+                Debug.Log("Entregou os peixes");
+                
+                // Checar se ele tem peixes no aquário
+                    //Checar quantos peixes ele tem no aquário
+                    //Tirar os peixes do aquário
+                    //Diminuir o número de peixes resgatáveis da missão
+                
+            }
+
         }
     }
 

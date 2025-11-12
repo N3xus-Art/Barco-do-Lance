@@ -10,6 +10,7 @@ public class CurrentMission : MonoBehaviour{
     public int CurrentReward;
     public int Level;
     public int MissionSea;
+    public int RescubleSea;
     public int TabID;    
 
     void Update(){
