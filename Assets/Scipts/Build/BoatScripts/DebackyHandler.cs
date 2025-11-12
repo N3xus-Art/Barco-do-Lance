@@ -131,6 +131,7 @@ public class DebackyHandler : MonoBehaviour{
 
             // atribuindo a tab na qual pegou a missão
             MissionTabID = currentID;
+            currentMission.TabID = currentID;
             
             onMission = true;
 
@@ -279,9 +280,20 @@ public class DebackyHandler : MonoBehaviour{
                 onMission = true;
                 MissionTabID = playerCH.CurrentMission.TabID;
 
-                // reconfigura o botão missão
-                confirmButton.interactable = false;
-                confirmTMP.SetText("Em Missão");
+                if (MissionTabID == currentID)
+                {
+                    // reconfigura o botão missão
+                    confirmButton.interactable = false;
+                    confirmTMP.SetText("Em Missão");
+                }
+                else {
+
+                    // reconfigura o botão missão
+                    confirmButtonGO.SetActive(false);
+                    confirmButton.interactable = false;
+                    confirmTMP.SetText("Em Missão");
+
+                }
             }
         }
              

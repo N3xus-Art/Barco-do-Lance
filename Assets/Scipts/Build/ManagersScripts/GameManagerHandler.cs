@@ -25,6 +25,8 @@ public class GameManagerHandler : MonoBehaviour{
     [SerializeField] public static Scene CurrentScene;
     [SerializeField] private PlayerControlerHandler pcHandler;
     [SerializeField] public bool fishSpwn = false;
+    [SerializeField] public ScriptableObjectMissions[] CurrentAvaliableMissions = new ScriptableObjectMissions[] { };
+
     #endregion
 
     public static void SpawnAnimalsInCurrentSea(CurrentMission mission){
