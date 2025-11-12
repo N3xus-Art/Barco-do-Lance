@@ -117,7 +117,26 @@ public class PlayerControlerHandler : MonoBehaviour{
         playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
         biHandler.box2D = GetComponent<BoxCollider2D>();
     }
+    /*
+    private void UpdateO2Pointer()
+    {
+        // Defina os ângulos mínimo e máximo do ponteiro
+        float minAngle = -90f; // Exemplo: ponteiro para baixo (O2 zero)
+        float maxAngle = 90f;  // Exemplo: ponteiro para cima (O2 cheio)
 
+        // Calcula a porcentagem de O2
+        float o2Percent = o2 / maxO2;
+
+        // Interpola o ângulo conforme o O2
+        float pointerAngle = Mathf.Lerp(minAngle, maxAngle, o2Percent);
+
+        // Aplica a rotação ao ponteiro
+        if (pointer != null)
+        {
+            pointer.transform.localEulerAngles = new Vector3(0, 0, pointerAngle);
+        }
+    }
+    */
     public void Update(){
         if (BuildInputHandler.isMoving){
             if (isGrounded() && !biHandler.topCollision.inLadderLocal){
@@ -148,7 +167,16 @@ public class PlayerControlerHandler : MonoBehaviour{
             biHandler.box2D.isTrigger = false;
             FlipPlayerModel();
         }
-
+        if (inWater())
+        {
+            o2 -= o2Cost * Time.deltaTime;
+            o2 = Mathf.Clamp(o2, 0, maxO2);
+            if (o2 <= 0)
+            {
+                // Morte do player
+            }
+            // UpdateO2Pointer();
+        }
         if (BuildInputHandler.isStarted){
             playerInventory.TryUseEquipped();
             BuildInputHandler.isStarted = false;
