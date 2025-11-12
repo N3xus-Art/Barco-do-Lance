@@ -31,6 +31,10 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] public LayerMask groundLayer;
     [SerializeField] public LayerMask waterLayer;
     [SerializeField] public LayerMask ladderLayer;
+    [Header("---- Configuração de Interação ----")]
+    [SerializeField] private float interactRange = 5.0f;
+    [Tooltip("Quais layers o sistema de interação deve verificar")]
+    [SerializeField] private LayerMask interactableLayer;
     #endregion
     //Methods
     #region
@@ -49,23 +53,40 @@ public class BuildInputHandler : MonoBehaviour{
             isMoving = false;
         }
     }
-    public void Interact(InputAction.CallbackContext context){
-        if(context.phase == InputActionPhase.Started){
-            isStarted = true;
-        }else if (context.phase == InputActionPhase.Performed){
-            isInteracting = !isInteracting;
-            if (isInteracting){
-                var interagiveis = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None)
-                    .OfType<IInteractable>()
-                    .Where(obj => Vector2.Distance(transform.position, (obj as MonoBehaviour)?.transform.position ?? Vector2.positiveInfinity) < 5.0f);
-                foreach (var obj in interagiveis)
-                {
-                    Debug.Log($"Encontrado: {obj.GetType().Name}, posição: {(obj as MonoBehaviour)?.transform.position}");
-                    obj.Interact();
-                    Debug.Log(obj);
-                    break;
+    public void Interact(InputAction.CallbackContext context)
+    {
+        // Reage quando o botão é pressionado (Performed)
+        if (context.phase == InputActionPhase.Performed)
+        {
+            Debug.Log("Botão de interação pressionado!");
+            // 1. Verifica todos os colliders na área de interação
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRange, interactableLayer);
 
-                }
+            if (hits.Length == 0)
+            {
+                Debug.Log("Nada interativo por perto.");
+                return;
+            }
+
+            // 2. Encontra o collider mais próximo do jogador
+            Collider2D closestHit = hits
+                .OrderBy(hit => Vector2.Distance(transform.position, hit.transform.position))
+                .FirstOrDefault();
+
+            if (closestHit == null) return;
+
+            // 3. Tenta pegar o script IInteractable no objeto encontrado
+            IInteractable interactableObject = closestHit.GetComponentInParent<IInteractable>();
+
+            // 4. Se o script existir, chama o método Interact
+            if (interactableObject != null)
+            {
+                Debug.Log($"Interagindo com: {closestHit.gameObject.name}");
+                interactableObject.Interact();
+            }
+            else
+            {
+                Debug.LogWarning($"Objeto {closestHit.gameObject.name} está na layer Interagível, mas não tem um script IInteractable!");
             }
             isInteracting = true;
         }else if (context.phase == InputActionPhase.Canceled){

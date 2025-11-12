@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5325275720607023729}
   - component: {fileID: 4795872120598853899}
   - component: {fileID: 512176533644466457}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Jellyfish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,5 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c417a44d8cd5849a37389dd72f4161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
   speed: 0
   smoothness: 0.5
