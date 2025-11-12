@@ -35,6 +35,9 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] private float interactRange = 5.0f;
     [Tooltip("Quais layers o sistema de interação deve verificar")]
     [SerializeField] private LayerMask interactableLayer;
+    [Header("---- Prefabs de Itens ----")]
+    [SerializeField] private GameObject racaoPrefab;
+
     #endregion
     //Methods
     #region
@@ -93,6 +96,33 @@ public class BuildInputHandler : MonoBehaviour{
             isInteracting = false;
         }
     }
+    public void UseFood(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            // 1. Tenta consumir um item de ração do inventário
+            bool success = PlayerInventoryHandler.Instance.TryUseRacao();
+
+            // 2. Se foi bem-sucedido, instancia o prefab da ração na água
+            if (success)
+            {
+                if (racaoPrefab != null)
+                {
+                    Instantiate(racaoPrefab, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    Debug.LogError("Prefab da Ração não está configurado no BuildInputHandler!");
+                }
+            }
+            else
+            {
+                Debug.Log("Sem ração para usar!");
+                // Opcional: Tocar um som de "falha"
+            }
+        }
+    }
+
     public void Tertriary(InputAction.CallbackContext context){
         if (context.phase == InputActionPhase.Performed){
             isTertriary = true;

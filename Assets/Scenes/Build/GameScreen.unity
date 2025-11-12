@@ -4795,6 +4795,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 733091346491455723, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: racaoPrefab
+      value: 
+      objectReference: {fileID: 2580837282353623088, guid: 42e94fe23ca33b948b27592502414de3, type: 3}
+    - target: {fileID: 733091346491455723, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
       propertyPath: interactableLayer.m_Bits
       value: 256
       objectReference: {fileID: 0}

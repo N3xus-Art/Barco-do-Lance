@@ -31,7 +31,7 @@ public class DebackyHandler : MonoBehaviour{
     [SerializeField] private int MissionTabID = -1;
     [SerializeField] private Button NextButton;
     [SerializeField] private Button PreviousButton;
-    [Header("----Variaveis de Confirmação----")]
+    [Header("----Variaveis de Confirmaï¿½ï¿½o----")]
     [SerializeField] private bool onMission = false;
     [SerializeField] private bool outMission = false;
     [SerializeField] private GameObject confirmButtonGO;
@@ -119,9 +119,9 @@ public class DebackyHandler : MonoBehaviour{
                 GameManagerHandler.SpawnAnimalsInCurrentSea(playerCH.CurrentMission);
                 Debug.Log("teste");
             }
-            //Definir o que acontece quando não está no oceano atual
+            //Definir o que acontece quando nï¿½o estï¿½ no oceano atual
             confirmButton.interactable = false;
-            confirmTMP.SetText("Em Missão");
+            confirmTMP.SetText("Em Missï¿½o");
         }
     }
 
@@ -205,7 +205,7 @@ public class DebackyHandler : MonoBehaviour{
 
         if (!outMission && onMission && playerCH.CurrentMission != null && playerCH.CurrentMission.End) {
             outMission = true;
-            confirmTMP.SetText("Terminar Missão");
+            confirmTMP.SetText("Terminar Missï¿½o");
             confirmButton.interactable = true;
         }
     }

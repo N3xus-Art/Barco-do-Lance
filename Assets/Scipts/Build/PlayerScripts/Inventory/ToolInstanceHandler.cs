@@ -70,7 +70,7 @@ public class ToolInstanceHandler
     /// </summary>
     public void Repair(int amount)
     {
-        if (amount <= 0 || IsBroken) return; // design choice: broken tools can’t be repaired; scrap instead
+        if (amount <= 0 || IsBroken) return; // design choice: broken tools canï¿½t be repaired; scrap instead
         int prev = currentDurability;
         currentDurability = Mathf.Clamp(currentDurability + amount, 0, MaxDurability);
         if (currentDurability != prev)

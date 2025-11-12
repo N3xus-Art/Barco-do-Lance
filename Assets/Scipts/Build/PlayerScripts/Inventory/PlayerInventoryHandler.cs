@@ -252,7 +252,27 @@ public class PlayerInventoryHandler : MonoBehaviour
     }
     #endregion
 
-    #region L�gica de Captura e Armazenamento
+    #region Logica de Atrair ,Capturar e Armazenar Animais
+
+    // Tenta usar um item de ração do inventário
+    public bool TryUseRacao()
+    {
+        // Encontra o primeiro item de ração que não esteja "quebrado" (sem quantidade)
+        ToolInstanceHandler racao = ownedTools.FirstOrDefault(t => t.Data.type == ToolType.Racao && !t.IsBroken);
+
+        if (racao != null)
+        {
+            Debug.Log($"Usando ração. Quantidade restante: {racao.CurrentDurability - 1}");
+            // Usa 1 "carga" (durabilidade) da ração
+            racao.TryUse(1);
+            return true;
+        }
+
+        Debug.Log("Nenhuma ração encontrada no inventário.");
+        return false;
+    }
+
+    // Tenta capturar um animal usando uma rede ou na mão
     public bool TryCaptureAnimal(ICapturable animal)
     {
         ToolInstanceHandler rede = ownedTools.FirstOrDefault(t => t.Data.type == ToolType.Net && !t.IsBroken);
@@ -266,7 +286,7 @@ public class PlayerInventoryHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log("Nenhuma Rede encontrada. Tentando capturar na m�o...");
+            Debug.Log("Nenhuma Rede encontrada. Tentando capturar na mao...");
             if (UnityEngine.Random.value <= 0.1f)
             {
                 Debug.Log("Sorte! Capturado na m�o!");
@@ -284,7 +304,7 @@ public class PlayerInventoryHandler : MonoBehaviour
             bool armazenado = TryStoreFishInSambura(animal);
             if (!armazenado)
             {
-                Debug.LogWarning("Captura bem-sucedida, mas a Sambura est� cheia! O animal escapou.");
+                Debug.LogWarning("Captura bem-sucedida, mas a Sambura esta cheia! O animal escapou.");
                 return false;
             }
             return true;

@@ -1,5 +1,5 @@
 using UnityEngine;
-public enum ToolType { Knife, Pliers, Scissors, Sambura, Net}
+public enum ToolType { Knife, Pliers, Scissors, Sambura, Net, Racao}
 
 [CreateAssetMenu(fileName = "ToolDataHandler", menuName = "Scriptable Objects/ToolDataHandler")]
 public class ToolDataHandler : ScriptableObject
