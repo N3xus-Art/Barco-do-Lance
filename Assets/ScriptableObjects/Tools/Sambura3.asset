@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8d976359a388a845b99165e1f508a79, type: 3}
-  m_Name: Sambura
+  m_Name: Sambura3
   m_EditorClassIdentifier: 
   type: 3
   toolName: Sambura
-  icon: {fileID: 6528339877313051009, guid: c9364a1b87e58c347a9b41c367576605, type: 3}
-  maxDurability: 3
+  icon: {fileID: 21300000, guid: 0c114f5d8c6bf1243bc3bb4a877efa49, type: 3}
+  maxDurability: 12
   shopPrice: 10
   scrapValue: 0
-  itemLevel: 0
+  itemLevel: 3
