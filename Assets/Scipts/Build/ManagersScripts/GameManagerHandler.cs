@@ -34,6 +34,8 @@ public class GameManagerHandler : MonoBehaviour{
         List<AnimalSpawnerHandler> animalSpawners = new List<AnimalSpawnerHandler>(Instance.currentSeaGO.GetComponentsInChildren<AnimalSpawnerHandler>());
 
         animalSpawners[mission.Level - 1].SpawnAnimal(mission.OperableAnimals);
+        animalSpawners[mission.Level - 1].SpawnAnimal(mission.RescueableAnimals,1);
+
     } 
     //Methods
     #region

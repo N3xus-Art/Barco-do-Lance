@@ -13,22 +13,12 @@ public class AnimalSpawnerHandler : MonoBehaviour {
     // specificAnimal: animal específico a ser spawnado (pode ser null)
     // specificAnimalQtt: quantidade do animal específico a ser spawnado
     // missionLevel: nível da missão (1, 2 ou 3)
-    public void SpawnAnimal(int maxAnimals, GameObject specificAnimal = null, int specificAnimalQtt = 0, int missionLevel = 1) {
+    public void SpawnAnimal(int maxAnimals, int Prefab = 0) {
         for (int i = 0; i < maxAnimals; i++) {
             // Usa o animal específico se fornecido, senão escolhe aleatoriamente
             GameObject animalToSpawn;
 
-            if (missionLevel == 3 && gameObject.name != "AnimalSpawnerHard")
-                specificAnimalQtt = 0;
-            else if (missionLevel == 2 && gameObject.name == "AnimalSpawnerMedium")
-                specificAnimalQtt = 0;
-            else if (missionLevel == 1 && gameObject.name == "AnimalSpawnerEasy")
-                specificAnimalQtt = 0;
-
-            if (specificAnimal != null && i < specificAnimalQtt)
-                animalToSpawn = specificAnimal;
-            else
-                animalToSpawn = animalPrefabs[Random.Range(0, animalPrefabs.Length)];
+            animalToSpawn = animalPrefabs[Prefab];
 
             Vector3 areaSize = AreaSpawn.GetComponent<Renderer>().bounds.size;
 

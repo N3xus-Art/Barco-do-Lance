@@ -138,7 +138,7 @@ public class DebackyHandler : MonoBehaviour{
 
             //Criar os animais do oceano atual
             if (currentMission.MissionSea == GameManagerHandler.currentSea){
-                GameManagerHandler.SpawnAnimalsInCurrentSea(playerCH.CurrentMission);
+                GameManagerHandler.SpawnAnimalsInCurrentSea(currentMission);
                 Debug.Log("teste");
             }
 
