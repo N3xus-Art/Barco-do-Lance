@@ -22,13 +22,18 @@ public class TrashHandler : MonoBehaviour, IPointerClickHandler{
 
         if(type == TrashType.Barnacle && equippedToolType == ToolType.Knife)
             correct = true;
-        if((type == TrashType.Wire || type == TrashType.Barb || type == TrashType.Hook) && equippedToolType == ToolType.Pliers)
+        //if((type == TrashType.Wire || type == TrashType.Barb || type == TrashType.Hook) && equippedToolType == ToolType.Pliers)
+        //correct = true;
+
+        if ((type == TrashType.Wire || type == TrashType.Barb || type == TrashType.Hook) && equippedToolType == ToolType.Knife)
             correct = true;
 
-        if (correct) {
+            if (correct) {
             if (PlayerInventoryHandler.Instance.TryUseEquipped()) {
                 Destroy(gameObject);
+                OperationUI.Instance.RemoveTrash();
                 Debug.Log("Lixo removido!");
+
             } else {
                 Debug.Log("A ferramenta quebrou ou não pôde ser usada!");
             }

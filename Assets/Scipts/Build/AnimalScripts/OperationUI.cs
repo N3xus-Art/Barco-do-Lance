@@ -9,7 +9,8 @@ public class OperationUI : MonoBehaviour{
     public Image animalImage;
     public Transform trashArea;
     public GameObject[] trashPrefabs;
-    private List<GameObject> activeTrashs = new List<GameObject>();
+    [SerializeField] private List<GameObject> activeTrashs = new List<GameObject>();
+    [SerializeField] private int CurrentTrash;
     private IOperable operationTarget;
 
     private void Awake() {
@@ -50,6 +51,8 @@ public class OperationUI : MonoBehaviour{
                 rt.anchoredPosition = new Vector2(randomX, randomY);
             }
             activeTrashs.Add(trash);
+
+            CurrentTrash = activeTrashs.Count;
         }
     }
     public void EndOperation() {
@@ -57,5 +60,23 @@ public class OperationUI : MonoBehaviour{
         operationPanel.SetActive(false);
         operationTarget?.FinalizeOperation();
         operationTarget = null;
+
+        if (CurrentTrash == 0)
+        {
+            Debug.Log("Finalizou a Operação com sucesso");
+            PlayerControlerHandler.Instance.CurrentMission.OperableAnimals--;
+
+        }
+    }
+
+    public void RemoveTrash()
+    {
+        CurrentTrash--;
+
+        if (CurrentTrash == 0){
+
+            EndOperation();
+
+        }
     }
 }

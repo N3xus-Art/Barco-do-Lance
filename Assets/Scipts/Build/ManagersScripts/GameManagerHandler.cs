@@ -88,9 +88,6 @@ public class GameManagerHandler : MonoBehaviour{
         fishSpwn = false;
     }
 
-    public void Update(){
-
-    }
     #endregion
 
 }

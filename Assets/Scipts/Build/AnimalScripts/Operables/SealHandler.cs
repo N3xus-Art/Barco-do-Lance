@@ -1,5 +1,3 @@
-using System.Xml.Linq;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SealHandler : MarineAnimalHandler, IOperable {
