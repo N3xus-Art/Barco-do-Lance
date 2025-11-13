@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface ICapturable: IInteractble{
+public interface ICapturable: IInteractable{
     GameObject GetGameObject();
     Sprite GetSprite();
     void StartCapture();

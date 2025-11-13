@@ -1,31 +1,57 @@
 using UnityEngine;
 using TMPro;
-using System;
 using UnityEngine.UI;
 
-// O nome do seu arquivo é ToolUIHandler.cs, mas a classe é EquippedToolUIHandler <-- meu mano copilot julgou o nome da classe
-public class EquippedToolUIHandler : MonoBehaviour
+public class ToolUIHandler : MonoBehaviour
 {
-    public PlayerInventoryHandler playerInventoryHandler;
-    public TextMeshProUGUI ToolText;
-    public Image image;
-    public Image ScrollUtil;
+    [SerializeField] private TextMeshProUGUI _toolText;
+    [SerializeField] private Image _image;
+    [SerializeField] private Image _scrollUtil;
+
+    private PlayerInventoryHandler _playerInventoryHandler;
+
+    public PlayerInventoryHandler PlayerInventoryHandler
+    {
+        get => _playerInventoryHandler;
+        set
+        {
+            if (_playerInventoryHandler != null)
+            {
+                _playerInventoryHandler.OnInventoryChanged -= UpdateToolText;
+                _playerInventoryHandler.OnEquippedToolChanged -= UpdateToolText;
+            }
+            _playerInventoryHandler = value;
+            if (_playerInventoryHandler != null)
+            {
+                _playerInventoryHandler.OnInventoryChanged += UpdateToolText;
+                _playerInventoryHandler.OnEquippedToolChanged += UpdateToolText;
+                UpdateToolText();
+            }
+        }
+    }
+
+    private void Awake()
+    {
+        if (PlayerInventoryHandler.Instance != null)
+        {
+            PlayerInventoryHandler = PlayerInventoryHandler.Instance;
+        }
+    }
 
     private void OnEnable()
     {
-        if (playerInventoryHandler != null)
+        if (PlayerInventoryHandler.Instance != null)
         {
-            playerInventoryHandler.OnInventoryChanged += UpdateToolText;
-            playerInventoryHandler.OnEquippedToolChanged += UpdateToolText;
+            PlayerInventoryHandler = PlayerInventoryHandler.Instance;
         }
     }
 
     private void OnDisable()
     {
-        if (playerInventoryHandler != null)
+        if (_playerInventoryHandler != null)
         {
-            playerInventoryHandler.OnInventoryChanged -= UpdateToolText;
-            playerInventoryHandler.OnEquippedToolChanged -= UpdateToolText;
+            _playerInventoryHandler.OnInventoryChanged -= UpdateToolText;
+            _playerInventoryHandler.OnEquippedToolChanged -= UpdateToolText;
         }
     }
 
@@ -34,40 +60,30 @@ public class EquippedToolUIHandler : MonoBehaviour
         UpdateToolText();
     }
 
-    // Atualiza a UI da ferramenta equipada
     private void UpdateToolUI(ToolInstanceHandler tool)
     {
-        if (ToolText == null || image == null || ScrollUtil == null) return;
+        if (_toolText == null || _image == null || _scrollUtil == null) return;
 
-        var currentTool = tool ?? playerInventoryHandler?.EquippedTool;
-            Debug.Log("Primeiro check ui");
+        var currentTool = tool ?? _playerInventoryHandler?.EquippedTool;
         if (currentTool != null)
         {
-            image.sprite = currentTool.Data.icon;
-            Debug.Log("Antes do If");
-
-            // Verifica se a ferramenta equipada é uma instância de Sambura.
+            _image.sprite = currentTool.Data?.icon;
             if (currentTool is SamburaInstanceHandler sambura)
             {
-                // Se for uma Sambura, exibe a informação de capacidade.
-                ToolText.text = $"{sambura.Data.toolName} ({sambura.occupiedSpace}/{sambura.maxCapacity})";
-                // A barra de preenchimento (ScrollUtil) reflete o espaço ocupado.
-                ScrollUtil.fillAmount = (float)sambura.occupiedSpace / sambura.maxCapacity;
+                _toolText.text = $"{sambura.Data?.toolName} ({sambura.occupiedSpace}/{sambura.maxCapacity})";
+                _scrollUtil.fillAmount = sambura.maxCapacity > 0 ? (float)sambura.occupiedSpace / sambura.maxCapacity : 0f;
             }
             else
             {
-                // Se for qualquer outra ferramenta, exibe a durabilidade normalmente.
-                ToolText.text = $"{currentTool.Data.toolName} ({currentTool.CurrentDurability}/{currentTool.MaxDurability})";
-                ScrollUtil.fillAmount = (float)currentTool.CurrentDurability / currentTool.MaxDurability;
-            Debug.Log("n sambura");
+                _toolText.text = $"{currentTool.Data?.toolName} ({currentTool.CurrentDurability}/{currentTool.MaxDurability})";
+                _scrollUtil.fillAmount = currentTool.MaxDurability > 0 ? (float)currentTool.CurrentDurability / currentTool.MaxDurability : 0f;
             }
         }
         else
         {
-            ToolText.text = "Ferramenta atual: Nenhuma";
-            image.sprite = null; // Opcional: Limpar o ícone se não houver ferramenta
-            ScrollUtil.fillAmount = 0;
-            Debug.Log("Else toolui");
+            _toolText.text = "Ferramenta atual: Nenhuma";
+            _image.sprite = null;
+            _scrollUtil.fillAmount = 0;
         }
     }
 

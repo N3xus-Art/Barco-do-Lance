@@ -63,31 +63,44 @@ public class IslandHandler : MonoBehaviour {
     }
 
     //Confirms
-    private void OnTabClick(int TabIndex) {
-        if (playerInventory.Money < firstItemPrice || playerInventory.Money < secondItemPrice || playerInventory.Money < thirdItemPrice) {
-            poorScreen.SetActive(true);
+    private void OnTabClick(int TabIndex)
+    {
+        int selectedPrice = 0;
+        switch (TabIndex)
+        {
+            case 0: selectedPrice = firstItemPrice; break;
+            case 1: selectedPrice = secondItemPrice; break;
+            case 2: selectedPrice = thirdItemPrice; break;
         }
+
+        if (playerInventory.Money < selectedPrice)
+        {
+            poorScreen.SetActive(true);
+            return; // Não abre a tela de confirmação se não tem dinheiro
+        }
+
         itemSlot = TabIndex;
         confirmScreen.SetActive(true);
     }
+
     public bool ConfirmCheck(int price) {
         if (itemSlot == 0) {
             if (playerInventory.TryBuyTool(firstData, out var tool)) {
                 Debug.Log("Comprou " + firstData.toolName);
             } else {
-                Debug.Log("Não conseguiu comprar o Alicate");
+                Debug.Log("Não conseguiu comprar " + firstData.toolName);
             }
         } else if (itemSlot == 1) {
             if (playerInventory.TryBuyTool(secondData, out var tool)) {
                 Debug.Log("Comprou " + secondData.toolName);
             } else {
-                Debug.Log("Não conseguiu comprar o Alicate");
+                Debug.Log("Não conseguiu comprar " + secondData.toolName);
             }
         } else if (itemSlot == 2) {
             if (playerInventory.TryBuyTool(thirdData, out var tool)) {
                 Debug.Log("Comprou " + thirdData.toolName);
             } else {
-                Debug.Log("Não conseguiu comprar o Alicate");
+                Debug.Log("Não conseguiu comprar " + thirdData.toolName);
             }
         }
         confirmScreen.SetActive(false);

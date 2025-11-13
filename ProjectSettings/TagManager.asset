@@ -21,10 +21,10 @@ TagManager:
   - UI
   - Ground
   - Player
+  - Interactable
   - Camera
   - Menu
   - Ladder
-  - 
   - 
   - 
   - 
@@ -51,6 +51,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1022931279
+    locked: 0
+  - name: Interactable
+    uniqueID: 91427163
     locked: 0
   - name: Player
     uniqueID: 1926435533

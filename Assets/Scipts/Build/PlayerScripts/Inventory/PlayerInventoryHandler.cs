@@ -23,7 +23,7 @@ public class PlayerInventoryHandler : MonoBehaviour
     public event Action<int> OnMoneyChanged;
     public event Action<ToolInstanceHandler> OnEquippedToolChanged;
 
-    // --- Propriedades Públicas ---
+    // --- Propriedades Pï¿½blicas ---
     public IReadOnlyList<ToolInstanceHandler> OwnedTools => ownedTools;
     public int MaxSlots => maxSlots;
     public int UsedSlots => ownedTools.Count;
@@ -63,7 +63,7 @@ public class PlayerInventoryHandler : MonoBehaviour
     }
     #endregion
 
-    #region Gerenciamento de Inventário (Adicionar, Remover)
+    #region Gerenciamento de Inventï¿½rio (Adicionar, Remover)
 
     public bool TryAddTool(ToolDataHandler data, out ToolInstanceHandler instance)
     {
@@ -151,17 +151,17 @@ public class PlayerInventoryHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log($"Nenhuma ferramenta do type {type} encontrada no inventário.");
+            Debug.Log($"Nenhuma ferramenta do type {type} encontrada no inventï¿½rio.");
         }
     }
 
-    // --- Wrappers para botões da Unity ---
+    // --- Wrappers para botï¿½es da Unity ---
     public void EquipFaca() => EquipToolByType(ToolType.Knife);
     public void EquipAlicate() => EquipToolByType(ToolType.Pliers);
     public void EquipTesoura() => EquipToolByType(ToolType.Scissors);
     #endregion
 
-    #region Ações com Ferramentas (Usar, Comprar, Melhorar, Descartar)
+    #region Aï¿½ï¿½es com Ferramentas (Usar, Comprar, Melhorar, Descartar)
     public bool TryUseEquipped(int wearAmount = 1)
     {
         var tool = EquippedTool;
@@ -197,7 +197,7 @@ public class PlayerInventoryHandler : MonoBehaviour
 
         if (nextToolData == null)
         {
-            Debug.LogError($"Não foi possível encontrar o ToolData para o próximo nível em: {resourcePath}");
+            Debug.LogError($"Nï¿½o foi possï¿½vel encontrar o ToolData para o prï¿½ximo nï¿½vel em: {resourcePath}");
             return;
         }
 
@@ -212,7 +212,7 @@ public class PlayerInventoryHandler : MonoBehaviour
 
         Equip(newToolInstance.InstanceId);
 
-        Debug.Log($"Ferramenta {currentToolData.toolName} atualizada para o nível {nextLevel}!");
+        Debug.Log($"Ferramenta {currentToolData.toolName} atualizada para o nï¿½vel {nextLevel}!");
         RaiseInventoryChanged();
     }
 
@@ -221,7 +221,7 @@ public class PlayerInventoryHandler : MonoBehaviour
         instance = null;
         if (data == null || !HasFreeSlot || !CanAfford(data.shopPrice))
         {
-            Debug.LogWarning("Falha na compra: pré-requisitos não atendidos.");
+            Debug.LogWarning("Falha na compra: prï¿½-requisitos nï¿½o atendidos.");
             return false;
         }
 
@@ -252,7 +252,27 @@ public class PlayerInventoryHandler : MonoBehaviour
     }
     #endregion
 
-    #region Lógica de Captura e Armazenamento
+    #region Logica de Atrair ,Capturar e Armazenar Animais
+
+    // Tenta usar um item de raÃ§Ã£o do inventÃ¡rio
+    public bool TryUseRacao()
+    {
+        // Encontra o primeiro item de raÃ§Ã£o que nÃ£o esteja "quebrado" (sem quantidade)
+        ToolInstanceHandler racao = ownedTools.FirstOrDefault(t => t.Data.type == ToolType.Racao && !t.IsBroken);
+
+        if (racao != null)
+        {
+            Debug.Log($"Usando raÃ§Ã£o. Quantidade restante: {racao.CurrentDurability - 1}");
+            // Usa 1 "carga" (durabilidade) da raÃ§Ã£o
+            racao.TryUse(1);
+            return true;
+        }
+
+        Debug.Log("Nenhuma raÃ§Ã£o encontrada no inventÃ¡rio.");
+        return false;
+    }
+
+    // Tenta capturar um animal usando uma rede ou na mÃ£o
     public bool TryCaptureAnimal(ICapturable animal)
     {
         ToolInstanceHandler rede = ownedTools.FirstOrDefault(t => t.Data.type == ToolType.Net && !t.IsBroken);
@@ -266,15 +286,15 @@ public class PlayerInventoryHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log("Nenhuma Rede encontrada. Tentando capturar na mão...");
+            Debug.Log("Nenhuma Rede encontrada. Tentando capturar na mao...");
             if (UnityEngine.Random.value <= 0.1f)
             {
-                Debug.Log("Sorte! Capturado na mão!");
+                Debug.Log("Sorte! Capturado na mï¿½o!");
                 sucessoNaCaptura = true;
             }
             else
             {
-                Debug.Log("Falhou em capturar na mão. O animal vai escapar.");
+                Debug.Log("Falhou em capturar na mï¿½o. O animal vai escapar.");
                 sucessoNaCaptura = false;
             }
         }
@@ -284,7 +304,7 @@ public class PlayerInventoryHandler : MonoBehaviour
             bool armazenado = TryStoreFishInSambura(animal);
             if (!armazenado)
             {
-                Debug.LogWarning("Captura bem-sucedida, mas a Sambura está cheia! O animal escapou.");
+                Debug.LogWarning("Captura bem-sucedida, mas a Sambura esta cheia! O animal escapou.");
                 return false;
             }
             return true;
@@ -293,19 +313,30 @@ public class PlayerInventoryHandler : MonoBehaviour
         return false;
     }
 
-    public bool TryStoreFishInSambura(ICapturable animal)
+    public bool TryStoreFishInSambura(ICapturable peixe)
     {
-        SamburaInstanceHandler sambura = ownedTools.OfType<SamburaInstanceHandler>().FirstOrDefault(s => !s.isFull);
+        var samburas = ownedTools.OfType<SamburaInstanceHandler>().ToList();
+        Debug.Log($"Quantidade de samburas no inventÃ¡rio: {samburas.Count}");
+        foreach (var tool in ownedTools)
+        {
+            Debug.Log($"Ferramenta: {tool.Data.toolName}, Tipo: {tool.Data.type}, InstÃ¢ncia: {tool.GetType().Name}");
+        }
+
+        SamburaInstanceHandler sambura = samburas.FirstOrDefault(s => !s.EstaCheia);
+
+
+
         if (sambura == null)
         {
-            Debug.LogWarning("Nenhuma Sambura com espaço disponível encontrada no inventário!");
+            Debug.LogWarning("Nenhuma Sambura com espaÃ§o disponÃ­vel encontrada no inventÃ¡rio!");
             return false;
         }
-        return sambura.TryAddFish(animal);
+
+        return sambura.TentarAdicionarPeixe(peixe.GetGameObject());
     }
     #endregion
 
-    #region Utilitários
+    #region Utilitï¿½rios
     private void RaiseInventoryChanged() => OnInventoryChanged?.Invoke();
     private void RaiseMoneyChanged() => OnMoneyChanged?.Invoke(Money);
     #endregion

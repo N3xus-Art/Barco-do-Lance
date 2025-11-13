@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IOperable: IInteractble{
+public interface IOperable: IInteractable{
     Sprite GetSprite();
     void StartOperation();
     void FinalizeOperation();

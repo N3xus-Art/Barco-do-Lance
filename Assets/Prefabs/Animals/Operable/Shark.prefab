@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5325275720607023729}
   - component: {fileID: 4795872120598853899}
   - component: {fileID: 487529973950666006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ PolygonCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -217,5 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60bdc57ea0732242b1f9af06d9388d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
   speed: 0
   smoothness: 0.5

@@ -5,7 +5,7 @@ public class LionfishHandler : MarineAnimalHandler, ICapturable {
     protected override void Start()
     {
         base.Start();
-        name = "Peixe-Leão";
+        name = "Peixe-Leao";
         speed = 1.0f;
     }
 
@@ -21,16 +21,16 @@ public class LionfishHandler : MarineAnimalHandler, ICapturable {
 
     public void StartCapture()
     {
-        Debug.Log("Medusa iniciando captura. Parando movimento.");
-        // Usa o método público da classe base para pausar/retomar o movimento
+        Debug.Log("Peixe-leao iniciando captura. Parando movimento.");
+        // Usa o mï¿½todo pï¿½blico da classe base para pausar/retomar o movimento
         SetCanMove(false);
         CaptureUI.Instance.OpenCapture(this);
     }
 
     public void ReturnBehaviour()
     {
-        Debug.Log("Medusa retomando comportamento normal.");
-        // Usa o método público da classe base para voltar a nadar.
+        Debug.Log("Peixe-leao retomando comportamento normal.");
+        // Usa o mï¿½todo pï¿½blico da classe base para voltar a nadar.
         SetCanMove(true);
     }
 
@@ -41,8 +41,8 @@ public class LionfishHandler : MarineAnimalHandler, ICapturable {
 
     private IEnumerator EscapeRoutine(Vector3 playerPos)
     {
-        Debug.Log("Medusa está fugindo!");
-        SetCanMove(false); // Garante que o movimento normal não interfira
+        Debug.Log("Peixe-leao esta fugindo!");
+        SetCanMove(false); // Garante que o movimento normal nï¿½o interfira
 
         Vector2 escapeDirection = ((Vector2)transform.position - (Vector2)playerPos).normalized;
         Vector2 escapeDestination = (Vector2)transform.position + escapeDirection * 10f;
@@ -57,7 +57,7 @@ public class LionfishHandler : MarineAnimalHandler, ICapturable {
             yield return null;
         }
 
-        Debug.Log("Medusa terminou de fugir.");
+        Debug.Log("Peixe-leao terminou de fugir.");
         ReturnBehaviour(); // Volta a nadar normalmente
     }
 
