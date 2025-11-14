@@ -143,6 +143,11 @@ public class IslandHandler : MonoBehaviour {
         firstGameObject.GetComponent<Image>().sprite = firstSprite;
         secondGameObject.GetComponent<Image>().sprite = secondSprite;
         thirdGameObject.GetComponent<Image>().sprite = thirdSprite;
+
+        firstItemText.raycastTarget = false;
+        secondItemText.raycastTarget = false;
+        thirdItemText.raycastTarget = false;
+        moneyText.raycastTarget = false;
     }
     private void Update() {
         if (BuildInputHandler.isInteracting && ison) {
