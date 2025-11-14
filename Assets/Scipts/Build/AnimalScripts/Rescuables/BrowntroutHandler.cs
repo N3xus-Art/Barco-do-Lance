@@ -9,6 +9,7 @@ public class BrowntroutHandler : MarineAnimalHandler, ICapturable {
         base.Start();
         name = "Truta";
         speed = 1.0f;
+        SetCanInteract(true);
     }
 
     public GameObject GetGameObject()
@@ -65,6 +66,13 @@ public class BrowntroutHandler : MarineAnimalHandler, ICapturable {
 
     public void Interact()
     {
-        StartCapture();
+        if (canInteract) { StartCapture(); }
+    }
+
+    public void SetCanInteract(bool Can)
+    {
+
+        canInteract = Can;
+
     }
 }

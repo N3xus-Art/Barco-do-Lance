@@ -59,14 +59,15 @@ public class OperationUI : MonoBehaviour{
         Time.timeScale = 1f;
         operationPanel.SetActive(false);
         operationTarget?.FinalizeOperation();
-        operationTarget = null;
 
         if (CurrentTrash == 0)
         {
             Debug.Log("Finalizou a Operação com sucesso");
             PlayerControlerHandler.Instance.CurrentMission.OperableAnimals--;
+            operationTarget.SetCanInteract(false);
 
         }
+        operationTarget = null;
     }
 
     public void RemoveTrash()

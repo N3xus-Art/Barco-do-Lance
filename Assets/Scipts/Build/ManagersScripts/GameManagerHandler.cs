@@ -70,13 +70,26 @@ public class GameManagerHandler : MonoBehaviour{
             }
             if (pcHandler.CurrentMission != null && (pcHandler.CurrentMission.RescubleSea == currentSea)){
 
-                Debug.Log("Entregou os peixes");
-                
-                // Checar se ele tem peixes no aquário
+                Debug.Log("Entregou os peixes");      
+
+                var fish = AquariumHandler.Instance.storedFish.Count;
+                Debug.Log($"Tem {fish} no aquário");
+
+                if (fish > 0) {
+
+                    Debug.Log($"tirando {fish} da missão");
+                    pcHandler.CurrentMission.RescueableAnimals -= fish;
+
+                    Debug.Log($"retirando {fish} do aquário");
+                    AquariumHandler.Instance.RemoveFish();
+
                     //Checar quantos peixes ele tem no aquário
                     //Tirar os peixes do aquário
                     //Diminuir o número de peixes resgatáveis da missão
+                    //Se der certo, checar se a missão acabou (fazer nos dois pra tirar aquele update fudido)
                 
+                }
+
             }
 
         }

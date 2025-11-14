@@ -9,6 +9,8 @@ public class TurtleHandler : MarineAnimalHandler, IOperable {
         base.Start();
         name = "Tartaruga";
         speed = 5.0f;
+        SetCanInteract(true);
+
     }
     public Sprite GetSprite() {
         return gameObject.GetComponent<SpriteRenderer>().sprite;
@@ -21,7 +23,14 @@ public class TurtleHandler : MarineAnimalHandler, IOperable {
         Debug.Log("Operação finalizada na tartaruga.");
     }
     public void Interact(){
-        StartOperation();
+        if (canInteract) { StartOperation(); }
+    }
+
+    public void SetCanInteract(bool Can)
+    {
+
+        canInteract = Can;
+
     }
     #endregion
 }
