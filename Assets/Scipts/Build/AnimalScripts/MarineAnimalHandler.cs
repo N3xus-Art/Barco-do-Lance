@@ -9,7 +9,6 @@ public class MarineAnimalHandler : MonoBehaviour
     protected Vector2 targetPosition;
     protected Vector2 velocity = Vector2.zero;
     protected bool canMove = true;
-    protected bool canInteract = false;
 
     // Variável para rastrear se o animal está indo para a comida
     protected bool isAttractedToFood = false;

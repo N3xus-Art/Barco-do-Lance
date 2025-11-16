@@ -7,7 +7,6 @@ public class JellyfishHandler : MarineAnimalHandler, ICapturable {
         base.Start();
         name = "Medusa";
         speed = 1.0f;
-        SetCanInteract(true);
     }
 
     public GameObject GetGameObject()
@@ -64,13 +63,6 @@ public class JellyfishHandler : MarineAnimalHandler, ICapturable {
 
     public void Interact()
     {
-        if (canInteract) { StartCapture(); }
-    }
-
-    public void SetCanInteract(bool Can)
-    {
-
-        canInteract = Can;
-
+        StartCapture();
     }
 }

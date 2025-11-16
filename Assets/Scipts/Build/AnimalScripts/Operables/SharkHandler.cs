@@ -7,7 +7,6 @@ public class SharkHandler : MarineAnimalHandler, IOperable {
         base.Start();
         name = "Tubarão";
         speed = 5.0f;
-        SetCanInteract(true);
     }
     public Sprite GetSprite() {
         return gameObject.GetComponent<SpriteRenderer>().sprite;
@@ -19,16 +18,8 @@ public class SharkHandler : MarineAnimalHandler, IOperable {
     public void FinalizeOperation() {
         Debug.Log("Operação finalizada na tubarão.");
     }
-    public void Interact()
-    {
-        if (canInteract) { StartOperation(); }
-    }
-
-    public void SetCanInteract(bool Can)
-    {
-
-        canInteract = Can;
-
+    public void Interact(){
+        StartOperation();
     }
     #endregion
 }

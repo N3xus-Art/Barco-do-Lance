@@ -8,7 +8,7 @@ public class AquariumHandler : MonoBehaviour, IInteractable
     // Área onde os peixes podem nadar dentro do aquário
     [SerializeField] private Transform fishSwimArea;
     // Lista para armazenar os peixes dentro do aquário
-    public List<GameObject> storedFish = new List<GameObject>();
+    private List<GameObject> storedFish = new List<GameObject>();
 
     // Garante que apenas uma instância do AquariumHandler exista
     private void Awake()
@@ -67,7 +67,6 @@ public class AquariumHandler : MonoBehaviour, IInteractable
         fishObject.transform.SetParent(fishSwimArea);
         fishObject.transform.position = GetRandomPositionInBounds();
         fishObject.SetActive(true);
-        fishObject.GetComponent<ICapturable>().SetCanInteract(false);
         // Chama o comportamento de retorno do peixe, se aplicável
         ICapturable capturable = fishObject.GetComponent<ICapturable>();
         if (capturable != null)
@@ -95,20 +94,4 @@ public class AquariumHandler : MonoBehaviour, IInteractable
             fishSwimArea.position.z
         );
     }
-
-    public void RemoveFish()
-    {
-
-        foreach(GameObject FishObject in storedFish)
-        {
-
-            Destroy(FishObject);
-
-        }
-
-        storedFish.Clear();
-
-    }
-
-    public void SetCanInteract(bool Can) { }
 }

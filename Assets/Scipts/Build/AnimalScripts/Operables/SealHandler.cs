@@ -7,7 +7,6 @@ public class SealHandler : MarineAnimalHandler, IOperable {
         base.Start();
         name = "Foca";
         speed = 5.0f;
-        SetCanInteract(true);
     }
     public Sprite GetSprite() {
         return gameObject.GetComponent<SpriteRenderer>().sprite;
@@ -19,16 +18,8 @@ public class SealHandler : MarineAnimalHandler, IOperable {
     public void FinalizeOperation() {
         Debug.Log("Operação finalizada na foca.");
     }
-    public void Interact()
-    {
-        if (canInteract) { StartOperation(); }
-    }
-
-    public void SetCanInteract(bool Can)
-    {
-
-        canInteract = Can;
-
+    public void Interact(){
+        StartOperation();
     }
     #endregion
 }
