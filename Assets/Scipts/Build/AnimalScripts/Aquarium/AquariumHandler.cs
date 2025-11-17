@@ -110,5 +110,24 @@ public class AquariumHandler : MonoBehaviour, IInteractable
 
     }
 
+    public void SpawnFishStored()
+    {
+
+        if (storedFish.Count <= 0) { return; }
+        else
+        {
+            foreach(GameObject fishObject in storedFish)
+            {
+
+                fishObject.transform.SetParent(fishSwimArea);
+                fishObject.transform.position = GetRandomPositionInBounds();
+                fishObject.SetActive(true);
+                fishObject.GetComponent<ICapturable>().SetCanInteract(false);
+            }
+
+
+        }
+    }
+
     public void SetCanInteract(bool Can) { }
 }

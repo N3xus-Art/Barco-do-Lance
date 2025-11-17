@@ -93,6 +93,10 @@ public class GameManagerHandler : MonoBehaviour{
 
             }
 
+            if (pcHandler.CurrentMission != null && (pcHandler.CurrentMission.RescubleSea != currentSea)) {
+
+                AquariumHandler.Instance.SpawnFishStored();
+            }
         }
     }
 
