@@ -95,6 +95,7 @@ public class GameManagerHandler : MonoBehaviour{
 
             if (pcHandler.CurrentMission != null && (pcHandler.CurrentMission.RescubleSea != currentSea)) {
 
+                Debug.Log("Spawnando peixes");
                 AquariumHandler.Instance.SpawnFishStored();
             }
         }
