@@ -1,25 +1,39 @@
 using UnityEngine;
 
-public class SealHandler : MarineAnimalHandler, IOperable {
+public class SealHandler : MarineAnimalHandler, IOperable
+{
     //Methdos
     #region
-    protected override void Start() {
+    protected override void Start()
+    {
         base.Start();
         name = "Foca";
         speed = 5.0f;
+        SetCanInteract(true);
     }
-    public Sprite GetSprite() {
+    public Sprite GetSprite()
+    {
         return gameObject.GetComponent<SpriteRenderer>().sprite;
     }
-    public void StartOperation() {
+    public void StartOperation()
+    {
         Time.timeScale = 0f;
         OperationUI.Instance.OpenOperation(this);
     }
-    public void FinalizeOperation() {
+    public void FinalizeOperation()
+    {
         Debug.Log("Operação finalizada na foca.");
     }
-    public void Interact(){
-        StartOperation();
+    public void Interact()
+    {
+        if (canInteract) { StartOperation(); }
+    }
+
+    public void SetCanInteract(bool Can)
+    {
+
+        canInteract = Can;
+
     }
     #endregion
 }
