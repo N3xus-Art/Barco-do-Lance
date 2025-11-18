@@ -22,6 +22,7 @@ public class DebackyHandler : MonoBehaviour{
     [SerializeField] private int currentID;
     [SerializeField] private List<ScriptableObjectMissions> nextMissions = new List<ScriptableObjectMissions>();
     [SerializeField] private ScriptableObjectMissions[] avaliableMissions = new ScriptableObjectMissions[] { };
+    [SerializeField] private AnimalsMissionHandler AnimalsMissionUI;
     [Header("----Variaveis das Abas----")]
     [SerializeField] private Button firstButton;
     [SerializeField] private Button secondButton;
@@ -224,6 +225,8 @@ public class DebackyHandler : MonoBehaviour{
         // Importa data pro canva
         missionDescription.SetText($"{avaliableMissions[currentID].missionDescription}");
         missionTMP.SetText($"Recompensa:    R${avaliableMissions[currentID].missionReward}");
+
+        AnimalsMissionUI.ChangeAnimals(avaliableMissions[currentID]);
     }
     #endregion
     #region Unity Methods
@@ -297,7 +300,8 @@ public class DebackyHandler : MonoBehaviour{
                 }
             }
         }
-             
+
+        
         ImportDataToCanva();
     }
 

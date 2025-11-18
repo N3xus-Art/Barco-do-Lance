@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Mission_5E
   m_EditorClassIdentifier: 
   missionName: Facil - Vemelho Dois
-  animalSprite: {fileID: 0}
   Level: 1
   missionDescription: "O resultado da pesquisa anual a respeito da biodiversidade
     do Mar Vermelho foi publicado recentemente. Os dados mostram uma mudan\xE7a dr\xE1stica
@@ -23,15 +22,11 @@ MonoBehaviour:
     e flora, a realoca\xE7\xE3o de pelo menos cinco elementos dessa esp\xE9cie \xE9
     necess\xE1ria.\r\n\nEquipamentos Obrigat\xF3rios \r\n\nTanque de Oxig\xEAnio
     b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria.\r"
-  animalDescription: "A truta-marrom \xE9 um animal origin\xE1rio do Mar Mediterr\xE2neo.\r\nA
-    truta marrom, com seu corpo esguio e cores amarronzadas, \xE9 uma esp\xE9cie
-    invasora comum no Mar Vermelho. Normalmente, ela \xE9 introduzida no ecossistema
-    por acompanhar os barcos em dire\xE7\xE3o ao seu novo habitat. Ela afeta diretamente
-    o ecossistema e a cadeia alimentar das esp\xE9cies nativas devido ao seu comportamento
-    competitivo e territorial.\r"
   missionID: 0
   missionReward: 87
   rescueableAnimals: 0
   operableAnimals: 2
   MissionSea: 2
   rescueableSea: -1
+  OperableImage: {fileID: 6528339877313051009, guid: c9364a1b87e58c347a9b41c367576605, type: 3}
+  RescuableImage: {fileID: -4477202895634683369, guid: 3e51a36351b06314db0817507e84a2d3, type: 3}
