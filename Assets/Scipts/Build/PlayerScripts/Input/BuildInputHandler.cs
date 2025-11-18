@@ -41,6 +41,14 @@ public class BuildInputHandler : MonoBehaviour{
     #endregion
     //Methods
     #region
+    public void Menu(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            Debug.Log("Botão de Menu pressionado!");
+            SceneManager.LoadScene("HomeScreen");
+        }
+    }
     public void Move(InputAction.CallbackContext context){
         if (context.phase == InputActionPhase.Performed){
             horizontalMoviment = context.ReadValue<Vector2>().x;
