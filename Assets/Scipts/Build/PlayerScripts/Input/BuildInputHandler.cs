@@ -41,6 +41,14 @@ public class BuildInputHandler : MonoBehaviour{
     #endregion
     //Methods
     #region
+    public void Menu(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            Debug.Log("Botão de Menu pressionado!");
+            SceneManager.LoadScene("HomeScreen");
+        }
+    }
     public void Move(InputAction.CallbackContext context){
         if (context.phase == InputActionPhase.Performed){
             horizontalMoviment = context.ReadValue<Vector2>().x;
@@ -58,7 +66,6 @@ public class BuildInputHandler : MonoBehaviour{
     }
     public void Interact(InputAction.CallbackContext context)
     {
-        // Reage quando o botão é pressionado (Performed)
         if (context.phase == InputActionPhase.Performed)
         {
             Debug.Log("Botão de interação pressionado!");
@@ -68,6 +75,25 @@ public class BuildInputHandler : MonoBehaviour{
             if (hits.Length == 0)
             {
                 Debug.Log("Nada interativo por perto.");
+                // Verifica se está no mar e tem ração
+                bool estaNaAgua = Physics2D.OverlapBox(transform.position, contactCheckSize, 0, waterLayer);
+
+                if (estaNaAgua)
+                {
+                    // Usa a ração
+                    bool success = PlayerInventoryHandler.Instance.TryUseRacao();
+                    if (success)
+                    {
+                        if (racaoPrefab != null)
+                        {
+                            Instantiate(racaoPrefab, transform.position, Quaternion.identity);
+                        }
+                        else
+                        {
+                            Debug.LogError("Prefab da Ração não está configurado no BuildInputHandler!");
+                        }
+                    }
+                }
                 return;
             }
 
@@ -92,10 +118,13 @@ public class BuildInputHandler : MonoBehaviour{
                 Debug.LogWarning($"Objeto {closestHit.gameObject.name} está na layer Interagível, mas não tem um script IInteractable!");
             }
             isInteracting = true;
-        }else if (context.phase == InputActionPhase.Canceled){
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
             isInteracting = false;
         }
     }
+
     public void UseFood(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)

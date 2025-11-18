@@ -108,6 +108,7 @@ public class PlayerControlerHandler : MonoBehaviour{
         // Se estiver na cena do mapa
         if (GameManagerHandler.CurrentScene.name == "MapScreen")
         {
+            gameObject.SetActive(true);
             biHandler.rb.gravityScale = 0f;
             spriteModel = spriteBoat;
             biHandler.inicialPos.localScale = new Vector3(5, 5, 5);
@@ -116,13 +117,27 @@ public class PlayerControlerHandler : MonoBehaviour{
             biHandler.box2D.size = new Vector2(0.1741978f, 0.8615327f);
             biHandler.contactCheckSize = new Vector2(0.586f, 0.01f);
             biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
-
+            BuildInputHandler.isInteracting = false;
             pointer = null;
 
+        }
+        else if (GameManagerHandler.CurrentScene.name == "HomeScreen")
+        {
+            gameObject.SetActive(false);
+            biHandler.rb.gravityScale = 0f;
+            spriteModel = spriteBase;
+            biHandler.inicialPos.localScale = new Vector3(5, 5, 5);
+            biHandler.inicialPos.position = new Vector3(1.26f, 1, 0);
+            biHandler.box2D.offset = new Vector2(0.0004896298f, -0.001247153f);
+            biHandler.box2D.size = new Vector2(0.1741978f, 0.8615327f);
+            biHandler.contactCheckSize = new Vector2(0.586f, 0.01f);
+            biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
+            pointer = null;
         }
         // Se estiver na cena de jogo
         else if (GameManagerHandler.CurrentScene.name == "GameScreen")
         {
+            gameObject.SetActive(true);
             biHandler.rb.gravityScale = 1f;
             spriteModel = spriteBase;
             biHandler.inicialPos.localScale = new Vector3(5, 5, 5);

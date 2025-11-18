@@ -9,8 +9,18 @@ public class CameraHandler : MonoBehaviour{
     #endregion
     //Methods
     #region
-    private void Start(){
-        target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+    void Start(){
+        PlayerTag playerTag = FindObjectOfType<PlayerTag>(true);
+        if (playerTag != null)
+        {
+            target = playerTag.gameObject.GetComponent<Transform>();
+            Debug.Log("Player encontrado e Atribuido");
+        }
+        else
+        {
+            Debug.LogWarning("CameraHandler: NÃO FOI POSSÍVEL ENCONTRAR o objeto com a tag 'playerTag' na cena!");
+            target = null;
+        }
     }
     private void FixedUpdate(){
         Vector3 targetPosition = target.position;

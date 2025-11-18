@@ -318,6 +318,11 @@ MonoBehaviour:
   ladderLayer:
     serializedVersion: 2
     m_Bits: 1024
+  interactRange: 5
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  racaoPrefab: {fileID: 0}
 --- !u!114 &7344627380523034766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,11 +338,11 @@ MonoBehaviour:
   biHandler: {fileID: 733091346491455723}
   gmHandler: {fileID: 0}
   CurrentMission: {fileID: 0}
+  CanMove: 1
   rotation: 0
   o2: 100
   maxO2: 100
   o2Cost: 0.1
-  pointer: {fileID: 2465818758151283328}
   playerModel: {fileID: 6058074040118564723}
   spriteBase: {fileID: 640403281415976067, guid: e2745b1c2b3d7484992c7a2b593cacfe, type: 3}
   spriteModel: {fileID: 640403281415976067, guid: e2745b1c2b3d7484992c7a2b593cacfe, type: 3}
@@ -513,7 +518,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a56e879b69962e64ebc6d94d67bbb438, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -521,7 +526,7 @@ SpriteRenderer:
   m_Size: {x: 0.125, y: 0.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1028851806296872817
@@ -791,7 +796,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a56e879b69962e64ebc6d94d67bbb438, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -799,6 +804,6 @@ SpriteRenderer:
   m_Size: {x: 0.125, y: 0.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
