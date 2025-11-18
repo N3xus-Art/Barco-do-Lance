@@ -21,6 +21,7 @@ public class PlayerControlerHandler : MonoBehaviour{
     [SerializeField] public BuildInputHandler biHandler;
     [SerializeField] public GameManagerHandler gmHandler;
     [SerializeField] public CurrentMission CurrentMission;
+    [SerializeField] public bool CanMove = true;
     [Header("----Variaveis do o2----")]
     [SerializeField] public float rotation;
     [SerializeField] public float o2 = 100;
@@ -81,15 +82,18 @@ public class PlayerControlerHandler : MonoBehaviour{
     //Flip Methods
     public void FlipPlayerModel()
     {
-        if (biHandler.horizontalMoviment > 0)
+        if (CanMove)
         {
-            playerModel.GetComponent<SpriteRenderer>().flipX = false;
-            biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
-        }
-        else if (biHandler.horizontalMoviment < 0)
-        {
-            playerModel.GetComponent<SpriteRenderer>().flipX = true;
-            biHandler.contactCheckPos.localPosition = new Vector3(-0.0234f, -0.431f, 0);
+            if (biHandler.horizontalMoviment > 0)
+            {
+                playerModel.GetComponent<SpriteRenderer>().flipX = false;
+                biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
+            }
+            else if (biHandler.horizontalMoviment < 0)
+            {
+                playerModel.GetComponent<SpriteRenderer>().flipX = true;
+                biHandler.contactCheckPos.localPosition = new Vector3(-0.0234f, -0.431f, 0);
+            }
         }
     }
 
@@ -158,6 +162,7 @@ public class PlayerControlerHandler : MonoBehaviour{
             return;
         }
         _instance = this;
+        CanMove = true;
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += LoadedSceneHandler;
         biHandler.speed = 5f;
@@ -196,7 +201,7 @@ public class PlayerControlerHandler : MonoBehaviour{
 
     public void Update()
     {
-        if (BuildInputHandler.isMoving)
+        if (BuildInputHandler.isMoving && CanMove)
         {
             if (isGrounded() && !biHandler.topCollision.inLadderLocal)
             {

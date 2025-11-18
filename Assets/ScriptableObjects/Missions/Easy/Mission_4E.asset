@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Mission_4E
   m_EditorClassIdentifier: 
   missionName: "Facil - Mediterr\xE2neo Dois"
-  animalSprite: {fileID: 0}
   Level: 1
   missionDescription: "Recebemos muitas reclama\xE7\xF5es vindas das praias ao Norte
     do Mar Mediterr\xE2neo. Aparentemente, os visitantes da praia saem com uma irrita\xE7\xE3o
@@ -24,16 +23,11 @@ MonoBehaviour:
     para seu habitat natural. Foram reportadas cerca de vinte esp\xE9cies na regi\xE3o.\r\n\nEquipamentos
     Obrigat\xF3rios :\n\n\rTanque de Oxig\xEAnio b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria.
     \r"
-  animalDescription: "A medusa-de-pintas \xE9 um animal origin\xE1rio do Mar do Caribe.\r\nA
-    medusa-de-pintas, com seu formato de cogumelo, suas cores variadas e pintas,
-    \xE9 uma esp\xE9cie invasora do Mar Mediterr\xE2neo. Normalmente, ela \xE9 introduzida
-    no ecossistema atrav\xE9s da \xE1gua de lastro de navios ou pela aquariofilia.\r\nSua
-    invas\xE3o no ecossistema provoca desequil\xEDbrios significativos, superando
-    as esp\xE9cies nativas na competi\xE7\xE3o por recursos e alterando a cadeia
-    alimentar.\r"
   missionID: 0
   missionReward: 70
   rescueableAnimals: 5
   operableAnimals: 2
   MissionSea: 1
   rescueableSea: 2
+  OperableImage: {fileID: 6528339877313051009, guid: c9364a1b87e58c347a9b41c367576605, type: 3}
+  RescuableImage: {fileID: -4477202895634683369, guid: 3e51a36351b06314db0817507e84a2d3, type: 3}

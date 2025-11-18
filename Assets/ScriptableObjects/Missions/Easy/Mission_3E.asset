@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Mission_3E
   m_EditorClassIdentifier: 
   missionName: "Facil - Mar Mediterr\xE2neo"
-  animalSprite: {fileID: 0}
   Level: 1
   missionDescription: "A inaugura\xE7\xE3o do novo Resort NewWaters ao Norte do Mar
     Mediterr\xE2neo aumentou consideravelmente o n\xEDvel de polui\xE7\xE3o na regi\xE3o.
@@ -24,16 +23,11 @@ MonoBehaviour:
     quatro animais habitavam a regi\xE3o. \n\r\nEquipamentos Obrigat\xF3rios \n\r\nTanque
     de Oxig\xEAnio b\xE1sico; \r\nRede b\xE1sica; \r\nTesoura b\xE1sica; \r\nAlicate
     b\xE1sico. \r"
-  animalDescription: "A foca-monge-do-mediterr\xE2neo \xE9 um animal origin\xE1rio
-    do Mar Mediterr\xE2neo.\r\nEla possui nadadeiras adaptadas para nata\xE7\xE3o
-    e locomo\xE7\xE3o em terra, embora seja mais \xE1gil na \xE1gua.\r\nSua pele
-    \xE9 grossa e a camada de gordura (tamb\xE9m conhecida como blubber) ajuda a
-    manter a temperatura corporal em \xE1guas mais frias. \xC9 um animal solit\xE1rio
-    e territorial, conhecido por sua curiosidade e intelig\xEAncia, o que o torna
-    um desafio interessante.\r"
   missionID: 0
   missionReward: 70
   rescueableAnimals: 0
   operableAnimals: 4
   MissionSea: 1
   rescueableSea: -1
+  OperableImage: {fileID: 6528339877313051009, guid: c9364a1b87e58c347a9b41c367576605, type: 3}
+  RescuableImage: {fileID: 0}

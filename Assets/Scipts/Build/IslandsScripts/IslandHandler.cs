@@ -59,7 +59,8 @@ public class IslandHandler : MonoBehaviour {
     public void OnCloseClick() {
         ison = false;
         shopGO.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
+        PlayerControlerHandler.Instance.CanMove = true;
     }
 
     //Confirms
@@ -151,7 +152,9 @@ public class IslandHandler : MonoBehaviour {
     }
     private void Update() {
         if (BuildInputHandler.isInteracting && ison) {
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
+            PlayerControlerHandler.Instance.CanMove = false;
+            BuildInputHandler.isMoving = false;
             shopGO.SetActive(true);
             normalScreen.SetActive(true);
         }

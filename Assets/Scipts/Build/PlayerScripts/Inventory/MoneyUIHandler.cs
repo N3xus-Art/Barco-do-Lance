@@ -2,21 +2,22 @@ using UnityEngine;
 using TMPro;
 
 public class MoneyUIHandler : MonoBehaviour{
-    public PlayerInventoryHandler playerInventoryHandler;
     public TextMeshProUGUI moneyText;
+    public PlayerInventoryHandler playerInventory;
 
     private void OnEnable(){
-        if (playerInventoryHandler != null)
-            playerInventoryHandler.OnMoneyChanged += UpdateMoneyText;
+        if (playerInventory != null)
+            playerInventory.OnMoneyChanged += UpdateMoneyText;
     }
 
     private void OnDisable(){
-        if (playerInventoryHandler != null)
-            playerInventoryHandler.OnMoneyChanged -= UpdateMoneyText;
+        if (playerInventory != null)
+            playerInventory.OnMoneyChanged -= UpdateMoneyText;
     }
 
     private void Start(){
-        UpdateMoneyText(playerInventoryHandler.Money);
+        playerInventory = PlayerControlerHandler.Instance.playerInventory;
+        UpdateMoneyText(playerInventory.Money);
     }
 
     private void UpdateMoneyText(int currentMoney){
