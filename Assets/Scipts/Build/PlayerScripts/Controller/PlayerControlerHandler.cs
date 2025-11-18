@@ -116,7 +116,7 @@ public class PlayerControlerHandler : MonoBehaviour{
             biHandler.box2D.size = new Vector2(0.1741978f, 0.8615327f);
             biHandler.contactCheckSize = new Vector2(0.586f, 0.01f);
             biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
-
+            BuildInputHandler.isInteracting = false;
             pointer = null;
 
         }
