@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionName: Facil - Mar do Caribe
   Level: 1
-  missionDescription: "Texto Descritivo: Turistas reportaram grande quantidade de
-    lixo na \xE1rea costeira da praia do Mar do Caribe. Considerando a \xE9poca de
-    desova das Tartarugas-Verdes, achamos necess\xE1rio a verifica\xE7\xE3o vinda
-    de nossos membros para assegurar que as f\xEAmeas consigam retornar ao mar sem
-    nenhuma complica\xE7\xE3o. Registros mostram cerca de tr\xEAs ninhos no local.
-    \n\r\nEquipamentos Obrigat\xF3rios \r\nTanque de Oxig\xEAnio b\xE1sico; \r\nRede
-    b\xE1sica; \r\nTesoura b\xE1sica; \n\r"
+  missionDescription: "Turistas reportaram grande quantidade de lixo na \xE1rea costeira
+    da praia do Mar do Caribe. Considerando a \xE9poca de desova das Tartarugas-Verdes,
+    achamos necess\xE1rio a verifica\xE7\xE3o vinda de nossos membros para assegurar
+    que as f\xEAmeas consigam retornar ao mar sem nenhuma complica\xE7\xE3o. Registros
+    mostram cerca de tr\xEAs ninhos no local. \n\r\nEquipamentos Obrigat\xF3rios
+    \r\nTanque de Oxig\xEAnio b\xE1sico\r\nRede b\xE1sica\r\nTesoura b\xE1sica; \n\r"
   missionID: 0
   missionReward: 52
   rescueableAnimals: 0

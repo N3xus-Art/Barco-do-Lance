@@ -13,12 +13,19 @@ MonoBehaviour:
   m_Name: Mission_2M
   m_EditorClassIdentifier: 
   missionName: 
-  animalSprite: {fileID: 0}
   Level: 2
-  missionDescription: 
-  animalDescription: 
+  missionDescription: "Durante o transporte de um grande carregamento de caf\xE9
+    do Brasileiro para a Turquia um container mal preso cai no mar. liberando diversos
+    pl\xE1sticos no Mediterraneo, banhistas est\xE3o relatando diversos casos de
+    Focas-monge-do-mediterr\xE2neo com pl\xE1sticos presos nos seus corpos. Libere
+    seis Focas-monge-do-mediterr\xE2neo e vinte Medusas-de-pintas\r\n\nEquipamentos
+    Obrigat\xF3rios \r\n\nTanque de Oxig\xEAnio b\xE1sico\r\nRede Intermedi\xE1ria\r\nAlicate
+    B\xE1sico\r\nTransportador B\xE1sico\r\n"
   missionID: 0
-  missionReward: 0
-  rescueableAnimals: 0
-  operableAnimals: 0
-  MissionSea: 0
+  missionReward: 175
+  rescueableAnimals: 4
+  operableAnimals: 6
+  MissionSea: 1
+  rescueableSea: 0
+  OperableImage: {fileID: 21300000, guid: bc8095864ff083f449a1662ae5128e08, type: 3}
+  RescuableImage: {fileID: 21300000, guid: 7335dab6316ca2742a5c69c8248bea4b, type: 3}

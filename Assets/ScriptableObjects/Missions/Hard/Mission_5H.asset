@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: Mission_5H
   m_EditorClassIdentifier: 
   missionName: 
-  animalSprite: {fileID: 0}
   Level: 3
-  missionDescription: 
-  animalDescription: 
+  missionDescription: "Durante o transporte de um grande carregamento de caf\xE9
+    do Brasileiro para a Turquia um container mal preso cai no mar. liberando diversos
+    pl\xE1sticos no Caribe, banhistas est\xE3o relatando diversos casos de Tartaruas-Verde
+    com pl\xE1sticos presos nos seus corpos. Libere doze Tartaruas-Verde e oito Peixes-Le\xE3o\r\n\r\nEquipamentos
+    Obrigat\xF3rios \r\n\r\nTanque de Oxig\xEAnio b\xE1sico\r\nRede Intermedi\xE1ria\r\nAlicate
+    B\xE1sico\r\nTransportador B\xE1sico"
   missionID: 0
-  missionReward: 0
-  rescueableAnimals: 0
-  operableAnimals: 0
-  MissionSea: 0
+  missionReward: 350
+  rescueableAnimals: 8
+  operableAnimals: 12
+  MissionSea: 1
+  rescueableSea: 0
+  OperableImage: {fileID: 21300000, guid: 44573622f76ad3944879406eff13ca67, type: 3}
+  RescuableImage: {fileID: 21300000, guid: 653e136099e961a49b6e0a2b9bace0ca, type: 3}

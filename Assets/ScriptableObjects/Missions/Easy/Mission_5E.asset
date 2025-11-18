@@ -12,21 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8809e0481c475294a9c548b33c2b1ab7, type: 3}
   m_Name: Mission_5E
   m_EditorClassIdentifier: 
-  missionName: Facil - Vemelho Dois
+  missionName: "Facil - Mediterr\xE2neo Dois"
   Level: 1
-  missionDescription: "O resultado da pesquisa anual a respeito da biodiversidade
-    do Mar Vermelho foi publicado recentemente. Os dados mostram uma mudan\xE7a dr\xE1stica
-    nas esp\xE9cies nativas na regi\xE3o Norte do Mar Vermelho. Isso aconteceu pela
-    introdu\xE7\xE3o da esp\xE9cie invasora Truta-marrom que alterou intensamente
-    a cadeia alimentar dos animais da regi\xE3o. Inicialmente, para preservar a fauna
-    e flora, a realoca\xE7\xE3o de pelo menos cinco elementos dessa esp\xE9cie \xE9
-    necess\xE1ria.\r\n\nEquipamentos Obrigat\xF3rios \r\n\nTanque de Oxig\xEAnio
-    b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria.\r"
+  missionDescription: "Recebemos muitas reclama\xE7\xF5es vindas das praias ao Norte
+    do Mar Mediterr\xE2neo. Aparentemente, os visitantes da praia saem com uma irrita\xE7\xE3o
+    na pele nunca antes presenciada. Enviamos pesquisadores at\xE9 o local e descobrimos
+    uma quantidade exorbitante de Medusas-de-pintas na regi\xE3o. Trata-se de uma
+    esp\xE9cie invasora que causa queimadura e irrita\xE7\xE3o ao entrar em contato
+    com a pele humana, por isso \xE9 vital a realoca\xE7\xE3o dessas esp\xE9cies
+    para seu habitat natural. Foram reportadas cerca de vinte esp\xE9cies na regi\xE3o."
   missionID: 0
-  missionReward: 87
-  rescueableAnimals: 0
-  operableAnimals: 2
-  MissionSea: 2
-  rescueableSea: -1
-  OperableImage: {fileID: 6528339877313051009, guid: c9364a1b87e58c347a9b41c367576605, type: 3}
-  RescuableImage: {fileID: -4477202895634683369, guid: 3e51a36351b06314db0817507e84a2d3, type: 3}
+  missionReward: 70
+  rescueableAnimals: 5
+  operableAnimals: 0
+  MissionSea: 1
+  rescueableSea: 2
+  OperableImage: {fileID: 0}
+  RescuableImage: {fileID: 21300000, guid: 7335dab6316ca2742a5c69c8248bea4b, type: 3}

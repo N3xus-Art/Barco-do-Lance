@@ -13,12 +13,17 @@ MonoBehaviour:
   m_Name: Mission_4M
   m_EditorClassIdentifier: 
   missionName: 
-  animalSprite: {fileID: 0}
   Level: 2
-  missionDescription: 
-  animalDescription: 
+  missionDescription: "Turistas no leste do I\xEAmen, este banhado pelo Mar Caribe,
+    v\xEAm observando diversos Tartarugas-verde com peda\xE7os de lixo presos neles
+    e Peixes-Le\xE3o os atacando ,voc\xEA deve operar quatro Tartarugas-verde limpando
+    os lixos deles e resgatar 6 Peixes-Le\xE3o. \r\n\r\nEquipamentos Obrigat\xF3rios:\r\n\r\nRede
+    Intermedi\xE1ria\r\nAlicate B\xE1sico\r\nTransportador B\xE1sico"
   missionID: 0
-  missionReward: 0
-  rescueableAnimals: 0
-  operableAnimals: 0
+  missionReward: 182
+  rescueableAnimals: 4
+  operableAnimals: 6
   MissionSea: 0
+  rescueableSea: 2
+  OperableImage: {fileID: 21300000, guid: 44573622f76ad3944879406eff13ca67, type: 3}
+  RescuableImage: {fileID: 21300000, guid: 653e136099e961a49b6e0a2b9bace0ca, type: 3}

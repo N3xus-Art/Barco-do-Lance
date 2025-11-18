@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: Mission_1M
   m_EditorClassIdentifier: 
   missionName: 
-  animalSprite: {fileID: 0}
   Level: 2
-  missionDescription: 
-  animalDescription: 
+  missionDescription: "Um grande cruzeiro entre Cuba-It\xE1lia libera um grande n\xFAmero
+    de Medusas-de-pintas no mar Mediterraneo ao soltar sua \xE1gua de lastro, o jogador
+    deve colet\xE1 las em adi\xE7\xE3o aos animais de costume, o jogador deve coletar
+    cinco Medusas-de-pintas, tr\xEAs Foca-monge-do-mediterr\xE2neo.\r\n\r\nEquipamentos
+    Obrigat\xF3rios \r\n\r\nTanque de Oxig\xEAnio b\xE1sico \r\nRede b\xE1sica\r\nTesoura
+    intermedi\xE1ria\r\nAlicate Intermedi\xE1rio\r\nTransportador intermedi\xE1rio.\r\n"
   missionID: 0
-  missionReward: 0
-  rescueableAnimals: 0
-  operableAnimals: 0
+  missionReward: 136
+  rescueableAnimals: 5
+  operableAnimals: 3
   MissionSea: 0
+  rescueableSea: 1
+  OperableImage: {fileID: 21300000, guid: bc8095864ff083f449a1662ae5128e08, type: 3}
+  RescuableImage: {fileID: 21300000, guid: 653e136099e961a49b6e0a2b9bace0ca, type: 3}

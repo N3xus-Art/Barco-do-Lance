@@ -19,8 +19,7 @@ MonoBehaviour:
     por esses pescadores podem capturar acidentalmente os Tubar\xF5es-galha-branca-oce\xE2nicos.
     Na \xE1rea indicada, verifique a situa\xE7\xE3o dos quatro animais registrados
     em nosso banco de dados. \r\n\nEquipamentos Obrigat\xF3rios:\n\r\nTanque de Oxig\xEAnio
-    b\xE1sico; \r\nRede b\xE1sica; \r\nTesoura b\xE1sica; \r\nAlicate b\xE1sico.
-    \r"
+    b\xE1sico \r\nRede b\xE1sica \r\nTesoura b\xE1sica\r\nAlicate b\xE1sico. \r"
   missionID: 0
   missionReward: 70
   rescueableAnimals: 0

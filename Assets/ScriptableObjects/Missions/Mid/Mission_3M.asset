@@ -13,12 +13,19 @@ MonoBehaviour:
   m_Name: Mission_3M
   m_EditorClassIdentifier: 
   missionName: 
-  animalSprite: {fileID: 0}
   Level: 2
-  missionDescription: 
-  animalDescription: 
+  missionDescription: "Um veleiro de Pescadores de Camar\xE3o Sauditas, localizado
+    no Mar Vermelho, relatou uma diminui\xE7\xE3o de sua reprodu\xE7\xE3o, nossa
+    organiza\xE7\xE3o percebeu que este fen\xF4meno est\xE1 ligado com o aumento
+    no n\xFAmero de Trutas-marrom. Necessitamos de um exemplar para realocar um total
+    de oito Trutas-marrom e operar dois Tubar\xF5es-galha-branca-oce\xE2nicos para
+    amenizar o problema. \r\n\nEquipamentos Obrigat\xF3rios: \r\n\nRede Intermedi\xE1ria\r\nAlicate
+    B\xE1sico\r\nTransportador B\xE1sico\r"
   missionID: 0
-  missionReward: 0
-  rescueableAnimals: 0
-  operableAnimals: 0
-  MissionSea: 0
+  missionReward: 147
+  rescueableAnimals: 8
+  operableAnimals: 2
+  MissionSea: 2
+  rescueableSea: 1
+  OperableImage: {fileID: 21300000, guid: e11e9ad340eb49e4db7634023390ba5b, type: 3}
+  RescuableImage: {fileID: 21300000, guid: dda1ab415987a684e95281a9bb2de0f8, type: 3}

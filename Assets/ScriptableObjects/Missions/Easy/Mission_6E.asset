@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionName: Facil - Mar do Caribe Dois
   Level: 1
-  missionDescription: "s mergulhados da Associa\xE7\xE3o de Mergulhadores que Mergulham
+  missionDescription: "Os mergulhados da Associa\xE7\xE3o de Mergulhadores que Mergulham
     (AMM) encontraram milhares de ovos de Peixe-le\xE3o no Norte do Mar do Caribe.
     Essa esp\xE9cie \xE9 conhecida pela sua reprodu\xE7\xE3o r\xE1pida e alimenta\xE7\xE3o
     voraz, o que pode acabar causando um desequil\xEDbrio ambiental na regi\xE3o. 
     A princ\xEDpio, precisamos retirar cerca de dez exemplares at\xE9 que possamos
-    tomar as devidas provid\xEAncias. \r\n\nEquipamentos Obrigat\xF3rios \n\r\nTanque
-    de Oxig\xEAnio b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria. \r"
+    tomar as devidas provid\xEAncias. \r\n\nEquipamentos Obrigat\xF3rios \r\n\nTanque
+    de Oxig\xEAnio b\xE1sico; \r\nRede b\xE1sica/intermedi\xE1ria; \r\n"
   missionID: 0
   missionReward: 70
   rescueableAnimals: 10
-  operableAnimals: 2
+  operableAnimals: 0
   MissionSea: 0
   rescueableSea: 2
-  OperableImage: {fileID: 6528339877313051009, guid: c9364a1b87e58c347a9b41c367576605, type: 3}
-  RescuableImage: {fileID: -4477202895634683369, guid: 3e51a36351b06314db0817507e84a2d3, type: 3}
+  OperableImage: {fileID: 0}
+  RescuableImage: {fileID: 21300000, guid: 653e136099e961a49b6e0a2b9bace0ca, type: 3}
