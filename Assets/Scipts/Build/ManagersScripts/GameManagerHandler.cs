@@ -87,7 +87,7 @@ public class GameManagerHandler : MonoBehaviour{
                     //Checar quantos peixes ele tem no aquario
                     //Tirar os peixes do aquario
                     //Diminuir o numero de peixes resgataveis da missao
-                    //Se der certo, checar se a missao acabou (fazer nos dois pra tirar aquele update fudido)
+                    //Se der certo, checar se a missao acabou (fazer nos dois pra tirar aquele update ******)
 
                 }
 
