@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FadeHandler : MonoBehaviour
 {
-    [SerializeField] private PlayerHandler _PlayerHander;
     [SerializeField] private CanvasGroup _CanvasGroup;
     [SerializeField] private float FadeDuration = 5.0f;
     [SerializeField] private float Start = 0;
@@ -12,15 +11,15 @@ public class FadeHandler : MonoBehaviour
     
     public void FadeOut(float Time,Action Function = null){
 
-        // Começa a courotina do valor do fade pra até chegar a 1 (completamente escuro)
-        StartCoroutine(Fade(_CanvasGroup, _CanvasGroup.alpha, 1, Time, Function));
+        // Comeï¿½a a courotina do valor do fade pra atï¿½ chegar a 1 (completamente escuro)
+        StartCoroutine(Fade(_CanvasGroup, _CanvasGroup.alpha, 1, FadeDuration, Function));
 
     }
 
     public void FadeIn(float Time,Action Function = null) {
 
-        // Começa a courotina do valor do fade pra até chegar a 0 (completamente vazio)
-        StartCoroutine(Fade(_CanvasGroup, _CanvasGroup.alpha, 0, Time, Function));
+        // Comeï¿½a a courotina do valor do fade pra atï¿½ chegar a 0 (completamente vazio)
+        StartCoroutine(Fade(_CanvasGroup, _CanvasGroup.alpha, 0, FadeDuration, Function));
       
     }
 
@@ -36,7 +35,7 @@ public class FadeHandler : MonoBehaviour
         // seta o numero inicial do fade, pra se precisar parar o fade
         Start = start;
 
-        // peguei esse código de fade de um vídeo mas acho que da pra entender o que ele faz aqui kkssksksksks
+        // peguei esse cï¿½digo de fade de um vï¿½deo mas acho que da pra entender o que ele faz aqui kkssksksksks
         float ElapsedTime = 0.0f;
 
         while (ElapsedTime < durantion)
@@ -48,13 +47,13 @@ public class FadeHandler : MonoBehaviour
 
         }
 
-        // Pós Fade
+        // Pï¿½s Fade
         cg.alpha = end;
 
-        // Checa se tem alguma função pra executar depois do fade
+        // Checa se tem alguma funï¿½ï¿½o pra executar depois do fade
         if (function != null) {
 
-            // roda a função
+            // roda a funï¿½ï¿½o
             function();
         
         }
