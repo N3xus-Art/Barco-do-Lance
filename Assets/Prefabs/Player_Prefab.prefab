@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3741923216983998708}
   - component: {fileID: 733091346491455723}
   - component: {fileID: 7344627380523034766}
+  - component: {fileID: 1631142569712096594}
   m_Layer: 7
   m_Name: Player_Prefab
   m_TagString: Player
@@ -266,6 +267,10 @@ MonoBehaviour:
         m_CallState: 1
     m_ActionId: 0878aa6b-f2d7-4eeb-90ec-25eeb3eaa676
     m_ActionName: 'Player/Tertriary[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 62f9f8cf-7a1e-49e9-bf73-7c7c9722791c
+    m_ActionName: 'Player/Menu[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -323,6 +328,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   racaoPrefab: {fileID: 0}
+  anim: {fileID: 1631142569712096594}
 --- !u!114 &7344627380523034766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +358,30 @@ MonoBehaviour:
   pliersData: {fileID: 11400000, guid: 9aeefcb19875c0940aa83407db9fb5a7, type: 2}
   scissorsData: {fileID: 11400000, guid: 5b5c9980bca29754cb7a6fc46aae56e4, type: 2}
   knifeData: {fileID: 11400000, guid: cce73977e2f092e41ad2e80279fa1a6f, type: 2}
+  deathTag: {fileID: 0}
+  Death_Text: {fileID: 0}
+--- !u!95 &1631142569712096594
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012311066116273635}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 23b10ec08528d2b43adaeb1d4c28ce23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2465818758151283328
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,8 +689,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.47, y: 0.47, z: 0.47}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2057891195485341027}
   m_Father: {fileID: 6246745718549352033}

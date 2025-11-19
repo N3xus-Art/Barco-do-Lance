@@ -1,4 +1,5 @@
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -37,6 +38,7 @@ public class BuildInputHandler : MonoBehaviour{
     [SerializeField] private LayerMask interactableLayer;
     [Header("---- Prefabs de Itens ----")]
     [SerializeField] private GameObject racaoPrefab;
+    [SerializeField] public Animator anim;
 
     #endregion
     //Methods
@@ -54,6 +56,7 @@ public class BuildInputHandler : MonoBehaviour{
             horizontalMoviment = context.ReadValue<Vector2>().x;
             verticalMoviment = context.ReadValue<Vector2>().y;
             isMoving = true;
+            anim.SetBool("isMoving", isMoving);
             if (Mathf.Abs(horizontalMoviment) > 0 && Mathf.Abs(horizontalMoviment) < 1){
                 horizontalMoviment = 1 * Mathf.Sign(horizontalMoviment);
             }
@@ -62,6 +65,7 @@ public class BuildInputHandler : MonoBehaviour{
             }
         }else if (context.phase == InputActionPhase.Canceled){
             isMoving = false;
+            anim.SetBool("isMoving", isMoving);
         }
     }
     public void Interact(InputAction.CallbackContext context)

@@ -116,6 +116,7 @@ public class PlayerControlerHandler : MonoBehaviour{
             AquariumHandler.Instance.gameObject.SetActive(false);
             biHandler.rb.gravityScale = 0f;
             spriteModel = spriteBoat;
+            biHandler.anim.SetBool("isBoat", true);
             playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
             playerModel.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
             biHandler.inicialPos.localScale = new Vector3(5, 5, 5);
@@ -151,8 +152,9 @@ public class PlayerControlerHandler : MonoBehaviour{
             AquariumHandler.Instance.gameObject.SetActive(true);
             biHandler.rb.gravityScale = 1f;
             spriteModel = spriteBase;
+            biHandler.anim.SetBool("isBoat", false);
             playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
-            playerModel.transform.localScale = new Vector3(1f, 1f, 1f);
+            playerModel.transform.localScale = new Vector3(0.47f, 0.47f, 0.47f);
             biHandler.inicialPos.localScale = new Vector3(5, 5, 5);
             biHandler.inicialPos.position = new Vector3(1.26f, 1, 0);
             biHandler.box2D.offset = new Vector2(0.0004896298f, -0.001247153f);
@@ -247,6 +249,7 @@ public class PlayerControlerHandler : MonoBehaviour{
                 biHandler.rb.linearVelocity = new Vector2(biHandler.horizontalMoviment * biHandler.speed, biHandler.verticalMoviment * biHandler.speed);
                 biHandler.rb.gravityScale = 0;
                 biHandler.box2D.isTrigger = true;
+                biHandler.anim.SetBool("isMoving", false);
                 FlipPlayerModel();
             }
             else if (biHandler.topCollision.inLadderLocal)
