@@ -30,7 +30,7 @@ public class PlayerHandler : MonoBehaviour
             // checa se o O2 acabou
             if (CurrentO2 <= 0)
             {
-                //toca a animação de fade
+                //toca a animaï¿½ï¿½o de fade
                 _FadeHandler.FadeOut(4,Morrer);
 
             }
@@ -60,7 +60,7 @@ public class PlayerHandler : MonoBehaviour
 
     public void Spawn() { 
     
-        //reabalita as funções
+        //reabalita as funï¿½ï¿½es
         _MoveTester.enabled = true;
         CurrentO2 = MaxO2;
         Dead = false;

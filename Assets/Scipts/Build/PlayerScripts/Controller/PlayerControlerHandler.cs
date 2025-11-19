@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using TMPro; // Adicionado para o Texto
+using System.Collections; // Adicionado para Coroutines
 
-public class PlayerControlerHandler : MonoBehaviour{
+public class PlayerControlerHandler : MonoBehaviour
+{
     //Variables
     #region
     private static PlayerControlerHandler _instance;
@@ -22,13 +25,18 @@ public class PlayerControlerHandler : MonoBehaviour{
     [SerializeField] public GameManagerHandler gmHandler;
     [SerializeField] public CurrentMission CurrentMission;
     [SerializeField] public bool CanMove = true;
+
+    [Header("----Variaveis de Morte/UI----")]
+    [SerializeField] private FadeHandler fadeHandler; 
+    [SerializeField] private TMP_Text deathText;      
+    private bool isDead = false;
+
     [Header("----Variaveis do o2----")]
     [SerializeField] public float rotation;
     [SerializeField] public float o2 = 100;
     [SerializeField] public int maxO2 = 100;
     [SerializeField] public float o2Cost;
 
-    // Referência do ponteiro agora é privada e encontrada dinamicamente
     private GameObject pointer;
 
     [Header("----Variaveis de sprite----")]
@@ -51,8 +59,11 @@ public class PlayerControlerHandler : MonoBehaviour{
     //Contact Methods
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(biHandler.contactCheckPos.position, biHandler.contactCheckSize);
+        if (biHandler != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(biHandler.contactCheckPos.position, biHandler.contactCheckSize);
+        }
     }
     private bool isGrounded()
     {
@@ -180,10 +191,18 @@ public class PlayerControlerHandler : MonoBehaviour{
         CanMove = true;
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += LoadedSceneHandler;
-        biHandler.speed = 5f;
-        biHandler.rb = GetComponent<Rigidbody2D>();
-        playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
-        biHandler.box2D = GetComponent<BoxCollider2D>();
+
+        // Verifica se biHandler existe antes de acessar
+        biHandler = GetComponent<BuildInputHandler>();
+        if (biHandler != null)
+        {
+            biHandler.speed = 5f;
+            biHandler.rb = GetComponent<Rigidbody2D>();
+            biHandler.box2D = GetComponent<BoxCollider2D>();
+        }
+
+        if (playerModel != null)
+            playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
     }
 
     private void UpdateO2Pointer()
@@ -214,8 +233,76 @@ public class PlayerControlerHandler : MonoBehaviour{
         }
     }
 
+    // --- LÓGICA DE MORTE ---
+
+    private void HandleDeath()
+    {
+        if (isDead) return; // Evita chamar a morte várias vezes
+        isDead = true;
+        CanMove = false; // Trava o movimento
+        Debug.Log("O jogador morreu por falta de oxigênio.");
+
+        // Chama o FadeOut e depois a cutscene
+        if (fadeHandler != null)
+        {
+            fadeHandler.FadeOut(2f, StartDeathCutscene);
+        }
+        else
+        {
+            // Fallback se não tiver fade configurado
+            StartDeathCutscene();
+        }
+    }
+
+    private void StartDeathCutscene()
+    {
+        StartCoroutine(CutsceneMorteRoutine());
+    }
+
+    private IEnumerator CutsceneMorteRoutine()
+    {
+        // Zera a velocidade física
+        if (biHandler != null && biHandler.rb != null)
+            biHandler.rb.linearVelocity = Vector2.zero;
+
+        // Move o player para o spawn (Ajuste as coordenadas conforme necessário)
+        transform.position = new Vector3(0, 0, 0);
+
+        // Habilita o texto de "Desmaiou"
+        if (deathText != null) deathText.enabled = true;
+
+        yield return new WaitForSecondsRealtime(4f);
+
+        // Desabilita o texto
+        if (deathText != null) deathText.enabled = false;
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        // Fade In e chama o Respawn
+        if (fadeHandler != null)
+        {
+            fadeHandler.FadeIn(1.5f, FinishRespawn);
+        }
+        else
+        {
+            FinishRespawn();
+        }
+    }
+
+    private void FinishRespawn()
+    {
+        // Reseta status
+        o2 = maxO2;
+        isDead = false;
+        CanMove = true; // Libera o movimento
+        UpdateO2Pointer();
+    }
+
+    // ----------------------
+
     public void Update()
     {
+        if (isDead) return; // Se estiver morto, não processa inputs nem física
+
         if (BuildInputHandler.isMoving && CanMove)
         {
             if (isGrounded() && !biHandler.topCollision.inLadderLocal)
@@ -257,11 +344,13 @@ public class PlayerControlerHandler : MonoBehaviour{
         {
             o2 -= o2Cost * Time.deltaTime;
             o2 = Mathf.Clamp(o2, 0, maxO2);
+
+            UpdateO2Pointer(); // Atualiza o ponteiro
+
             if (o2 <= 0)
             {
-                // Morte do player
+                HandleDeath(); // Chama a morte se o O2 acabar
             }
-            UpdateO2Pointer();
         }
         if (BuildInputHandler.isStarted)
         {
