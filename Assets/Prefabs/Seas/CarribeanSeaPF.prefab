@@ -53305,6 +53305,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2309009294031307642, guid: 3f6810df3782b024bacd23a76712f5d0, type: 3}
+      propertyPath: 'animalPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 218619888168782972, guid: fb35c344e021c384f8bd932dc8d7c5cc, type: 3}
     - target: {fileID: 6248769545650778515, guid: 3f6810df3782b024bacd23a76712f5d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4882729
@@ -53347,6 +53351,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4216878327933870217}
     m_Modifications:
+    - target: {fileID: 2118573803070250842, guid: 7ac18e32a1317944ba545746e86ee3e9, type: 3}
+      propertyPath: 'animalPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 218619888168782972, guid: 71fb80d46f4f99f409eb08aed4218f3c, type: 3}
+    - target: {fileID: 2118573803070250842, guid: 7ac18e32a1317944ba545746e86ee3e9, type: 3}
+      propertyPath: 'animalPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 218619888168782972, guid: fb35c344e021c384f8bd932dc8d7c5cc, type: 3}
     - target: {fileID: 3150360819649198636, guid: 7ac18e32a1317944ba545746e86ee3e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -53432,11 +53444,11 @@ PrefabInstance:
     - target: {fileID: 1259251653893967648, guid: c375644ea31f28d408f66ca9ad2e3b67, type: 3}
       propertyPath: 'animalPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 218619888168782972, guid: 71fb80d46f4f99f409eb08aed4218f3c, type: 3}
     - target: {fileID: 1259251653893967648, guid: c375644ea31f28d408f66ca9ad2e3b67, type: 3}
       propertyPath: 'animalPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 218619888168782972, guid: fb35c344e021c384f8bd932dc8d7c5cc, type: 3}
     - target: {fileID: 2857315617262840406, guid: c375644ea31f28d408f66ca9ad2e3b67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.034

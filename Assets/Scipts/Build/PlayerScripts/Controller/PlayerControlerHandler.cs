@@ -164,6 +164,7 @@ public class PlayerControlerHandler : MonoBehaviour{
         }
         else if (GameManagerHandler.CurrentScene.name == "HomeScreen")
         {
+            biHandler.anim.SetBool("isSwim", false);
             gameObject.SetActive(false);
             AquariumHandler.Instance.gameObject.SetActive(false);
             biHandler.rb.gravityScale = 0f;
