@@ -62,6 +62,7 @@ public class ToolUIHandler : MonoBehaviour
 
     private void UpdateToolUI(ToolInstanceHandler tool)
     {
+
         if (_toolText == null || _image == null || _scrollUtil == null) return;
 
         var currentTool = tool ?? _playerInventoryHandler?.EquippedTool;

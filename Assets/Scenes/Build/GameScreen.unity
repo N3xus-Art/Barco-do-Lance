@@ -3012,7 +3012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7954a0eec2032794ca34c8f188b9f45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishSwimArea: {fileID: 0}
+  fishSwimArea: {fileID: 1600520882}
   storedFish: []
 --- !u!61 &1165160297
 BoxCollider2D:
@@ -3375,10 +3375,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 7482667652216324306, guid: ad342b084e7414e4cb7c2efb0b5819dd, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0

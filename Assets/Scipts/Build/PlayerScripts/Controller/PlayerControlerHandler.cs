@@ -340,6 +340,8 @@ public class PlayerControlerHandler : MonoBehaviour{
         if (inWater())
         {
             biHandler.anim.SetBool("isSwim", true);
+            biHandler.box2D.offset = new Vector2(-0.00432229f, 0.02040866f);
+            biHandler.box2D.size = new Vector2(1.074133f, 0.6016592f);
             if (o2 > 0)
             {
                 o2 -= o2Cost * Time.deltaTime;
@@ -353,6 +355,8 @@ public class PlayerControlerHandler : MonoBehaviour{
         }
         if (!inWater()) {
             biHandler.anim.SetBool("isSwim", false);
+            biHandler.box2D.offset = new Vector2(0.0004896298f, -0.001247153f);
+            biHandler.box2D.size = new Vector2(0.1741978f, 0.8615327f);
         }
         if (inWater() && inLadder()) {
             biHandler.anim.SetBool("isSwim", false);
