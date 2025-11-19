@@ -197,6 +197,7 @@ public class PlayerControlerHandler : MonoBehaviour{
             biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
             deathTag = GameObject.FindWithTag("DeathTag");
             Death_Text = deathTag.GetComponent<TMP_Text>();
+            o2 = 100;
             CanMove = true;
             isMap = false;
             playerModel.GetComponent<SpriteRenderer>().transform.localRotation = Quaternion.Euler(0, 0, 0);
