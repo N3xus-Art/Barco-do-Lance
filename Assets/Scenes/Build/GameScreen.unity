@@ -5585,6 +5585,10 @@ PrefabInstance:
       propertyPath: Death_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7839255652071640687, guid: 54025c639a8ccfb4abe71f533d6ca531, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

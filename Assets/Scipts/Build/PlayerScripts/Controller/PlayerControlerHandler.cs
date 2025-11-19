@@ -116,6 +116,8 @@ public class PlayerControlerHandler : MonoBehaviour{
             gameObject.SetActive(true);
             biHandler.rb.gravityScale = 0f;
             spriteModel = spriteBoat;
+            playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
+            playerModel.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
             biHandler.inicialPos.localScale = new Vector3(5, 5, 5);
             biHandler.inicialPos.position = new Vector3(1.26f, 1, 0);
             biHandler.box2D.offset = new Vector2(0.0004896298f, -0.001247153f);

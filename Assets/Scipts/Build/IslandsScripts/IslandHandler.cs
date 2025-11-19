@@ -40,7 +40,7 @@ public class IslandHandler : MonoBehaviour {
     [SerializeField] private ToolDataHandler thirdData;
     [SerializeField] private TMP_Text thirdItemText;
     [SerializeField] private Sprite thirdSprite;
-    [Header("----Variaveis dos Botões----")]
+    [Header("----Variaveis dos Botï¿½es----")]
     [SerializeField] private Button firstButton;
     [SerializeField] private Button secoundButton;
     [SerializeField] private Button thirdButton;
@@ -50,6 +50,9 @@ public class IslandHandler : MonoBehaviour {
     //Methods
     #region
     //Trigger Methods
+    private void OnCollisionEnter2D(Collision2D collision) {
+        
+    }
     void OnTriggerEnter2D(Collider2D collider2D) {
         ison = true;
         isOnCar.isOn = false;
@@ -86,7 +89,7 @@ public class IslandHandler : MonoBehaviour {
         if (playerInventory.Money < selectedPrice)
         {
             poorScreen.SetActive(true);
-            return; // Não abre a tela de confirmação se não tem dinheiro
+            return; // Nï¿½o abre a tela de confirmaï¿½ï¿½o se nï¿½o tem dinheiro
         }
 
         itemSlot = TabIndex;
@@ -98,19 +101,19 @@ public class IslandHandler : MonoBehaviour {
             if (playerInventory.TryBuyTool(firstData, out var tool)) {
                 Debug.Log("Comprou " + firstData.toolName);
             } else {
-                Debug.Log("Não conseguiu comprar " + firstData.toolName);
+                Debug.Log("Nï¿½o conseguiu comprar " + firstData.toolName);
             }
         } else if (itemSlot == 1) {
             if (playerInventory.TryBuyTool(secondData, out var tool)) {
                 Debug.Log("Comprou " + secondData.toolName);
             } else {
-                Debug.Log("Não conseguiu comprar " + secondData.toolName);
+                Debug.Log("Nï¿½o conseguiu comprar " + secondData.toolName);
             }
         } else if (itemSlot == 2) {
             if (playerInventory.TryBuyTool(thirdData, out var tool)) {
                 Debug.Log("Comprou " + thirdData.toolName);
             } else {
-                Debug.Log("Não conseguiu comprar " + thirdData.toolName);
+                Debug.Log("Nï¿½o conseguiu comprar " + thirdData.toolName);
             }
         }
         confirmScreen.SetActive(false);
