@@ -2,7 +2,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.PlayerSettings;
 
 public class PlayerControlerHandler : MonoBehaviour{
     //Variables
@@ -152,6 +151,8 @@ public class PlayerControlerHandler : MonoBehaviour{
             AquariumHandler.Instance.gameObject.SetActive(true);
             biHandler.rb.gravityScale = 1f;
             spriteModel = spriteBase;
+            playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
+            playerModel.transform.localScale = new Vector3(1f, 1f, 1f);
             biHandler.inicialPos.localScale = new Vector3(5, 5, 5);
             biHandler.inicialPos.position = new Vector3(1.26f, 1, 0);
             biHandler.box2D.offset = new Vector2(0.0004896298f, -0.001247153f);

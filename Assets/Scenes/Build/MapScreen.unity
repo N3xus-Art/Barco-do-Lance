@@ -3483,6 +3483,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 217712243295048486, guid: e167dab725a67944bab11c829bf24d35, type: 3}
+      propertyPath: seaValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2994619989756262940, guid: e167dab725a67944bab11c829bf24d35, type: 3}
       propertyPath: m_Name
       value: MedSea
@@ -3614,6 +3618,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2865629728368555407, guid: 8ade56d6b9bf6c94798b3f629a6e6e05, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262798523294421112, guid: 8ade56d6b9bf6c94798b3f629a6e6e05, type: 3}
+      propertyPath: seaValue
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4889768901029074464, guid: 8ade56d6b9bf6c94798b3f629a6e6e05, type: 3}
