@@ -242,6 +242,7 @@ public class PlayerControlerHandler : MonoBehaviour{
                 biHandler.rb.linearVelocity = new Vector2(biHandler.horizontalMoviment * biHandler.speed, 0);
                 biHandler.rb.gravityScale = 1;
                 biHandler.box2D.isTrigger = false;
+                biHandler.anim.SetBool("isMoving", true);
                 FlipPlayerModel();
             }
             else if (inWater() || inLadder())
@@ -275,6 +276,7 @@ public class PlayerControlerHandler : MonoBehaviour{
         }
         if (inWater())
         {
+            biHandler.anim.SetBool("isSwim", true);
             if (o2 > 0)
             {
                 o2 -= o2Cost * Time.deltaTime;
@@ -285,6 +287,12 @@ public class PlayerControlerHandler : MonoBehaviour{
                     GameManagerHandler.Instance.FadeHandler.FadeOut(5f,Morrer); }
             }
                 UpdateO2Pointer();
+        }
+        if (!inWater()) {
+            biHandler.anim.SetBool("isSwim", false);
+        }
+        if (inWater() && inLadder()) {
+            biHandler.anim.SetBool("isSwim", false);
         }
         if (BuildInputHandler.isStarted)
         {
