@@ -1,6 +1,8 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using static UnityEditor.PlayerSettings;
 
 public class PlayerControlerHandler : MonoBehaviour{
     //Variables
@@ -44,6 +46,9 @@ public class PlayerControlerHandler : MonoBehaviour{
     [SerializeField] public ToolDataHandler pliersData;
     [SerializeField] public ToolDataHandler scissorsData;
     [SerializeField] public ToolDataHandler knifeData;
+
+    //hard code por que essa extensão vai acabar e nn tenho tempo KKKKKKKKKKKK
+    [SerializeField] private TMP_Text Death_Text;
     #endregion
 
     //Methods
@@ -118,6 +123,7 @@ public class PlayerControlerHandler : MonoBehaviour{
             biHandler.contactCheckSize = new Vector2(0.586f, 0.01f);
             biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
             BuildInputHandler.isInteracting = false;
+            CanMove = true;
             pointer = null;
 
         }
@@ -132,6 +138,7 @@ public class PlayerControlerHandler : MonoBehaviour{
             biHandler.box2D.size = new Vector2(0.1741978f, 0.8615327f);
             biHandler.contactCheckSize = new Vector2(0.586f, 0.01f);
             biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
+            CanMove = true;
             pointer = null;
         }
         // Se estiver na cena de jogo
@@ -146,6 +153,8 @@ public class PlayerControlerHandler : MonoBehaviour{
             biHandler.box2D.size = new Vector2(0.1741978f, 0.8615327f);
             biHandler.contactCheckSize = new Vector2(0.586f, 0.01f);
             biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
+            CanMove = true;
+
 
             // Tenta encontrar o ponteiro de O2 na cena
             O2PointerTag pointerTag = FindObjectOfType<O2PointerTag>(true);
@@ -255,13 +264,14 @@ public class PlayerControlerHandler : MonoBehaviour{
         }
         if (inWater())
         {
-            o2 -= o2Cost * Time.deltaTime;
-            o2 = Mathf.Clamp(o2, 0, maxO2);
-            if (o2 <= 0)
+            if (o2 > 0)
             {
-                // Morte do player
+                o2 -= o2Cost * Time.deltaTime;
+                o2 = Mathf.Clamp(o2, 0, maxO2);
+
+                if (o2 <= 0) { GameManagerHandler.Instance.FadeHandler.FadeOut(5f,Morrer); }
             }
-            UpdateO2Pointer();
+                UpdateO2Pointer();
         }
         if (BuildInputHandler.isStarted)
         {
@@ -275,5 +285,40 @@ public class PlayerControlerHandler : MonoBehaviour{
             BuildInputHandler.isTertriary = false;
         }
     }
+
+
+    public void Morrer()
+    {
+        // desabilita a o movimento e o interagir
+        CanMove = false;
+        biHandler.enabled = false;
+
+        StartCoroutine(CutsceneMorte());
+    }
+
+
+    private IEnumerator CutsceneMorte()
+    {
+        // espera meio segundo
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        // habilita o texto de "Desmaiou"
+        Death_Text.enabled = true;
+
+        // espera 4s
+        yield return new WaitForSecondsRealtime(4f);
+
+        // desabilita o texto de "Desmaiou"
+        Death_Text.enabled = false;
+
+        Initialize();
+
+        yield return new WaitForSecondsRealtime(0.2f);
+
+
+        GameManagerHandler.Instance.FadeHandler.FadeIn(1.5f);
+
+    }
+
     #endregion
 }

@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class FadeHandler : MonoBehaviour
 {
-    [SerializeField] private PlayerHandler _PlayerHander;
     [SerializeField] private CanvasGroup _CanvasGroup;
-    [SerializeField] private float FadeDuration = 5.0f;
     [SerializeField] private float Start = 0;
-
     
-    public void FadeOut(float Time,Action Function = null){
+    public void FadeOut(float Time ,Action Function = null){
 
         // Começa a courotina do valor do fade pra até chegar a 1 (completamente escuro)
         StartCoroutine(Fade(_CanvasGroup, _CanvasGroup.alpha, 1, Time, Function));
