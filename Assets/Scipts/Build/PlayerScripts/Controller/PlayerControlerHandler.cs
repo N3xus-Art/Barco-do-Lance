@@ -198,7 +198,7 @@ public class PlayerControlerHandler : MonoBehaviour{
             Death_Text = deathTag.GetComponent<TMP_Text>();
             CanMove = true;
             isMap = false;
-
+            playerModel.GetComponent<SpriteRenderer>().transform.localRotation = Quaternion.Euler(0, 0, 0);
 
             // Tenta encontrar o ponteiro de O2 na cena
             O2PointerTag pointerTag = FindObjectOfType<O2PointerTag>(true);
