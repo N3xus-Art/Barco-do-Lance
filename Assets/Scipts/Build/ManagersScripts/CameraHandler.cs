@@ -14,7 +14,7 @@ public class CameraHandler : MonoBehaviour{
         if (playerTag != null)
         {
             target = playerTag.gameObject.GetComponent<Transform>();
-            Debug.Log("Player encontrado e Atribuido");
+            //Debug.Log("Player encontrado e Atribuido");
         }
         else
         {

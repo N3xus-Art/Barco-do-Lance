@@ -28,6 +28,7 @@ public class PlayerControlerHandler : MonoBehaviour{
     [SerializeField] public float o2 = 100;
     [SerializeField] public int maxO2 = 100;
     [SerializeField] public float o2Cost;
+    [SerializeField] public bool isMap;
 
     // Referência do ponteiro agora é privada e encontrada dinamicamente
     private GameObject pointer;
@@ -84,10 +85,8 @@ public class PlayerControlerHandler : MonoBehaviour{
     }
 
     //Flip Methods
-    public void FlipPlayerModel()
-    {
-        if (CanMove)
-        {
+    public void FlipPlayerModel(){
+        if (CanMove){
             if (biHandler.horizontalMoviment > 0)
             {
                 playerModel.GetComponent<SpriteRenderer>().flipX = false;
@@ -96,6 +95,38 @@ public class PlayerControlerHandler : MonoBehaviour{
             else if (biHandler.horizontalMoviment < 0)
             {
                 playerModel.GetComponent<SpriteRenderer>().flipX = true;
+                biHandler.contactCheckPos.localPosition = new Vector3(-0.0234f, -0.431f, 0);
+            }
+        }
+    }
+    public void RotateModel()
+    {
+        if (CanMove)
+        {
+            if (biHandler.horizontalMoviment > 0)
+            {
+                playerModel.GetComponent<SpriteRenderer>().transform.localRotation = Quaternion.Euler(0, 0, -90);
+                biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
+            }
+            else if (biHandler.horizontalMoviment < 0)
+            {
+                playerModel.GetComponent<SpriteRenderer>().transform.localRotation = Quaternion.Euler(0, 0, 90);
+                biHandler.contactCheckPos.localPosition = new Vector3(-0.0234f, -0.431f, 0);
+            }
+        }
+    }
+
+    public void FlipVerticalModel(){
+        if (CanMove)
+        {
+            if (biHandler.verticalMoviment > 0)
+            {
+                playerModel.GetComponent<SpriteRenderer>().transform.localRotation = Quaternion.Euler(0, 0, 0);
+                biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
+            }
+            else if (biHandler.verticalMoviment < 0)
+            {
+                playerModel.GetComponent<SpriteRenderer>().transform.localRotation = Quaternion.Euler(0, 0, 180);
                 biHandler.contactCheckPos.localPosition = new Vector3(-0.0234f, -0.431f, 0);
             }
         }
@@ -128,6 +159,7 @@ public class PlayerControlerHandler : MonoBehaviour{
             BuildInputHandler.isInteracting = false;
             CanMove = true;
             pointer = null;
+            isMap = true;
 
         }
         else if (GameManagerHandler.CurrentScene.name == "HomeScreen")
@@ -144,6 +176,7 @@ public class PlayerControlerHandler : MonoBehaviour{
             biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
             CanMove = true;
             pointer = null;
+            isMap = false;
         }
         // Se estiver na cena de jogo
         else if (GameManagerHandler.CurrentScene.name == "GameScreen")
@@ -164,6 +197,7 @@ public class PlayerControlerHandler : MonoBehaviour{
             deathTag = GameObject.FindWithTag("DeathTag");
             Death_Text = deathTag.GetComponent<TMP_Text>();
             CanMove = true;
+            isMap = false;
 
 
             // Tenta encontrar o ponteiro de O2 na cena
@@ -171,11 +205,11 @@ public class PlayerControlerHandler : MonoBehaviour{
             if (pointerTag != null)
             {
                 pointer = pointerTag.gameObject;
-                Debug.Log("Ponteiro de O2 encontrado e atribuído!");
+                //Debug.Log("Ponteiro de O2 encontrado e atribuído!");
             }
             else
             {
-                Debug.LogWarning("PlayerControlerHandler: NÃO FOI POSSÍVEL ENCONTRAR o objeto com a tag 'O2PointerTag' na cena!");
+                //Debug.LogWarning("PlayerControlerHandler: NÃO FOI POSSÍVEL ENCONTRAR o objeto com a tag 'O2PointerTag' na cena!");
                 pointer = null;
             }
 
@@ -243,7 +277,12 @@ public class PlayerControlerHandler : MonoBehaviour{
                 biHandler.rb.gravityScale = 1;
                 biHandler.box2D.isTrigger = false;
                 biHandler.anim.SetBool("isMoving", true);
-                FlipPlayerModel();
+                if (!isMap){
+                    FlipPlayerModel();
+                }else{
+                    RotateModel();
+                    FlipVerticalModel();
+                }
             }
             else if (inWater() || inLadder())
             {
@@ -251,28 +290,51 @@ public class PlayerControlerHandler : MonoBehaviour{
                 biHandler.rb.gravityScale = 0;
                 biHandler.box2D.isTrigger = true;
                 biHandler.anim.SetBool("isMoving", false);
-                FlipPlayerModel();
+                if (!isMap){
+                    FlipPlayerModel();
+                }else{
+                    RotateModel();
+                    FlipVerticalModel();
+                }
             }
             else if (biHandler.topCollision.inLadderLocal)
             {
                 biHandler.rb.linearVelocity = new Vector2(biHandler.horizontalMoviment * biHandler.speed, biHandler.verticalMoviment * biHandler.speed);
                 biHandler.rb.gravityScale = 0;
                 biHandler.box2D.isTrigger = false;
-                FlipPlayerModel();
+                if (!isMap){
+                    FlipPlayerModel();
+                }else{
+                    RotateModel();
+                    FlipVerticalModel();
+                }
             }
         }
         if (!BuildInputHandler.isMoving)
         {
             biHandler.rb.linearVelocity = new Vector2(0, 0);
             biHandler.rb.gravityScale = 0;
-            FlipPlayerModel();
+            if (!isMap){
+                 FlipPlayerModel();
+            }else{
+                RotateModel();
+                FlipVerticalModel();
+             }
         }
         if (!isGrounded() && !inWater() && !inLadder())
         {
             biHandler.rb.linearVelocity = new Vector2(0, 0);
             biHandler.rb.gravityScale = 1f;
             biHandler.box2D.isTrigger = false;
-            FlipPlayerModel();
+            if (!isMap)
+            {
+                FlipPlayerModel();
+            }
+            else
+            {
+                RotateModel();
+                FlipVerticalModel();
+            }
         }
         if (inWater())
         {

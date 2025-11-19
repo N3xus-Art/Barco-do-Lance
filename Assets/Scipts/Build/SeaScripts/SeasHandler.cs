@@ -28,6 +28,7 @@ public class SeasHandler : MonoBehaviour{
     private void Update() {
         if (isOn && BuildInputHandler.isInteracting) {
             GameManagerHandler.currentSea = seaValue;
+            BuildInputHandler.isInteracting = false;
             sceneHandler.LoadScene("GameScreen");
         }
     }

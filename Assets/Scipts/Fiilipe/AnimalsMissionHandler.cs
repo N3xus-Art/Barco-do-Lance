@@ -15,10 +15,10 @@ public class AnimalsMissionHandler : MonoBehaviour
     {
         if (mission == null) { Debug.Log("Missão Nula, retornando"); return; }
 
-        Debug.Log("começou a função");
+        //Debug.Log("começou a função");
         if (mission.operableAnimals > 0) {
 
-            Debug.Log("Tem animais operáveis, trocando imagem");
+          //  Debug.Log("Tem animais operáveis, trocando imagem");
 
             OperablesText.gameObject.SetActive(true);
             OperablesImage.gameObject.SetActive(true);
@@ -27,7 +27,7 @@ public class AnimalsMissionHandler : MonoBehaviour
             OperablesImage.sprite = mission.OperableImage;
         }
         else{ 
-            Debug.Log("Não tem animais operáveis, retirando as imagens");
+            //Debug.Log("Não tem animais operáveis, retirando as imagens");
 
             OperablesText.gameObject.SetActive(false);
             OperablesImage.gameObject.SetActive(false);
@@ -38,7 +38,7 @@ public class AnimalsMissionHandler : MonoBehaviour
         if (mission.rescueableAnimals > 0)
         {
 
-            Debug.Log("Tem animais resgatáveis, trocando imagem");
+            //Debug.Log("Tem animais resgatáveis, trocando imagem");
 
             RescuablesText.gameObject.SetActive(true);
             RescuablesImage.gameObject.SetActive(true);
@@ -48,7 +48,7 @@ public class AnimalsMissionHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log("Não tem animais restáveis, retirando as imagens");
+            //Debug.Log("Não tem animais restáveis, retirando as imagens");
 
             RescuablesText.gameObject.SetActive(false);
             RescuablesImage.gameObject.SetActive(false);

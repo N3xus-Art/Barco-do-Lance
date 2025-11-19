@@ -33,7 +33,7 @@ public class GameManagerHandler : MonoBehaviour{
     #endregion
 
     public static void SpawnAnimalsInCurrentSea(CurrentMission mission){
-        Debug.Log($"GameManagerHandler.SapwnOcean - ocean.GetComponentsInChildren<AnimalSpawnerHandler>() {Instance.currentSeaGO.GetComponentsInChildren<AnimalSpawnerHandler>().Length}");
+        //Debug.Log($"GameManagerHandler.SapwnOcean - ocean.GetComponentsInChildren<AnimalSpawnerHandler>() {Instance.currentSeaGO.GetComponentsInChildren<AnimalSpawnerHandler>().Length}");
         List<AnimalSpawnerHandler> animalSpawners = new List<AnimalSpawnerHandler>(Instance.currentSeaGO.GetComponentsInChildren<AnimalSpawnerHandler>());
 
         animalSpawners[mission.Level - 1].SpawnAnimal(mission.OperableAnimals);
@@ -63,9 +63,9 @@ public class GameManagerHandler : MonoBehaviour{
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         CurrentScene = SceneManager.GetActiveScene();
-        Debug.Log($"GameManagerHandler.OnSceneLoaded - Carregou a cena {CurrentScene.name} - hasSpwn: {hasSpwn}");
+        //Debug.Log($"GameManagerHandler.OnSceneLoaded - Carregou a cena {CurrentScene.name} - hasSpwn: {hasSpwn}");
         if (!hasSpwn && CurrentScene.name == "GameScreen"){
-            Debug.Log($"GameManagerHandler.OnSceneLoaded - Carregou a cena {scene.name}"); 
+            //Debug.Log($"GameManagerHandler.OnSceneLoaded - Carregou a cena {scene.name}"); 
             SpawnOcean(currentSea);
             SceneManager.activeSceneChanged += OnChangeScene;
             onScene = true;
@@ -75,18 +75,18 @@ public class GameManagerHandler : MonoBehaviour{
             }
             if (pcHandler.CurrentMission != null && (pcHandler.CurrentMission.RescubleSea == currentSea)){
 
-                Debug.Log("Entregou os peixes");
+               // Debug.Log("Entregou os peixes");
 
                 var fish = AquariumHandler.Instance.storedFish.Count;
-                Debug.Log($"Tem {fish} no aquario");
+                //Debug.Log($"Tem {fish} no aquario");
 
                 if (fish > 0)
                 {
 
-                    Debug.Log($"tirando {fish} da missao");
+                    //Debug.Log($"tirando {fish} da missao");
                     pcHandler.CurrentMission.RescueableAnimals -= fish;
 
-                    Debug.Log($"retirando {fish} do aquario");
+                    //Debug.Log($"retirando {fish} do aquario");
                     AquariumHandler.Instance.RemoveFish();
 
                     //Checar quantos peixes ele tem no aquario
@@ -100,14 +100,14 @@ public class GameManagerHandler : MonoBehaviour{
 
             if (pcHandler.CurrentMission != null && (pcHandler.CurrentMission.RescubleSea != currentSea)) {
 
-                Debug.Log("Spawnando peixes");
+                //Debug.Log("Spawnando peixes");
                 AquariumHandler.Instance.SpawnFishStored();
             }
         }
     }
 
     public void OnChangeScene(Scene currentScene, Scene newScene){
-        Debug.Log($"GameManagerHandler.OnChangeScene - currentScene = {currentScene.name} - newScene = {newScene} - hasSpw = {hasSpwn}"); 
+        //Debug.Log($"GameManagerHandler.OnChangeScene - currentScene = {currentScene.name} - newScene = {newScene} - hasSpw = {hasSpwn}"); 
         hasSpwn = false;
         fishSpwn = false;
     }

@@ -47,7 +47,7 @@ public class BuildInputHandler : MonoBehaviour{
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            Debug.Log("Botão de Menu pressionado!");
+            //Debug.Log("Botão de Menu pressionado!");
             SceneManager.LoadScene("HomeScreen");
         }
     }
@@ -72,13 +72,13 @@ public class BuildInputHandler : MonoBehaviour{
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            Debug.Log("Botão de interação pressionado!");
+            //Debug.Log("Botão de interação pressionado!");
             // 1. Verifica todos os colliders na área de interação
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactRange, interactableLayer);
 
             if (hits.Length == 0)
             {
-                Debug.Log("Nada interativo por perto.");
+                //Debug.Log("Nada interativo por perto.");
                 // Verifica se está no mar e tem ração
                 bool estaNaAgua = Physics2D.OverlapBox(transform.position, contactCheckSize, 0, waterLayer);
 
@@ -94,7 +94,7 @@ public class BuildInputHandler : MonoBehaviour{
                         }
                         else
                         {
-                            Debug.LogError("Prefab da Ração não está configurado no BuildInputHandler!");
+                            //Debug.LogError("Prefab da Ração não está configurado no BuildInputHandler!");
                         }
                     }
                 }
@@ -114,12 +114,12 @@ public class BuildInputHandler : MonoBehaviour{
             // 4. Se o script existir, chama o método Interact
             if (interactableObject != null)
             {
-                Debug.Log($"Interagindo com: {closestHit.gameObject.name}");
+                //Debug.Log($"Interagindo com: {closestHit.gameObject.name}");
                 interactableObject.Interact();
             }
             else
             {
-                Debug.LogWarning($"Objeto {closestHit.gameObject.name} está na layer Interagível, mas não tem um script IInteractable!");
+                //Debug.LogWarning($"Objeto {closestHit.gameObject.name} está na layer Interagível, mas não tem um script IInteractable!");
             }
             isInteracting = true;
         }
@@ -145,12 +145,12 @@ public class BuildInputHandler : MonoBehaviour{
                 }
                 else
                 {
-                    Debug.LogError("Prefab da Ração não está configurado no BuildInputHandler!");
+                    //Debug.LogError("Prefab da Ração não está configurado no BuildInputHandler!");
                 }
             }
             else
             {
-                Debug.Log("Sem ração para usar!");
+                //Debug.Log("Sem ração para usar!");
                 // Opcional: Tocar um som de "falha"
             }
         }
