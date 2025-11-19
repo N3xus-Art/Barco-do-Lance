@@ -114,6 +114,7 @@ public class PlayerControlerHandler : MonoBehaviour{
         if (GameManagerHandler.CurrentScene.name == "MapScreen")
         {
             gameObject.SetActive(true);
+            AquariumHandler.Instance.gameObject.SetActive(false);
             biHandler.rb.gravityScale = 0f;
             spriteModel = spriteBoat;
             playerModel.GetComponent<SpriteRenderer>().sprite = spriteModel;
@@ -132,6 +133,7 @@ public class PlayerControlerHandler : MonoBehaviour{
         else if (GameManagerHandler.CurrentScene.name == "HomeScreen")
         {
             gameObject.SetActive(false);
+            AquariumHandler.Instance.gameObject.SetActive(false);
             biHandler.rb.gravityScale = 0f;
             spriteModel = spriteBase;
             biHandler.inicialPos.localScale = new Vector3(5, 5, 5);
@@ -147,6 +149,7 @@ public class PlayerControlerHandler : MonoBehaviour{
         else if (GameManagerHandler.CurrentScene.name == "GameScreen")
         {
             gameObject.SetActive(true);
+            AquariumHandler.Instance.gameObject.SetActive(true);
             biHandler.rb.gravityScale = 1f;
             spriteModel = spriteBase;
             biHandler.inicialPos.localScale = new Vector3(5, 5, 5);
