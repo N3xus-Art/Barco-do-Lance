@@ -34,6 +34,7 @@ Transform:
   - {fileID: 5295602462630534864}
   - {fileID: 875211716259294568}
   - {fileID: 87738534709443022}
+  - {fileID: 4514101989911814857}
   - {fileID: 5637335798354396193}
   - {fileID: 9209577226218045457}
   m_Father: {fileID: 0}
@@ -50,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2398809461d9ae4aa09d2b0d01442bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 2
 --- !u!1 &1121824877599259316
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +64,7 @@ GameObject:
   - component: {fileID: 5617952709588161385}
   - component: {fileID: 349452693783606600}
   - component: {fileID: 7249515135126035770}
-  m_Layer: 4
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50378,7 +50379,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -14
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -50435,7 +50436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875211716259294568}
   - component: {fileID: 8003120763382763074}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50482,7 +50483,7 @@ GameObject:
   - component: {fileID: 7280359489571847667}
   - component: {fileID: 2288452706678020700}
   - component: {fileID: 519116167577853207}
-  m_Layer: 4
+  m_Layer: 6
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50549,7 +50550,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -50616,7 +50617,7 @@ GameObject:
   - component: {fileID: 434709528456986782}
   - component: {fileID: 770325729985294499}
   - component: {fileID: 7579540850800408488}
-  m_Layer: 4
+  m_Layer: 6
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50683,7 +50684,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -50750,7 +50751,7 @@ GameObject:
   - component: {fileID: 7446693549941044072}
   - component: {fileID: 7322087039002512528}
   - component: {fileID: 8570706724707192606}
-  m_Layer: 4
+  m_Layer: 6
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50817,7 +50818,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -50883,7 +50884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5295602462630534864}
   - component: {fileID: 3983490094363849848}
-  m_Layer: 4
+  m_Layer: 6
   m_Name: '### Grid ###'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50963,7 +50964,7 @@ GameObject:
   - component: {fileID: 4456483236610596447}
   - component: {fileID: 9135568138595044387}
   - component: {fileID: 2570195523421787066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Deco_Pequenas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52458,7 +52459,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -14
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.4375, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -52478,7 +52479,7 @@ GameObject:
   - component: {fileID: 5674983362449082697}
   - component: {fileID: 7029576916097732967}
   - component: {fileID: 4572009576584679706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Deco_Pequenas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53973,7 +53974,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -14
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.4375, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -53993,7 +53994,7 @@ GameObject:
   - component: {fileID: 4183893688155995871}
   - component: {fileID: 388899333037839704}
   - component: {fileID: 4348543826471280448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Deco_Grandes_e_grama_frente
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54368,7 +54369,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -14
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.5, y: 0.5, z: 0}
   m_MaxChunkCount: 16
@@ -54411,6 +54412,93 @@ Transform:
   - {fileID: 7446693549941044072}
   m_Father: {fileID: 1455893855965618080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6206990536865699679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4514101989911814857}
+  - component: {fileID: 2248196694753555437}
+  m_Layer: 3
+  m_Name: Waters (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4514101989911814857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6206990536865699679}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.36163, y: -0.495637, z: 0}
+  m_LocalScale: {x: 1.5310462, y: 2.4624302, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1455893855965618080}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2248196694753555437
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6206990536865699679}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -30
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.8078432, g: 0.909804, b: 0.8862746, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &7095023121703791460
 GameObject:
   m_ObjectHideFlags: 0
@@ -54422,7 +54510,7 @@ GameObject:
   - component: {fileID: 7033343487013809301}
   - component: {fileID: 5209578076942920846}
   - component: {fileID: 7736098368115100352}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Deco_Grandes_e_grama_frente
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54797,7 +54885,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -14
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.5, y: 0.5, z: 0}
   m_MaxChunkCount: 16
@@ -54950,7 +55038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3889488680138845527}
   - component: {fileID: 7860972301877237478}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
