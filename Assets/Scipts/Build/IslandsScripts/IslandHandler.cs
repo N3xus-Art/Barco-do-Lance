@@ -8,6 +8,9 @@ public class IslandHandler : MonoBehaviour {
     [Header("----Variaveis de Trigger----")]
     [SerializeField] private bool ison;
     [SerializeField] private PlayerInventoryHandler playerInventory;
+    [SerializeField] private SeasHandler isOnCar;
+    [SerializeField] private SeasHandler isOnMed;
+    [SerializeField] private SeasHandler isOnRed;
     [Header("----Variaveis de Canva----")]
     [SerializeField] private GameObject shopGO;
     [SerializeField] private GameObject normalScreen;
@@ -49,10 +52,16 @@ public class IslandHandler : MonoBehaviour {
     //Trigger Methods
     void OnTriggerEnter2D(Collider2D collider2D) {
         ison = true;
+        isOnCar.isOn = false;
+        isOnMed.isOn = false;
+        isOnRed.isOn = false;
     }
 
     void OnTriggerExit2D(Collider2D collider2D) {
         ison = false;
+        isOnCar.isOn = true;
+        isOnMed.isOn = true;
+        isOnRed.isOn = true;
     }
 
     //Button Methods

@@ -6,7 +6,7 @@ public class SeasHandler : MonoBehaviour{
     //Variables
     #region
     [SerializeField] public int seaValue;
-    [SerializeField] private bool isOn;
+    [SerializeField] public bool isOn;
     [SerializeField] private SceneHandler sceneHandler;
     //[SerializeField] private AnimalSpawner animalSpawner;
     [SerializeField] private Scene scene;

@@ -46,8 +46,8 @@ public class PlayerControlerHandler : MonoBehaviour{
     [SerializeField] public ToolDataHandler pliersData;
     [SerializeField] public ToolDataHandler scissorsData;
     [SerializeField] public ToolDataHandler knifeData;
-
-    //hard code por que essa extensão vai acabar e nn tenho tempo KKKKKKKKKKKK
+    [Header("----Variaveis de Morte----")]
+    [SerializeField] private GameObject deathTag;
     [SerializeField] private TMP_Text Death_Text;
     #endregion
 
@@ -153,6 +153,8 @@ public class PlayerControlerHandler : MonoBehaviour{
             biHandler.box2D.size = new Vector2(0.1741978f, 0.8615327f);
             biHandler.contactCheckSize = new Vector2(0.586f, 0.01f);
             biHandler.contactCheckPos.localPosition = new Vector3(0.0234f, -0.431f, 0);
+            deathTag = GameObject.FindWithTag("DeathTag");
+            Death_Text = deathTag.GetComponent<TMP_Text>();
             CanMove = true;
 
 
@@ -269,7 +271,9 @@ public class PlayerControlerHandler : MonoBehaviour{
                 o2 -= o2Cost * Time.deltaTime;
                 o2 = Mathf.Clamp(o2, 0, maxO2);
 
-                if (o2 <= 0) { GameManagerHandler.Instance.FadeHandler.FadeOut(5f,Morrer); }
+                if (o2 <= 0) { 
+                    Debug.Log(GameManagerHandler.Instance.FadeHandler);
+                    GameManagerHandler.Instance.FadeHandler.FadeOut(5f,Morrer); }
             }
                 UpdateO2Pointer();
         }

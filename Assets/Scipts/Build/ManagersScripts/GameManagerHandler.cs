@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,6 +27,7 @@ public class GameManagerHandler : MonoBehaviour{
     [SerializeField] private PlayerControlerHandler pcHandler;
     [SerializeField] public bool fishSpwn = false;
     [SerializeField] public ScriptableObjectMissions[] CurrentAvaliableMissions = new ScriptableObjectMissions[] { };
+    [SerializeField] private GameObject deathTag;
     [SerializeField] public FadeHandler FadeHandler;
 
     #endregion
@@ -45,6 +47,8 @@ public class GameManagerHandler : MonoBehaviour{
         currentSeaGO = Instantiate(sea.gameObject, new Vector3(0, -124.5f, 0), Quaternion.identity);
         currentSea = sea.GetSeaId;
         hasSpwn = true;
+        deathTag = GameObject.FindWithTag("DeathOBJ");
+        FadeHandler = deathTag.GetComponent<FadeHandler>();
     }
     public void Awake(){
         if (_instance != null && _instance != this){

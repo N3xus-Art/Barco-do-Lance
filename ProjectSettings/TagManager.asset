@@ -12,6 +12,8 @@ TagManager:
   - GameManager
   - Sea
   - Audio
+  - DeathTag
+  - DeathOBJ
   layers:
   - Default
   - TransparentFX
